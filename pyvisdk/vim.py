@@ -180,6 +180,24 @@ class Vim(pyvisdk.core.VimBase):
         mo = self.getContentsRecursively(props=["configIssue", "configStatus", "name", "parent"])
         return mo
 
+    #------------------------------------------------------------
+    # References
+    #------------------------------------------------------------
+    def getReferenceToManagedObject(self, mo):
+        """
+        Returns reference of managed object as string. For example: VirtualMachine:vm-16
+        """
+        return "{}:{}".format(mo.ref._type, mo.ref.value)
+    
+    def _managedObjectExists(self, mo):
+        from suds import WebFault
+        try:
+            mo.value    # test any member of managed object.. 'value' is common to all objects
+        except WebFault, e:
+            if e.fault.detail.__keylist__ == ['ManagedObjectNotFoundFault']:
+                return False
+        return True
+    
     def getManagedObjectByReference(self, moref):
         """
         Returns the managed object
@@ -189,8 +207,14 @@ class Vim(pyvisdk.core.VimBase):
         # http://www.doublecloud.org/2011/03/how-to-get-a-managed-object-with-its-id-like-task-id/
         class_name, object_id = moref.split(':', 1)
         ref = ManagedObjectReference(self, type=class_name, value=object_id)
-        return self._getManagedObjectType(class_name)(self, ref=ref)
+        mo = self._getManagedObjectType(class_name)(self, ref=ref)
+        if not self._managedObjectExists(mo):
+            raise ValueError(object_id)
+        return mo
 
     def _getManagedObjectType(self, class_name):
         # inspired by pyvisdk.vim
-        return import_string("pyvisdk.mo.{}.{}".format(camel_to_under(class_name), class_name))
+        try:
+            return import_string("pyvisdk.mo.{}.{}".format(camel_to_under(class_name), class_name))
+        except ImportError:
+            raise ValueError(class_name)
