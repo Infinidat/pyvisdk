@@ -21,6 +21,7 @@ from .do.retrieve_options import RetrieveOptions
 from .enums.task_info_state import TaskInfoState
 from .exceptions import VisdkTaskError
 from .mo.service_instance import ServiceInstance
+from .mo.task import Task
 from .utils import camel_to_under
 from brownie.importing import import_string
 
@@ -335,37 +336,25 @@ class VimBase(object):
 
         return changeData, version
 
-    def waitForTask(self, objmor):
-        version = ""
+    def waitForTask(self, task, timeout=None):
+        if isinstance(task, ManagedObjectReference):
+            task = Task(self, ref=task)
 
-        objmor = ManagedObjectReference("Task", objmor.value)
-
-        myObjSpec = ObjectSpec(self, objmor)
-        myPropSpec = PropertySpec(self, type=objmor._type, pathSet=["info.state", "info.error"])
-        pSpec = PropertyFilterSpec(self, propSet=[myPropSpec], objectSet=[myObjSpec])
-
-        filter = self.property_collector.CreateFilter(pSpec, partialUpdates=True)
-
-        updateset = self.property_collector.WaitForUpdates(version)
-
-        status = self._parseTaskResponse(updateset)
-        while status['info.state'] in ['running', 'queued']: #@UndefinedVariable
-            log.debug("Waiting for task to complete...")
-
-            version = updateset.version
-            updateset = self.property_collector.WaitForUpdates(version)
-            status = self._parseTaskResponse(updateset)
-            log.debug("**** status: %s" % status)
+        log.debug("Waiting for task to complete...")
+        t0 = time.time()
+        while task.update("info.state") in [TaskInfoState.running, TaskInfoState.queued]:
             time.sleep(0.1)
+            t1 = time.time()
+            if timeout is not None and (t1 - t0) > timeout:
+                raise VisdkTaskError("Timeout waiting for task")
 
         log.debug("Finished task...")
-        # Destroy the filter when we are done.
-        filter.DestroyPropertyFilter()
 
-        if status['info.state'] == TaskInfoState.error: #@UndefinedVariable
-            error = status['info.error']
+        if task.info.state == TaskInfoState.error:
+            error = task.info.error
             raise VisdkTaskError(error.localizedMessage)
-        return status['info.state']
+        
+        return task.info.state
 
     def _parseTaskResponse(self, response):
         status = {}
