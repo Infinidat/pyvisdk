@@ -337,8 +337,8 @@ class VimBase(object):
         return changeData, version
 
     def waitForTask(self, task, timeout=None):
-        if isinstance(task, ManagedObjectReference):
-            task = Task(self, ref=task)
+        if not isinstance(task, Task):
+            task = self._parse_object_content(task)
 
         log.debug("Waiting for task to complete...")
         t0 = time.time()
