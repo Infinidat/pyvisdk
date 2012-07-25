@@ -355,13 +355,3 @@ class VimBase(object):
             raise VisdkTaskError(error.localizedMessage)
         
         return task.info.state
-
-    def _parseTaskResponse(self, response):
-        status = {}
-        for x in response.filterSet[0].objectSet[0].changeSet:
-            if hasattr(x, 'val'):
-                status[x.name] = x.val
-            else:
-                status[x.name] = x.op
-        return status
-
