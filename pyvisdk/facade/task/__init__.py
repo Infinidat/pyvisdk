@@ -88,6 +88,14 @@ class Task(object):
     def get_name(self):
         data_object = self._get_info()
         return data_object.name or ''
+    
+    def set_state(self, state):
+        self._managed_object.SetTaskState(state, None, None)
+    
+    def set_description(self, message):
+        from pyvisdk.do.localizable_message import LocalizableMessage
+        msg = LocalizableMessage(self._client, key=self._managed_object.info.key, message=message)
+        self._managed_object.SetTaskDescription(msg)
 
     def get_id(self):
         return self._get_info().key
