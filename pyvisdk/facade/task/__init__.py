@@ -74,16 +74,28 @@ class Task(object):
             with self:
                 return func(*args, **kwargs)
         return callable
+    
+    @contextmanager
+    def silent_context(self):
+        try:
+            with self:
+                yield
+        except Exception:
+            pass
 
     def __enter__(self):
-        self._managed_object.SetTaskState('running', None, None)
+        self.set_state('running')
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        state = 'success' if (exc_type, exc_val, exc_tb) == (None, None, None) else 'error'
-        self._managed_object.SetTaskState(state, None, None)
-        if state != 'success':
+        success = (exc_type, exc_val, exc_tb) == (None, None, None)
+        if not success:
+            self.set_state('error')
+            self.set_description(exc_val.message)
+            logger.exception(exc_val.message)
             raise exc_type, exc_val, exc_tb
+        self.set_state('success')
+        self.set_description("")
 
     def get_name(self):
         data_object = self._get_info()
