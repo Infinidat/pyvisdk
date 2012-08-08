@@ -66,7 +66,6 @@ class ExtensionFacade(object):
     def _get_ids(self):
         return self._resources_dict
 
-    @cached_method
     def _get_tasks(self):
         ids = self._get_ids()
         return {task.taskID: ids[task.taskID]
