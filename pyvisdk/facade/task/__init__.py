@@ -87,13 +87,13 @@ class Task(object):
         self.set_state('running')
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        success = (exc_type, exc_val, exc_tb) == (None, None, None)
-        if not success:
+    def __exit__(self, *exc_info):
+        exception_has_been_raised = exc_info != (None, None, None)
+        if exception_has_been_raised:
             self.set_state('error')
             self.set_description(exc_val.message)
-            logger.exception(exc_val.message)
-            raise exc_type, exc_val, exc_tb
+            logger.error("Exception has been raised inside the task context", exc_info=exc_info)
+            raise exc_info[0], exc_info[1], exc_info[2]
         self.set_state('success')
         self.set_description("")
 
