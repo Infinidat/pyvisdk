@@ -174,8 +174,13 @@ class CachedPropertyCollector(object):
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.Change.html
         list_to_update = self._get_list_and_object_to_update(property_dict, key, value)
         key_to_remove = self._get_key_to_remove(key)
-        value = [item for item in list_to_update if item.key == key_to_remove][0]
-        list_to_update.remove(value)
+        value_list = [item for item in list_to_update if item.key == key_to_remove]
+        if not value_list:
+            msg = "No item with key {!r} in list {!r}, original value is {!r}, original key is {!r}"
+            logger.warn(msg.format(key_to_remove, list_to_update, value, key))
+        else:
+            value = value_list[0]
+            list_to_update.remove(value)
 
     def _mergeObjectUpdateIntoCache__modify(self, object_ref_key, objectUpdate):
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.ObjectUpdate.html
