@@ -216,7 +216,7 @@ class CachedPropertyCollector(object):
             self._mergeChangesIntoCache(self._getChanges(0, update.version))
         else:
             self._version = update.version
-            logger.debug("Cache is updated for version {}".format(self._version))
+            logger.debug("Cache of {!r} is updated for version {}".format(self, self._version))
 
     def checkForUpdates(self):
         """:returns: True if the cached data is not up to date"""
