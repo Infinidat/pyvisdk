@@ -146,6 +146,25 @@ class Vim(pyvisdk.core.VimBase):
         return self.getDecendentsByName(_type=ManagedObjectTypes.Datacenter, properties=["name"], name=_name) #@UndefinedVariable
 
     #------------------------------------------------------------
+    # Datastores
+    #------------------------------------------------------------
+    def getDatastores(self):
+        """
+        Get all the data centers on the server
+        
+        :rtype: :py:class:`Datacenter`
+        """
+        return self.getDecendentsByName(_type=ManagedObjectTypes.Datastore, properties=["name"]) #@UndefinedVariable
+
+    def getDatastore(self, _name):
+        """
+        Get the data center by name
+        
+        :rtype: :py:class:`Datacenter`
+        """
+        return self.getDecendentsByName(_type=ManagedObjectTypes.Datastore, properties=["name"], name=_name) #@UndefinedVariable
+
+    #------------------------------------------------------------
     # Resource pool
     #------------------------------------------------------------
     def getResourcePools(self):
