@@ -152,17 +152,24 @@ class Vim(pyvisdk.core.VimBase):
         """
         Get all the data centers on the server
         
-        :rtype: :py:class:`Datacenter`
+        :rtype: :py:class:`Datastore`
         """
-        return self.getDecendentsByName(_type=ManagedObjectTypes.Datastore, properties=["name"]) #@UndefinedVariable
+        datastores = list()
+        for datacenter in self.getDatacenters():
+            datastores.extend(datacenter.datastore)
+        return datastores
 
     def getDatastore(self, _name):
         """
         Get the data center by name
         
-        :rtype: :py:class:`Datacenter`
+        :rtype: :py:class:`Datastore`
         """
-        return self.getDecendentsByName(_type=ManagedObjectTypes.Datastore, properties=["name"], name=_name) #@UndefinedVariable
+        for datacenter in self.getDatacenters():
+            for datastore in datacenter.datastore:
+                if datastore.name == _name:
+                    return datastore
+        return None
 
     #------------------------------------------------------------
     # Resource pool
