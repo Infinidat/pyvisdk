@@ -271,3 +271,20 @@ class HostSystemCachedPropertyCollector(CachedPropertyCollector):
         select_set.append(self._createTraversalSpec("ContainerView", 'container',
                           [select.name for select in select_set]))
         return select_set
+
+
+class VirtualMachinePropertyCollector(CachedPropertyCollector):
+    def __init__(self, vim, properties):
+        super(VirtualMachinePropertyCollector, self).__init__(vim, 'VirtualMachine', properties)
+
+    @cached_method
+    def _getSelectSet(self):
+        select_set = list()
+        select_set.append(self._createTraversalSpec("Datacenter", 'vmFolder',
+                                                    ["Folder.childEntity"]))
+        select_set.append(self._createTraversalSpec("Folder", 'childEntity',
+                                                    ['Datacenter.vmFolder', "Folder.childEntity"]))
+        select_set.append(self._createTraversalSpec("ContainerView", 'container',
+                          [select.name for select in select_set]))
+        return select_set
+
