@@ -20,7 +20,7 @@ def InheritablePolicy(vim, *args, **kwargs):
     information object, The values of the properties in the subclass are the
     effective values. if inherited is true, the object is getting the effective
     values from upper level. If false, the values are explicitly set by a user.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}InheritablePolicy')
 
     # do some validation checking...
@@ -40,4 +40,3 @@ def InheritablePolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

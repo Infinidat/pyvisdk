@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def GeneralUserEvent(vim, *args, **kwargs):
     '''This event is the general user event type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GeneralUserEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def GeneralUserEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

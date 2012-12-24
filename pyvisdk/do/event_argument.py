@@ -12,7 +12,7 @@ def EventArgument(vim, *args, **kwargs):
     '''This is the base type for event argument types.Event argument objects, which
     inherit from a common subtype, are used to manage supplementary properties of
     different kinds of event objects.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventArgument')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def EventArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualParallelPortDeviceBackingOption(vim, *args, **kwargs):
     '''Data object type that represents the options for a device backing of a virtual
     parallel port.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualParallelPortDeviceBackingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualParallelPortDeviceBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

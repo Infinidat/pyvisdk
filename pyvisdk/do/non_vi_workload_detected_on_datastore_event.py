@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NonVIWorkloadDetectedOnDatastoreEvent(vim, *args, **kwargs):
     '''This event records that non-VI workload is detected on the datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NonVIWorkloadDetectedOnDatastoreEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NonVIWorkloadDetectedOnDatastoreEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

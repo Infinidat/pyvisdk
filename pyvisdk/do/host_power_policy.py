@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPowerPolicy(vim, *args, **kwargs):
     '''Power Management Policy data object. Used to retrieve and specify current host
     power management policy.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPowerPolicy')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPowerPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

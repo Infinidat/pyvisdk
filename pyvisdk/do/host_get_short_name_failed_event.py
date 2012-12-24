@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostGetShortNameFailedEvent(vim, *args, **kwargs):
     '''This event records that hostname -s failed or returned a name containing '.'.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostGetShortNameFailedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostGetShortNameFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

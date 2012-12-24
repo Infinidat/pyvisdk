@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDpmHostConfigInfo(vim, *args, **kwargs):
     '''DPM configuration for a single host. This makes it possible to override the
     default behavior for an individual host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDpmHostConfigInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDpmHostConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

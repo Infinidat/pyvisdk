@@ -20,16 +20,10 @@ def ClusterDasFdmHostState(vim, *args, **kwargs):
     user-initiated power offs. The master is also responsible for reporting fault-
     domain state to vCenter Server.The master FDM is determined through election by
     the FDMs that are alive at the time. An election occurs in the following
-    circumstances:* When the vSphere HA feature is enabled for the cluster. * When
-    the master's host fails. * When the management network is partitioned. In a
-    network partition there will be a master for each partition. However, only one
-    master will be responsible for a given VM. When the partition is resolved, all
-    but one of the masters will abdicate. * After a host in a vSphere HA cluster
-    powers back up following a failure that caused all hosts in the cluster to
-    power off.The slaves are responsible for reporting state updates to the master
-    and restarting VMs as required. All FDMs provide the VM/Application Health
-    Monitoring Service.'''
-    
+    circumstances:The slaves are responsible for reporting state updates to the
+    master and restarting VMs as required. All FDMs provide the VM/Application
+    Health Monitoring Service.'''
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasFdmHostState')
 
     # do some validation checking...
@@ -49,4 +43,3 @@ def ClusterDasFdmHostState(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

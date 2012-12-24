@@ -13,7 +13,7 @@ def VmfsDatastoreExtendSpec(vim, *args, **kwargs):
     more new extents to the datastore. All the extents to be added must be on the
     same disk. Extension is different from creation in that the VMFS creation
     specification need not be specified.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreExtendSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmfsDatastoreExtendSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

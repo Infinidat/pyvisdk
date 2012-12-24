@@ -13,7 +13,7 @@ def HostNetworkConfig(vim, *args, **kwargs):
     These objects contain only the configuration information for networking. The
     runtime information is available from the NetworkInfo data object type.See
     HostNetworkInfo'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNetworkConfig')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def HostNetworkConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

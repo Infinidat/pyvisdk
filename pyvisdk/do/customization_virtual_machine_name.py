@@ -14,7 +14,7 @@ def CustomizationVirtualMachineName(vim, *args, **kwargs):
     necessary, to make it unique.Virtual machine names are unique across the set of
     hosts and virtual machines known to the VirtualCenter instance. VMware Tools
     reports the names of existing virtual machines.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationVirtualMachineName')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def CustomizationVirtualMachineName(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

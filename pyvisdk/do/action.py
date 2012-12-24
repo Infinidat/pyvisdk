@@ -12,7 +12,7 @@ def Action(vim, *args, **kwargs):
     '''This data object type defines the action initiated by a scheduled task or
     alarm.This is an abstract type. A client creates a scheduled task or an alarm
     each of which triggers an action, defined by a subclass of this type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}Action')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def Action(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

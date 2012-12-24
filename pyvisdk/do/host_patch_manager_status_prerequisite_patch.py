@@ -13,7 +13,7 @@ def HostPatchManagerStatusPrerequisitePatch(vim, *args, **kwargs):
     on the server. In addition to being installed on the server, an update can have
     additional requirement on the server or services running on the server
     pertaining to the prerequisite update.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPatchManagerStatusPrerequisitePatch')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostPatchManagerStatusPrerequisitePatch(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

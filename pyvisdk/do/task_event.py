@@ -14,7 +14,7 @@ def TaskEvent(vim, *args, **kwargs):
     always be "queued". To find the current status of the task, query for the
     current state of the Task using the eventChainId in the embedded TaskInfo
     object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskEvent')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def TaskEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

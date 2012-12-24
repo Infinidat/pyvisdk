@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNewNetworkConnectInfo(vim, *args, **kwargs):
     '''Network information for a network that will be added to VirtualCenter when the
     host is added.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNewNetworkConnectInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostNewNetworkConnectInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IsoImageFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for an ISO CD-ROM
     image.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IsoImageFileQuery')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def IsoImageFileQuery(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

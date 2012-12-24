@@ -12,7 +12,7 @@ def HostPlugStoreTopologyAdapter(vim, *args, **kwargs):
     '''This data object type is an association class that describes a host bus adapter
     and its associated storage Paths. The set of Paths on all the host bus adapters
     is the complete set of Paths in the system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyAdapter')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostPlugStoreTopologyAdapter(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

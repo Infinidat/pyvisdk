@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmSuspendedEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine finished suspending.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmSuspendedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmSuspendedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

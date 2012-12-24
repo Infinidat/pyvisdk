@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmRegisteredEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine was successfully registered.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmRegisteredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmRegisteredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

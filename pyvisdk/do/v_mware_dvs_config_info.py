@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMwareDVSConfigInfo(vim, *args, **kwargs):
     '''This class defines the VMware specific configuration for
     DistributedVirtualSwitch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareDVSConfigInfo')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def VMwareDVSConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

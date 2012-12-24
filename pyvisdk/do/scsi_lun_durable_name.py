@@ -14,7 +14,7 @@ def ScsiLunDurableName(vim, *args, **kwargs):
     common algorithm. The algorithm divides the identifier into multiple namespaces
     where each namespace uses a different set of properties of the LUN to generate
     the identifier. The namespace itself is encoded in the identifier.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScsiLunDurableName')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ScsiLunDurableName(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

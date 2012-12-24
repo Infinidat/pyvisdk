@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDrsVmConfigInfo(vim, *args, **kwargs):
     '''DRS configuration for a single virtual machine. This makes it possible to
     override the default behavior for an individual virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDrsVmConfigInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDrsVmConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

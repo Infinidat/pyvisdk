@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def SessionManagerLocalTicket(vim, *args, **kwargs):
     '''This data object type contains the user name and location of the file
     containing the password that clients can use for one-time logon to a server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SessionManagerLocalTicket')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def SessionManagerLocalTicket(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

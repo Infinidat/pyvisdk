@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileDescription(vim, *args, **kwargs):
     '''The ProfileDescription data object describes a profile. The description
     contains multiple sections. Each section describes a part of the profile.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileDescription')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

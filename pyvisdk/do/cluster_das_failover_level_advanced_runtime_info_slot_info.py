@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo(vim, *args, **kwargs):
     '''A slot represents an amount of resources sufficient for any powered on virtual
     machine in the cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

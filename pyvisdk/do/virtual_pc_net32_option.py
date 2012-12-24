@@ -13,7 +13,7 @@ def VirtualPCNet32Option(vim, *args, **kwargs):
     VirtualPCNet32 data object type. Except for the boolean supportsMorphing
     option, the options are inherited from the VirtualEthernetCardOption data
     object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPCNet32Option')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualPCNet32Option(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

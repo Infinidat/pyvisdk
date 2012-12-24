@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostSecuritySpec(vim, *args, **kwargs):
     '''DataObject used for configuring the Security settings'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSecuritySpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostSecuritySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

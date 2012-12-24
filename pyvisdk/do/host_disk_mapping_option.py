@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDiskMappingOption(vim, *args, **kwargs):
     '''The HostDiskMappingOption data object type describes the options for a virtual
     disk mapping to a host disk.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskMappingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDiskMappingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

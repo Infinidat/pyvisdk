@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NoDatastoresConfiguredEvent(vim, *args, **kwargs):
     '''No datastores have been configured on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NoDatastoresConfiguredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NoDatastoresConfiguredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmReloadFromPathFailedEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine reload from a new configuration path
     failed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmReloadFromPathFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmReloadFromPathFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

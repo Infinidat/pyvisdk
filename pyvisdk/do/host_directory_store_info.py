@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDirectoryStoreInfo(vim, *args, **kwargs):
     '''HostDirectoryStoreInfo is a base class for objects that provide information
     about directory-based authentication stores.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDirectoryStoreInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDirectoryStoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

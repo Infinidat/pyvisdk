@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineBootOptionsBootableDevice(vim, *args, **kwargs):
     '''Bootable device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptionsBootableDevice')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachineBootOptionsBootableDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterNotAttemptedVmInfo(vim, *args, **kwargs):
     '''This data class reports one virtual machine powerOn failure.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterNotAttemptedVmInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterNotAttemptedVmInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

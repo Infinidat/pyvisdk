@@ -14,7 +14,7 @@ def HostResignatureRescanResult(vim, *args, **kwargs):
     underlying storage luns. As part of the operation, we rescan the specified list
     of hosts. This data object describes the return value of resignature APIs in
     DatastoreSystem.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostResignatureRescanResult')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostResignatureRescanResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

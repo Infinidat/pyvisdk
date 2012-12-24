@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineConfigSummary(vim, *args, **kwargs):
     '''A subset of virtual machine configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigSummary')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualMachineConfigSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

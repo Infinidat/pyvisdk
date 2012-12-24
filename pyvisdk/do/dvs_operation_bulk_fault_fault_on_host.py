@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsOperationBulkFaultFaultOnHost(vim, *args, **kwargs):
     '''The fault occured on the host during an operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsOperationBulkFaultFaultOnHost')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DvsOperationBulkFaultFaultOnHost(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

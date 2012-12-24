@@ -12,7 +12,7 @@ def VmFaultToleranceVmTerminatedEvent(vim, *args, **kwargs):
     '''This event records a secondary or primary VM is terminated. The reason could be
     : divergence, lost connection to secondary, partial hardware failure of
     secondary, or by user.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceVmTerminatedEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmFaultToleranceVmTerminatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

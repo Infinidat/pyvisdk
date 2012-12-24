@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVSConfigInfo(vim, *args, **kwargs):
     '''Configuration of a DistributedVirtualSwitch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSConfigInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DVSConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

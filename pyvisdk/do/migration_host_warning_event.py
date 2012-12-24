@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def MigrationHostWarningEvent(vim, *args, **kwargs):
     '''A migration warning that includes the destination host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MigrationHostWarningEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def MigrationHostWarningEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

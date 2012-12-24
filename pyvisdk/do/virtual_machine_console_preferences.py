@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineConsolePreferences(vim, *args, **kwargs):
     '''Preferences for the legacy console application that affect the way it behaves
     during power operations on the virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConsolePreferences')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineConsolePreferences(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

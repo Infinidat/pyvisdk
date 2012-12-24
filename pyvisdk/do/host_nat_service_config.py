@@ -12,7 +12,7 @@ def HostNatServiceConfig(vim, *args, **kwargs):
     '''This data object type describes the network address translation (NAT) service
     configuration representing both the configured properties on a NAT Service and
     identification information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNatServiceConfig')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostNatServiceConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

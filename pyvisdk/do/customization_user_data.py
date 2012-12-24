@@ -13,7 +13,7 @@ def CustomizationUserData(vim, *args, **kwargs):
     object type maps to the UserData key in the answer file. These values are
     transferred directly into the file that VirtualCenter stores on the target
     virtual disk. For more detailed information, see the document .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationUserData')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def CustomizationUserData(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

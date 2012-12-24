@@ -12,7 +12,7 @@ def HostProxySwitchConfig(vim, *args, **kwargs):
     '''This data object type describes the HostProxySwitch configuration containing
     both the configurable properties on a HostProxySwitch and identification
     information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostProxySwitchConfig')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostProxySwitchConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

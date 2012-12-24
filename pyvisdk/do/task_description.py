@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def TaskDescription(vim, *args, **kwargs):
     '''Static strings for task objects. These strings are locale-specific.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def TaskDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

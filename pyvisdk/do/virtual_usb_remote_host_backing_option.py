@@ -13,7 +13,7 @@ def VirtualUSBRemoteHostBackingOption(vim, *args, **kwargs):
     host USB configuration. This backing option indicates support for persistent
     USB connections when vMotion operations migrate virtual machines to different
     hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualUSBRemoteHostBackingOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualUSBRemoteHostBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

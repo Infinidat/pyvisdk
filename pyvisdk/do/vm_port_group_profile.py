@@ -14,7 +14,7 @@ def VmPortGroupProfile(vim, *args, **kwargs):
     configuration data for the virtual machine port group profile. Use the property
     list for access to subprofiles, if any.vSphere Servers use Network managed
     objects to represent virtual machine port groups in the vSphere inventory.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmPortGroupProfile')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VmPortGroupProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

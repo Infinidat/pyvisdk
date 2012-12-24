@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostSystemReconnectSpec(vim, *args, **kwargs):
     '''Specifies the parameters needed to merge vCenter Server settings and host
     settings on reconnect.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSystemReconnectSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostSystemReconnectSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

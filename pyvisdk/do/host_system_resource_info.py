@@ -13,7 +13,7 @@ def HostSystemResourceInfo(vim, *args, **kwargs):
     system resource group. System resource groups are analogous to ResourcePool
     objects for virtual machines; however, their structure is fixed and groups may
     not be created nor destroyed, only configured.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSystemResourceInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostSystemResourceInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

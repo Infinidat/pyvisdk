@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ResourcePoolRuntimeInfo(vim, *args, **kwargs):
     '''Current runtime resource usage and state of the resource pool'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolRuntimeInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ResourcePoolRuntimeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

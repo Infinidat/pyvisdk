@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualKeyboardOption(vim, *args, **kwargs):
     '''The VirtualKeyboardOption data object type contains the options for the virtual
     keyboard class.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualKeyboardOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualKeyboardOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

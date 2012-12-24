@@ -12,7 +12,7 @@ def HostProfileSerializedHostProfileSpec(vim, *args, **kwargs):
     '''The HostProfileSerializedHostProfileSpec data object contains a string
     representation of a host profile. Use this object when you create a host
     profile from a file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostProfileSerializedHostProfileSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostProfileSerializedHostProfileSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

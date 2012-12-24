@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseFeatureInfo(vim, *args, **kwargs):
     '''A single feature that can be licensed. This information is immutable.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseFeatureInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LicenseFeatureInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

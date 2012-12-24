@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EventArgDesc(vim, *args, **kwargs):
     '''Describes an available event argument name for an Event type, which can be used
     in EventAlarmExpression.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventArgDesc')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def EventArgDesc(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

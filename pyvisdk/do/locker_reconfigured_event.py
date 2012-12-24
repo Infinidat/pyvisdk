@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LockerReconfiguredEvent(vim, *args, **kwargs):
     '''Locker was reconfigured to a new location.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LockerReconfiguredEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def LockerReconfiguredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

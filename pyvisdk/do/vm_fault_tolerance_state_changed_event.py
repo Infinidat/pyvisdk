@@ -14,7 +14,7 @@ def VmFaultToleranceStateChangedEvent(vim, *args, **kwargs):
     if the newState is needSecondary; the vm state is yellow if the newState is
     disabled; the vm state is green if the newState is notConfigured, starting,
     enabled or running'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceStateChangedEvent')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VmFaultToleranceStateChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualMachineFileLayoutExDiskUnit(vim, *args, **kwargs):
     '''Information about a single unit of a virtual disk, such as the base-disk or a
     delta-disk.A disk-unit consists of at least one descriptor file, and zero or
     more extent files.Sometimes, a disk-unit is also referred to as a .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutExDiskUnit')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineFileLayoutExDiskUnit(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

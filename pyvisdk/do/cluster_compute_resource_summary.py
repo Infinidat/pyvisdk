@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterComputeResourceSummary(vim, *args, **kwargs):
     '''The ClusterComputeResourceSummary data object encapsulates runtime properties
     of a ClusterComputeResource.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterComputeResourceSummary')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ClusterComputeResourceSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVirtualSwitchBondBridge(vim, *args, **kwargs):
     '''This data object type describes a bridge that provides network adapter teaming
     capabilities.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchBondBridge')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVirtualSwitchBondBridge(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

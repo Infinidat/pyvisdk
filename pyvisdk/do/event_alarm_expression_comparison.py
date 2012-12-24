@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def EventAlarmExpressionComparison(vim, *args, **kwargs):
     '''Encapsulates Comparison of an event's attribute to a value.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventAlarmExpressionComparison')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def EventAlarmExpressionComparison(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

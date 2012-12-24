@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMwareDVSPortgroupPolicy(vim, *args, **kwargs):
     '''This class defines the VMware specific configuration for
     DistributedVirtualPort.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareDVSPortgroupPolicy')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VMwareDVSPortgroupPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

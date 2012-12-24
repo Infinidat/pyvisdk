@@ -12,7 +12,7 @@ def FcoeConfigVlanRange(vim, *args, **kwargs):
     '''Used to represent inclusive intervals of VLAN IDs. Valid VLAN IDs fall within
     the range [0,4094], and the low value of a VlanRange must be less than or equal
     to the high value.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FcoeConfigVlanRange')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def FcoeConfigVlanRange(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

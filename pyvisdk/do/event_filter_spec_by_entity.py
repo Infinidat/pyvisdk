@@ -13,7 +13,7 @@ def EventFilterSpecByEntity(vim, *args, **kwargs):
     specified managed entity is a Folder or a ResourcePool, the query will actually
     be performed on the entities contained within that Folder or ResourcePool, so
     you cannot query for events on Folders and ResourcePools themselves this way.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventFilterSpecByEntity')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def EventFilterSpecByEntity(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

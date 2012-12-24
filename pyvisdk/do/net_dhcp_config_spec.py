@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetDhcpConfigSpec(vim, *args, **kwargs):
     '''Dynamic Host Configuration Protocol Configuration for IP version 4 and version
     6.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetDhcpConfigSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NetDhcpConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

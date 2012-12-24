@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostMultipathStateInfoPath(vim, *args, **kwargs):
     '''Data object indicating state of storage path for a named path.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathStateInfoPath')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostMultipathStateInfoPath(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

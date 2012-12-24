@@ -31,14 +31,8 @@ def HostPlugStoreTopology(vim, *args, **kwargs):
     multipathing" plugin is used. This data object provides the complete inventory
     of Devices and Paths. Hence it provides a superset of Device mappings over data
     object such as ScsiTopology and MultipaThe use cases that this data object
-    accommodates includes the following non-exhaustive list:* Enumerate paths on a
-    host bus adapter. * Enumerate paths on a storage device. * Conveniently access
-    the devices a host bus adapter is associated with by traversing the path. *
-    Determine which plugin a device belongs. * Determine which paths are claimed by
-    a plugin by accumulating the paths of all device of the plugin. * Determine
-    which plugin a path belongs to by accessing its device and finding that device
-    in the Plugin list.'''
-    
+    accommodates includes the following non-exhaustive list:'''
+
     obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopology')
 
     # do some validation checking...
@@ -59,4 +53,3 @@ def HostPlugStoreTopology(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

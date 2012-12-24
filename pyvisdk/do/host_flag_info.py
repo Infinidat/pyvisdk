@@ -12,7 +12,7 @@ def HostFlagInfo(vim, *args, **kwargs):
     '''The FlagInfo data object type encapsulates the flag settings for a host. These
     properties are optional since the same structure is used to change the values
     during an edit or create operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFlagInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostFlagInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

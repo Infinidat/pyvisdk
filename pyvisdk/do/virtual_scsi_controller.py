@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSCSIController(vim, *args, **kwargs):
     '''The VirtualSCSIController data object type represents a SCSI controller in a
     virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSCSIController')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualSCSIController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

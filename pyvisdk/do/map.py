@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def Map(vim, *args, **kwargs):
     '''Topological representation of entity relationships as a set of nodes and edges.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}Map')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def Map(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

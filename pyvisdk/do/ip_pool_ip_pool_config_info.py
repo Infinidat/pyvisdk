@@ -13,7 +13,7 @@ def IpPoolIpPoolConfigInfo(vim, *args, **kwargs):
     This is a part of network configuration.IPv4 addresses are in dot-decimal
     notation, e.g.: 192.0.2.235IPv6 addresses are in colon-hexadecimal notation,
     e.g.: 2001:0db8:85a3::0370:7334'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IpPoolIpPoolConfigInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def IpPoolIpPoolConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

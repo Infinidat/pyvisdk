@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEthernetCard(vim, *args, **kwargs):
     '''This data object type contains the properties of an Ethernet adapter attached
     to a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCard')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualEthernetCard(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

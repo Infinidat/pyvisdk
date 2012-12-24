@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEthernetCardDistributedVirtualPortBackingInfo(vim, *args, **kwargs):
     '''The class defines a VirtualEthernetCard backing that connects the device to a
     distributed virtual switch port or portgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardDistributedVirtualPortBackingInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualEthernetCardDistributedVirtualPortBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

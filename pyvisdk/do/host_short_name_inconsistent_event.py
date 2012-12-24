@@ -12,7 +12,7 @@ def HostShortNameInconsistentEvent(vim, *args, **kwargs):
     '''This event records that host name resolution returned different names on the
     host. Please check your host's network configuration and your DNS
     configuration. There may be duplicate entries.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostShortNameInconsistentEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostShortNameInconsistentEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

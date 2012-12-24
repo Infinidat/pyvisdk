@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualCdromAtapiBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.AtapiBackingInfo data object type represents an ATAPI device
     backing for a virtual CD-ROM.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdromAtapiBackingInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualCdromAtapiBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

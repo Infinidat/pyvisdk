@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostNumericSensorInfo(vim, *args, **kwargs):
     '''Base class for numeric sensor information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNumericSensorInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostNumericSensorInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchManagerHostContainerFilter(vim, *args, **kwargs):
     '''Check host compatibility against all hosts in this
     DistributedVirtualSwitchManagerHostContainer'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostContainerFilter')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchManagerHostContainerFilter(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

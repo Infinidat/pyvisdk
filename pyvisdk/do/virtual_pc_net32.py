@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualPCNet32(vim, *args, **kwargs):
     '''This data object type defines the properties of an AMD Lance PCNet32 Ethernet
     card attached to a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPCNet32')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualPCNet32(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

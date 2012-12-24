@@ -12,7 +12,7 @@ def CustomizationLinuxPrep(vim, *args, **kwargs):
     '''This is the Linux counterpart to the Windows Sysprep object. LinuxPrep contains
     machine-wide settings that identify a Linux machine in the same way that the
     Sysprep type identifies a Windows machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationLinuxPrep')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def CustomizationLinuxPrep(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

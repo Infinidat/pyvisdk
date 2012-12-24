@@ -12,7 +12,7 @@ def HostVirtualSwitchAutoBridge(vim, *args, **kwargs):
     '''This data type describes a bridge that automatically selects a particular
     physical network adapter on the host according to some predetermined policy.
     Used primarily to support mobility scenarios.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchAutoBridge')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostVirtualSwitchAutoBridge(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

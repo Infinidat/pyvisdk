@@ -12,7 +12,7 @@ def VirtualDiskSparseVer1BackingInfo(vim, *args, **kwargs):
     '''This data object type contains information about backing a virtual disk by
     using a virtual disk file on the host, in the sparse disk format used by GSX
     Server 2.x.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskSparseVer1BackingInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualDiskSparseVer1BackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

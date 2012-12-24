@@ -9,9 +9,8 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def GuestFileAttributes(vim, *args, **kwargs):
-    '''Different attributes for a guest file.* Check GuestPosixFileAttributes for
-    Posix guest files. * Check GuestWindowsFileAttributes for Windows guest files.'''
-    
+    '''Different attributes for a guest file.'''
+
     obj = vim.client.factory.create('{urn:vim25}GuestFileAttributes')
 
     # do some validation checking...
@@ -32,4 +31,3 @@ def GuestFileAttributes(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

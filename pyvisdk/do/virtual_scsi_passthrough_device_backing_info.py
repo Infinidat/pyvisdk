@@ -12,7 +12,7 @@ def VirtualSCSIPassthroughDeviceBackingInfo(vim, *args, **kwargs):
     '''The VirtualSCSIPassthrough.DeviceBackingInfo data object type contains
     information about the backing that maps the virtual device onto a physical
     device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSCSIPassthroughDeviceBackingInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualSCSIPassthroughDeviceBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

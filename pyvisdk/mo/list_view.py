@@ -27,7 +27,7 @@ class ListView(ManagedObjectView):
 
     
     
-    def ModifyListView(self, add=None, remove=None):
+    def ModifyListView(self, add, remove):
         '''Modify the list by giving a delta of entities to add and entities to
         remove.Modify the list by giving a delta of entities to add and entities to
         remove.
@@ -39,7 +39,7 @@ class ListView(ManagedObjectView):
         '''
         return self.delegate("ModifyListView")(add, remove)
     
-    def ResetListView(self, obj=None):
+    def ResetListView(self, obj):
         '''Replaces the list with an entirely new set of objects. If the entire set is
         changing, this is less data to send than a delta.Replaces the list with an
         entirely new set of objects. If the entire set is changing, this is less data

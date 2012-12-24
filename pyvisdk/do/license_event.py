@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseEvent(vim, *args, **kwargs):
     '''This is a base licensing event to group all license events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LicenseEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ObjectContent(vim, *args, **kwargs):
     '''The ObjectContent data object type contains the contents retrieved for a single
     managed object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ObjectContent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ObjectContent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

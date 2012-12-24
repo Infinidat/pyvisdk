@@ -22,7 +22,7 @@ def ResourceAllocationInfo(vim, *args, **kwargs):
     overheadLimit; they are not optional. (Currently, overheadLimit is for VMware
     internal use only.)If the limit is configured, it must be greater than or equal
     to the reservation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourceAllocationInfo')
 
     # do some validation checking...
@@ -43,4 +43,3 @@ def ResourceAllocationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def HostNoRedundantManagementNetworkEvent(vim, *args, **kwargs):
     '''This event records the fact that a host does not have a redundant management
     network. It is recommended that host management networks be configured with
     redundancy.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNoRedundantManagementNetworkEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostNoRedundantManagementNetworkEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

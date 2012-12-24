@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineDatastoreVolumeOption(vim, *args, **kwargs):
     '''This data object type describes a file system volume option for this virtual
     machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineDatastoreVolumeOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineDatastoreVolumeOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

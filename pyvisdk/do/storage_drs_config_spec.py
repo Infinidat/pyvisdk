@@ -13,7 +13,7 @@ def StorageDrsConfigSpec(vim, *args, **kwargs):
     for storage DRS configuration. To support incremental changes, these properties
     are all optional.NOTE: This data object type and all of its methods are
     experimental and subject to change in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageDrsConfigSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def StorageDrsConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

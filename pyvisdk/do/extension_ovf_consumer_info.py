@@ -12,7 +12,7 @@ def ExtensionOvfConsumerInfo(vim, *args, **kwargs):
     '''This data object contains configuration for extensions that also extend the OVF
     functionality of vCenter server.This feature is experimental in this version of
     the API and might change in future versions.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtensionOvfConsumerInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ExtensionOvfConsumerInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

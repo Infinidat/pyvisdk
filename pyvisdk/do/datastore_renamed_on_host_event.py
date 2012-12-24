@@ -13,7 +13,7 @@ def DatastoreRenamedOnHostEvent(vim, *args, **kwargs):
     VirtualCenter because this datastore already exists in VirtualCenter with a
     different name, or because the name conflicts with another datastore in
     VirtualCenter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreRenamedOnHostEvent')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DatastoreRenamedOnHostEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

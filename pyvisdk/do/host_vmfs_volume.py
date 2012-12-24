@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostVmfsVolume(vim, *args, **kwargs):
     '''The VMFS file system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVmfsVolume')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVmfsVolume(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVnicConnectedToCustomizedDVPortEvent(vim, *args, **kwargs):
     '''This event records when some host Virtual NICs were reconfigured to use DVPorts
     with port level configuration, which might be different from the DVportgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVnicConnectedToCustomizedDVPortEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostVnicConnectedToCustomizedDVPortEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

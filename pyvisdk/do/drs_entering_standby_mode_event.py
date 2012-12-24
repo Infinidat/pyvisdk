@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsEnteringStandbyModeEvent(vim, *args, **kwargs):
     '''This event records that a host has begun the process of entering standby mode
     initiated by Distributed Power Management.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsEnteringStandbyModeEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DrsEnteringStandbyModeEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

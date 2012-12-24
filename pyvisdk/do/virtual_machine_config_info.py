@@ -12,7 +12,7 @@ def VirtualMachineConfigInfo(vim, *args, **kwargs):
     '''The ConfigInfo data object type encapsulates the configuration settings and
     virtual hardware for a virtual machine. This type holds all the information
     that is present in the .vmx configuration file for the virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigInfo')
 
     # do some validation checking...
@@ -44,4 +44,3 @@ def VirtualMachineConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

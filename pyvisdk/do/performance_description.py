@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PerformanceDescription(vim, *args, **kwargs):
     '''Static strings for performance metrics.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerformanceDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def PerformanceDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

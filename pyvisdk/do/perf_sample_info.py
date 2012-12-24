@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PerfSampleInfo(vim, *args, **kwargs):
     '''This data object type describes information contained in a sample collection,
     its timestamp, and sampling interval.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfSampleInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def PerfSampleInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

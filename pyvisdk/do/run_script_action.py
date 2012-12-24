@@ -12,7 +12,7 @@ def RunScriptAction(vim, *args, **kwargs):
     '''This data object type specifies a script that is triggered by an alarm. You can
     use any elements of the ActionParameter enumerated list as part of your script
     to provide information available at runtime.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}RunScriptAction')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def RunScriptAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

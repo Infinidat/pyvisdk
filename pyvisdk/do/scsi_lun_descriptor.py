@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScsiLunDescriptor(vim, *args, **kwargs):
     '''A structure that encapsulates an identifier and its properties for the ScsiLun
     object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScsiLunDescriptor')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ScsiLunDescriptor(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

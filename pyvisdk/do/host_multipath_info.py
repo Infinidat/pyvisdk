@@ -21,7 +21,7 @@ def HostMultipathInfo(vim, *args, **kwargs):
     HostStorageDeviceInfo object, only native multipathing exists. That means for
     these hosts, the MultipathInfo object contains the complete set of LUNs and
     paths on the LUNs available on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathInfo')
 
     # do some validation checking...
@@ -41,4 +41,3 @@ def HostMultipathInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

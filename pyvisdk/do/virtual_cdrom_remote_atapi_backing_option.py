@@ -13,7 +13,7 @@ def VirtualCdromRemoteAtapiBackingOption(vim, *args, **kwargs):
     options for the remote ATAPI CD-ROM device backing. Note that the server cannot
     present a list of valid remote backing devices because it is unable to scan
     remote hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemoteAtapiBackingOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualCdromRemoteAtapiBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

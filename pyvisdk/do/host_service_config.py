@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostServiceConfig(vim, *args, **kwargs):
     '''DataObject representing configuration for a particular service.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostServiceConfig')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostServiceConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

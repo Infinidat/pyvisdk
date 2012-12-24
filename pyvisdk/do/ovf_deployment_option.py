@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfDeploymentOption(vim, *args, **kwargs):
     '''A deployment option as defined in the OVF specfication.This corresponds to the
     Configuration element of the DeploymentOptionSection in the specification.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfDeploymentOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def OvfDeploymentOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

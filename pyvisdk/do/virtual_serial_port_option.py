@@ -13,7 +13,7 @@ def VirtualSerialPortOption(vim, *args, **kwargs):
     device defined by the data object. These options include information about how
     the device is backed physically on the host: by a network socket, a host file,
     a host serial port device, or a pipe to another process.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortOption')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualSerialPortOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

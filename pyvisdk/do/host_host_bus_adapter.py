@@ -12,7 +12,7 @@ def HostHostBusAdapter(vim, *args, **kwargs):
     '''This data object type describes the bus adapter for the host. A host bus
     adapter (HBA) is a hardware or software adapter that connects the host to
     storage devices.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostHostBusAdapter')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostHostBusAdapter(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

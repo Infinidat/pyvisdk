@@ -14,7 +14,7 @@ def TraversalSpec(vim, *args, **kwargs):
     managed object or an array of managed objects included in the set of objects
     for consideration. This data object can also be named, using the "name" field
     in the base type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TraversalSpec')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def TraversalSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

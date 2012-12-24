@@ -12,7 +12,7 @@ def VmDasBeingResetEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine is reset by HA VM Health Monitoring
     on hosts that do not support the create screenshot api or if the
     createscreenshot api fails.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDasBeingResetEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmDasBeingResetEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

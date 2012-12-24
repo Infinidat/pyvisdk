@@ -12,7 +12,7 @@ def PolicyOption(vim, *args, **kwargs):
     '''The PolicyOption data object represents one or more configuration values. A
     policy option is one of the configuration options from the
     ProfilePolicyMetadata.possibleOption list.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PolicyOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PolicyOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

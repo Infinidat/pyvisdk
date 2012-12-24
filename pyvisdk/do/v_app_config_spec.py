@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VAppConfigSpec(vim, *args, **kwargs):
     '''Configuration of a vApp'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VAppConfigSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VAppConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

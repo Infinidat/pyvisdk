@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostDevice(vim, *args, **kwargs):
     '''This data object type defines a device on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDevice')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

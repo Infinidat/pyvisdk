@@ -17,7 +17,7 @@ def HostListSummaryQuickStats(vim, *args, **kwargs):
     from 1, the less fair the allocation. Therefore, a fairness score of 990,
     representing 0.990, is more fair than a fairness score of 1015, which
     represents 1.015. This is because 1.015 is further from 1 than 0.990.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostListSummaryQuickStats')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def HostListSummaryQuickStats(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

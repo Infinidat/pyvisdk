@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AuthorizationEvent(vim, *args, **kwargs):
     '''These events indicate authorization events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AuthorizationEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AuthorizationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

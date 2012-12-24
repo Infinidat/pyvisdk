@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseUsageInfo(vim, *args, **kwargs):
     '''Contains source information, licensed features, and usage.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseUsageInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def LicenseUsageInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

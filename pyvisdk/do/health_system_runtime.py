@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HealthSystemRuntime(vim, *args, **kwargs):
     '''The system health runtime information'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HealthSystemRuntime')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HealthSystemRuntime(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

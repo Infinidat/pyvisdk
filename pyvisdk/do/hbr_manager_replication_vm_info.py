@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HbrManagerReplicationVmInfo(vim, *args, **kwargs):
     '''This data object represents the essential information about the state of a
     given replicated VirtualMachine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HbrManagerReplicationVmInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HbrManagerReplicationVmInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

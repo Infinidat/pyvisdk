@@ -14,19 +14,12 @@ def VAppEntityConfigInfo(vim, *args, **kwargs):
     control the behavior of the start/stop vApp operations.An virtual machine
     entity can be configured to wait for a period of time before starting or to
     wait to receive a successful heartbeat from a virtual machine before starting
-    the next virtual machine in the sequence.* For a power-on operation, if
-    waitForHeartbeat is true, then the power-on sequence continues after the the
-    first heartbeat has been received. If waitingForGuest is false, the system
-    waits for the specified delay and then continues the power-on sequence. * For a
-    power-off operation, if delay is non-zero, the requested power-off action is
-    invoked (powerOff, suspend, guestShutdown) on the virtual machine and the
-    system waits until the number of seconds specified in the delay have passed.If
-    startAction and stopAction for an entity are both set to none, that entity does
-    not participate in the sequence.The start/stop delay and waitingForGuest is not
-    used if the entity is a vApp container. For a vApp the only value values for
-    startAction is none or powerOn, and the valid values for stopAction is none or
-    powerOff.'''
-    
+    the next virtual machine in the sequence.If startAction and stopAction for an
+    entity are both set to none, that entity does not participate in the
+    sequence.The start/stop delay and waitingForGuest is not used if the entity is
+    a vApp container. For a vApp the only value values for startAction is none or
+    powerOn, and the valid values for stopAction is none or powerOff.'''
+
     obj = vim.client.factory.create('{urn:vim25}VAppEntityConfigInfo')
 
     # do some validation checking...
@@ -48,4 +41,3 @@ def VAppEntityConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

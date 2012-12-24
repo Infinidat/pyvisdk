@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualIDEController(vim, *args, **kwargs):
     '''The VirtualIDEController data object type specifies a virtual IDE controller.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualIDEController')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualIDEController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

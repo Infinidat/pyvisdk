@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PhysicalNicHintInfo(vim, *args, **kwargs):
     '''The NetworkHint data object type is some information about the network to which
     the physical network adapter is attached.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicHintInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PhysicalNicHintInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

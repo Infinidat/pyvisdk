@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVPortgroupEvent(vim, *args, **kwargs):
     '''DVPortgroup related events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVPortgroupEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DVPortgroupEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

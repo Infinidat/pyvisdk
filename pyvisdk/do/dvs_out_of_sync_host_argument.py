@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsOutOfSyncHostArgument(vim, *args, **kwargs):
     '''The host on which the DVS configuration is different from that of Virtual
     Center server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsOutOfSyncHostArgument')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsOutOfSyncHostArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

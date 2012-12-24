@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostBootDevice(vim, *args, **kwargs):
     '''The HostBootDevice data object represents a boot device on the host system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostBootDevice')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostBootDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

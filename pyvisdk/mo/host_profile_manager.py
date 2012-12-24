@@ -22,7 +22,7 @@ class HostProfileManager(ProfileManager):
 
     
     
-    def ApplyHostConfig_Task(self, host, configSpec, userInput=None):
+    def ApplyHostConfig_Task(self, host, configSpec, userInput):
         '''Apply the configuration to the host. If you specify any user input, the
         configuration will be saved in the AnswerFile associated with the host. If
         there is no answer file, the Profile Engine will create one.
@@ -45,13 +45,13 @@ class HostProfileManager(ProfileManager):
         '''
         return self.delegate("CheckAnswerFileStatus_Task")(host)
     
-    def CreateDefaultProfile(self, profileType, profileTypeName=None, profile=None):
+    def CreateDefaultProfile(self, profileType, profileTypeName, profile):
         '''Create a default subprofile of a given type (for example, a
         VirtualSwitchProfile). After you create the subprofile, you can add it to a
-        configuration specification and update the host profile:Create a default
-        subprofile of a given type (for example, a VirtualSwitchProfile). After you
-        create the subprofile, you can add it to a configuration specification and
-        update the host profile:
+        configuration specification and update the host profile:<br>
+            
+              * Call
+        the
         
         :param profileType: Type of profile to create. The profile types are system-defined (ApplyProfile.profileTypeName).
         
@@ -92,7 +92,7 @@ class HostProfileManager(ProfileManager):
         '''
         return self.delegate("QueryAnswerFileStatus")(host)
     
-    def QueryHostProfileMetadata(self, profileName=None, profile=None):
+    def QueryHostProfileMetadata(self, profileName, profile):
         '''Retrieve the metadata for a set of profiles.
         
         :param profileName: Names of the profiles for which metadata is requested. If not set, the method returns metadata for all the profiles.
@@ -102,7 +102,7 @@ class HostProfileManager(ProfileManager):
         '''
         return self.delegate("QueryHostProfileMetadata")(profileName, profile)
     
-    def QueryProfileStructure(self, profile=None):
+    def QueryProfileStructure(self, profile):
         '''Get information about the structure of the profile.
         
         :param profile: Base profile whose context needs to be used during the operationvSphere API 5.0

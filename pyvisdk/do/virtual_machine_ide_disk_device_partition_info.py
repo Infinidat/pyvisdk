@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineIdeDiskDevicePartitionInfo(vim, *args, **kwargs):
     '''Describes the partition sizes'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineIdeDiskDevicePartitionInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachineIdeDiskDevicePartitionInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

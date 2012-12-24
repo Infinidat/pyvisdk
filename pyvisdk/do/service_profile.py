@@ -12,7 +12,7 @@ def ServiceProfile(vim, *args, **kwargs):
     '''The ServiceProfile data object controls the configuration of a service. Use the
     policy list for access to configuration data for the service profile. Use the
     property list for access to subprofiles, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ServiceProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ServiceProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def HostMultipathInfoLogicalUnitStorageArrayTypePolicy(vim, *args, **kwargs):
     '''The HostMultipathInfoLogicalUnitStorageArrayTypePolicy data object describes a
     storage array type policy for for a device. This policy determines how device
     I/O and management is performed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnitStorageArrayTypePolicy')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostMultipathInfoLogicalUnitStorageArrayTypePolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

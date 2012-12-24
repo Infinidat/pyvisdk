@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MethodAction(vim, *args, **kwargs):
     '''This data object type defines an operation and its arguments, invoked on a
     particular entity.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MethodAction')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def MethodAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostShortNameToIpFailedEvent(vim, *args, **kwargs):
     '''This event records that the host's short name could not be resolved to an IP
     address.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostShortNameToIpFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostShortNameToIpFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

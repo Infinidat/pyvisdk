@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AlarmScriptCompleteEvent(vim, *args, **kwargs):
     '''This event records the completion of an alarm-triggered script.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmScriptCompleteEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AlarmScriptCompleteEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

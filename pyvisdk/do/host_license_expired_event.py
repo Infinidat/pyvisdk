@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostLicenseExpiredEvent(vim, *args, **kwargs):
     '''This event records an expired host license.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostLicenseExpiredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostLicenseExpiredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

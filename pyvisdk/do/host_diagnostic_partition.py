@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDiagnosticPartition(vim, *args, **kwargs):
     '''This data object type contains information about an available or active
     diagnostic partition.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartition')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDiagnosticPartition(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

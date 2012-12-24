@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def UserUnassignedFromGroup(vim, *args, **kwargs):
     '''This event records that a user account membership was removed from a group.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UserUnassignedFromGroup')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def UserUnassignedFromGroup(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GhostDvsProxySwitchRemovedEvent(vim, *args, **kwargs):
     '''This event records when the ghost DVS proxy switches (a.k.a host proxy switches
     that don't match any DVS defined in Virtual Center) were removed on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GhostDvsProxySwitchRemovedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def GhostDvsProxySwitchRemovedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

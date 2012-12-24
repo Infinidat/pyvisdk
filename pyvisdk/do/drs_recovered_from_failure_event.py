@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsRecoveredFromFailureEvent(vim, *args, **kwargs):
     '''This event records that DRS has recovered from failure. It is triggered by a
     successful DRS invocation after repeated failure.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsRecoveredFromFailureEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DrsRecoveredFromFailureEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

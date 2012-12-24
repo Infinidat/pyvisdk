@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterDasVmConfigSpec(vim, *args, **kwargs):
     '''An incremental update to the per-virtual-machine vSphere HA configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasVmConfigSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterDasVmConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualCdromIsoBackingOption(vim, *args, **kwargs):
     '''The VirtualCdromOption.IsoBackingOption data object type contains the options
     for an ISO image backing.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdromIsoBackingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualCdromIsoBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

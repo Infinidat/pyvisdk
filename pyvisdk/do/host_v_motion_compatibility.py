@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVMotionCompatibility(vim, *args, **kwargs):
     '''The object type for the array returned by queryVMotionCompatibility; specifies
     the VMotion compatibility types for a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVMotionCompatibility')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVMotionCompatibility(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

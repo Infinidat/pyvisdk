@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmDiskFileQueryFlags(vim, *args, **kwargs):
     '''Details for the virtual disk primary file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDiskFileQueryFlags')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VmDiskFileQueryFlags(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

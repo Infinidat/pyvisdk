@@ -15,7 +15,7 @@ def HostFibreChannelOverEthernetTargetTransport(vim, *args, **kwargs):
     VF_Port Virtual Link; and the VLAN on which an FCoE target resides. More FCoE
     information can be found in the working draft of the T11's Fibre Channel
     Backbone 5 standard (FC-BB-5). The draft can be found at http://www.t11.org.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFibreChannelOverEthernetTargetTransport')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def HostFibreChannelOverEthernetTargetTransport(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

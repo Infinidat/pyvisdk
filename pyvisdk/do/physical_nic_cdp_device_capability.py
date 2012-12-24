@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PhysicalNicCdpDeviceCapability(vim, *args, **kwargs):
     '''The capability of the CDP-awared device that connects to a Physical NIC.
     PhysicalNicCdpInfo'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicCdpDeviceCapability')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PhysicalNicCdpDeviceCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

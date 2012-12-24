@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseServerUnavailableEvent(vim, *args, **kwargs):
     '''This event is reported if the LicenseServer becomes unreachable.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseServerUnavailableEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LicenseServerUnavailableEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

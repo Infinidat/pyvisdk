@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState(vim, *args, **kwargs):
     '''Runtime state of a virtual ethernet card device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineDeviceRuntimeInfoVirtualEthernetCardRuntimeState(vim, *args, *
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

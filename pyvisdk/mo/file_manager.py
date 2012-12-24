@@ -14,12 +14,8 @@ log = logging.getLogger(__name__)
 class FileManager(BaseEntity):
     '''This managed object type provides a way to manage and manipulate files and
     folders on datastores. The source and the destination names are in the form of
-    a URL or a datastore path.A URL has the formwhere* is or . * specifies the
-    hostname or IP address of the VirtualCenter or ESX server and optionally the
-    port. * is the inventory path to the Datacenter containing the Datastore. * is
-    the name of the Datastore. * is a slash-delimited path from the root of the
-    datastore.A datastore path has the formwhere* is the datastore name. * is a
-    slash-delimited path from the root of the datastore.'''
+    a URL or a datastore path.A URL has the formwhereA datastore path has the
+    formwhere'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.FileManager):
         super(FileManager, self).__init__(core, name=name, ref=ref, type=type)
@@ -28,7 +24,7 @@ class FileManager(BaseEntity):
 
     
     
-    def ChangeOwner(self, name, owner, datacenter=None):
+    def ChangeOwner(self, name, datacenter, owner):
         '''Change the owner for a file.Change the owner for a file.
         
         :param name: 
@@ -40,7 +36,7 @@ class FileManager(BaseEntity):
         '''
         return self.delegate("ChangeOwner")(name, datacenter, owner)
     
-    def CopyDatastoreFile_Task(self, sourceName, destinationName, sourceDatacenter=None, destinationDatacenter=None, force=None):
+    def CopyDatastoreFile_Task(self, sourceName, sourceDatacenter, destinationName, destinationDatacenter, force):
         '''Copies the source file or folder to the destination.Copies the source file or
         folder to the destination.Copies the source file or folder to the
         destination.Copies the source file or folder to the destination.Copies the
@@ -62,7 +58,7 @@ class FileManager(BaseEntity):
         '''
         return self.delegate("CopyDatastoreFile_Task")(sourceName, sourceDatacenter, destinationName, destinationDatacenter, force)
     
-    def DeleteDatastoreFile_Task(self, name, datacenter=None):
+    def DeleteDatastoreFile_Task(self, name, datacenter):
         '''Deletes the specified file or folder from the datastore. If a file of a virtual
         machine is deleted, it may corrupt that virtual machine. Folder deletes are
         always recursive. The datacenter parameter may be omitted if a URL is used to
@@ -85,7 +81,7 @@ class FileManager(BaseEntity):
         '''
         return self.delegate("DeleteDatastoreFile_Task")(name, datacenter)
     
-    def MakeDirectory(self, name, datacenter=None, createParentDirectories=None):
+    def MakeDirectory(self, name, datacenter, createParentDirectories):
         '''Create a folder using the specified name. If the parent or intermediate level
         folders do not exist, and the parameter createParentDirectories is false, a
         FileNotFound fault is thrown. If the intermediate level folders do not exist,
@@ -105,7 +101,7 @@ class FileManager(BaseEntity):
         '''
         return self.delegate("MakeDirectory")(name, datacenter, createParentDirectories)
     
-    def MoveDatastoreFile_Task(self, sourceName, destinationName, sourceDatacenter=None, destinationDatacenter=None, force=None):
+    def MoveDatastoreFile_Task(self, sourceName, sourceDatacenter, destinationName, destinationDatacenter, force):
         '''Moves the source file or folder to the destination.Moves the source file or
         folder to the destination.Moves the source file or folder to the
         destination.Moves the source file or folder to the destination.Moves the source

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def TaskReasonAlarm(vim, *args, **kwargs):
     '''Indicates that the task was queued by an alarm.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskReasonAlarm')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def TaskReasonAlarm(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

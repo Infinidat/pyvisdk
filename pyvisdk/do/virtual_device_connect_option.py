@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDeviceConnectOption(vim, *args, **kwargs):
     '''The ConnectOption data object type contains information about options for
     connectable virtual devices.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceConnectOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualDeviceConnectOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

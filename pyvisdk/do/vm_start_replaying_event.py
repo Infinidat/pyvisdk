@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmStartReplayingEvent(vim, *args, **kwargs):
     '''This event indicates the start of a replay session on a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmStartReplayingEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmStartReplayingEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

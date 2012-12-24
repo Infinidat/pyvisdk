@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def RoleUpdatedEvent(vim, *args, **kwargs):
     '''This event records the creation of a role.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}RoleUpdatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def RoleUpdatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

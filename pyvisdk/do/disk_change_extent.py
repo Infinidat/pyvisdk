@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DiskChangeExtent(vim, *args, **kwargs):
     '''An area of the disk flagged as modified'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DiskChangeExtent')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DiskChangeExtent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

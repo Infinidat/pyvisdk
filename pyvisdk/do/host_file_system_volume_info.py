@@ -17,7 +17,7 @@ def HostFileSystemVolumeInfo(vim, *args, **kwargs):
     file system volume is backed by disk storage. It could span one or more disks
     but need not use an entire disk.A file system volume by definition must be
     mounted on the file system in order to exist.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFileSystemVolumeInfo')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def HostFileSystemVolumeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

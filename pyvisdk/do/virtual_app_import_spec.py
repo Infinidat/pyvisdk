@@ -12,7 +12,7 @@ def VirtualAppImportSpec(vim, *args, **kwargs):
     '''A VAppImportSpec is used by ResourcePool.importVApp when importing vApps
     (single VM or multi-VM).It provides all information needed to import a
     VirtualApp.See also ImportSpec.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualAppImportSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualAppImportSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

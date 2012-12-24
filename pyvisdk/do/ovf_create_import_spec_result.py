@@ -15,7 +15,7 @@ def OvfCreateImportSpecResult(vim, *args, **kwargs):
     list of URLs to which the files must be uploaded. These paths are not known
     until the VMs have been created, ie. until ResourcePool.importVApp has been
     called.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfCreateImportSpecResult')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def OvfCreateImportSpecResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

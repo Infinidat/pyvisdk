@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def GeneralHostErrorEvent(vim, *args, **kwargs):
     '''This event is the general error event for a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GeneralHostErrorEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def GeneralHostErrorEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

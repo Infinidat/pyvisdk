@@ -12,7 +12,7 @@ def HostDiskPartitionAttributes(vim, *args, **kwargs):
     '''Information about a single disk partition. A partition is a contiguous set of
     blocks on a disk that is marked for use. The typeId identifies the purpose of
     the data in the partition.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionAttributes')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostDiskPartitionAttributes(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

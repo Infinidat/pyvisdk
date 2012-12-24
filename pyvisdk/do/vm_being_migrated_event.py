@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmBeingMigratedEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine is being migrated.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmBeingMigratedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmBeingMigratedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

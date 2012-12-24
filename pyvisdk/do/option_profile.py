@@ -12,7 +12,7 @@ def OptionProfile(vim, *args, **kwargs):
     '''The OptionProfile data object encapsulates one advanced configuration. Use the
     policy list for access to configuration data for the option profile. Use the
     property list for access to subprofile configuration data, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OptionProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def OptionProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

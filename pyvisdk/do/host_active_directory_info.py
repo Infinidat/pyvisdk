@@ -13,7 +13,7 @@ def HostActiveDirectoryInfo(vim, *args, **kwargs):
     Active Directory domain. If the HostAuthenticationStoreInfo.enabled property is
     , the host is a member of a domain and the ESX Server will set the domain
     information properties.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostActiveDirectoryInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostActiveDirectoryInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

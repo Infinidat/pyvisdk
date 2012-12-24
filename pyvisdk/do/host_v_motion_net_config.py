@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVMotionNetConfig(vim, *args, **kwargs):
     '''The NetConfig data object type contains the networking configuration for
     VMotion operations.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVMotionNetConfig')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVMotionNetConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseSource(vim, *args, **kwargs):
     '''This data object type is used to communicate configuration about where to find
     licenses to use for this system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseSource')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LicenseSource(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

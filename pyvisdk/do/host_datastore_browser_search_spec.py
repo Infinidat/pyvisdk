@@ -13,7 +13,7 @@ def HostDatastoreBrowserSearchSpec(vim, *args, **kwargs):
     The properties do not include the starting datastore path because that path is
     a separate parameter to the search method.A SearchSpec contains the query
     parameters and some global search modifiers.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDatastoreBrowserSearchSpec')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostDatastoreBrowserSearchSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

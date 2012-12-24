@@ -12,7 +12,7 @@ def CustomizationGuiUnattended(vim, *args, **kwargs):
     '''The GuiUnattended type maps to the GuiUnattended key in the answer file. These
     values are plugged directly into the file that VirtualCenter stores on the
     target virtual disk. For more detailed information, see the document .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationGuiUnattended')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def CustomizationGuiUnattended(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

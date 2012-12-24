@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def SessionEvent(vim, *args, **kwargs):
     '''These are session events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SessionEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def SessionEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

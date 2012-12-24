@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostIpRouteConfigSpec(vim, *args, **kwargs):
     '''Dataobject specifying the configuration for IpRoute'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIpRouteConfigSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostIpRouteConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

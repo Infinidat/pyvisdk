@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileAssociatedEvent(vim, *args, **kwargs):
     '''This event records that a Profile was associated with a managed entitiy.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileAssociatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileAssociatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

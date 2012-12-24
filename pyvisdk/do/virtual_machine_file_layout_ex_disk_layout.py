@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineFileLayoutExDiskLayout(vim, *args, **kwargs):
     '''Layout of a virtual disk, including the base- and delta- disks.A virtual disk
     typically is made up of a chain of disk-units.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutExDiskLayout')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineFileLayoutExDiskLayout(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

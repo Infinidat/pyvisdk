@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseManagerEvaluationInfo(vim, *args, **kwargs):
     '''Encapsulates product evaluation information'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseManagerEvaluationInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def LicenseManagerEvaluationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

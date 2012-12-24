@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseRestrictedEvent(vim, *args, **kwargs):
     '''This event records if the required licenses could not be reserved because of a
     restriction in the option file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseRestrictedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def LicenseRestrictedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

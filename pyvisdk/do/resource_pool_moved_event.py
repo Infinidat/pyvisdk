@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ResourcePoolMovedEvent(vim, *args, **kwargs):
     '''This event records when a resource pool is moved.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolMovedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ResourcePoolMovedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

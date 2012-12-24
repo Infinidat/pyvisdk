@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IpAddressProfile(vim, *args, **kwargs):
     '''The IpAddressProfile represents the Virtual NIC IP address. The policy property
     contains the configuration data values for the IP address.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IpAddressProfile')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def IpAddressProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

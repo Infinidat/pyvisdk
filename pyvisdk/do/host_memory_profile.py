@@ -13,7 +13,7 @@ def HostMemoryProfile(vim, *args, **kwargs):
     This may not be valid all versions of the host.Use the policy list for access
     to configuration data for the host memory profile. Use the property list for
     access to subprofile configuration data, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMemoryProfile')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostMemoryProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

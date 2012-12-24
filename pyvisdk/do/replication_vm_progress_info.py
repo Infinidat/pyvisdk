@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ReplicationVmProgressInfo(vim, *args, **kwargs):
     '''A set of statistics related to the progress of the current operation (full sync
     or lwd).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ReplicationVmProgressInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ReplicationVmProgressInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

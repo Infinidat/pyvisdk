@@ -13,7 +13,7 @@ def StorageDrsVmConfigInfo(vim, *args, **kwargs):
     to override the default behavior for an individual virtual machine.NOTE: This
     data object type and all of its methods are experimental and subject to change
     in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageDrsVmConfigInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def StorageDrsVmConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

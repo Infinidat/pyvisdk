@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VAppPropertyInfo(vim, *args, **kwargs):
     '''A vApp Property description, including deployment values'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VAppPropertyInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VAppPropertyInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileExecuteResult(vim, *args, **kwargs):
     '''The ProfileExecuteResult data object contains the results from a
     HostProfile.ExecuteHostProfile operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileExecuteResult')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ProfileExecuteResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

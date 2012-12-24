@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def OvfConsumerOvfSection(vim, *args, **kwargs):
     '''A self-contained OVF section'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfConsumerOvfSection')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def OvfConsumerOvfSection(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

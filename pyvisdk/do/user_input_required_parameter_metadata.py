@@ -13,7 +13,7 @@ def UserInputRequiredParameterMetadata(vim, *args, **kwargs):
     metadata information for configuration data. The Profile Engine saves
     configuration data from the user input options in the host AnswerFile. See the
     ExecuteHostProfile and ApplyHostConfig_Task methods.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UserInputRequiredParameterMetadata')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def UserInputRequiredParameterMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

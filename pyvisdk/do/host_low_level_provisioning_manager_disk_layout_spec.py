@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostLowLevelProvisioningManagerDiskLayoutSpec(vim, *args, **kwargs):
     '''File layout spec of a virtual disk. The disk could be either a base-disk or a
     delta disk.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostLowLevelProvisioningManagerDiskLayoutSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostLowLevelProvisioningManagerDiskLayoutSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

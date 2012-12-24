@@ -12,7 +12,7 @@ def HostAccountSpec(vim, *args, **kwargs):
     '''This data object type contains common parameters for local account creation.
     The password and description properties are not supported for group accounts on
     POSIX hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostAccountSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostAccountSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def StorageIORMInfo(vim, *args, **kwargs):
     '''Configuration of storage I/O resource management.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageIORMInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def StorageIORMInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

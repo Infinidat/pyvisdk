@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def SendSNMPAction(vim, *args, **kwargs):
     '''This data object type specifies an SNMP trap that is triggered by an alarm.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SendSNMPAction')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def SendSNMPAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

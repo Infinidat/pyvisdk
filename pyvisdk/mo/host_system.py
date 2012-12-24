@@ -107,7 +107,7 @@ class HostSystem(ManagedEntity):
         '''
         return self.delegate("EnterLockdownMode")()
     
-    def EnterMaintenanceMode_Task(self, timeout, evacuatePoweredOffVms=None):
+    def EnterMaintenanceMode_Task(self, timeout, evacuatePoweredOffVms):
         '''Puts the host in maintenance mode. While this task is running and when the host
         is in maintenance mode, no virtual machines can be powered on and no
         provisioning operations can be performed on the host. Once the call completes,
@@ -151,7 +151,7 @@ class HostSystem(ManagedEntity):
         '''
         return self.delegate("ExitMaintenanceMode_Task")(timeout)
     
-    def PowerDownHostToStandBy_Task(self, timeoutSec, evacuatePoweredOffVms=None):
+    def PowerDownHostToStandBy_Task(self, timeoutSec, evacuatePoweredOffVms):
         '''Puts the host in standby mode, a mode in which the host is in a standby state
         from which it can be powered up remotely. While this task is running, no
         virtual machines can be powered on and no provisioning operations can be
@@ -197,7 +197,7 @@ class HostSystem(ManagedEntity):
         '''
         return self.delegate("QueryHostConnectionInfo")()
     
-    def QueryMemoryOverhead(self, memorySize, numVcpus, videoRamSize=None):
+    def QueryMemoryOverhead(self, memorySize, videoRamSize, numVcpus):
         '''<b>Deprecated.</b> <i>As of VI API 2.5, use QueryMemoryOverheadEx.</i>
         Determines the amount of memory overhead necessary to power on a virtual
         machine with the specified characteristics.
@@ -240,7 +240,7 @@ class HostSystem(ManagedEntity):
         '''
         return self.delegate("ReconfigureHostForDAS_Task")()
     
-    def ReconnectHost_Task(self, cnxSpec=None, reconnectSpec=None):
+    def ReconnectHost_Task(self, cnxSpec, reconnectSpec):
         '''Reconnects to a host. This process reinstalls agents and reconfigures the host,
         if it has gotten out of date with VirtualCenter. The reconnection process goes
         through many of the same steps as addHost: ensuring the correct set of licenses
@@ -320,10 +320,3 @@ class HostSystem(ManagedEntity):
         
         '''
         return self.delegate("UpdateSystemResources")(resourceInfo)
-
-    def RetrieveManagedMethodExecuter(self):
-        return self.delegate("RetrieveManagedMethodExecuter")()
-   
-    def RetrieveDynamicTypeManager(self):
-        return self.delegate("RetrieveDynamicTypeManager")()
-

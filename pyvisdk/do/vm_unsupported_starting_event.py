@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmUnsupportedStartingEvent(vim, *args, **kwargs):
     '''This event records when an unsupported guest is powering on.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmUnsupportedStartingEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmUnsupportedStartingEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

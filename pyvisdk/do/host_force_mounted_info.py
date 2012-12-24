@@ -14,7 +14,7 @@ def HostForceMountedInfo(vim, *args, **kwargs):
     keep the original Uuid and mount it on the host, it will have 'forceMounted'
     flag and 'forceMountedInfo' set. 'ForceMountedInfo' provides additional
     information specific to user-mounted VmfsVolume.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostForceMountedInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostForceMountedInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

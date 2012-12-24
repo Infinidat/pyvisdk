@@ -16,7 +16,7 @@ def VirtualMachineFileInfo(vim, *args, **kwargs):
     configuration. This is a read-only structure and is returned when the
     configuration is read. This is ignored during configuration and can be left
     out.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileInfo')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def VirtualMachineFileInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

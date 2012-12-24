@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmDiskFileInfo(vim, *args, **kwargs):
     '''This data object type describes a virtual disk primary file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDiskFileInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmDiskFileInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

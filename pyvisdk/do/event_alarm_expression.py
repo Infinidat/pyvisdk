@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EventAlarmExpression(vim, *args, **kwargs):
     '''An alarm expression that uses the event stream to trigger the alarm.This alarm
     is triggered when an event matching this expression gets logged.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventAlarmExpression')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def EventAlarmExpression(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

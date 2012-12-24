@@ -12,7 +12,7 @@ def FaultToleranceConfigInfo(vim, *args, **kwargs):
     '''FaultToleranceConfigInfo is a data object type containing Fault Tolerance
     settings for this virtual machine. role, instanceUuids and configPaths contain
     information about the whole fault tolerance group.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FaultToleranceConfigInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def FaultToleranceConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

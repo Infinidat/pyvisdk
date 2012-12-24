@@ -13,7 +13,7 @@ def HostFileSystemVolume(vim, *args, **kwargs):
     that have more specific details about specific filesystem types.Typically a
     FileSystem is exposed as a datatoreSee DatastoreInfoSee HostVmfsVolumeSee
     HostNasVolumeSee HostLocalFileSystemVolumeSee HostVfatVolume'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFileSystemVolume')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostFileSystemVolume(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

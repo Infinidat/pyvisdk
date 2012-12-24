@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def TaskReasonSchedule(vim, *args, **kwargs):
     '''Indicates that the task was queued by a scheduled task.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskReasonSchedule')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def TaskReasonSchedule(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

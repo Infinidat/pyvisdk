@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsEvent(vim, *args, **kwargs):
     '''These are dvs-related events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

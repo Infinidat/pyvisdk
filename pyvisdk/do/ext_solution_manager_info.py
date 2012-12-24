@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtSolutionManagerInfo(vim, *args, **kwargs):
     '''This data object encapsulates the Solution Manager configuration for this
     extension.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtSolutionManagerInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ExtSolutionManagerInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

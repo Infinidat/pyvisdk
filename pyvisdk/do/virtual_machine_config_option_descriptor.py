@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineConfigOptionDescriptor(vim, *args, **kwargs):
     '''Contains the definition of a unique key that can be used to retrieve a
     configOption object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigOptionDescriptor')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineConfigOptionDescriptor(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

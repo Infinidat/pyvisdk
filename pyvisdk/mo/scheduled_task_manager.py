@@ -49,7 +49,7 @@ class ScheduledTaskManager(BaseEntity):
         '''
         return self.delegate("CreateScheduledTask")(entity, spec)
     
-    def RetrieveEntityScheduledTask(self, entity=None):
+    def RetrieveEntityScheduledTask(self, entity):
         '''Available scheduled tasks defined on the entity.
         
         :param entity: The entity. If null, all scheduled tasks are returned for visible entities.
@@ -57,7 +57,7 @@ class ScheduledTaskManager(BaseEntity):
         '''
         return self.delegate("RetrieveEntityScheduledTask")(entity)
     
-    def RetrieveObjectScheduledTask(self, obj=None):
+    def RetrieveObjectScheduledTask(self, obj):
         '''Available scheduled tasks defined on the object.
         
         :param obj: The object. If not specified, all scheduled tasks are returned for visible entities and visible ManagedObjects.

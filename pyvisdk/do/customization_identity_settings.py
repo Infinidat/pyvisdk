@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationIdentitySettings(vim, *args, **kwargs):
     '''Base type for sysprep, sysprepText, or linuxPrep object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationIdentitySettings')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationIdentitySettings(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

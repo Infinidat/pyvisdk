@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def FolderEventArgument(vim, *args, **kwargs):
     '''The event argument is a Folder object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FolderEventArgument')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def FolderEventArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

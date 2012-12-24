@@ -12,7 +12,7 @@ def ModeInfo(vim, *args, **kwargs):
     '''The FileAccess.Modes data object type defines the known access modes for a
     datastore. The property values specify how to interpret the "what" property for
     a FileAccess object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ModeInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ModeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

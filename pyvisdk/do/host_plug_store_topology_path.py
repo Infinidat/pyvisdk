@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPlugStoreTopologyPath(vim, *args, **kwargs):
     '''This data object type is an association class that describes a Path and its
     associated Device. A Path may be claimed by at most one Device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyPath')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostPlugStoreTopologyPath(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmNvramFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for a non-volatile
     memory file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmNvramFileQuery')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmNvramFileQuery(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

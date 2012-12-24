@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEthernetCardOption(vim, *args, **kwargs):
     '''This data object type contains the options for the virtual ethernet card data
     object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualEthernetCardOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

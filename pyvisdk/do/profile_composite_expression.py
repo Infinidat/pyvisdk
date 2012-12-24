@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileCompositeExpression(vim, *args, **kwargs):
     '''DataObject to Compose expressions. It is used to group expressions together.
     They are similar to a parentheses in an expression.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileCompositeExpression')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileCompositeExpression(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

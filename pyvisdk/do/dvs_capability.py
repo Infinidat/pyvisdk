@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVSCapability(vim, *args, **kwargs):
     '''Capability of the switch configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSCapability')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVSCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

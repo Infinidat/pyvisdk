@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualHardwareOption(vim, *args, **kwargs):
     '''The VirtualHardwareOption data object contains the options available for all
     virtual devices.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualHardwareOption')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualHardwareOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

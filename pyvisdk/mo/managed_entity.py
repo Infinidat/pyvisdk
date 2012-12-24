@@ -38,13 +38,18 @@ class ManagedEntity(ExtensibleManagedObject):
         '''The configStatus indicates whether or not the system has detected a
         configuration issue involving this entity. For example, it might have detected
         a duplicate IP address or MAC address, or a host in a cluster might be out of
-        compliance. The meanings of the configStatus values are: * red: A problem has
-        been detected involving the entity. * yellow: A problem is about to occur or a
-        transient condition has occurred (For example, reconfigure fail-over policy). *
-        green: No configuration issues have been detected. * gray: The configuration
-        status of the entity is not being monitored. A green status indicates only that
-        a problem has not been detected; it is not a guarantee that the entity is
-        problem-free.'''
+        compliance. The meanings of the configStatus values are:
+        * red: A problem has been detected involving the entity.
+        * yellow: A problem is about to occur or a transient condition has occurred
+        (For example, reconfigure fail-over policy).
+                    
+                    * green:
+        No configuration issues have been detected.
+                    
+                    * gray:
+        The configuration status of the entity is not being monitored.
+        A green status indicates only that a problem has not been detected; it is not a
+        guarantee that the entity is problem-free.'''
         return self.update('configStatus')
     @property
     def customValue(self):
@@ -76,12 +81,15 @@ class ManagedEntity(ExtensibleManagedObject):
         '''General health of this managed entity. The overall status of the managed entity
         is computed as the worst status among its alarms and the configuration issues
         detected on the entity. The status is reported as one of the following values:
-        * red: The entity has alarms or configuration issues with a red status. *
-        yellow: The entity does not have alarms or configuration issues with a red
-        status, and has at least one with a yellow status. * green: The entity does not
-        have alarms or configuration issues with a red or yellow status, and has at
-        least one with a green status. * gray: All of the entity's alarms have a gray
-        status and the configuration status of the entity is not being monitored.'''
+        * red: The entity has alarms or configuration issues with a red status.
+        * yellow: The entity does not have alarms or configuration issues with a red
+        status, and has at least one with a yellow status.
+                    
+                    *
+        green: The entity does not have alarms or configuration issues with a red or
+        yellow status, and has at least one with a green status.
+        * gray: All of the entity's alarms have a gray status and the configuration
+        status of the entity is not being monitored.'''
         return self.update('overallStatus')
     @property
     def parent(self):

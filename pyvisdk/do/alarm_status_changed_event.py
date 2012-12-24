@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AlarmStatusChangedEvent(vim, *args, **kwargs):
     '''This event records a status change for an alarm.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmStatusChangedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def AlarmStatusChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

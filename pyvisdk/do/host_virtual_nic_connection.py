@@ -15,7 +15,7 @@ def HostVirtualNicConnection(vim, *args, **kwargs):
     cases where VirtualNic will be created as part of a configuration operation and
     the created VirtualNic is referred to in some other part of configuration. e.g:
     for configuring VMotion'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualNicConnection')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def HostVirtualNicConnection(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

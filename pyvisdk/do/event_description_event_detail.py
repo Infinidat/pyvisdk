@@ -14,7 +14,7 @@ def EventDescriptionEventDetail(vim, *args, **kwargs):
     properties to format an event message string that is appropriate when viewed
     from a specific context. The variable information (vm.name, and so on) is
     derived from the Event object's event arguments (VmEventArgument, and so on).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventDescriptionEventDetail')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def EventDescriptionEventDetail(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

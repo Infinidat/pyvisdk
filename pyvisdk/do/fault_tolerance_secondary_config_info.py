@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FaultToleranceSecondaryConfigInfo(vim, *args, **kwargs):
     '''FaultToleranceSecondaryConfigInfo is a data object type containing Fault
     Tolerance settings for a secondary virtual machine in a fault tolerance group'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FaultToleranceSecondaryConfigInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def FaultToleranceSecondaryConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

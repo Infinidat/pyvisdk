@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmMaxFTRestartCountReached(vim, *args, **kwargs):
     '''This event is fired when FT VM reached the max restart count'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmMaxFTRestartCountReached')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmMaxFTRestartCountReached(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

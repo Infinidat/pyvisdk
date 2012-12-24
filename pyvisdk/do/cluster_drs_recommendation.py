@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDrsRecommendation(vim, *args, **kwargs):
     '''DrsRecommendation describes a recommendation to migrate one or more virtual
     machines.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDrsRecommendation')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDrsRecommendation(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

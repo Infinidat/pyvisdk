@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def MethodDescription(vim, *args, **kwargs):
     '''Static strings used for describing an object model method.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MethodDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def MethodDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

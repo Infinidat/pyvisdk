@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CheckResult(vim, *args, **kwargs):
     '''The result of a call to any of the methods in either
     VirtualMachineCompatibilityChecker or VirtualMachineProvisioningChecker.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CheckResult')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def CheckResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

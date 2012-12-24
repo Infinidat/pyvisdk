@@ -12,7 +12,7 @@ def DvsProfile(vim, *args, **kwargs):
     '''The DvsProfile data object represents the distributed virtual switch to which
     this host is connected. If a profile plug-in defines policies or subprofiles,
     use the policy or property list to access the additional configuration data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DvsProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

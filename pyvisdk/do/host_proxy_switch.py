@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostProxySwitch(vim, *args, **kwargs):
     '''The HostProxySwitch is a software entity which represents the component of a
     DistributedVirtualSwitch on a particular host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostProxySwitch')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostProxySwitch(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TaskReason(vim, *args, **kwargs):
     '''Base type for all task reasons. Task reasons represent the kind of entity
     responsible for a task's creation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskReason')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def TaskReason(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

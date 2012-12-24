@@ -19,7 +19,7 @@ def ServiceConsoleReservationInfo(vim, *args, **kwargs):
     serviceConsoleReservedCfg property. This property indicates how much memory
     should be reserved for the service console on the next boot. In most cases,
     this amount is the same as the current reservation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ServiceConsoleReservationInfo')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def ServiceConsoleReservationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

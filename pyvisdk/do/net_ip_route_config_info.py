@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NetIpRouteConfigInfo(vim, *args, **kwargs):
     '''This data object reports the IP Route Table.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetIpRouteConfigInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def NetIpRouteConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

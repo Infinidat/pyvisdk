@@ -12,7 +12,7 @@ def VirtualMachineFlagInfo(vim, *args, **kwargs):
     '''The FlagInfo data object type encapsulates the flag settings for a virtual
     machine. These properties are optional since the same structure is used to
     change the values during an edit or create operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFlagInfo')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualMachineFlagInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

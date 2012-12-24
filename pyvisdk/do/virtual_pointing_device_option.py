@@ -13,7 +13,7 @@ def VirtualPointingDeviceOption(vim, *args, **kwargs):
     host mouse type defined in the VirtualPointingDevice data object type. These
     options include the valid selections for the mouse type, the supported mouse
     types, and the default mouse type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPointingDeviceOption')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualPointingDeviceOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

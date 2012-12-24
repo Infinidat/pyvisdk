@@ -14,7 +14,7 @@ def ImportSpec(vim, *args, **kwargs):
     OvfManager.This class is the abstract base for VirtualMachineImportSpec and
     VirtualAppImportSpec. These three classes form a composite structure that
     allows us to contain arbitrarily complex entitites in a single ImportSpec.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ImportSpec')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ImportSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

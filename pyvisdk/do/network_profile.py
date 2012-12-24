@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetworkProfile(vim, *args, **kwargs):
     '''The NetworkProfile data object contains a set of subprofiles for network
     configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetworkProfile')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def NetworkProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualCdromRemotePassthroughBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.RemotePassthroughBackingInfo data object type contains the
     information to specify a remote pass-through device backing of a virtual CD-
     ROM.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemotePassthroughBackingInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualCdromRemotePassthroughBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

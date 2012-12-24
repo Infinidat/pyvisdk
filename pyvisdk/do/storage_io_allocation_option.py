@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def StorageIOAllocationOption(vim, *args, **kwargs):
     '''The IOAllocationOption specifies value ranges that can be used to initialize
     IOAllocationInfo object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageIOAllocationOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def StorageIOAllocationOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

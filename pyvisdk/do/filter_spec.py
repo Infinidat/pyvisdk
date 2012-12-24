@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def FilterSpec(vim, *args, **kwargs):
     '''Specification of a set of filter constraints to be applied on a query result.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}FilterSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def FilterSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

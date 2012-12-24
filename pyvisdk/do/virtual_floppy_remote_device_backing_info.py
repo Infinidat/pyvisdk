@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualFloppyRemoteDeviceBackingInfo(vim, *args, **kwargs):
     '''The data object type for remote device backing of a virtual floppy drive.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualFloppyRemoteDeviceBackingInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualFloppyRemoteDeviceBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

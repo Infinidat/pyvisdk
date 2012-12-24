@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostHardwareInfo(vim, *args, **kwargs):
     '''The HardwareInfo data object type describes the hardware configuration of the
     host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostHardwareInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostHardwareInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

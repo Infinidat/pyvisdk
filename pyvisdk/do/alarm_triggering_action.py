@@ -13,7 +13,7 @@ def AlarmTriggeringAction(vim, *args, **kwargs):
     action to be done when an alarm is triggered.There are four triggering
     transitions; at least one of them must be provided. A gray state is considered
     the same as a green state, for the purpose of detecting transitions.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmTriggeringAction')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def AlarmTriggeringAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

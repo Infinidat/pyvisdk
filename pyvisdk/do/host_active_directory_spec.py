@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostActiveDirectorySpec(vim, *args, **kwargs):
     '''The HostActiveDirectorySpec data object defines properties for Active Directory
     domain access.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostActiveDirectorySpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostActiveDirectorySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

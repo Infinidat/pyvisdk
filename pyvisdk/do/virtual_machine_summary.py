@@ -13,7 +13,7 @@ def VirtualMachineSummary(vim, *args, **kwargs):
     information that is useful for list views and summary pages.VirtualCenter can
     retrieve this information very efficiently, even for large sets of virtual
     machines.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineSummary')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualMachineSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

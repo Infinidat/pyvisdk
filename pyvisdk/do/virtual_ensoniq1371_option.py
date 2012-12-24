@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEnsoniq1371Option(vim, *args, **kwargs):
     '''The VirtualEnsoniq1371Option data object type contains the options for the
     virtual Ensoniq 1371 sound card.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEnsoniq1371Option')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualEnsoniq1371Option(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VlanProfile(vim, *args, **kwargs):
     '''The VlanProfile data object represents the VLAN identifier subprofile. The
     policy property contains the configuration data values for the VLAN identifier.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VlanProfile')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VlanProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -13,7 +13,7 @@ def SessionManagerServiceRequestSpec(vim, *args, **kwargs):
     to AcquireGenericServiceTicket. This is the base class for more specific
     service request specifications. E.g. for HTTP services the derived class will
     provide a URL property.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SessionManagerServiceRequestSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def SessionManagerServiceRequestSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

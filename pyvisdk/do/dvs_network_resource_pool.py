@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSNetworkResourcePool(vim, *args, **kwargs):
     '''DataObject describing the resource configuration and management of network
     resource pools.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSNetworkResourcePool')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DVSNetworkResourcePool(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -16,7 +16,7 @@ def HostIpRouteConfig(vim, *args, **kwargs):
     2001:DB8:101::230:6eff:fe04:d9ff. The address can also consist of symbol '::'
     to represent multiple 16-bit groups of contiguous 0's only once in an address
     as described in RFC 2373.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIpRouteConfig')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def HostIpRouteConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

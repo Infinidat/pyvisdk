@@ -13,7 +13,7 @@ def HostDiagnosticPartitionCreateDescription(vim, *args, **kwargs):
     a new diagnostic partition on a disk. It contains a CreateSpec that can be
     submitted to create the partition and information that can be shown to the
     user.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartitionCreateDescription')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostDiagnosticPartitionCreateDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

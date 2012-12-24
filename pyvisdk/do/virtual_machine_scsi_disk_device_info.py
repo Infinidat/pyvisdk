@@ -12,7 +12,7 @@ def VirtualMachineScsiDiskDeviceInfo(vim, *args, **kwargs):
     '''The ScsiDiskDeviceInfo class contains detailed information about a specific
     scsi disk hardware device. These devices are for the
     vim.vm.device.VirtualDisk.RawDiskMappingVer1BackingInfo.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineScsiDiskDeviceInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualMachineScsiDiskDeviceInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

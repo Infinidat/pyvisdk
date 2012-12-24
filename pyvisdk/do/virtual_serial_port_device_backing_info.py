@@ -15,7 +15,7 @@ def VirtualSerialPortDeviceBackingInfo(vim, *args, **kwargs):
     that machine maintains the backing, any additional attempts to configure
     backing using that device will fail (a recoverable error, see the connection
     info ).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortDeviceBackingInfo')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualSerialPortDeviceBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

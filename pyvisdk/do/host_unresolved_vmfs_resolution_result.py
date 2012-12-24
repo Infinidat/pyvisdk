@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostUnresolvedVmfsResolutionResult(vim, *args, **kwargs):
     '''When an UnresolvedVmfsVolume has been resignatured or forceMounted, we want to
     return the original spec information along with newly created VMFS volume.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsResolutionResult')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostUnresolvedVmfsResolutionResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

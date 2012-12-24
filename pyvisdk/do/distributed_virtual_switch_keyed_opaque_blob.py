@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchKeyedOpaqueBlob(vim, *args, **kwargs):
     '''This class defines a data structure to hold opaque binary data identified by a
     key.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchKeyedOpaqueBlob')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchKeyedOpaqueBlob(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def GuestInfo(vim, *args, **kwargs):
     '''Information about the guest operating system.Most of this information is
     collected by VMware Tools. In general, be sure you have VMware Tools installed
     and that the virtual machine is running when you access this information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GuestInfo')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def GuestInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

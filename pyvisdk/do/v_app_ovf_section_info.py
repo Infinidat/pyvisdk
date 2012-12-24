@@ -13,7 +13,7 @@ def VAppOvfSectionInfo(vim, *args, **kwargs):
     descriptor. When an OVF package is imported, non-required / non-interpreted
     sections will be stored as OvfSection object. During the creation of an OVF
     package, these sections will be placed in the OVF descriptor.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VAppOvfSectionInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VAppOvfSectionInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

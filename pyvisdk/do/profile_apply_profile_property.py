@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileApplyProfileProperty(vim, *args, **kwargs):
     '''The ProfileApplyProfileProperty data object defines one or more subprofiles.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileApplyProfileProperty')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ProfileApplyProfileProperty(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

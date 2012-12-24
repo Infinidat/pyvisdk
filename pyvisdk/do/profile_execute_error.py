@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileExecuteError(vim, *args, **kwargs):
     '''The ProfileExecuteError data object describes an error encountered during host
     profile execution.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileExecuteError')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileExecuteError(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

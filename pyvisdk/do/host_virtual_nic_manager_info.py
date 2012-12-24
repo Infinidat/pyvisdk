@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostVirtualNicManagerInfo(vim, *args, **kwargs):
     '''This data object type describes VirtualNic host configuration data objects.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualNicManagerInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostVirtualNicManagerInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

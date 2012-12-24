@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AnswerFileStatusError(vim, *args, **kwargs):
     '''The AnswerFileStatusError data object describes an answer file error and
     identifies the profile or policy option with which the error is associated.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AnswerFileStatusError')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AnswerFileStatusError(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

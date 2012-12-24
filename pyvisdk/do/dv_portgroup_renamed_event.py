@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVPortgroupRenamedEvent(vim, *args, **kwargs):
     '''Two distributed virtual portgroup was renamed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVPortgroupRenamedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DVPortgroupRenamedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

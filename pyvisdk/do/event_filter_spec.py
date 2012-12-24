@@ -12,7 +12,7 @@ def EventFilterSpec(vim, *args, **kwargs):
     '''Event filter used to query events in the history collector database. The client
     creates an event history collector with a filter specification, then retrieves
     the events from the event history collector.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventFilterSpec')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def EventFilterSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

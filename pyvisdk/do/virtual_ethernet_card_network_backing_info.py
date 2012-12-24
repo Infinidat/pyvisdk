@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualEthernetCardNetworkBackingInfo(vim, *args, **kwargs):
     '''The virtual Ethernet card backing class.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardNetworkBackingInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualEthernetCardNetworkBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

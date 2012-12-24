@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ResourcePoolCreatedEvent(vim, *args, **kwargs):
     '''This event records when a new resource pool is created.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolCreatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ResourcePoolCreatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

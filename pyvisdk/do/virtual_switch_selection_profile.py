@@ -12,7 +12,7 @@ def VirtualSwitchSelectionProfile(vim, *args, **kwargs):
     '''The VirtualSwitchSelectionProfile data object represents the virtual switch
     that is connected to a port group. The policy property contains the
     configuration data values for the virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSwitchSelectionProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualSwitchSelectionProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

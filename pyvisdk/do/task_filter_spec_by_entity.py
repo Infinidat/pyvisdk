@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def TaskFilterSpecByEntity(vim, *args, **kwargs):
     '''This data object type specifies a managed entity used to filter task history.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskFilterSpecByEntity')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def TaskFilterSpecByEntity(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

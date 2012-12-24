@@ -12,7 +12,7 @@ def HostAdminDisableEvent(vim, *args, **kwargs):
     '''This event records that the permission on the host has been changed such that
     only the user account used for VirtualCenter operation will have Administrator
     permission.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostAdminDisableEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostAdminDisableEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

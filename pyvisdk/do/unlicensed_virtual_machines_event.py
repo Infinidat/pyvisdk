@@ -12,7 +12,7 @@ def UnlicensedVirtualMachinesEvent(vim, *args, **kwargs):
     '''This event records that we have unlicensed virtual machines on the specified
     host. This can be both a (@link vim.ManagedEntity.configIssue configIssue) and
     an entry in the event log.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UnlicensedVirtualMachinesEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def UnlicensedVirtualMachinesEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

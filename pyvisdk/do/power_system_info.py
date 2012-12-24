@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PowerSystemInfo(vim, *args, **kwargs):
     '''Power System Info data object. Shows current state of power management system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PowerSystemInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def PowerSystemInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

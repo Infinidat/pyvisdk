@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmClonedEvent(vim, *args, **kwargs):
     '''This event records the completion of a virtual machine cloning operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmClonedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmClonedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

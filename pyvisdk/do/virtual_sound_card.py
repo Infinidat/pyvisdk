@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualSoundCard(vim, *args, **kwargs):
     '''This data object type represents a sound card in a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSoundCard')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualSoundCard(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

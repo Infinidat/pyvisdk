@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostScsiTopologyTarget(vim, *args, **kwargs):
     '''This data object type describes the SCSI target that is associated with a list
     of logical units.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostScsiTopologyTarget')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostScsiTopologyTarget(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

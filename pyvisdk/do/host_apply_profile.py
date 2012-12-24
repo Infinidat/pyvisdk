@@ -13,7 +13,7 @@ def HostApplyProfile(vim, *args, **kwargs):
     configuration data for different host capabilities. The Profile Engine will use
     any configuration data that you supply to overwrite the host configuration. See
     the ExecuteHostProfile and ApplyHostConfig_Task methods.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostApplyProfile')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def HostApplyProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

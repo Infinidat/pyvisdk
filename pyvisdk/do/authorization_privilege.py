@@ -15,7 +15,7 @@ def AuthorizationPrivilege(vim, *args, **kwargs):
     privileges.Within each product version, privileges do not change. See
     AuthorizationDescription for detailed information on the privileges defined by
     the system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AuthorizationPrivilege')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def AuthorizationPrivilege(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

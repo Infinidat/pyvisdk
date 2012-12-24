@@ -12,7 +12,7 @@ def CustomizationSysprep(vim, *args, **kwargs):
     '''An object representation of a Windows answer file. The sysprep type encloses
     all the individual keys listed in a file. For more detailed information, see
     the document .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationSysprep')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def CustomizationSysprep(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

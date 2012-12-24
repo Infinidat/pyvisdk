@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AlarmSnmpFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to complete an alarm SNMP notification.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmSnmpFailedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AlarmSnmpFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

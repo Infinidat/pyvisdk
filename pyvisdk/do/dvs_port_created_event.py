@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsPortCreatedEvent(vim, *args, **kwargs):
     '''New ports are created in the distributed virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsPortCreatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsPortCreatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

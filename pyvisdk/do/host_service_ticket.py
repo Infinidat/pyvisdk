@@ -24,7 +24,7 @@ def HostServiceTicket(vim, *args, **kwargs):
     request is made to the VirtualCenter server, but the server does not provide
     the required service directly, then the server provides a hostname and port for
     a server that accepts the ticketed connection and provides the service.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostServiceTicket')
 
     # do some validation checking...
@@ -44,4 +44,3 @@ def HostServiceTicket(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

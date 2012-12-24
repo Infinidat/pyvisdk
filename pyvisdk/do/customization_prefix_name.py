@@ -15,7 +15,7 @@ def CustomizationPrefixName(vim, *args, **kwargs):
     the network names of virtual machines as well as hosts. VMware Tools runs in a
     guest operating system and reports information to VirtualCenter, including the
     network name of the guest.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationPrefixName')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def CustomizationPrefixName(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

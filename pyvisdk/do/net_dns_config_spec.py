@@ -15,7 +15,7 @@ def NetDnsConfigSpec(vim, *args, **kwargs):
     specific to the RFC/common to all systems. Properties that are platform
     specific should go into a separate config spec. http://technet.microsoft.com
     /en-us/library/cc778792.aspx http://en.wikipedia.org/wiki/Microsoft_DNS'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetDnsConfigSpec')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def NetDnsConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

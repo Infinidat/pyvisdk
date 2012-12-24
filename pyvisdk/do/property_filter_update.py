@@ -12,7 +12,7 @@ def PropertyFilterUpdate(vim, *args, **kwargs):
     '''The PropertyFilterUpdate data object type contains a list of updates to data
     visible through a specific filter. Note that if a property changes through
     multiple filters, then a client receives an update for each filter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PropertyFilterUpdate')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PropertyFilterUpdate(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def HostMountInfo(vim, *args, **kwargs):
     '''The HostMountInfo data object provides information related to a configured
     mount point. This object does not include information about the mounted file
     system. (See HostFileSystemMountInfo.)'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMountInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostMountInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

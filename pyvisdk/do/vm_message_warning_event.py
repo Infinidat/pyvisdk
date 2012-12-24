@@ -12,7 +12,7 @@ def VmMessageWarningEvent(vim, *args, **kwargs):
     '''This event records when a warning message (consisting of a collection of
     "observations") is thrown by the virtual machine. This is a generic event for
     such messages.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmMessageWarningEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmMessageWarningEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

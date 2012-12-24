@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ScheduledTaskEvent(vim, *args, **kwargs):
     '''These events are scheduled task events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScheduledTaskEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ScheduledTaskEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

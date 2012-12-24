@@ -17,12 +17,8 @@ class Datacenter(ManagedEntity):
     must be under a distinct datacenter in the inventory, and datacenters may not
     be nested under other datacenters.Every Datacenter has the following set of
     dedicated folders. These folders are empty until you create entities for the
-    Datacenter.* A folder for VirtualMachine, template, and VirtualApp objects. * A
-    folder for a ComputeResource hierarchy. * A folder for Network,
-    DistributedVirtualSwitch, and DistributedVirtualPortgroup objects. * A folder
-    for Datastore objects.For a visual representation of the organization of
-    objects in a vCenter hierarchy, see the description of the ServiceInstance
-    object.'''
+    Datacenter.For a visual representation of the organization of objects in a
+    vCenter hierarchy, see the description of the ServiceInstance object.'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.Datacenter):
         super(Datacenter, self).__init__(core, name=name, ref=ref, type=type)
@@ -62,7 +58,7 @@ class Datacenter(ManagedEntity):
 
     
     
-    def PowerOnMultiVM_Task(self, vm, option=None):
+    def PowerOnMultiVM_Task(self, vm, option):
         '''Powers on multiple virtual machines in a data center. If the virtual machines
         are suspended, this method resumes execution from the suspend point. The
         virtual machines can belong to different clusters in the data center.Powers on
@@ -80,7 +76,7 @@ class Datacenter(ManagedEntity):
         '''
         return self.delegate("PowerOnMultiVM_Task")(vm, option)
     
-    def QueryConnectionInfo(self, hostname, port, username, password, sslThumbprint=None):
+    def QueryConnectionInfo(self, hostname, port, username, password, sslThumbprint):
         '''This method provides a way of getting basic information about a host without
         adding it to a datacenter. Connection wizards typically use this method to show
         information about a host so a user can confirm a set of changes before applying

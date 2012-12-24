@@ -13,7 +13,7 @@ def DatastoreSummary(vim, *args, **kwargs):
     reference is not set when an object of this type is created. These fields and
     references are typically set later when these objects are associated with a
     host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreSummary')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DatastoreSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

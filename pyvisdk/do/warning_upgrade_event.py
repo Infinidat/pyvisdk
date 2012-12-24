@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def WarningUpgradeEvent(vim, *args, **kwargs):
     '''This event is a general warning event from upgrade.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}WarningUpgradeEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def WarningUpgradeEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

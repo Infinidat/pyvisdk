@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterConfigSpec(vim, *args, **kwargs):
     '''A complete cluster configuration. All fields are defined as optional. In case
     of a reconfiguration, unset fields are unchanged.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterConfigSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ClusterConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

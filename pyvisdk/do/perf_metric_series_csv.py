@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PerfMetricSeriesCSV(vim, *args, **kwargs):
     '''This data object type represents a PerfMetricSeries encoded in CSV format.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfMetricSeriesCSV')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def PerfMetricSeriesCSV(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -31,7 +31,7 @@ def ClusterFailoverLevelAdmissionControlPolicy(vim, *args, **kwargs):
     divided by the CPU component of the slot size; the result is rounded down. HA
     makes the same calculation for host memory resource amount. HA compares the
     results; the lower of the two numbers is the host slot capacity.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterFailoverLevelAdmissionControlPolicy')
 
     # do some validation checking...
@@ -51,4 +51,3 @@ def ClusterFailoverLevelAdmissionControlPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

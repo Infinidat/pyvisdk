@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSCSIPassthroughDeviceBackingOption(vim, *args, **kwargs):
     '''This data object type describes the options for the
     VirtualSCSIPassthroughDeviceBackingInfo data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSCSIPassthroughDeviceBackingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualSCSIPassthroughDeviceBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

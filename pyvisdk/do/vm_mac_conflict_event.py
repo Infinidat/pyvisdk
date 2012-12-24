@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmMacConflictEvent(vim, *args, **kwargs):
     '''This event records a MAC address conflict for a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmMacConflictEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmMacConflictEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

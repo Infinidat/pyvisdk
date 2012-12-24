@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Edge(vim, *args, **kwargs):
     '''Topological representation of a physical or logical relationship between two
     entities in the system.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}Edge')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def Edge(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

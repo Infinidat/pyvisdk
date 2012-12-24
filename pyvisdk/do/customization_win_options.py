@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationWinOptions(vim, *args, **kwargs):
     '''Optional operations supported by the customization process for Windows.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationWinOptions')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationWinOptions(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

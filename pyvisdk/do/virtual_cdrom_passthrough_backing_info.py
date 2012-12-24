@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualCdromPassthroughBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.PassthroughBackingInfo data class represents a device pass-
     through backing for a virtual CD-ROM.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdromPassthroughBackingInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualCdromPassthroughBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AlarmActionTriggeredEvent(vim, *args, **kwargs):
     '''This event records that an alarm was triggered.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmActionTriggeredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AlarmActionTriggeredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

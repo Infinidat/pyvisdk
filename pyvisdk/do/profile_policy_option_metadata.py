@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfilePolicyOptionMetadata(vim, *args, **kwargs):
     '''The ProfilePolicyOptionMetadata data object contains the metadata information
     for a PolicyOption.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfilePolicyOptionMetadata')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfilePolicyOptionMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -16,7 +16,7 @@ def OvfConsumerOstNode(vim, *args, **kwargs):
     children, it can also be regarded as a tree. This tree mirrors the structure of
     the OVF descriptor. It is provided to OVF consumers as a more convenient way to
     navigate and modify the OVF than by working directly on the XML.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfConsumerOstNode')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def OvfConsumerOstNode(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -48,7 +48,7 @@ class Task(ExtensibleManagedObject):
         '''
         return self.delegate("SetTaskDescription")(description)
     
-    def SetTaskState(self, state, result=None, fault=None):
+    def SetTaskState(self, state, result, fault):
         '''Sets task state and optionally sets results or fault, as appropriate for state
         
         :param state: New state for task

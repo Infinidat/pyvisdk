@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileSerializedCreateSpec(vim, *args, **kwargs):
     '''The ProfileSerializedCreateSpec data object defines a string that contains a
     serialized representation of a host profile.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileSerializedCreateSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileSerializedCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

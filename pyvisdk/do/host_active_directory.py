@@ -44,7 +44,7 @@ def HostActiveDirectory(vim, *args, **kwargs):
     must create the "ESX Admins" group in the Active Directory. The host will
     periodically check the domain controller for the group and will assign the role
     when the group exists.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostActiveDirectory')
 
     # do some validation checking...
@@ -64,4 +64,3 @@ def HostActiveDirectory(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualSCSIPassthrough(vim, *args, **kwargs):
     '''The VirtualSCSIPassthrough data object type contains information about a SCSI
     device on the virtual machine that is being backed by a generic SCSI device on
     the host via passthrough.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSCSIPassthrough')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualSCSIPassthrough(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

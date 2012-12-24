@@ -12,7 +12,7 @@ def DatastoreInfo(vim, *args, **kwargs):
     '''Detailed information about a datastore. This is a base type for derived types
     that have more specific details about a datastore.See HostVmfsVolumeSee
     HostNasVolumeSee HostLocalFileSystemVolume'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DatastoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

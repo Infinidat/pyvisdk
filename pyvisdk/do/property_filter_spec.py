@@ -13,7 +13,7 @@ def PropertyFilterSpec(vim, *args, **kwargs):
     part of a single managed object, or parts of multiple related managed objects
     in an inventory hierarchy - for example, to collect updates from all virtual
     machines in a given folder.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PropertyFilterSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def PropertyFilterSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

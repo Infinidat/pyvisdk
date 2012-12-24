@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualVmxnet2(vim, *args, **kwargs):
     '''The VirtualVmxnet2 data object type represents an instance of the Vmxnet2
     virtual Ethernet adapter attached to a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualVmxnet2')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualVmxnet2(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

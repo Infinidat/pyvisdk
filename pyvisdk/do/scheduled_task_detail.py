@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ScheduledTaskDetail(vim, *args, **kwargs):
     '''Descriptive detail for each scheduler type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScheduledTaskDetail')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ScheduledTaskDetail(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

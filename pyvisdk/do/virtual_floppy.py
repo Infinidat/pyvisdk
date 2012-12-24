@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualFloppy(vim, *args, **kwargs):
     '''The VirtualFloppy data object type contains information about a floppy drive in
     a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualFloppy')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualFloppy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

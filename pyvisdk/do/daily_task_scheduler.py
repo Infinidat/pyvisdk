@@ -15,7 +15,7 @@ def DailyTaskScheduler(vim, *args, **kwargs):
     minute.If you set the interval to a value greater than 1, the task will execute
     at the specified daily interval. (For example, an interval of 2 will cause the
     task to execute at the specified hour and minute every 2 days.)'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DailyTaskScheduler')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def DailyTaskScheduler(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

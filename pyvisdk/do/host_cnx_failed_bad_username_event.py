@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostCnxFailedBadUsernameEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to an invalid user name
     and password combination.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostCnxFailedBadUsernameEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostCnxFailedBadUsernameEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

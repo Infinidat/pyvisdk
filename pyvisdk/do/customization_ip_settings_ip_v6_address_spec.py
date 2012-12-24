@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationIPSettingsIpV6AddressSpec(vim, *args, **kwargs):
     '''IPv6 settings'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationIPSettingsIpV6AddressSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationIPSettingsIpV6AddressSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

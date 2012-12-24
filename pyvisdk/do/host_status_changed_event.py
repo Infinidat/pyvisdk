@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostStatusChangedEvent(vim, *args, **kwargs):
     '''This event records when a host's overall status changed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostStatusChangedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostStatusChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

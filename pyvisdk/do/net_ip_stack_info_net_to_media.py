@@ -12,7 +12,7 @@ def NetIpStackInfoNetToMedia(vim, *args, **kwargs):
     '''Information from an IP stack about known mappings betwwen an IP address and the
     underlying physical address it maps to as learned by: IPv4: Address Resolution
     Protocol (ARP) RFC 826 IPv6: Neighbor Discovery Protocol (NDP) RFC 4861'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetIpStackInfoNetToMedia')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def NetIpStackInfoNetToMedia(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

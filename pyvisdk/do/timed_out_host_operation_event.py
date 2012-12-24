@@ -12,7 +12,7 @@ def TimedOutHostOperationEvent(vim, *args, **kwargs):
     '''This event indicates that an operation performed on the host timed out.
     Typically, a previous event in the sequence of events contains more information
     about the cause of the operation timing out.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TimedOutHostOperationEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def TimedOutHostOperationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterProfileConfigServiceCreateSpec(vim, *args, **kwargs):
     '''DataObject which allows reconfiguration of a profile based on services that
     will be available on the cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterProfileConfigServiceCreateSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ClusterProfileConfigServiceCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

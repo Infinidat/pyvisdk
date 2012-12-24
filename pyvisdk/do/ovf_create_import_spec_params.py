@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def OvfCreateImportSpecParams(vim, *args, **kwargs):
     '''Parameters for deploying an OVF.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfCreateImportSpecParams')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def OvfCreateImportSpecParams(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

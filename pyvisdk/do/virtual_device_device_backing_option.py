@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualDeviceDeviceBackingOption(vim, *args, **kwargs):
     '''The DeviceBackingOption data class contains device-specific backing options.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceDeviceBackingOption')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualDeviceDeviceBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

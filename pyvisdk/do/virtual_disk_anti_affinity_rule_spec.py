@@ -12,7 +12,7 @@ def VirtualDiskAntiAffinityRuleSpec(vim, *args, **kwargs):
     '''Pod-wide anit-affinity rule for virtual disks. The set of virtual disks should
     be placed on different datastores.NOTE: This data object type and all of its
     methods are experimental and subject to change in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskAntiAffinityRuleSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualDiskAntiAffinityRuleSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

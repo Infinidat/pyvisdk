@@ -13,7 +13,7 @@ def ProfileCompositePolicyOptionMetadata(vim, *args, **kwargs):
     information for a composite PolicyOption. The user will retrieve metadata
     information about a composite policy and then combine policy options to produce
     the composite policy option.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileCompositePolicyOptionMetadata')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ProfileCompositePolicyOptionMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

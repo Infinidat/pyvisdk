@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineNetworkShaperInfo(vim, *args, **kwargs):
     '''Network traffic shaping specification.Traffic shaping is used to configure the
     network utilization characteristics of a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineNetworkShaperInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineNetworkShaperInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def OvfParseDescriptorResult(vim, *args, **kwargs):
     ''''''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfParseDescriptorResult')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def OvfParseDescriptorResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

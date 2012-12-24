@@ -12,7 +12,7 @@ def DistributedVirtualSwitchManagerDvsProductSpec(vim, *args, **kwargs):
     '''This class is used to specify ProductSpec for the DVS. The two properties are
     strictly mutually exclusive. If both properties are set, then an
     InvalidArgument fault would be thrown.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerDvsProductSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DistributedVirtualSwitchManagerDvsProductSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

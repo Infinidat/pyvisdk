@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostMemberPnicBacking(vim, *args, **kwargs):
     '''Specification to select individual physical NICs. In this case, a proxy switch
     will be created on the host from scratch with the pNICs as the uplinks.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberPnicBacking')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchHostMemberPnicBacking(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

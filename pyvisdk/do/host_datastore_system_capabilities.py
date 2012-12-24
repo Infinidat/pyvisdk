@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostDatastoreSystemCapabilities(vim, *args, **kwargs):
     '''Capability vector indicating the available product features.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDatastoreSystemCapabilities')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDatastoreSystemCapabilities(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

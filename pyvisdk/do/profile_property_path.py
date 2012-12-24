@@ -12,7 +12,7 @@ def ProfilePropertyPath(vim, *args, **kwargs):
     '''The ProfilePropertyPath data object represents the path to either a profile or
     a policy option. If both and are specified, the combination of the two
     identifies a specific profile policy option.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfilePropertyPath')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ProfilePropertyPath(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

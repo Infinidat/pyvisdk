@@ -15,7 +15,7 @@ def OptionDef(vim, *args, **kwargs):
     notation. The string preceding the first dot is the top of the hierarchy. The
     hierarchy descends to a new sublevel with each dot. For example,
     "Ethernet.NetworkConnection.Bridged".'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OptionDef')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def OptionDef(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetworkPolicyProfile(vim, *args, **kwargs):
     '''The NetworkPolicyProfile data object represents a network policy. The policy
     property contains network configuration data values.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetworkPolicyProfile')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def NetworkPolicyProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

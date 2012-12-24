@@ -16,7 +16,7 @@ def HostVirtualNic(vim, *args, **kwargs):
     connected to a virtual switch. A VirtualNic accesses the external network
     through a virtual switch that is bridged through a PhysicalNic to a physical
     network.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualNic')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def HostVirtualNic(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

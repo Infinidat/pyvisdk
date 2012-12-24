@@ -12,7 +12,7 @@ def PhysicalNicSpec(vim, *args, **kwargs):
     '''This data object type describes the physical network adapter specification
     representing the properties on a physical network adapter that can be
     configured once the object exists.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PhysicalNicSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

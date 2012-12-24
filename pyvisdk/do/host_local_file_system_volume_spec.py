@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostLocalFileSystemVolumeSpec(vim, *args, **kwargs):
     '''The specification for creating a new local file system volume.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostLocalFileSystemVolumeSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostLocalFileSystemVolumeSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

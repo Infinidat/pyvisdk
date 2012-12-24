@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreMountPathDatastorePair(vim, *args, **kwargs):
     '''Contains a mapping of an old mount path and its corresponding resignatured or
     remounted datastore'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreMountPathDatastorePair')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DatastoreMountPathDatastorePair(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

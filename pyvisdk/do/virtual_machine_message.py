@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineMessage(vim, *args, **kwargs):
     '''The message data for one message in a sequence of message data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineMessage')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachineMessage(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

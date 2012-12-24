@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DrsRuleViolationEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine violates a DRS rule.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsRuleViolationEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DrsRuleViolationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

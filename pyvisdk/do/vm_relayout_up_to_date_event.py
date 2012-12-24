@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmRelayoutUpToDateEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine is already in the correct format. No
     relay out is necessary.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmRelayoutUpToDateEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmRelayoutUpToDateEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

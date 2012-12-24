@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsHostStatusUpdated(vim, *args, **kwargs):
     '''A host has it's status or statusDetail updated.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsHostStatusUpdated')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DvsHostStatusUpdated(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

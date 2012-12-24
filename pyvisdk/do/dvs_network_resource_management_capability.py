@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSNetworkResourceManagementCapability(vim, *args, **kwargs):
     '''Dataobject representing the feature capabilities of network resource management
     supported by the vSphere Distributed Switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSNetworkResourceManagementCapability')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVSNetworkResourceManagementCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

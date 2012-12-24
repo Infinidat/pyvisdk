@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineVMIROM(vim, *args, **kwargs):
     '''The VirtualVMIROM data object type represents the ROM on the virtual machine's
     PCI bus that provides support for VMI.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMIROM')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineVMIROM(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

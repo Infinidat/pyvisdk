@@ -13,7 +13,7 @@ def ObjectUpdate(vim, *args, **kwargs):
     particular managed object. We distinguish updates when an object is created,
     destroyed, or modified, as well as when the object enters or leaves the set of
     objects dynamically associated with a filter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ObjectUpdate')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ObjectUpdate(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

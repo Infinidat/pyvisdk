@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def EnumDescription(vim, *args, **kwargs):
     '''Static strings used for describing an enumerated type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EnumDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def EnumDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

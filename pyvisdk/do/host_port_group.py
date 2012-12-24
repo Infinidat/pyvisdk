@@ -12,7 +12,7 @@ def HostPortGroup(vim, *args, **kwargs):
     '''This data object type is used to describe port groups. Port groups are used to
     group virtual network adapters on a virtual switch, associating them with
     networks and network policies.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPortGroup')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostPortGroup(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

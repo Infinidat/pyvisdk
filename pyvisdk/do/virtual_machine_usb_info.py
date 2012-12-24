@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineUsbInfo(vim, *args, **kwargs):
     '''This data object contains information about a physical USB device on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineUsbInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineUsbInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

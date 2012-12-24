@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualBusLogicControllerOption(vim, *args, **kwargs):
     '''This data object contains the options for a BusLogic SCSI controller.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualBusLogicControllerOption')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualBusLogicControllerOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

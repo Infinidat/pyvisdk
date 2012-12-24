@@ -13,7 +13,7 @@ def DasHostIsolatedEvent(vim, *args, **kwargs):
     cluster. Since an isolated host cannot be distinguished from a failed host
     except by the isolated host itself, this event is logged when the isolated host
     regains network connectivity.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasHostIsolatedEvent')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DasHostIsolatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

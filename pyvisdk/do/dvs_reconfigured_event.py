@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsReconfiguredEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was reconfigured.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsReconfiguredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsReconfiguredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

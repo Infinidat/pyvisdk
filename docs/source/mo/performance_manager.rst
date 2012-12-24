@@ -16,6 +16,7 @@ PerformanceManager
     :py:class:`~pyvisdk.do.perf_interval.PerfInterval`,
     :py:class:`~pyvisdk.do.perf_metric_id.PerfMetricId`,
     :py:class:`~pyvisdk.do.performance_description.PerformanceDescription`,
+    :py:class:`~pyvisdk.do.performance_manager_counter_level_mapping.PerformanceManagerCounterLevelMapping`,
     :py:class:`~pyvisdk.do.perf_provider_summary.PerfProviderSummary`,
     :py:class:`~pyvisdk.do.perf_query_spec.PerfQuerySpec`
     

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmShutdownOnIsolationEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine has been shut down on an isolated
     host in a HA cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmShutdownOnIsolationEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmShutdownOnIsolationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

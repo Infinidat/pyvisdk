@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ComplianceProfile(vim, *args, **kwargs):
     '''DataObject contains the verifications that need to be done to make sure the
     entity is in compliance.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ComplianceProfile')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ComplianceProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

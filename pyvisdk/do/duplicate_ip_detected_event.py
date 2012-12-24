@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DuplicateIpDetectedEvent(vim, *args, **kwargs):
     '''This event records that a duplicate IP address has been observed in conflict
     with the vmotion or IP storage interface configured on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DuplicateIpDetectedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DuplicateIpDetectedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

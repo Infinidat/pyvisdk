@@ -17,7 +17,7 @@ def DatabaseSizeParam(vim, *args, **kwargs):
     fields filled up by Virtual Center based on some heuristics. These parameters
     need not represent a real inventory. The user can use these parameters to
     estimate the database size required by a hypothetical VirtualCenter setup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatabaseSizeParam')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def DatabaseSizeParam(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

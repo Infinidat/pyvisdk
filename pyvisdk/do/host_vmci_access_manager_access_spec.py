@@ -14,7 +14,7 @@ def HostVmciAccessManagerAccessSpec(vim, *args, **kwargs):
     services, replace the existing service or be revoked depending on the mode
     specified. In case of a revoke, an empty or non-existing service list indicates
     that all granted services should be revoked.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVmciAccessManagerAccessSpec')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostVmciAccessManagerAccessSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

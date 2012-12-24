@@ -12,7 +12,7 @@ def IscsiDependencyEntity(vim, *args, **kwargs):
     '''Defines a dependency entity. Contains the affected Virtual NIC device name and
     iSCSI HBA name (if Virtual NIC is associated with the HBA). See
     IscsiMigrationDependency'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IscsiDependencyEntity')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def IscsiDependencyEntity(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

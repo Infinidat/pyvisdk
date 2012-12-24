@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmfsDatastoreExpandSpec(vim, *args, **kwargs):
     '''Specification to increase the capacity of a VMFS datastore by expanding
     (increasing the size of) an existing extent of the datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreExpandSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmfsDatastoreExpandSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

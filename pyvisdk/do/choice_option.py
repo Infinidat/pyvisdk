@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ChoiceOption(vim, *args, **kwargs):
     '''The ChoiceOption data object type defines a set of supported string values, a
     localizable description for each value, and the default value.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ChoiceOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ChoiceOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

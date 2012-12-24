@@ -13,7 +13,7 @@ def CustomizationCustomName(vim, *args, **kwargs):
     generate the (hostname/IP). The command line for this application must be
     specified in the server configuration file (vpxd.cfg) in the vpxd/name-ip-
     generator key.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationCustomName')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def CustomizationCustomName(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

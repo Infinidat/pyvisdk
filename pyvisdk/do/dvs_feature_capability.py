@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSFeatureCapability(vim, *args, **kwargs):
     '''Dataobject representing the feature capabilities supported by the vSphere
     Distributed Switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSFeatureCapability')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVSFeatureCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

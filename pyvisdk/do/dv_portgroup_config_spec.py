@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVPortgroupConfigSpec(vim, *args, **kwargs):
     '''Specification to reconfigure a DistributedVirtualPortgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVPortgroupConfigSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVPortgroupConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

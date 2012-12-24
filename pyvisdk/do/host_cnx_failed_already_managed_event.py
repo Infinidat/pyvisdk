@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostCnxFailedAlreadyManagedEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to the host being managed
     by a different VirtualCenter server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostCnxFailedAlreadyManagedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostCnxFailedAlreadyManagedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

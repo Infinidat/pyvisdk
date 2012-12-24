@@ -14,7 +14,7 @@ def VirtualDevice(vim, *args, **kwargs):
     to display devices they do not recognize. For example, a client with an older
     version than the server to which it connects may see a device without knowing
     what it is.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDevice')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

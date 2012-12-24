@@ -17,7 +17,7 @@ def DasAgentUnavailableEvent(vim, *args, **kwargs):
     this cluster will fail until a DasAgentFoundEvent is logged or unless this is
     the first node to be configured. For example, if all the other hosts are
     disconnected first.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasAgentUnavailableEvent')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def DasAgentUnavailableEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

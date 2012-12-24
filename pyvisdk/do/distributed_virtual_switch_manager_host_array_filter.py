@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DistributedVirtualSwitchManagerHostArrayFilter(vim, *args, **kwargs):
     '''Check host compatibility against all hosts specified in the array.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostArrayFilter')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DistributedVirtualSwitchManagerHostArrayFilter(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -13,7 +13,7 @@ def HostNumaNode(vim, *args, **kwargs):
     correctly if the NUMA node contains multiple disjoint memory ranges. If there
     are multiple memory ranges, the client will see one memory ranges from this
     NumaNode object, and the memory range may or may not belong to this NUMA node.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNumaNode')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostNumaNode(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmFailoverFailed(vim, *args, **kwargs):
     '''This event records when a virtual machine failover was unsuccessful.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFailoverFailed')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmFailoverFailed(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

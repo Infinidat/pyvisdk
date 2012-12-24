@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmDeployFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to deploy from a template.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDeployFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmDeployFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

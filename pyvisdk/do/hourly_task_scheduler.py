@@ -14,7 +14,7 @@ def HourlyTaskScheduler(vim, *args, **kwargs):
     minute.If you set the interval to a value greater than 1, the task will execute
     at the specified hourly interval. (For example, an interval of 2 will cause the
     task to execute at the specified minute every 2 hours.)'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HourlyTaskScheduler')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HourlyTaskScheduler(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

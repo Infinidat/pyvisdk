@@ -13,8 +13,8 @@ def DynamicData(vim, *args, **kwargs):
     properties dynamically. The primary usage is as a base class for types that may
     be extended with subtypes in the future, where new properties should be sent to
     old clients as a set of dynamic properties.'''
-    
-    obj = vim.client.factory.create('{urn:sms}DynamicData')
+
+    obj = vim.client.factory.create('{urn:vim25}DynamicData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:
@@ -33,4 +33,3 @@ def DynamicData(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

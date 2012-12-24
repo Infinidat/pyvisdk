@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ManagedEntityEventArgument(vim, *args, **kwargs):
     '''The general event argument for a managed entity.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ManagedEntityEventArgument')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ManagedEntityEventArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

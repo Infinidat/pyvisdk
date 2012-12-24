@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostHardwareElementInfo(vim, *args, **kwargs):
     '''Data object describing the operational status of a physical element.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostHardwareElementInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostHardwareElementInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

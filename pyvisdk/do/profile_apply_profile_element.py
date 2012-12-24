@@ -13,7 +13,7 @@ def ProfileApplyProfileElement(vim, *args, **kwargs):
     an ApplyProfile for a set of host configuration settings which may be
     instanced. For example, there may be multiple virtual switch instances
     represented by individual ApplyProfileElement DataObjects.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileApplyProfileElement')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ProfileApplyProfileElement(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

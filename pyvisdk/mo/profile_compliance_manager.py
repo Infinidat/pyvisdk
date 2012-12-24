@@ -21,7 +21,7 @@ class ProfileComplianceManager(BaseEntity):
 
     
     
-    def CheckCompliance_Task(self, profile=None, entity=None):
+    def CheckCompliance_Task(self, profile, entity):
         '''Check compliance of an entity against a Profile.
         
         :param profile: If specified, check compliance against the specified profiles. If not specified, use the profiles associated with the entities. If both Profiles and Entities are specified, Check the compliance of each Entity against each of the profile specified. For more information, look at the KMap below. P represents if Profile is specified. E represents if Entity is specified.
@@ -31,7 +31,7 @@ class ProfileComplianceManager(BaseEntity):
         '''
         return self.delegate("CheckCompliance_Task")(profile, entity)
     
-    def ClearComplianceStatus(self, profile=None, entity=None):
+    def ClearComplianceStatus(self, profile, entity):
         '''Clear the saved ComplianceResult based on profile and entity filtering
         criteria.
         
@@ -42,7 +42,7 @@ class ProfileComplianceManager(BaseEntity):
         '''
         return self.delegate("ClearComplianceStatus")(profile, entity)
     
-    def QueryComplianceStatus(self, profile=None, entity=None):
+    def QueryComplianceStatus(self, profile, entity):
         '''Query the compliance status based on Profile and Entity filter.
         
         :param profile: If specified, compliance result for the specified profiles will be returned. This acts like a filtering criteria for the ComplianceResults based on specified profiles.
@@ -52,7 +52,7 @@ class ProfileComplianceManager(BaseEntity):
         '''
         return self.delegate("QueryComplianceStatus")(profile, entity)
     
-    def QueryExpressionMetadata(self, expressionName=None, profile=None):
+    def QueryExpressionMetadata(self, expressionName, profile):
         '''Query the metadata for the expressions.
         
         :param expressionName: Names of the Expressions for which metadata is requested. If expressionNames are not specified, metadata for all known expressions is returned

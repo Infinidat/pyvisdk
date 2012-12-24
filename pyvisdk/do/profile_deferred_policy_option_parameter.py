@@ -10,12 +10,8 @@ log = logging.getLogger(__name__)
 
 def ProfileDeferredPolicyOptionParameter(vim, *args, **kwargs):
     '''The ProfileDeferredPolicyOptionParameter data object contains information about
-    a single deferred parameter for host configuration.* The Server verifies
-    deferred parameter data when it calls the HostProfile.ExecuteHostProfile
-    method. * The client supplies deferred parameter data for host configuration
-    when it calls the HostProfileManager.ApplyHostConfig_Task method. * The vCenter
-    Server stores deferred parameter data in answer files (AnswerFile.userInput).'''
-    
+    a single deferred parameter for host configuration.'''
+
     obj = vim.client.factory.create('{urn:vim25}ProfileDeferredPolicyOptionParameter')
 
     # do some validation checking...
@@ -35,4 +31,3 @@ def ProfileDeferredPolicyOptionParameter(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

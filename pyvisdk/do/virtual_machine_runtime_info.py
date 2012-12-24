@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineRuntimeInfo(vim, *args, **kwargs):
     '''The RuntimeInfo data object type provides information about the execution state
     and history of a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineRuntimeInfo')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualMachineRuntimeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

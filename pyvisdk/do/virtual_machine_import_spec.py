@@ -14,7 +14,7 @@ def VirtualMachineImportSpec(vim, *args, **kwargs):
     coincides with VirtualMachineConfigSpec.A VmImportSpec can be contained in a
     VirtualAppImportSpec as part of the ImportSpec for an entity.See also
     ImportSpec.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineImportSpec')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualMachineImportSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

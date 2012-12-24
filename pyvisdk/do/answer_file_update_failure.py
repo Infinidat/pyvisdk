@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AnswerFileUpdateFailure(vim, *args, **kwargs):
     '''DataObject which represents the errors that ocurred when an answer file update
     was performed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AnswerFileUpdateFailure')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AnswerFileUpdateFailure(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

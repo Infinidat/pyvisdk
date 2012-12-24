@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNoAvailableNetworksEvent(vim, *args, **kwargs):
     '''This event records the fact that a host does not have any available networks
     for HA communication'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNoAvailableNetworksEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostNoAvailableNetworksEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

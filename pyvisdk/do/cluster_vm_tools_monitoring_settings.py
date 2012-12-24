@@ -17,7 +17,7 @@ def ClusterVmToolsMonitoringSettings(vim, *args, **kwargs):
     configuration settings for Virtual Machine Health Monitoring Service.All fields
     are defined as optional. In case of a reconfiguration, fields left unset are
     not changed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterVmToolsMonitoringSettings')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def ClusterVmToolsMonitoringSettings(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

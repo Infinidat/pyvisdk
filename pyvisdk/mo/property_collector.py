@@ -18,11 +18,7 @@ class PropertyCollector(BaseEntity):
     change detection and supports both polling and notification.For change
     detection a client creates one or more filters to specify the subset of managed
     objects in which the client is interested. Filters keep per-session state to
-    track incremental changes. Because this state is per-session:* A session cannot
-    share its PropertyCollector filters with other sessions * two different clients
-    can share the same session, and so can share the same filters, but this is not
-    recommended * When a session terminates, the associated PropertyCollector
-    filters are automatically destroyed.'''
+    track incremental changes. Because this state is per-session:'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.PropertyCollector):
         super(PropertyCollector, self).__init__(core, name=name, ref=ref, type=type)
@@ -54,13 +50,19 @@ class PropertyCollector(BaseEntity):
         '''
         return self.delegate("CancelWaitForUpdates")()
     
-    def CheckForUpdates(self, version=None):
+    def CheckForUpdates(self, version):
         '''<b>Deprecated.</b> <i>As of vSphere API 4.1, use WaitForUpdatesEx with a
         maxWaitSeconds of 0.</i> Checks for updates on properties specified by the
         union of all current filters. If no updates are pending, this method returns
         null.
         
-        :param version: The data version currently known to the client. The value must be either * the special initial version (an empty string) * a data version returned from CheckForUpdates or WaitForUpdates by the same PropertyCollector on the same session. * a non-truncated data version returned from WaitForUpdatesEx by the same PropertyCollector on the same session.
+        :param version: The data version currently known to the client. The value must be either
+          
+            * the special initial version (an empty string)
+            
+            * a data version returned from CheckForUpdates or WaitForUpdates by the same PropertyCollector on the same session.
+            
+            * a non-truncated data version returned from WaitForUpdatesEx by the same PropertyCollector on the same session.
         
         '''
         return self.delegate("CheckForUpdates")(version)
@@ -149,22 +151,36 @@ class PropertyCollector(BaseEntity):
         '''
         return self.delegate("RetrievePropertiesEx")(specSet, options)
     
-    def WaitForUpdates(self, version=None):
+    def WaitForUpdates(self, version):
         '''<b>Deprecated.</b> <i>As of vSphere API 4.1, use WaitForUpdatesEx.</i>
         Calculate the set of updates for each existing filter in the session, returning
         when at least one filter has updates.
         
-        :param version: The data version currently known to the client. The value must be either * the special initial version (an empty string) * a data version returned from CheckForUpdates or WaitForUpdates by the same PropertyCollector on the same session * a non-truncated data version returned from WaitForUpdatesEx by the same PropertyCollector on the same session.
+        :param version: The data version currently known to the client. The value must be either
+          
+            * the special initial version (an empty string)
+            
+            * a data version returned from CheckForUpdates or WaitForUpdates by the same PropertyCollector on the same session
+            
+            * a non-truncated data version returned from WaitForUpdatesEx by the same PropertyCollector on the same session.
         
         '''
         return self.delegate("WaitForUpdates")(version)
     
-    def WaitForUpdatesEx(self, version=None, options=None):
+    def WaitForUpdatesEx(self, version, options):
         '''Calculate the set of updates for each existing filter in the session.Calculate
         the set of updates for each existing filter in the session.Calculate the set of
         updates for each existing filter in the session.
         
-        :param version: The data version currently known to the client. The value must be either * the special initial data version (an empty string), * a data version returned from CheckForUpdates or WaitForUpdates * a non-truncated data version returned from WaitForUpdatesEx * a truncated data version returned from the last call to WaitForUpdatesEx with no intervening calls to WaitForUpdates or CheckForUpdates.
+        :param version: The data version currently known to the client. The value must be either
+          
+            * the special initial data version (an empty string),
+            
+            * a data version returned from CheckForUpdates or WaitForUpdates
+            
+            * a non-truncated data version returned from WaitForUpdatesEx
+            
+            * a truncated data version returned from the last call to WaitForUpdatesEx with no intervening calls to WaitForUpdates or CheckForUpdates.
         
         :param options: Additional options controlling the change calculation. If omitted, equivalent to an options argument with no fields set.
         

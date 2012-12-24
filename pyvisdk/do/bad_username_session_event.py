@@ -12,7 +12,7 @@ def BadUsernameSessionEvent(vim, *args, **kwargs):
     '''This event records a failed user logon. Failed logons are due to no match
     existing between the provided user name and password combination and the
     combinations stored for authentication.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}BadUsernameSessionEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def BadUsernameSessionEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

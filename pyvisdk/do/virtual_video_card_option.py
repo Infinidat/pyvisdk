@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualVideoCardOption(vim, *args, **kwargs):
     '''This data object type contains the options for the VirtualVideoCard data object
     type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualVideoCardOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualVideoCardOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

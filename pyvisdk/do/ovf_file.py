@@ -13,7 +13,7 @@ def OvfFile(vim, *args, **kwargs):
     appropriate.An instance of this class is used to tell OvfManager about the
     choices the caller made about a file. This information is needed when the OVF
     descriptor is generated with createDescriptor.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfFile')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def OvfFile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

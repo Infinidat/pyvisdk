@@ -72,7 +72,7 @@ class AlarmManager(BaseEntity):
         '''
         return self.delegate("EnableAlarmActions")(entity, enabled)
     
-    def GetAlarm(self, entity=None):
+    def GetAlarm(self, entity):
         '''Available alarms defined on the entity. These alarms do not include any
         inherited alarms; that is, alarms associated with parent entities.
         

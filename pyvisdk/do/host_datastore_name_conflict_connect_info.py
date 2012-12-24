@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDatastoreNameConflictConnectInfo(vim, *args, **kwargs):
     '''This data object type describes a datastore on the host that has the same name
     as a different datastore on VirtualCenter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDatastoreNameConflictConnectInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDatastoreNameConflictConnectInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

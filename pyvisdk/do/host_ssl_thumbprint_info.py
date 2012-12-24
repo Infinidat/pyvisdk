@@ -12,7 +12,7 @@ def HostSslThumbprintInfo(vim, *args, **kwargs):
     '''The SSL thumbprint information for a host managed by a vCenter Server or a
     vCenter extension to login into other hosts without username/password
     authentication.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSslThumbprintInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostSslThumbprintInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

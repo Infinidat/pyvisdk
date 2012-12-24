@@ -11,10 +11,8 @@ log = logging.getLogger(__name__)
 def ArrayUpdateSpec(vim, *args, **kwargs):
     '''An ArrayUpdateSpec data object type is a common superclass for supporting
     incremental updates to arrays.The common code pattern is:The ArrayUpdateSpec
-    contains the following:* : the type of operation being performed. * : In the
-    case of a remove operation, the key value that identifies the array to be
-    removed.'''
-    
+    contains the following:'''
+
     obj = vim.client.factory.create('{urn:vim25}ArrayUpdateSpec')
 
     # do some validation checking...
@@ -34,4 +32,3 @@ def ArrayUpdateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

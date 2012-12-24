@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDiskFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for the virtual disk
     primary file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDiskFileQuery')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmDiskFileQuery(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

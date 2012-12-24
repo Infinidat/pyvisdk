@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def SessionTerminatedEvent(vim, *args, **kwargs):
     '''This event records the termination of a session.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SessionTerminatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def SessionTerminatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

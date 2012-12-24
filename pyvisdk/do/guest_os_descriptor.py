@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestOsDescriptor(vim, *args, **kwargs):
     '''This data object type contains information to describe a particular guest
     operating system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GuestOsDescriptor')
 
     # do some validation checking...
@@ -41,4 +41,3 @@ def GuestOsDescriptor(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

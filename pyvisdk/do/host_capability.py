@@ -12,7 +12,7 @@ def HostCapability(vim, *args, **kwargs):
     '''Specifies the capabilities of the particular host. This set of capabilities is
     referenced in other parts of the API specification to indicate under what
     circumstances an API will throw a NotSupported fault.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostCapability')
 
     # do some validation checking...
@@ -52,4 +52,3 @@ def HostCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

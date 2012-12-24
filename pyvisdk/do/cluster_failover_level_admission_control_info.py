@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterFailoverLevelAdmissionControlInfo(vim, *args, **kwargs):
     '''The current admission control related information if the cluster was configured
     with a FailoverLevelAdmissionControlPolicy.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterFailoverLevelAdmissionControlInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterFailoverLevelAdmissionControlInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

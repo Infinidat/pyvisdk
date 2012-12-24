@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def FcoeConfigFcoeCapabilities(vim, *args, **kwargs):
     '''Flags which indicate what parameters are settable for this FcoeConfig.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FcoeConfigFcoeCapabilities')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def FcoeConfigFcoeCapabilities(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -39,7 +39,7 @@ class HostDatastoreSystem(BaseEntity):
 
     
     
-    def ConfigureDatastorePrincipal(self, userName, password=None):
+    def ConfigureDatastorePrincipal(self, userName, password):
         '''Configures datastore principal user for the host.Configures datastore principal
         user for the host.
         
@@ -98,7 +98,7 @@ class HostDatastoreSystem(BaseEntity):
         '''
         return self.delegate("ExtendVmfsDatastore")(datastore, spec)
     
-    def QueryAvailableDisksForVmfs(self, datastore=None):
+    def QueryAvailableDisksForVmfs(self, datastore):
         '''Query to list disks that can be used to contain VMFS datastore extents. If the
         optional parameter name is supplied, queries for disks that can be used to
         contain extents for a VMFS datastore identified by the supplied name.
@@ -127,7 +127,7 @@ class HostDatastoreSystem(BaseEntity):
         '''
         return self.delegate("QueryUnresolvedVmfsVolumes")()
     
-    def QueryVmfsDatastoreCreateOptions(self, devicePath, vmfsMajorVersion=None):
+    def QueryVmfsDatastoreCreateOptions(self, devicePath, vmfsMajorVersion):
         '''Queries options for creating a new VMFS datastore for a disk.See devicePath
         
         :param devicePath: The devicePath of the disk on which datastore creation options are generated.See devicePath
@@ -146,7 +146,7 @@ class HostDatastoreSystem(BaseEntity):
         '''
         return self.delegate("QueryVmfsDatastoreExpandOptions")(datastore)
     
-    def QueryVmfsDatastoreExtendOptions(self, datastore, devicePath, suppressExpandCandidates=None):
+    def QueryVmfsDatastoreExtendOptions(self, datastore, devicePath, suppressExpandCandidates):
         '''Queries for options for increasing the capacity of an existing VMFS datastore
         by adding new extents using space from the specified disk.See devicePath
         
@@ -187,7 +187,7 @@ class HostDatastoreSystem(BaseEntity):
         '''
         return self.delegate("ResignatureUnresolvedVmfsVolume_Task")(resolutionSpec)
     
-    def UpdateLocalSwapDatastore(self, datastore=None):
+    def UpdateLocalSwapDatastore(self, datastore):
         '''Choose the localSwapDatastore for this host. Any change to this setting will
         affect virtual machines that subsequently power on or resume from a suspended
         state at this host, or that migrate to this host while powered on; virtual

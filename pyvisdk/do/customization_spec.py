@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationSpec(vim, *args, **kwargs):
     '''The Specification data object type contains information required to customize a
     virtual machine when deploying it or migrating it to a new host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def CustomizationSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

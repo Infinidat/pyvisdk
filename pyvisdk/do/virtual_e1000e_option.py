@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualE1000eOption(vim, *args, **kwargs):
     '''The VirtualE1000e option data object type contains the options for the
     VirtualE1000e data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualE1000eOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualE1000eOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

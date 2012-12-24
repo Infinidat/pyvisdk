@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostIpConfigIpV6AddressConfiguration(vim, *args, **kwargs):
     '''The ipv6 address configuration'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIpConfigIpV6AddressConfiguration')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostIpConfigIpV6AddressConfiguration(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

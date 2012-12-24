@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineMksTicket(vim, *args, **kwargs):
     '''This data object contains the information needed to establish an MKS (mouse-
     keyboard-screen) connection to a running virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineMksTicket')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineMksTicket(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

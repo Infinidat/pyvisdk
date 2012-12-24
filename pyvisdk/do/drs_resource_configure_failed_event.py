@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsResourceConfigureFailedEvent(vim, *args, **kwargs):
     '''This event records when resource configuration specification synchronization
     fails on a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsResourceConfigureFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DrsResourceConfigureFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

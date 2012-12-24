@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmNoNetworkAccessEvent(vim, *args, **kwargs):
     '''This event records a migration failure when the destination host is not on the
     same network as the source host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmNoNetworkAccessEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmNoNetworkAccessEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

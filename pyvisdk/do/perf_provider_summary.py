@@ -14,7 +14,7 @@ def PerfProviderSummary(vim, *args, **kwargs):
     A performance provider is any managed object that generates real-time or
     historical statistics (or boththe currentSupported and summarySupported
     properties are not mutually exclusive).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfProviderSummary')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def PerfProviderSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

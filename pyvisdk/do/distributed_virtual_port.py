@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DistributedVirtualPort(vim, *args, **kwargs):
     '''The data object that represents a port in the distributed virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualPort')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualPort(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

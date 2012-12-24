@@ -17,7 +17,7 @@ def ObjectSpec(vim, *args, **kwargs):
     associated sets of PropertySpec data objects.If the selectSet property is
     present, then this specifies additional objects to filter. These objects are
     defined by one or more SelectionSpec objects.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ObjectSpec')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def ObjectSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

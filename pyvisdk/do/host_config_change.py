@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConfigChange(vim, *args, **kwargs):
     '''This data object type describes types and constants related to the
     specification of changes to a host configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConfigChange')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostConfigChange(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

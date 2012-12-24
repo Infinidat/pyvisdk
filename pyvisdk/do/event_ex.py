@@ -22,7 +22,7 @@ def EventEx(vim, *args, **kwargs):
     can put in any object identifier as the objectId, but objectType should be
     filled in only if the object is actually present in the VC Server's
     ManagedEntity inventory.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EventEx')
 
     # do some validation checking...
@@ -44,4 +44,3 @@ def EventEx(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

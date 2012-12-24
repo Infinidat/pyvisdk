@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDiskOption(vim, *args, **kwargs):
     '''The VirtualDiskOption data class contains the options for the virtual disk data
     object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualDiskOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

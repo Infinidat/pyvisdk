@@ -13,7 +13,7 @@ def HostPortGroupProfile(vim, *args, **kwargs):
     that will be used by the ESX host. If a profile plug-in defines policies or
     subprofiles, use the policy or property list to access the additional
     configuration data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPortGroupProfile')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostPortGroupProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

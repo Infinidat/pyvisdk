@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ComplianceLocator(vim, *args, **kwargs):
     '''This dataObject contains information about location of applyProfile which was
     responsible for generation of a particular ComplianceExpression.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ComplianceLocator')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ComplianceLocator(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

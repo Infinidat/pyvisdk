@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmConnectedEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine is connected.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmConnectedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmConnectedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def UpdatedAgentBeingRestartedEvent(vim, *args, **kwargs):
     '''This event records that the agent has been patched and will be restarted.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UpdatedAgentBeingRestartedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def UpdatedAgentBeingRestartedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

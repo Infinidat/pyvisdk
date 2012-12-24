@@ -12,11 +12,8 @@ def AnswerFile(vim, *args, **kwargs):
     '''The AnswerFile data object contains host-specific information that a host will
     use in combination with a HostProfile for configuration. Answer files are
     stored on the vCenter Server, along with host profiles. An answer file is
-    always associated with a particular host.To supply host-specific data:* Specify
-    deferred parameters when you call the HostProfile.ExecuteHostProfile method.
-    The host profile engine will verify the set of parameters for the additional
-    configuration data.'''
-    
+    always associated with a particular host.To supply host-specific data:'''
+
     obj = vim.client.factory.create('{urn:vim25}AnswerFile')
 
     # do some validation checking...
@@ -36,4 +33,3 @@ def AnswerFile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

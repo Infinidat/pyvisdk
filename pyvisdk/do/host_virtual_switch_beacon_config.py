@@ -17,7 +17,7 @@ def HostVirtualSwitchBeaconConfig(vim, *args, **kwargs):
     status of a physical network adapter. Beacon probing must be configured in
     order to use the beacon status as a criteria to determine if a physical network
     adapter failed.See checkBeacon'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchBeaconConfig')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def HostVirtualSwitchBeaconConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

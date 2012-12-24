@@ -13,8 +13,8 @@ def DynamicArray(vim, *args, **kwargs):
     typed objects. A client should only see a DynamicArray object when the element
     type is unknown (meaning the type is newer than the client). Otherwise, a
     client would see the type as T[] where T is known.'''
-    
-    obj = vim.client.factory.create('{urn:sms}DynamicArray')
+
+    obj = vim.client.factory.create('{urn:vim25}DynamicArray')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:
@@ -33,4 +33,3 @@ def DynamicArray(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtSolutionManagerInfoTabInfo(vim, *args, **kwargs):
     '''This data object contains information about a tab to show in the Solution
     Manager for this extension.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtSolutionManagerInfoTabInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ExtSolutionManagerInfoTabInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

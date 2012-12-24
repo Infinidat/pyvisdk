@@ -13,7 +13,7 @@ def HostVmfsRescanResult(vim, *args, **kwargs):
     we resignature and auto-mount on the other hosts which share the same
     underlying storage luns. As part of the operation, we rescan host. This data
     object describes the outcome of rescan operation on a host'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVmfsRescanResult')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostVmfsRescanResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

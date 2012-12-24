@@ -12,7 +12,7 @@ def PodStorageDrsEntry(vim, *args, **kwargs):
     '''An entry containing storage DRS configuration, runtime results, and history for
     a pod StoragePod.NOTE: This data object type and all of its methods are
     experimental and subject to change in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PodStorageDrsEntry')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PodStorageDrsEntry(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

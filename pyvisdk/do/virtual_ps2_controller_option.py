@@ -13,7 +13,7 @@ def VirtualPS2ControllerOption(vim, *args, **kwargs):
     virtual PS/2 controller for keyboards and mice. In addition to the options
     defined in the VirtualControllerOption data object type, these options include
     the number of keyboards and mice.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPS2ControllerOption')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def VirtualPS2ControllerOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

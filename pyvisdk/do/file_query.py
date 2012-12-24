@@ -13,7 +13,7 @@ def FileQuery(vim, *args, **kwargs):
     query filters and details that apply to every file. Querying only file details
     generally does not require opening files and so is an efficient query. Derived
     types add query parameters specific to the type of file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FileQuery')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def FileQuery(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

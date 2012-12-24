@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchInfo(vim, *args, **kwargs):
     '''This class describes a DistributedVirtualSwitch that a device backing can
     attached to its ports.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DiagnosticManagerBundleInfo(vim, *args, **kwargs):
     '''Describes a location of a diagnostic bundle and the server to which it belongs.
     This is a return type for the generateLogBundles operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DiagnosticManagerBundleInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DiagnosticManagerBundleInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

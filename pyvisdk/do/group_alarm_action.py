@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GroupAlarmAction(vim, *args, **kwargs):
     '''This data object type describes a group of actions that occur when the alarm is
     triggered. These actions are not necessarily executed in order.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GroupAlarmAction')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def GroupAlarmAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

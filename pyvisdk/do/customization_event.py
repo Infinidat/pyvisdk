@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationEvent(vim, *args, **kwargs):
     '''Base for customization events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def CustomizationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

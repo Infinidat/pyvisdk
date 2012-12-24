@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NASDatastoreCreatedEvent(vim, *args, **kwargs):
     '''This event records when a NAS datastore is created.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NASDatastoreCreatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NASDatastoreCreatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

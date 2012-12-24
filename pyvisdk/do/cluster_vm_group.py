@@ -15,7 +15,7 @@ def ClusterVmGroup(vim, *args, **kwargs):
     machines can be powered-on.If a virtual machine is removed from the cluster, it
     loses its DRS group affiliation. The Server does not restore any group
     affiliations if the virtual machine is returned to the cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterVmGroup')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def ClusterVmGroup(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

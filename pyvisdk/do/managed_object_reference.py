@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ManagedObjectReference(vim, *args, **kwargs):
     '''This class is used to refer to a server-side Managed Object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ManagedObjectReference')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ManagedObjectReference(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

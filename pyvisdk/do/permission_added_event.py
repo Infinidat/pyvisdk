@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PermissionAddedEvent(vim, *args, **kwargs):
     '''This event records the creation of a permission.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PermissionAddedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PermissionAddedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

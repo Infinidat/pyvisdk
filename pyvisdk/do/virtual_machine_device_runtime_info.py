@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineDeviceRuntimeInfo(vim, *args, **kwargs):
     '''The DeviceRuntimeInfo data object type provides information about the execution
     state of a single virtual device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineDeviceRuntimeInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineDeviceRuntimeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

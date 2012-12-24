@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VMwareIpfixConfig(vim, *args, **kwargs):
     '''Configuration for ipfix monitoring of the switch traffic.See ipfixEnabled'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareIpfixConfig')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VMwareIpfixConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

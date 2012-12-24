@@ -12,7 +12,7 @@ def HostDiskPartitionSpec(vim, *args, **kwargs):
     '''This data object type describes the disk partition table specification used to
     configure the partitions on a disk. This data object represents the fundamental
     data needed to specify a partition table.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostDiskPartitionSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

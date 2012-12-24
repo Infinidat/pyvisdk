@@ -12,7 +12,7 @@ def HostFibreChannelOverEthernetHbaLinkInfo(vim, *args, **kwargs):
     '''Represents FCoE link information. The link information represents a VNPort to
     VFPort Virtual Link, as described in the FC-BB-5 standard, with the addition of
     the VLAN ID over which a link exists.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFibreChannelOverEthernetHbaLinkInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostFibreChannelOverEthernetHbaLinkInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

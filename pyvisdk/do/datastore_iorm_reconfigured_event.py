@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreIORMReconfiguredEvent(vim, *args, **kwargs):
     '''This event records that the configuration of storage I/O resource management
     for a datastore has changed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreIORMReconfiguredEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DatastoreIORMReconfiguredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

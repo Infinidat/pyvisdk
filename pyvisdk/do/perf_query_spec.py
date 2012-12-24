@@ -10,15 +10,8 @@ log = logging.getLogger(__name__)
 
 def PerfQuerySpec(vim, *args, **kwargs):
     '''This data object specifies the query parameters, including the managed object
-    reference to the target entity for statistics retrieval.* If the optional
-    intervalId is omitted, the metrics are returned in their originally sampled
-    interval. * When an intervalId is specified, the server tries to summarize the
-    information for the specified intervalId. However, if that interval does not
-    exist or has no data, the server summarizes the information using the best
-    interval available. * If the range between startTime and endTime crosses
-    multiple sample interval periods, the result contains data from the longest
-    interval in the period.'''
-    
+    reference to the target entity for statistics retrieval.'''
+
     obj = vim.client.factory.create('{urn:vim25}PerfQuerySpec')
 
     # do some validation checking...
@@ -39,4 +32,3 @@ def PerfQuerySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

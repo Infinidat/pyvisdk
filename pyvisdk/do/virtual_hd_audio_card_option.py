@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualHdAudioCardOption(vim, *args, **kwargs):
     '''The VirtualHdAudioCardOption data object type contains the options for a
     virtual HD Audio sound card.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualHdAudioCardOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualHdAudioCardOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

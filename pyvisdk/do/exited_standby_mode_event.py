@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ExitedStandbyModeEvent(vim, *args, **kwargs):
     '''This event records that the host is no longer in standby mode.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExitedStandbyModeEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ExitedStandbyModeEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

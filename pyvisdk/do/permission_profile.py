@@ -12,7 +12,7 @@ def PermissionProfile(vim, *args, **kwargs):
     '''The PermissionProfile data object represents the profile for a permission rule.
     Use the policy list for access to configuration data for the permission
     profile. Use the property list for access to subprofiles, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PermissionProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def PermissionProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

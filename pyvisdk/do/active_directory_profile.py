@@ -13,7 +13,7 @@ def ActiveDirectoryProfile(vim, *args, **kwargs):
     configuration. Use the policy list for access to configuration data for the
     Active Directory profile. Use the property list for access to subprofiles, if
     any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ActiveDirectoryProfile')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ActiveDirectoryProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

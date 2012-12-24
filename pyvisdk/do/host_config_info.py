@@ -13,7 +13,7 @@ def HostConfigInfo(vim, *args, **kwargs):
     information that is useful for displaying and configuring a host.VirtualCenter
     can retrieve this set of information very efficiently even for a large set of
     hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConfigInfo')
 
     # do some validation checking...
@@ -42,4 +42,3 @@ def HostConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -22,7 +22,7 @@ def VirtualUSBController(vim, *args, **kwargs):
     connected devices, the additional devices will not be available to virtual
     machines on the host.You must remove all USB devices from a virtual machine
     before you can remove the USB controller.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualUSBController')
 
     # do some validation checking...
@@ -43,4 +43,3 @@ def VirtualUSBController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostSnmpConfigSpec(vim, *args, **kwargs):
     ''''''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSnmpConfigSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostSnmpConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

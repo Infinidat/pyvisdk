@@ -12,7 +12,7 @@ def HostFibreChannelOverEthernetHba(vim, *args, **kwargs):
     '''This data object type describes the FCoE host bus adapter interface.
     Terminology is borrowed from T11's working draft of the Fibre Channel Backbone
     5 standard (FC-BB-5). The draft can be found at http://www.t11.org.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFibreChannelOverEthernetHba')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostFibreChannelOverEthernetHba(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

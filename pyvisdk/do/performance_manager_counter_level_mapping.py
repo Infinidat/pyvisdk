@@ -19,7 +19,7 @@ def PerformanceManagerCounterLevelMapping(vim, *args, **kwargs):
     counters we have two optional level fields.
     PerformanceManagerCounterLevelMapping is used to update the levels for a
     counter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerformanceManagerCounterLevelMapping')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def PerformanceManagerCounterLevelMapping(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

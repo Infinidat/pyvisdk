@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DistributedVirtualSwitchPortStatistics(vim, *args, **kwargs):
     '''Statistic data of a DistributedVirtualPort.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchPortStatistics')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DistributedVirtualSwitchPortStatistics(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

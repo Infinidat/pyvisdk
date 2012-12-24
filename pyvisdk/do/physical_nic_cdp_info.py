@@ -16,7 +16,7 @@ def PhysicalNicCdpInfo(vim, *args, **kwargs):
     information about the switch or host along with some port information. The CDP
     information allows ESX Server admins to know which Cisco switch port is
     connected to any given virtual switch uplink (PNIC).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicCdpInfo')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def PhysicalNicCdpInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

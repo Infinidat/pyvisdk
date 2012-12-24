@@ -12,7 +12,7 @@ def HostMultipathInfoLogicalUnitPolicy(vim, *args, **kwargs):
     '''The HostMultipathInfoLogicalUnitPolicy data object describes a path selection
     policy for a device. This policy determines how paths should be utilized when
     accessing a device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnitPolicy')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostMultipathInfoLogicalUnitPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualPCIPassthrough(vim, *args, **kwargs):
     '''The VirtualPCIPassthrough data object type contains information about a PCI
     device on the virtual machine that is being backed by a generic PCI device on
     the host via passthrough.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPCIPassthrough')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualPCIPassthrough(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

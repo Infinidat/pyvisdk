@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualKeyboard(vim, *args, **kwargs):
     '''This data object type contains information about the keyboard on a virtual
     machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualKeyboard')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualKeyboard(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

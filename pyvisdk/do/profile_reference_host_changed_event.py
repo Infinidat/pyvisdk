@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileReferenceHostChangedEvent(vim, *args, **kwargs):
     '''This event records that the reference host associated with this profile has
     changed'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileReferenceHostChangedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ProfileReferenceHostChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

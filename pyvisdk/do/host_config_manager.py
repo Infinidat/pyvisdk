@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConfigManager(vim, *args, **kwargs):
     '''This data object type describes the configuration of a host across products and
     versions.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConfigManager')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def HostConfigManager(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostInternetScsiHba(vim, *args, **kwargs):
     '''This data object type describes the iSCSI host bus adapter interface.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHba')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def HostInternetScsiHba(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

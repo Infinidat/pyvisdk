@@ -13,7 +13,7 @@ def HostPortGroupPort(vim, *args, **kwargs):
     between a network service or virtual machine and a virtual switch. This is
     different from a port group in that the port group represents the configuration
     aspects of the network connection. The Port object provides runtime statistics.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPortGroupPort')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostPortGroupPort(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineRuntimeInfoDasProtectionState(vim, *args, **kwargs):
     '''The DasProtectionState object describes the vSphere HA protection state of a
     virtual machine (VM).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineRuntimeInfoDasProtectionState')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineRuntimeInfoDasProtectionState(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

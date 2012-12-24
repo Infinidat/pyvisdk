@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AutoStartDefaults(vim, *args, **kwargs):
     '''Defines the system default auto-start/auto-stop values.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AutoStartDefaults')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AutoStartDefaults(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def MissingProperty(vim, *args, **kwargs):
     '''Used for reporting properties for which values could not be retrieved.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MissingProperty')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def MissingProperty(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def OptionType(vim, *args, **kwargs):
     '''The base data object type for all options.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OptionType')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def OptionType(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

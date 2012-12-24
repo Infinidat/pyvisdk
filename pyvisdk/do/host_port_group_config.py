@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPortGroupConfig(vim, *args, **kwargs):
     '''This describes the port group configuration containing both the configurable
     properties on a port group and the associated virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPortGroupConfig')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPortGroupConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

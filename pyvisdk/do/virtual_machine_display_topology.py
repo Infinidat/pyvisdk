@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineDisplayTopology(vim, *args, **kwargs):
     '''This data object defines a two-dimensional, rectangular display area.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineDisplayTopology')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachineDisplayTopology(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

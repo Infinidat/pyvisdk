@@ -17,7 +17,7 @@ def ResourcePoolQuickStats(vim, *args, **kwargs):
     reasons. Therefore, changes in QuickStats do not generate property collector
     updates. To monitor statistics values, use the statistics and alarms modules
     instead.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolQuickStats')
 
     # do some validation checking...
@@ -41,4 +41,3 @@ def ResourcePoolQuickStats(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

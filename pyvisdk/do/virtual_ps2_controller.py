@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualPS2Controller(vim, *args, **kwargs):
     '''The VirtualPS2Controller data object type represents a controller for keyboards
     and mice.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPS2Controller')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualPS2Controller(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

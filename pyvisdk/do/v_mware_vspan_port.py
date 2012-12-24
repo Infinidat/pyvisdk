@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMwareVspanPort(vim, *args, **kwargs):
     '''This class defines the ports participating in a Distributed Port Mirroring
     session. See VspanSession.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareVspanPort')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VMwareVspanPort(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

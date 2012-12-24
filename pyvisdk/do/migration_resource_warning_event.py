@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def MigrationResourceWarningEvent(vim, *args, **kwargs):
     '''A migration warning that includes both the destination host and resource pool.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MigrationResourceWarningEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def MigrationResourceWarningEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -14,7 +14,7 @@ def FileInfo(vim, *args, **kwargs):
     traditional file systems, but rather to provide sufficient information for
     files that are associated with virtual machines. Derived types describe the
     known file types for a datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FileInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def FileInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

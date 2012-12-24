@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSIOController(vim, *args, **kwargs):
     '''This data object type defines a Super IO Controller for floppy drives, parallel
     ports, and serial ports.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSIOController')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualSIOController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

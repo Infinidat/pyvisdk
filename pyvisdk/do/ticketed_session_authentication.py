@@ -17,7 +17,7 @@ def TicketedSessionAuthentication(vim, *args, **kwargs):
     function call.When you no longer need the TicketedSessionAuthentication object,
     you should call ReleaseCredentialsInGuest to free associated resources and
     session data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TicketedSessionAuthentication')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def TicketedSessionAuthentication(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

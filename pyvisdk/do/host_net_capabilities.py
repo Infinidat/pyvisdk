@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostNetCapabilities(vim, *args, **kwargs):
     '''Capability vector indicating the available product features.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNetCapabilities')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostNetCapabilities(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

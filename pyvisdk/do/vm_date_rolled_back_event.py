@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmDateRolledBackEvent(vim, *args, **kwargs):
     '''This event records when the VirtualCenter server date rolled back.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDateRolledBackEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmDateRolledBackEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

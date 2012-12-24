@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MissingObject(vim, *args, **kwargs):
     '''Used for reporting missing objects that were explicitly referenced by a filter
     spec. In other words, any of the objects referenced in objectSet'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MissingObject')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def MissingObject(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

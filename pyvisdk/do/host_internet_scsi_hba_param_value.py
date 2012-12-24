@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostInternetScsiHbaParamValue(vim, *args, **kwargs):
     '''Describes the the value of an iSCSI parameter, and whether the value is being
     inherited.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaParamValue')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostInternetScsiHbaParamValue(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

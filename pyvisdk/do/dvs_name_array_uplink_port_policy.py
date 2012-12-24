@@ -19,7 +19,7 @@ def DVSNameArrayUplinkPortPolicy(vim, *args, **kwargs):
     Decreasing beyond the number of unused uplink port raises a fault.This policy
     overrides the portgroup's port naming format, if both are defined and the
     uplink ports are created in a uplink portgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSNameArrayUplinkPortPolicy')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def DVSNameArrayUplinkPortPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

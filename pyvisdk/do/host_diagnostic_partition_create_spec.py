@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDiagnosticPartitionCreateSpec(vim, *args, **kwargs):
     '''The diagnostic create specification is used by the system to create a new
     diagnostic partition on a SCSI disk.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartitionCreateSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDiagnosticPartitionCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

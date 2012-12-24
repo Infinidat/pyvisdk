@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualCdrom(vim, *args, **kwargs):
     '''The VirtualCdrom data object type describes the configuration of a CD-ROM
     device in a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualCdrom')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualCdrom(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

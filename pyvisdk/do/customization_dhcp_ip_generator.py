@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationDhcpIpGenerator(vim, *args, **kwargs):
     '''Use a DHCP server to configure the virtual network adapter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationDhcpIpGenerator')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationDhcpIpGenerator(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

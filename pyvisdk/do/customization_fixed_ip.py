@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationFixedIp(vim, *args, **kwargs):
     '''Use a static IP Address for the virtual network adapter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationFixedIp')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationFixedIp(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

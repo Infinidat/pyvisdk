@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmPoweringOnWithCustomizedDVPortEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine was powering on using DVPorts with
     port level configuration, which might be different from the DVportgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmPoweringOnWithCustomizedDVPortEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmPoweringOnWithCustomizedDVPortEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

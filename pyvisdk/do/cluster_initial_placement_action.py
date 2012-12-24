@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterInitialPlacementAction(vim, *args, **kwargs):
     '''Describes an initial placement of a single virtual machine'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterInitialPlacementAction')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterInitialPlacementAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

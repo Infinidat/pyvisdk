@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostSystemInfo(vim, *args, **kwargs):
     '''Information about the system as a whole.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSystemInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostSystemInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def StoragePodSummary(vim, *args, **kwargs):
     '''The StoragePodSummary data object encapsulates runtime properties of a
     StoragePod.NOTE: This data object type and all of its methods are experimental
     and subject to change in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StoragePodSummary')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def StoragePodSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

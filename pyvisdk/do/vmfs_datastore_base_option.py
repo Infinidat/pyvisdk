@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmfsDatastoreBaseOption(vim, *args, **kwargs):
     '''Base class that describes a VMFS datastore provisioning option.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreBaseOption')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VmfsDatastoreBaseOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

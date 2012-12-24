@@ -13,7 +13,7 @@ def PhysicalNicLinkInfo(vim, *args, **kwargs):
     duplex communication. The link speed indicates the bit rate in megabits per
     second. The duplex boolean indicates if the link is capable of full-duplex or
     half-duplex communication.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicLinkInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def PhysicalNicLinkInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

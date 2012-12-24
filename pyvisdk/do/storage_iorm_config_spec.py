@@ -12,7 +12,7 @@ def StorageIORMConfigSpec(vim, *args, **kwargs):
     '''Configuration settings used for creating or reconfiguring storage I/O resource
     management.All fields are defined as optional. If a field is unset, the
     property is not changed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageIORMConfigSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def StorageIORMConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def HostDatastoreBrowserSearchResults(vim, *args, **kwargs):
     '''This data object type contains the results of a search method for one
     datastore. A search method typically returns a set of these objects as an
     array.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDatastoreBrowserSearchResults')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostDatastoreBrowserSearchResults(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

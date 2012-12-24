@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineTargetInfo(vim, *args, **kwargs):
     '''The TargetInfo specified a value that can be used in the device backings to
     connect the virtual machine to a physical (or logical) host device.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineTargetInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineTargetInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPortGroupSpec(vim, *args, **kwargs):
     '''This data object type describes the PortGroup specification representing the
     properties on a PortGroup that can be configured.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPortGroupSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPortGroupSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

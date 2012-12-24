@@ -32,7 +32,7 @@ def SSPIAuthentication(vim, *args, **kwargs):
     programs will be unable to use WMI functions unless the "Remote Enable"
     privilege is enabled for the user. Similarly, access to network resources may
     fail due to the limitations of the token.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SSPIAuthentication')
 
     # do some validation checking...
@@ -52,4 +52,3 @@ def SSPIAuthentication(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

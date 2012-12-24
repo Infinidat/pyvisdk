@@ -21,12 +21,10 @@ def VirtualSerialPortURIBackingInfo(vim, *args, **kwargs):
     machine initiates the connection with the concentrator and forwards the and to
     the concentrator. For information about using a virtual serial port
     concentrator, see .ESX hosts support different protocols depending on your
-    virtual serial port configuration.* If the virtual machine is handling the
-    network connection directly (no specified), you can use telnet, TCP, and SSL
-    protocols. The must use one of the following URI schemes:You cannot specify a
-    username and password in the proxy URI. Any text following the port
-    specification is ignored.For information about URI format, see .'''
-    
+    virtual serial port configuration.You cannot specify a username and password in
+    the proxy URI. Any text following the port specification is ignored.For
+    information about URI format, see .'''
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortURIBackingInfo')
 
     # do some validation checking...
@@ -46,4 +44,3 @@ def VirtualSerialPortURIBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

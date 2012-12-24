@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostExtraNetworksEvent(vim, *args, **kwargs):
     '''This event records the fact that a host has extra networks not used by other
     hosts for HA communication'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostExtraNetworksEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostExtraNetworksEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

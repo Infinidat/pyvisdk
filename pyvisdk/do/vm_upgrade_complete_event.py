@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmUpgradeCompleteEvent(vim, *args, **kwargs):
     '''This event records the successful completion of an upgrade operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmUpgradeCompleteEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmUpgradeCompleteEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

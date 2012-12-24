@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DasAgentFoundEvent(vim, *args, **kwargs):
     '''This event records that VirtualCenter has re-established contact with a primary
     host in this HA cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasAgentFoundEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DasAgentFoundEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

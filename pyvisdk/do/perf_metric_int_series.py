@@ -12,7 +12,7 @@ def PerfMetricIntSeries(vim, *args, **kwargs):
     '''This data object type describes integer metric values. The size of the array
     must match the size of sampleInfo property in the PerfEntityMetric that
     contains this series.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfMetricIntSeries')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PerfMetricIntSeries(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

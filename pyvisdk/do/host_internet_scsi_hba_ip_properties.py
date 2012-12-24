@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostInternetScsiHbaIPProperties(vim, *args, **kwargs):
     '''The IP properties for the host bus adapter'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaIPProperties')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostInternetScsiHbaIPProperties(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

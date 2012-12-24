@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ComputeResourceEventArgument(vim, *args, **kwargs):
     '''The event argument is a ComputeResource object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ComputeResourceEventArgument')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ComputeResourceEventArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

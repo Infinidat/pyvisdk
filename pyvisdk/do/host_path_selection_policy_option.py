@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPathSelectionPolicyOption(vim, *args, **kwargs):
     '''Description of options associated with a native multipathing path selection
     policy plugin.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPathSelectionPolicyOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPathSelectionPolicyOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

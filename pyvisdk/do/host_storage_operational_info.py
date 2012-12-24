@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostStorageOperationalInfo(vim, *args, **kwargs):
     '''Data class describing operational information of a storage element'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostStorageOperationalInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostStorageOperationalInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterOvercommittedEvent(vim, *args, **kwargs):
     '''This event records when a cluster's host capacity cannot satisfy resource
     configuration constraints.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterOvercommittedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ClusterOvercommittedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

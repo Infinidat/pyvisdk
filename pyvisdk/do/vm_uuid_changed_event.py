@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmUuidChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a virtual machine's BIOS UUID.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmUuidChangedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmUuidChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

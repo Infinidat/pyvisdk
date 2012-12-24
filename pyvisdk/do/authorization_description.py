@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AuthorizationDescription(vim, *args, **kwargs):
     '''Static strings for authorization.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AuthorizationDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def AuthorizationDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

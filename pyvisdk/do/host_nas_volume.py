@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostNasVolume(vim, *args, **kwargs):
     '''This data object type describes the NAS volume. Applies to both NFS and CIFS.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNasVolume')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostNasVolume(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

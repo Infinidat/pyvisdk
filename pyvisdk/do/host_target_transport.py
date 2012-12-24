@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostTargetTransport(vim, *args, **kwargs):
     '''Transport information about a SCSI target.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostTargetTransport')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostTargetTransport(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

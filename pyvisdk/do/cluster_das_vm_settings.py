@@ -18,7 +18,7 @@ def ClusterDasVmSettings(vim, *args, **kwargs):
     configuration on the Server. If you set the parameter to when you reconfigure a
     cluster, the cluster configuration is reverted to the default values, then the
     new configuration values are applied.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasVmSettings')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def ClusterDasVmSettings(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -13,7 +13,7 @@ def NasStorageProfile(vim, *args, **kwargs):
     Use the policy list for access to configuration data for the NAS storage
     profile. Use the property list for access to subprofile configuration data, if
     any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NasStorageProfile')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def NasStorageProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

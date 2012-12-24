@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostCacheConfigurationInfo(vim, *args, **kwargs):
     '''Host solid state drive cache configuration information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostCacheConfigurationInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostCacheConfigurationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

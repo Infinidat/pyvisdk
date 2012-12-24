@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationIpV6Generator(vim, *args, **kwargs):
     '''Base type for the various IpV6 specification possibilities'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationIpV6Generator')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationIpV6Generator(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

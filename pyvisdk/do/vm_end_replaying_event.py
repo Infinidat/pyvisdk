@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmEndReplayingEvent(vim, *args, **kwargs):
     '''This event indicates the end of a replay session on a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmEndReplayingEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmEndReplayingEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

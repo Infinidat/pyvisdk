@@ -13,7 +13,7 @@ def VirtualUSBUSBBackingOption(vim, *args, **kwargs):
     backing for a USB device. This backing option indicates support for a local
     connection where the virtual machine will remain on the host to which the USB
     device is attached.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualUSBUSBBackingOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualUSBUSBBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

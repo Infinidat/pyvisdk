@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def GuestPosixFileAttributes(vim, *args, **kwargs):
     '''Different attributes for Posix guest file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GuestPosixFileAttributes')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def GuestPosixFileAttributes(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

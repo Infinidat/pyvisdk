@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LinkDiscoveryProtocolConfig(vim, *args, **kwargs):
     '''Dataobject representing the link discovery protocol configuration for a virtual
     or distributed virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LinkDiscoveryProtocolConfig')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LinkDiscoveryProtocolConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVSContactInfo(vim, *args, **kwargs):
     '''Contact information of a human operator.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSContactInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DVSContactInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

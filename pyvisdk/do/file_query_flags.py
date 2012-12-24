@@ -13,7 +13,7 @@ def FileQueryFlags(vim, *args, **kwargs):
     This search request specifies which details to return for each matching file.
     This data object type is here to ensure that there is one flag corresponding to
     each FileInfo property other than the path name, which a search always returns.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FileQueryFlags')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def FileQueryFlags(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

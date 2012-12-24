@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterDestroyedEvent(vim, *args, **kwargs):
     '''This event records when a cluster is destroyed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDestroyedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDestroyedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostDasEvent(vim, *args, **kwargs):
     '''Top-level event for host DAS events to extend.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDasEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostDasEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

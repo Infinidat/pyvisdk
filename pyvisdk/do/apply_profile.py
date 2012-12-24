@@ -12,7 +12,7 @@ def ApplyProfile(vim, *args, **kwargs):
     '''The ApplyProfile data object is the base class for all data objects that define
     profile configuration data. defines ESX configuration data storage and it
     supports recursive profile definition for the profile plug-in architecture.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ApplyProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ApplyProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

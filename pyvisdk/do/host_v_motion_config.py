@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVMotionConfig(vim, *args, **kwargs):
     '''This data object configuring VMotion on the host. The runtime information is
     available from the VMotionInfo data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVMotionConfig')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVMotionConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -13,7 +13,7 @@ def VirtualMachineQuickStats(vim, *args, **kwargs):
     This data object type does not support notification, for scalability reasons.
     Therefore, changes in QuickStats do not generate property collector updates. To
     monitor statistics values, use the statistics and alarms modules instead.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineQuickStats')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def VirtualMachineQuickStats(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

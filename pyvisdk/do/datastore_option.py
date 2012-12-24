@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreOption(vim, *args, **kwargs):
     '''The DatastoreOption data object describes datastore options for a virtual
     machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DatastoreOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def QuerySpec(vim, *args, **kwargs):
     '''Specification of constraints to be applied on the result set of a query.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}QuerySpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def QuerySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

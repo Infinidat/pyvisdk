@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AccountRemovedEvent(vim, *args, **kwargs):
     '''This event records that an account was removed from a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AccountRemovedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AccountRemovedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

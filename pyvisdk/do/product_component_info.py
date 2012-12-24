@@ -15,7 +15,7 @@ def ProductComponentInfo(vim, *args, **kwargs):
     product, for usability or any other reason, bundles other products,
     ProductComponentInfo type may be used to describe installed components. For
     example, ESX product may bundle VI Client in its releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProductComponentInfo')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def ProductComponentInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

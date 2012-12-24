@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsPortUnblockedEvent(vim, *args, **kwargs):
     '''A port is blocked in the distributed virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsPortUnblockedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsPortUnblockedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

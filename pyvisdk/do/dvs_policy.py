@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVSPolicy(vim, *args, **kwargs):
     '''The switch usage policy types'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSPolicy')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DVSPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

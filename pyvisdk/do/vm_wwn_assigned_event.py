@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmWwnAssignedEvent(vim, *args, **kwargs):
     '''This event records the assignment of a new WWN (World Wide Name) to a virtual
     machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmWwnAssignedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmWwnAssignedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

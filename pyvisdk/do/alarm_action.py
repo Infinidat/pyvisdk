@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AlarmAction(vim, *args, **kwargs):
     '''Action invoked by triggered alarm.This is an abstract type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmAction')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def AlarmAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

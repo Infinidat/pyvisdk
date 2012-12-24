@@ -12,7 +12,7 @@ def CustomizationGlobalIPSettings(vim, *args, **kwargs):
     '''A collection of global IP settings for a virtual network adapter. In Linux, DNS
     server settings are global. The settings can either be statically set or
     supplied by a DHCP server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationGlobalIPSettings')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def CustomizationGlobalIPSettings(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

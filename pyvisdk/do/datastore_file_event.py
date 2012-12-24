@@ -12,7 +12,7 @@ def DatastoreFileEvent(vim, *args, **kwargs):
     '''Base class for events related to datastore file and directory
     operations.Property inherited from DatastoreEvent refers to the destination
     datastore in case there is more than datastore involved in the operation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreFileEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DatastoreFileEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

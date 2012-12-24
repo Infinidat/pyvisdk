@@ -19,7 +19,7 @@ def VMwareVspanSession(vim, *args, **kwargs):
     different Distributed Port Mirroring session is permitted but overlapping
     destination ports among different Distributed Port Mirroring session is not
     permitted.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareVspanSession')
 
     # do some validation checking...
@@ -41,4 +41,3 @@ def VMwareVspanSession(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

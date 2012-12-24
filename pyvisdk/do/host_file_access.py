@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFileAccess(vim, *args, **kwargs):
     '''This data object type contains a single access control entry for a file
     permissions list.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFileAccess')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostFileAccess(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

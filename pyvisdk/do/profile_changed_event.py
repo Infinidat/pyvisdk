@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileChangedEvent(vim, *args, **kwargs):
     '''This event records that the profile has beed edited'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileChangedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

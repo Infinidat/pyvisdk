@@ -13,7 +13,7 @@ def CompositePolicyOption(vim, *args, **kwargs):
     different PolicyOptions. The options set in the CompositePolicyOption should be
     derived from the possible options as indicated by the
     CompositePolicyOptionMetadata.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CompositePolicyOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def CompositePolicyOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

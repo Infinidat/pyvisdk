@@ -91,12 +91,17 @@ ManagedObjectTypes = Enum(
     "SearchIndex",
     "ServiceInstance",
     "SessionManager",
+    "SmsProvider",
+    "SmsServiceInstance",
+    "SmsStorageManager",
+    "SmsTask",
     "StoragePod",
     "StorageResourceManager",
     "Task",
     "TaskHistoryCollector",
     "TaskManager",
     "UserDirectory",
+    "VasaProvider",
     "View",
     "ViewManager",
     "VirtualApp",
@@ -106,10 +111,6 @@ ManagedObjectTypes = Enum(
     "VirtualMachineProvisioningChecker",
     "VirtualMachineSnapshot",
     "VirtualizationManager",
-    "VmwareDistributedVirtualSwitch",
-    "SmsProvider",
-    "SmsServiceInstance",
-    "SmsStorageManager",
-    "SmsTask",
-    "VasaProvider"
+    "VmwareDistributedVirtualSwitch"
 )
+

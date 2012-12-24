@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFaultToleranceTurnedOffEvent(vim, *args, **kwargs):
     '''This event records that all secondary virtual machines have been removed and
     fault tolerance protection turned off for this virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceTurnedOffEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmFaultToleranceTurnedOffEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

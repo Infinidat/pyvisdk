@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AndAlarmExpression(vim, *args, **kwargs):
     '''A data object type that links multiple alarm expressions with AND operators.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AndAlarmExpression')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def AndAlarmExpression(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

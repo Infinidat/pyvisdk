@@ -20,7 +20,7 @@ def ClusterFailoverHostAdmissionControlPolicy(vim, *args, **kwargs):
     does not use the failover host for load balancing.To obtain the status of a
     failover host, use the hostStatus property
     (ClusterComputeResourceSummary.admissionControlInfo.hostStatus).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterFailoverHostAdmissionControlPolicy')
 
     # do some validation checking...
@@ -40,4 +40,3 @@ def ClusterFailoverHostAdmissionControlPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

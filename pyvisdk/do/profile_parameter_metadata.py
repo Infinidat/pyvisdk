@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileParameterMetadata(vim, *args, **kwargs):
     '''The ProfileParameterMetadata data object represents the metadata information
     for expressions, policy options, and host-specific configuration data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileParameterMetadata')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ProfileParameterMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

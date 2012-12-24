@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostProductSpec(vim, *args, **kwargs):
     '''This data object type is a subset of AboutInfo. An object of this type can be
     used to describe the specification for a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostProductSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchHostProductSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

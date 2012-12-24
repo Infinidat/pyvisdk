@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def GuestAuthentication(vim, *args, **kwargs):
     '''GuestAuthentication is an abstract base class for authentication in the guest.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GuestAuthentication')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def GuestAuthentication(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

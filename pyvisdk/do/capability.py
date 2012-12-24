@@ -19,7 +19,7 @@ def Capability(vim, *args, **kwargs):
     NotSupported fault.Some capabilities depend on the host or virtual machine
     version. These are specified by using the vim.host.Capability and
     vim.vm.Capability objects.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}Capability')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def Capability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

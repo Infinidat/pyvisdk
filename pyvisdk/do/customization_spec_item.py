@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationSpecItem(vim, *args, **kwargs):
     '''Specification information and the Specification object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationSpecItem')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomizationSpecItem(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

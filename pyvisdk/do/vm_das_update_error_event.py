@@ -14,7 +14,7 @@ def VmDasUpdateErrorEvent(vim, *args, **kwargs):
     operation, the virtual machine will not be failed over in the event of a host
     failure. If it occurs during a powerOff, the virtual machine will be
     automatically powered on if the host it was last running on crashes.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDasUpdateErrorEvent')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VmDasUpdateErrorEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSerialPortURIBackingOption(vim, *args, **kwargs):
     '''The data object type contains the options for using a network socket as backing
     for a virtual serial port.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortURIBackingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualSerialPortURIBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

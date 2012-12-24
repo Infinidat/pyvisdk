@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineCapability(vim, *args, **kwargs):
     '''This data object type contains information about the operation/capabailities of
     a virtual machine'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineCapability')
 
     # do some validation checking...
@@ -45,4 +45,3 @@ def VirtualMachineCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

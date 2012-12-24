@@ -13,7 +13,7 @@ def VirtualDiskFlatVer1BackingInfo(vim, *args, **kwargs):
     using a virtual disk file on the host, in the flat file format used by GSX
     Server 2.x.Flat disks are allocated when created, unlike sparse disks, which
     grow as needed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskFlatVer1BackingInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualDiskFlatVer1BackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

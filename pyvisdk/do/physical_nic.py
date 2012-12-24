@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PhysicalNic(vim, *args, **kwargs):
     '''This data object type describes the physical network adapter as seen by the
     primary operating system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNic')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def PhysicalNic(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

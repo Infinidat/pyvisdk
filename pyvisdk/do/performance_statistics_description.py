@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PerformanceStatisticsDescription(vim, *args, **kwargs):
     '''Data object to capture all information needed to describe a sample inventory.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerformanceStatisticsDescription')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def PerformanceStatisticsDescription(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

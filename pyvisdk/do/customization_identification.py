@@ -14,7 +14,7 @@ def CustomizationIdentification(vim, *args, **kwargs):
     Identification key in the answer file. These values are transferred into the
     file that VirtualCenter stores on the target virtual disk. For more detailed
     information, see the document .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationIdentification')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def CustomizationIdentification(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

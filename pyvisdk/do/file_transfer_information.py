@@ -14,7 +14,7 @@ def FileTransferInformation(vim, *args, **kwargs):
     transfer the file from the guest. The user should send a HTTP GET request to
     the URL. Entire file content will be returned in the body of the response
     message.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FileTransferInformation')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def FileTransferInformation(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

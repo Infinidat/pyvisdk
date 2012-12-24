@@ -17,7 +17,7 @@ def NamePasswordAuthentication(vim, *args, **kwargs):
     use AcquireCredentialsInGuest or ReleaseCredentialsInGuest for
     NamePasswordAuthentication.Once populated, you can use
     NamePasswordAuthentication in any guest operations function call.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NamePasswordAuthentication')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def NamePasswordAuthentication(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

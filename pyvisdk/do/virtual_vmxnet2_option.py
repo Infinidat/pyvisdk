@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualVmxnet2Option(vim, *args, **kwargs):
     '''The VirtualVmxnet2Option data object type contains the options for the
     VirtualVmxnet2 data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualVmxnet2Option')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualVmxnet2Option(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

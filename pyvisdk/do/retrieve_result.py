@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def RetrieveResult(vim, *args, **kwargs):
     '''Result of RetrievePropertiesEx and ContinueRetrievePropertiesEx'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}RetrieveResult')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def RetrieveResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

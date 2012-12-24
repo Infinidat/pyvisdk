@@ -13,7 +13,7 @@ def VirtualMachineIdeDiskDeviceInfo(vim, *args, **kwargs):
     disk hardware device. These devices are for the
     vim.vm.device.VirtualDisk.RawDiskVer2BackingInfo and
     vim.vm.device.VirtualDisk.PartitionedRawDiskVer2BackingInfo backings.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineIdeDiskDeviceInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualMachineIdeDiskDeviceInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

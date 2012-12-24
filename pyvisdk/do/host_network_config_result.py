@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostNetworkConfigResult(vim, *args, **kwargs):
     '''The result returned by updateNetworkConfig call.See UpdateNetworkConfig'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNetworkConfigResult')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostNetworkConfigResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

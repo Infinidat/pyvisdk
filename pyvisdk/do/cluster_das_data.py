@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterDasData(vim, *args, **kwargs):
     '''Base class for DAS data for high availability service for a cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasData')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterDasData(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

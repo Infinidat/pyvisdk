@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def BoolPolicy(vim, *args, **kwargs):
     '''The boolean type of setting or configuration that may get an inherited value.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}BoolPolicy')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def BoolPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

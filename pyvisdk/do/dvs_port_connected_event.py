@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsPortConnectedEvent(vim, *args, **kwargs):
     '''A port is connected in the distributed virtual switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsPortConnectedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsPortConnectedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

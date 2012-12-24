@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VasaProviderSpec(vim, *args, **kwargs):
     '''VASA(vStorage APIs for Storage Awareness) provider specification'''
-    
+
     obj = vim.client.factory.create('{urn:sms}VasaProviderSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VasaProviderSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

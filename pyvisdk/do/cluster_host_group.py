@@ -13,7 +13,7 @@ def ClusterHostGroup(vim, *args, **kwargs):
     rules determine placement of virtual machines on hosts in a cluster. The logic
     specified in a ClusterVmHostRuleInfo object determines where virtual machines
     can be powered-on.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterHostGroup')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ClusterHostGroup(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

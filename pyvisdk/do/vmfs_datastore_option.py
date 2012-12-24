@@ -15,7 +15,7 @@ def VmfsDatastoreOption(vim, *args, **kwargs):
     disk. Each instance of this structure represents one of the possible options
     that can be applied to provisiong VMFS datastore storage. Only options that
     follow ESX Server best practice guidelines will be presented.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreOption')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VmfsDatastoreOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

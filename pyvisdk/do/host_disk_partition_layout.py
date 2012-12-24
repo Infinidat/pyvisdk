@@ -12,7 +12,7 @@ def HostDiskPartitionLayout(vim, *args, **kwargs):
     '''This data object type describes the disk partition layout specified as a list
     of ordered BlockRanges. This view of the disk partitions shows the data on the
     disk as a contiguous set of BlockRanges.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionLayout')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostDiskPartitionLayout(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

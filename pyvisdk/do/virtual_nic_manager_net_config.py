@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualNicManagerNetConfig(vim, *args, **kwargs):
     '''The NetConfig data object type contains the networking configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualNicManagerNetConfig')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualNicManagerNetConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

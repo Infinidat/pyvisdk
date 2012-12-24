@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostSnmpDestination(vim, *args, **kwargs):
     '''Defines a receiver for SNMP Notifications'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSnmpDestination')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostSnmpDestination(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

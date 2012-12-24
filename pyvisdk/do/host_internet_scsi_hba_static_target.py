@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostInternetScsiHbaStaticTarget(vim, *args, **kwargs):
     '''The iSCSI static target.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaStaticTarget')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostInternetScsiHbaStaticTarget(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

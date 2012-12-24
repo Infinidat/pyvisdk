@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterGroupSpec(vim, *args, **kwargs):
     '''An incremental update to the cluster-wide groups.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterGroupSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterGroupSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

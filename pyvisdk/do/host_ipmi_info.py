@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpmiInfo(vim, *args, **kwargs):
     '''The IpmiInfo data object contains IPMI (Intelligent Platform Management
     Interface) and BMC (Baseboard Management Controller) information for the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIpmiInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostIpmiInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

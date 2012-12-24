@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LocalLicenseSource(vim, *args, **kwargs):
     '''Specify license key data to store locally.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LocalLicenseSource')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def LocalLicenseSource(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

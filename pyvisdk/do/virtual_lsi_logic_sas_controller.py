@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualLsiLogicSASController(vim, *args, **kwargs):
     '''VirtualLsiLogicSASController is the data object that represents a LSI Logic SAS
     SCSI controller.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualLsiLogicSASController')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualLsiLogicSASController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

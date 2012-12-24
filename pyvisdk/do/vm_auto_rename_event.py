@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmAutoRenameEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine was automatically renamed because of
     a name conflict.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmAutoRenameEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmAutoRenameEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualDeviceConfigSpec(vim, *args, **kwargs):
     '''The VirtualDeviceSpec data object type encapsulates change specifications for
     an individual virtual device. The virtual device being added or modified must
     be fully specified.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceConfigSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualDeviceConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def StaticRouteProfile(vim, *args, **kwargs):
     '''The StaticRouteProfile data object represents a single static IP route. The
     policy property contains data values for static route configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StaticRouteProfile')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def StaticRouteProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

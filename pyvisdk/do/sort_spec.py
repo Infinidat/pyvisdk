@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def SortSpec(vim, *args, **kwargs):
     '''Specification of a single sort criterion to be applied on a query result set.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}SortSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def SortSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

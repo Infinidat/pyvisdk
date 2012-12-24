@@ -14,7 +14,7 @@ def CustomizationLicenseFilePrintData(vim, *args, **kwargs):
     stores on the target virtual disk. For more detailed information, see the
     document . LicenseFilePrintData provides licensing information for Windows
     server operating systems.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationLicenseFilePrintData')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def CustomizationLicenseFilePrintData(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

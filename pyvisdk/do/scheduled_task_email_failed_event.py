@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScheduledTaskEmailFailedEvent(vim, *args, **kwargs):
     '''This event records the failure of an attempt to send a notification via email
     for a scheduled task.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScheduledTaskEmailFailedEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def ScheduledTaskEmailFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

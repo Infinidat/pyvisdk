@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterActionHistory(vim, *args, **kwargs):
     '''Base class for all action history.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterActionHistory')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterActionHistory(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

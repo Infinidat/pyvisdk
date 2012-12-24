@@ -12,7 +12,7 @@ def ExtManagedEntityInfo(vim, *args, **kwargs):
     '''This data object contains information about entities managed by this extension.
     The data can be used by clients to show extra information about managed virtual
     machines or vApps, such as a custom icon and a description of the entity.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtManagedEntityInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ExtManagedEntityInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

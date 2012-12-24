@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEthernetCardDVPortBackingOption(vim, *args, **kwargs):
     '''This data object type contains the options for using a distributed virtual port
     virtual network card backing data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardDVPortBackingOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualEthernetCardDVPortBackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostProfileCompleteConfigSpec(vim, *args, **kwargs):
     '''The HostProfileCompleteConfigSpec data object specifies the complete
     configuration for a host profile.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostProfileCompleteConfigSpec')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostProfileCompleteConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

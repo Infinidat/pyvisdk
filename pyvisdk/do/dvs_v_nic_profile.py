@@ -12,7 +12,7 @@ def DvsVNicProfile(vim, *args, **kwargs):
     '''The DvsVNicProfile data object is the base object for host and service console
     Virtual NIC subprofiles. If a profile plug-in defines additional policies or
     subprofiles, use the policy or property list to access the configuration data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsVNicProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DvsVNicProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

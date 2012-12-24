@@ -13,7 +13,7 @@ def StoragePlacementAction(vim, *args, **kwargs):
     machine or a set of virtual disks on a datastore.NOTE: This data object type
     and all of its methods are experimental and subject to change in future
     releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StoragePlacementAction')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def StoragePlacementAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

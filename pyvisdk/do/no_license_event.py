@@ -12,7 +12,7 @@ def NoLicenseEvent(vim, *args, **kwargs):
     '''These are events reported by License Manager.A NoLicenseEvent is reported if
     the required licenses could not be reserved. Each feature that is not fully
     licensed is reported.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NoLicenseEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def NoLicenseEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

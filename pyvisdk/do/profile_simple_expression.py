@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileSimpleExpression(vim, *args, **kwargs):
     '''DataObject represents a pre-defined expression'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileSimpleExpression')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ProfileSimpleExpression(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

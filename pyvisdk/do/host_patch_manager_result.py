@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPatchManagerResult(vim, *args, **kwargs):
     '''The result of the operation. Some of the fields are only valid for specific
     operations.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPatchManagerResult')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPatchManagerResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

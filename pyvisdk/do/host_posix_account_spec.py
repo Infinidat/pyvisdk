@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPosixAccountSpec(vim, *args, **kwargs):
     '''This data object type contains a POSIX-specific parameter for local account
     creation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPosixAccountSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostPosixAccountSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

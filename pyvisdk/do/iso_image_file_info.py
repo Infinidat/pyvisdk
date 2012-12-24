@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def IsoImageFileInfo(vim, *args, **kwargs):
     '''This data object type describes a file that is an ISO CD-ROM image.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IsoImageFileInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def IsoImageFileInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

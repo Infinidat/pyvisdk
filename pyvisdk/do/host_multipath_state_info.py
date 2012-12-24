@@ -14,7 +14,7 @@ def HostMultipathStateInfo(vim, *args, **kwargs):
     path state information is encapsulated in this data object is because the path
     may actively change. This data object ensures that a request to gather path
     state changes only needs to fetch this data object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathStateInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def HostMultipathStateInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

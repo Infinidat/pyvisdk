@@ -13,7 +13,7 @@ def TaskFilterSpec(vim, *args, **kwargs):
     query tasks in the history collector database. The client creates a task
     history collector with a filter specification, then retrieves the tasks from
     the task history collector.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskFilterSpec')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def TaskFilterSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConfigSpec(vim, *args, **kwargs):
     '''The HostConfigSpec data object provides access to data objects that specify
     configuration changes to be applied to an ESX host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConfigSpec')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def HostConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

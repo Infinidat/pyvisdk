@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ExtendedEvent(vim, *args, **kwargs):
     '''This event is the base class for extended events.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtendedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ExtendedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

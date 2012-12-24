@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ServerLicenseExpiredEvent(vim, *args, **kwargs):
     '''This event records an expired VirtualCenter server license.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ServerLicenseExpiredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ServerLicenseExpiredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

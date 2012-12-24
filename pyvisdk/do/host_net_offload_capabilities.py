@@ -18,7 +18,7 @@ def HostNetOffloadCapabilities(vim, *args, **kwargs):
     built on a two-level inheritance scheme which requires that all settings be
     optional. As a result, all properties on the NetOffloadCapabilities object must
     be optional.See HostNetworkPolicy'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNetOffloadCapabilities')
 
     # do some validation checking...
@@ -39,4 +39,3 @@ def HostNetOffloadCapabilities(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

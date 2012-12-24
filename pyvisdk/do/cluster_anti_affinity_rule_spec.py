@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterAntiAffinityRuleSpec(vim, *args, **kwargs):
     '''The ClusterAntiAffinityRuleSpec data object defines a set of virtual machines.
     DRS will attempt to schedule the virtual machines to run on different hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterAntiAffinityRuleSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ClusterAntiAffinityRuleSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

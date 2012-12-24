@@ -12,7 +12,7 @@ def HostListSummary(vim, *args, **kwargs):
     '''This data object type encapsulates a typical set of host information that is
     useful for list views and summary pages.VirtualCenter can retrieve this
     information very efficiently, even for a large set of hosts.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostListSummary')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostListSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

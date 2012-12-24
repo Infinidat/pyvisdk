@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostDatastoreConnectInfo(vim, *args, **kwargs):
     '''The base data object type for information about datastores on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDatastoreConnectInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostDatastoreConnectInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

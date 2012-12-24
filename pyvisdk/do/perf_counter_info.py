@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PerfCounterInfo(vim, *args, **kwargs):
     '''This data object type contains metadata for a performance counter. See
     PerformanceManager for definitions of available counters.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfCounterInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PerfCounterInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmUuidConflictEvent(vim, *args, **kwargs):
     '''This event records a conflict of virtual machine BIOS UUIDs.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmUuidConflictEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmUuidConflictEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

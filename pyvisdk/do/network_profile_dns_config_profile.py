@@ -12,7 +12,7 @@ def NetworkProfileDnsConfigProfile(vim, *args, **kwargs):
     '''The NetworkProfileDnsConfigProfile data object represents DNS configuration for
     the host. Use the policy list for access to configuration data for the DNS
     profile. Use the property list for access to subprofiles, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetworkProfileDnsConfigProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def NetworkProfileDnsConfigProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

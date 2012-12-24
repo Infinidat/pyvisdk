@@ -12,7 +12,7 @@ def VmNoCompatibleHostForSecondaryEvent(vim, *args, **kwargs):
     '''This event records that no compatible host was found to place a secondary VM. A
     default alarm will be triggered upon this event, which by default would trigger
     a SNMP trap.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmNoCompatibleHostForSecondaryEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmNoCompatibleHostForSecondaryEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

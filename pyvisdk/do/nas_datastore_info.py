@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NasDatastoreInfo(vim, *args, **kwargs):
     '''Information details about a network-attached storage (NAS) datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NasDatastoreInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def NasDatastoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

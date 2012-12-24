@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreRemovedOnHostEvent(vim, *args, **kwargs):
     '''This event records when a datastore is removed from a host but not from
     VirtualCenter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DatastoreRemovedOnHostEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DatastoreRemovedOnHostEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

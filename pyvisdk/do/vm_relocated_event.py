@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmRelocatedEvent(vim, *args, **kwargs):
     '''This event records the completion of a virtual machine relocation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmRelocatedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmRelocatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AnswerFileSerializedCreateSpec(vim, *args, **kwargs):
     '''The AnswerFileSerializedCreateSpec data object contains a serialized string
     representation of host-specific data for an answer file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AnswerFileSerializedCreateSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AnswerFileSerializedCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

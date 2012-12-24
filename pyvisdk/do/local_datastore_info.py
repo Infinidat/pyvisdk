@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LocalDatastoreInfo(vim, *args, **kwargs):
     '''The information details about a datastore that is local to a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LocalDatastoreInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def LocalDatastoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

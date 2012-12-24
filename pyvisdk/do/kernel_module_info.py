@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def KernelModuleInfo(vim, *args, **kwargs):
     '''Information about a kernel module.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}KernelModuleInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def KernelModuleInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

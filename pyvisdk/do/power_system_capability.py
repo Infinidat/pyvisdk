@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PowerSystemCapability(vim, *args, **kwargs):
     '''Power System Capability data object. Exposes policies available in power
     management system.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PowerSystemCapability')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def PowerSystemCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

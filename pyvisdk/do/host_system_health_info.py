@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostSystemHealthInfo(vim, *args, **kwargs):
     '''This data object provides information about the health of the phyical system.
     The data is retrieved from numeric sensor probes.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSystemHealthInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostSystemHealthInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

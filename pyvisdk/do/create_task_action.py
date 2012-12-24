@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CreateTaskAction(vim, *args, **kwargs):
     '''This data object type specifies the type of task to be created when this action
     is triggered.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CreateTaskAction')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def CreateTaskAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

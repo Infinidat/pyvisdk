@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDasBeingResetWithScreenshotEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine is reset by HA VM Health Monitoring
     on hosts that support the create screenshot api'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDasBeingResetWithScreenshotEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmDasBeingResetWithScreenshotEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

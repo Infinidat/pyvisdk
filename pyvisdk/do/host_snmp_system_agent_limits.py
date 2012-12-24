@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostSnmpSystemAgentLimits(vim, *args, **kwargs):
     ''''''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSnmpSystemAgentLimits')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostSnmpSystemAgentLimits(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

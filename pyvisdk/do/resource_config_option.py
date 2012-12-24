@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourceConfigOption(vim, *args, **kwargs):
     '''This data object type is a default value and value range specification for
     ResourceConfigSpec object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourceConfigOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ResourceConfigOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

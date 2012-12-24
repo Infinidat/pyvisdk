@@ -14,7 +14,7 @@ def HostConnectSpec(vim, *args, **kwargs):
     and datastore configuration of the host to be synchronized with the naming
     conventions of the datacenter, as well as the configuration of a vim account
     (the username/password for the virtual machine files that is created on disk).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConnectSpec')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def HostConnectSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

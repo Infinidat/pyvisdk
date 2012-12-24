@@ -12,7 +12,7 @@ def HostDiskPartitionBlockRange(vim, *args, **kwargs):
     '''A BlockRange data object type describes a contiguous set of blocks on a disk. A
     BlockRange may describe either a partition or unpartitioned (primordial) blocks
     on the disk.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionBlockRange')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostDiskPartitionBlockRange(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

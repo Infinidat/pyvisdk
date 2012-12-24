@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmOrphanedEvent(vim, *args, **kwargs):
     '''This event records a virtual machine for which no host is responsible.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmOrphanedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmOrphanedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

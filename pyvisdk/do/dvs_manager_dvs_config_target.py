@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSManagerDvsConfigTarget(vim, *args, **kwargs):
     '''Configuration specification for a DistributedVirtualSwitch or
     DistributedVirtualPortgroup.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSManagerDvsConfigTarget')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVSManagerDvsConfigTarget(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

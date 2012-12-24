@@ -12,7 +12,7 @@ def DiagnosticManagerLogHeader(vim, *args, **kwargs):
     '''A header that is returned with a set of log entries. This header describes
     where entries are located in the log file. Log files typically grow
     dynamically, so indexes based on line numbers may become inaccurate.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DiagnosticManagerLogHeader')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DiagnosticManagerLogHeader(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

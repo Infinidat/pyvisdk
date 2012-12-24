@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourceConfigSpec(vim, *args, **kwargs):
     '''This data object type is a specification for a set of resources allocated to a
     virtual machine or a resource pool.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourceConfigSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ResourceConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

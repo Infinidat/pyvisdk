@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostProfileConfigInfo(vim, *args, **kwargs):
     '''The HostProfileConfigInfo data object contains host profile data and
     information about profile compliance.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostProfileConfigInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostProfileConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

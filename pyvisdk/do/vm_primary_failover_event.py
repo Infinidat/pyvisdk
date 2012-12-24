@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmPrimaryFailoverEvent(vim, *args, **kwargs):
     '''This event records a fault tolerance failover. The reason could be : lost
     connection to primary, partial hardware failure of primary or by user.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmPrimaryFailoverEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmPrimaryFailoverEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

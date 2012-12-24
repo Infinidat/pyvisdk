@@ -12,7 +12,7 @@ def SendEmailAction(vim, *args, **kwargs):
     '''This data object type defines an email that is triggered by an alarm. You can
     use any elements of the ActionParameter enumerated list as part of your strings
     to provide information available at runtime.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SendEmailAction')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def SendEmailAction(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

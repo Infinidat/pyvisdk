@@ -15,7 +15,7 @@ def VirtualMachineConfigSpec(vim, *args, **kwargs):
     optional property is unset, the property will not be changed unless 'unset' is
     a valid value for the property. To determine whether 'unset' is a valid value
     for a particular property, refer to the documentation for that property.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigSpec')
 
     # do some validation checking...
@@ -47,4 +47,3 @@ def VirtualMachineConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

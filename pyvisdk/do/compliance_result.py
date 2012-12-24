@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ComplianceResult(vim, *args, **kwargs):
     '''DataObject representing the result from a ComplianceCheck'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ComplianceResult')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ComplianceResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

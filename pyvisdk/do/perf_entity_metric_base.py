@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def PerfEntityMetricBase(vim, *args, **kwargs):
     '''Base type for the various PerfEntityMetric encodings.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PerfEntityMetricBase')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def PerfEntityMetricBase(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

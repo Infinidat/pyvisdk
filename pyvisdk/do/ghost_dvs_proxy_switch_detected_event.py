@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GhostDvsProxySwitchDetectedEvent(vim, *args, **kwargs):
     '''This event records when Virtual Center server found DVS proxy switches on the
     host that don't match any DVS defined in Virtual Center.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GhostDvsProxySwitchDetectedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def GhostDvsProxySwitchDetectedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

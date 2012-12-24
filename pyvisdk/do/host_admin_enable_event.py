@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostAdminEnableEvent(vim, *args, **kwargs):
     '''This event records that the administrator permission has been restored.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostAdminEnableEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostAdminEnableEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -13,7 +13,7 @@ def VirtualDeviceBackingInfo(vim, *args, **kwargs):
     virtual machine. This base type does not define any properties. It is used as a
     namespace for general-purpose subtypes. Specific devices are represented by
     subtypes which define properties for device-specific backing information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceBackingInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualDeviceBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

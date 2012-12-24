@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ExtensionResourceInfo(vim, *args, **kwargs):
     '''This data object encapsulates the message resources for all locales.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtensionResourceInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ExtensionResourceInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

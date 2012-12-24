@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def GeneralVmWarningEvent(vim, *args, **kwargs):
     '''This event is the general warning event for a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}GeneralVmWarningEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def GeneralVmWarningEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

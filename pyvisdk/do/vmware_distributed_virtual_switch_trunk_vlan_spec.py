@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmwareDistributedVirtualSwitchTrunkVlanSpec(vim, *args, **kwargs):
     '''This data type specifies that the port uses trunk mode, which allows the guest
     operating system to manage its own VLAN tags.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmwareDistributedVirtualSwitchTrunkVlanSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmwareDistributedVirtualSwitchTrunkVlanSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def UserLoginSessionEvent(vim, *args, **kwargs):
     '''This event records a user logon.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UserLoginSessionEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def UserLoginSessionEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

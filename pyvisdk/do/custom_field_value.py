@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomFieldValue(vim, *args, **kwargs):
     '''Base type for storing values.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomFieldValue')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def CustomFieldValue(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

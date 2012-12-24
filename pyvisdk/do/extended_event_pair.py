@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ExtendedEventPair(vim, *args, **kwargs):
     '''key/value pair'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ExtendedEventPair')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ExtendedEventPair(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

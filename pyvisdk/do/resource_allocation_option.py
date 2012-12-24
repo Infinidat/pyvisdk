@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourceAllocationOption(vim, *args, **kwargs):
     '''The ResourceAllocationOption data object specifies value ranges and default
     values for ResourceAllocationInfo.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourceAllocationOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ResourceAllocationOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

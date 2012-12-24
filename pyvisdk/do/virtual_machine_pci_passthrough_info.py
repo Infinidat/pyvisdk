@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachinePciPassthroughInfo(vim, *args, **kwargs):
     '''Description of a generic PCI device that can be attached to a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachinePciPassthroughInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachinePciPassthroughInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

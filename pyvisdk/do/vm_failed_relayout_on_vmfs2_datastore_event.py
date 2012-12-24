@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFailedRelayoutOnVmfs2DatastoreEvent(vim, *args, **kwargs):
     '''This event records a failure to relay out a virtual machine when the virtual
     machine still has disks on a VMFS2 volume.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFailedRelayoutOnVmfs2DatastoreEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmFailedRelayoutOnVmfs2DatastoreEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

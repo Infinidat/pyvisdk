@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmFailedToRebootGuestEvent(vim, *args, **kwargs):
     '''This event records a failure to reboot the guest on a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFailedToRebootGuestEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmFailedToRebootGuestEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DasHeartbeatDatastoreInfo(vim, *args, **kwargs):
     '''Class for the selection of heartbeat datastores'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasHeartbeatDatastoreInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DasHeartbeatDatastoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

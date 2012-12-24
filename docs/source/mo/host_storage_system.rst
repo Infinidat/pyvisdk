@@ -10,6 +10,7 @@ HostStorageSystem
     
 **See also**
     
+    :py:class:`~pyvisdk.do.fcoe_config_fcoe_specification.FcoeConfigFcoeSpecification`,
     :py:class:`~pyvisdk.do.host_disk_partition_block_range.HostDiskPartitionBlockRange`,
     :py:class:`~pyvisdk.do.host_disk_partition_info.HostDiskPartitionInfo`,
     :py:class:`~pyvisdk.do.host_disk_partition_layout.HostDiskPartitionLayout`,

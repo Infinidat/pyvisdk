@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NoAccessUserEvent(vim, *args, **kwargs):
     '''This event records a failed user logon due to insufficient access permission.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NoAccessUserEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NoAccessUserEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FloppyImageFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for a floppy disk
     image.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FloppyImageFileQuery')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def FloppyImageFileQuery(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

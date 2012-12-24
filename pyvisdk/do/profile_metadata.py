@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileMetadata(vim, *args, **kwargs):
     '''This data object represents the metadata information of a Profile.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileMetadata')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ProfileMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

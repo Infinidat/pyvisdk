@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Extension(vim, *args, **kwargs):
     '''This data object type contains all information about an extension. An extension
     may contain zero or more server interfaces and zero or more clients.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}Extension')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def Extension(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

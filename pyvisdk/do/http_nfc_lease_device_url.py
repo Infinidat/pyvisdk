@@ -15,7 +15,7 @@ def HttpNfcLeaseDeviceUrl(vim, *args, **kwargs):
     used in the ImportSpec, and one based on the object identifiers for the created
     objects. This is immutable and would match the id if an ExportLease is latter
     created.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseDeviceUrl')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def HttpNfcLeaseDeviceUrl(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

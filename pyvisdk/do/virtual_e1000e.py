@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualE1000e(vim, *args, **kwargs):
     '''The VirtualE1000e data object type represents an instance of the E1000e virtual
     Ethernet adapter attached to a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualE1000e')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualE1000e(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

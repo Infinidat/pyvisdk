@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileCreateSpec(vim, *args, **kwargs):
     '''Specification describing the parameters during Profile creation'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileCreateSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ProfileCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

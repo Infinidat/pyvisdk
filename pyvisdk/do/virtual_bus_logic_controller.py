@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualBusLogicController(vim, *args, **kwargs):
     '''VirtualBusLogicController is the data object that represents a BusLogic SCSI
     controller.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualBusLogicController')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualBusLogicController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

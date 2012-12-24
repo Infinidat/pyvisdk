@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ConfigTarget(vim, *args, **kwargs):
     '''The ConfigTarget class contains information about "physical" devices that can
     be used to back virtual devices.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ConfigTarget')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def ConfigTarget(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PhysicalNicIpHint(vim, *args, **kwargs):
     '''This data object type describes a network in network hint where the network is
     specified using IP addresses, for example, 10.27.49.1-10.27.49.254'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicIpHint')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def PhysicalNicIpHint(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

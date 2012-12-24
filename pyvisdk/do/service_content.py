@@ -15,7 +15,7 @@ def ServiceContent(vim, *args, **kwargs):
     of a property collector, and the property collector itself is a property of the
     ServiceInstance. For this reason, use the method RetrieveServiceContent to
     retrieve the ServiceContent object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ServiceContent')
 
     # do some validation checking...
@@ -44,4 +44,3 @@ def ServiceContent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMwareDVSFeatureCapability(vim, *args, **kwargs):
     '''Indicators of support for version-specific DVS features that are only available
     on a VMware-class switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareDVSFeatureCapability')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VMwareDVSFeatureCapability(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

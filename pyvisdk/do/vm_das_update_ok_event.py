@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDasUpdateOkEvent(vim, *args, **kwargs):
     '''This event records that HA agents have been updated with the current state of
     the virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDasUpdateOkEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmDasUpdateOkEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

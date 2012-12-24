@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfNetworkMapping(vim, *args, **kwargs):
     '''A NetworkMapping is a choice made by the caller about which VI network to use
     for a specific network in the OVF descriptor.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfNetworkMapping')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def OvfNetworkMapping(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

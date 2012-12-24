@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def RowData(vim, *args, **kwargs):
     '''Collection of values representing a single row in a query result set.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}RowData')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def RowData(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

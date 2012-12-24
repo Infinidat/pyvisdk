@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineDeviceRuntimeInfoDeviceRuntimeState(vim, *args, **kwargs):
     '''Runtime state of a device. Subclassed for information that is specific to
     certain device types.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineDeviceRuntimeInfoDeviceRuntimeState')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineDeviceRuntimeInfoDeviceRuntimeState(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

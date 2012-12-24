@@ -12,7 +12,7 @@ def HostScsiDisk(vim, *args, **kwargs):
     '''This data object type describes a SCSI disk. A SCSI disk contains a partition
     table which can be changed. To change a SCSI disk, use the device name and the
     partition specification.See RetrieveDiskPartitionInfoSee UpdateDiskPartitions'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostScsiDisk')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def HostScsiDisk(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

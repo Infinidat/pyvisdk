@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetIpConfigInfo(vim, *args, **kwargs):
     '''Protocol version independent address reporting data object for network
     interfaces.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetIpConfigInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def NetIpConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

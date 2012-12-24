@@ -16,7 +16,7 @@ def StorageIOAllocationInfo(vim, *args, **kwargs):
     virtual machine has one IOAllocationInfo object per virtual disk. For example,
     we can specify that a virtual machine has 500 shares on the first virtual disk,
     1000 shares on the second virtual disk, etc.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageIOAllocationInfo')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def StorageIOAllocationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ClusterConfigInfo(vim, *args, **kwargs):
     '''A complete cluster configuration.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterConfigInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ClusterConfigInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

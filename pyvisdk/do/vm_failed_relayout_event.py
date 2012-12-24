@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFailedRelayoutEvent(vim, *args, **kwargs):
     '''This event records a specific failure to relay out a virtual machine, such as a
     failure to access the disk.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmFailedRelayoutEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmFailedRelayoutEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

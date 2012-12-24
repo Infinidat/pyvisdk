@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AnswerFileOptionsCreateSpec(vim, *args, **kwargs):
     '''The AnswerFileOptionsCreateSpec data object contains host-specific user input
     for an answer file.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AnswerFileOptionsCreateSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AnswerFileOptionsCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

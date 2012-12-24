@@ -17,7 +17,7 @@ def ClusterFailoverResourcesAdmissionControlPolicy(vim, *args, **kwargs):
     the reservation is 0, a default of 0MB memory and 256MHz CPU is applied. This
     is controlled by the same HA advanced options used for the failover level
     policy (ClusterFailoverLevelAdmissionControlPolicy).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterFailoverResourcesAdmissionControlPolicy')
 
     # do some validation checking...
@@ -37,4 +37,3 @@ def ClusterFailoverResourcesAdmissionControlPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

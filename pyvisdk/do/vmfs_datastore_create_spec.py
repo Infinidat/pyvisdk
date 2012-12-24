@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmfsDatastoreCreateSpec(vim, *args, **kwargs):
     '''This data object type is used when creating a new VMFS datastore, to create a
     specification for the VMFS datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreCreateSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmfsDatastoreCreateSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

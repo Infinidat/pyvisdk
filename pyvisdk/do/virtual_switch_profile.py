@@ -12,7 +12,7 @@ def VirtualSwitchProfile(vim, *args, **kwargs):
     '''The VirtualSwitchProfile data object represents a subprofile for a virtual
     switch. If a profile plug-in defines policies or subprofiles, use the policy or
     property list to access the additional configuration data.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualSwitchProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualSwitchProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsUpgradeAvailableEvent(vim, *args, **kwargs):
     '''An upgrade for the distributed virtual switch is available.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsUpgradeAvailableEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsUpgradeAvailableEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

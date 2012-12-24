@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetIpRouteConfigSpecGatewaySpec(vim, *args, **kwargs):
     '''IpRoute report an individual host, network or default destination network
     reachable through a given gateway.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetIpRouteConfigSpecGatewaySpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def NetIpRouteConfigSpecGatewaySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostSyncFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to sync up with the VirtualCenter agent on the
     host'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostSyncFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostSyncFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

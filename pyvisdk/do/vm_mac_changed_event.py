@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmMacChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a virtual machine's MAC address.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmMacChangedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmMacChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

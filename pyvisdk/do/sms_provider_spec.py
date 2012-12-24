@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def SmsProviderSpec(vim, *args, **kwargs):
     '''Specification for Storage Monitoring Service (SMS) providers.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}SmsProviderSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def SmsProviderSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

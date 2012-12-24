@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchPortConnection(vim, *args, **kwargs):
     '''The class that represents a connection or an association between
     DistributedVirtualPort and a Virtual NIC or Physical NIC.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchPortConnection')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchPortConnection(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

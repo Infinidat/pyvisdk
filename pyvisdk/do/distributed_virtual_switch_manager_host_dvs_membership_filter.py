@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchManagerHostDvsMembershipFilter(vim, *args, **kwargs):
     '''Check host compatibility against all hosts in the DVS (or not in the DVS if
     inclusive flag in base class is false)'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostDvsMembershipFilter')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchManagerHostDvsMembershipFilter(vim, *args, **kwargs)
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

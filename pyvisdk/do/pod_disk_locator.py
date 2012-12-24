@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PodDiskLocator(vim, *args, **kwargs):
     '''The disk locator class. NOTE: This data object type and all of its methods are
     experimental and subject to change in future releases.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PodDiskLocator')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def PodDiskLocator(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

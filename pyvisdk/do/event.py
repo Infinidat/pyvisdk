@@ -13,7 +13,7 @@ def Event(vim, *args, **kwargs):
     event objects are data structures that describe events. While event data
     objects are data structures that describe events, event data type documentation
     may describe what the event records, rather than the data structure, itself.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}Event')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def Event(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

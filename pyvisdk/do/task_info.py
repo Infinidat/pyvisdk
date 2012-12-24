@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TaskInfo(vim, *args, **kwargs):
     '''This data object type contains all information about a task. A task represents
     an operation performed by VirtualCenter or ESX.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}TaskInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def TaskInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

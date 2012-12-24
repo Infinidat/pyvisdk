@@ -14,7 +14,7 @@ def QueryResult(vim, *args, **kwargs):
     the number of rows in the result set and the column names in the result set.
     Use the propertyName strings to deocde the RowData objects in the result set.
     See for more information and for tables of entity and relationship properties.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}QueryResult')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def QueryResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

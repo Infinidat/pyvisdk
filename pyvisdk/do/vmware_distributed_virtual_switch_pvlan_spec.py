@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmwareDistributedVirtualSwitchPvlanSpec(vim, *args, **kwargs):
     '''This data type defines the configuration when PVLAN id is to be used for the
     ports.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmwareDistributedVirtualSwitchPvlanSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmwareDistributedVirtualSwitchPvlanSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

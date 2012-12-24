@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def LicenseExpiredEvent(vim, *args, **kwargs):
     '''This event records the expiration of a license.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseExpiredEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def LicenseExpiredEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

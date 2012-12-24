@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineSnapshotTree(vim, *args, **kwargs):
     '''SnapshotTree encapsulates all the read-only data produced by the snapshot.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineSnapshotTree')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineSnapshotTree(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

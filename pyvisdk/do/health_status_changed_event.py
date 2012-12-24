@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HealthStatusChangedEvent(vim, *args, **kwargs):
     '''Event used to report change in health status of VirtualCenter components.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HealthStatusChangedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HealthStatusChangedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

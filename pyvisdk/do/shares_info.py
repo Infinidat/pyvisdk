@@ -12,7 +12,7 @@ def SharesInfo(vim, *args, **kwargs):
     '''Specification of shares.Shares are used to determine relative allocation
     between resource consumers. In general, a consumer with more shares gets
     proportionally more of the resource, subject to certain other constraints.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}SharesInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def SharesInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

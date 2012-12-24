@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostAddFailedEvent(vim, *args, **kwargs):
     '''This event records that adding a host failed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostAddFailedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostAddFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

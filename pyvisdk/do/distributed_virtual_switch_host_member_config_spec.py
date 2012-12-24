@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DistributedVirtualSwitchHostMemberConfigSpec(vim, *args, **kwargs):
     '''Specification to reconfigure a HostMember.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberConfigSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DistributedVirtualSwitchHostMemberConfigSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

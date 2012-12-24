@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NodeProperty(vim, *args, **kwargs):
     '''Information about a Node.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}NodeProperty')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def NodeProperty(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

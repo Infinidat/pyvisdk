@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def Node(vim, *args, **kwargs):
     '''Topological representation of an entity in the system.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}Node')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def Node(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

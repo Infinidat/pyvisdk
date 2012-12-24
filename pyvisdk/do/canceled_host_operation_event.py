@@ -12,7 +12,7 @@ def CanceledHostOperationEvent(vim, *args, **kwargs):
     '''An operation performed on the host was canceled. Typically, a previous event in
     the sequence of events contains more information about the cause of this
     cancellation.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CanceledHostOperationEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def CanceledHostOperationEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

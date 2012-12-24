@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineConfigInfoOverheadInfo(vim, *args, **kwargs):
     '''Information about virtualization overhead required to power on the virtual
     machine on the registered host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigInfoOverheadInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualMachineConfigInfoOverheadInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def NetIpConfigInfoIpAddress(vim, *args, **kwargs):
     '''Information about a specific IP Address.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}NetIpConfigInfoIpAddress')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def NetIpConfigInfoIpAddress(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

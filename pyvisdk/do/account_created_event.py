@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def AccountCreatedEvent(vim, *args, **kwargs):
     '''This event records that an account was created on a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AccountCreatedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AccountCreatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

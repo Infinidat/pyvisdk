@@ -15,7 +15,7 @@ def HostNasVolumeSpec(vim, *args, **kwargs):
     references the remotePath of a NAS volume as "/mnt/mount1" and another
     references it as "/mnt/mount1/", it will not be recognized as the same
     datastore.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNasVolumeSpec')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def HostNasVolumeSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

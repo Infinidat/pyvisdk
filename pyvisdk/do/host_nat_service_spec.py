@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNatServiceSpec(vim, *args, **kwargs):
     '''This data object type provides the details about the Network Address
     Translation (NAT) service.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostNatServiceSpec')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostNatServiceSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

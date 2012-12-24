@@ -12,7 +12,7 @@ def ClusterDasDataSummary(vim, *args, **kwargs):
     '''This class contains the summary of the data that DAS needs/uses. The actual
     data is available in ClusterDasDataDetails and can be retrieved using the
     RetrieveDasData method. This class is meant for VMware internal use only.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasDataSummary')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def ClusterDasDataSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

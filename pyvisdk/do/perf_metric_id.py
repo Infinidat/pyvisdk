@@ -13,9 +13,8 @@ def PerfMetricId(vim, *args, **kwargs):
     counter with a performance metric. When constructing this data object for the
     metricId property of the PerfQuerySpec to submit to one of the
     PerformanceManager query operations, the instance property supports these
-    special characters:* An asterisk (*) to specify all instances of the metric for
-    the specified counterId * Double-quotes ("") to specify aggregated statistics'''
-    
+    special characters:'''
+
     obj = vim.client.factory.create('{urn:vim25}PerfMetricId')
 
     # do some validation checking...
@@ -35,4 +34,3 @@ def PerfMetricId(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

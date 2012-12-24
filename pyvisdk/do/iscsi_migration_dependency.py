@@ -12,7 +12,7 @@ def IscsiMigrationDependency(vim, *args, **kwargs):
     '''Provides migration dependency information for a given Physical NIC. Lists all
     the iSCSI and networking resources impacted if migration of a given Physical
     NIC is to take place.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IscsiMigrationDependency')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def IscsiMigrationDependency(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

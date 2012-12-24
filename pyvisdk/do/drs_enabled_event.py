@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DrsEnabledEvent(vim, *args, **kwargs):
     '''This event records when DRS is enabled on a cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsEnabledEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DrsEnabledEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

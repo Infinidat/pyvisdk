@@ -22,7 +22,7 @@ def HostUnresolvedVmfsVolume(vim, *args, **kwargs):
     with the same Uuid mounted somewhere in the same datacenter.Simple diagram
     representing the possible operations on UnresolvedVmfsVolumeSee
     HostStorageSystem'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsVolume')
 
     # do some validation checking...
@@ -42,4 +42,3 @@ def HostUnresolvedVmfsVolume(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

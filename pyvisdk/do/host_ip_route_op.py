@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpRouteOp(vim, *args, **kwargs):
     '''Routing Entry Operation. Routing entries are individual static routes which
     combined with the default route form all of the routing rules for a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIpRouteOp')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostIpRouteOp(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

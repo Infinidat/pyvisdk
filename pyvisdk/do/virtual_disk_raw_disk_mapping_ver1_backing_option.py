@@ -12,7 +12,7 @@ def VirtualDiskRawDiskMappingVer1BackingOption(vim, *args, **kwargs):
     '''The VirtualDiskOption.RawDiskMappingVer1BackingOption object type contains the
     available options when backing a virtual disk using a raw device mapping on ESX
     Server 2.5 or 3.x.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskRawDiskMappingVer1BackingOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualDiskRawDiskMappingVer1BackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

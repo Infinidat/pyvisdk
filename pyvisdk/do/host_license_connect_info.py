@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostLicenseConnectInfo(vim, *args, **kwargs):
     '''This data object type describes license information stored on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostLicenseConnectInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostLicenseConnectInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

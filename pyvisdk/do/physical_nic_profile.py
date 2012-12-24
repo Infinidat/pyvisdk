@@ -12,7 +12,7 @@ def PhysicalNicProfile(vim, *args, **kwargs):
     '''The PhysicalNicProfile data object represents physical NIC configuration. Use
     the policy list for access to configuration data for the physical NIC profile.
     Use the property list for access to subprofile configuration data, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PhysicalNicProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def PhysicalNicProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

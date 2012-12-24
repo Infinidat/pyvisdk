@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineAffinityInfo(vim, *args, **kwargs):
     '''Specification of scheduling affinity.Scheduling affinity is used for explicitly
     specifying which processors or NUMA nodes may be used by a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineAffinityInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineAffinityInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

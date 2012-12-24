@@ -14,7 +14,7 @@ def OvfFileItem(vim, *args, **kwargs):
     ResourcePool.importVApp.Files can either be new files, in which case the
     "create" flag will be true, or updates to existing files in VI. The latter is
     used to support the OVF parentRef mechanism for Disks.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}OvfFileItem')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def OvfFileItem(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FilterSpecConstraint(vim, *args, **kwargs):
     '''Basic building block of a filter spec that specifies a single constraint in the
     form of a comparitive operation.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}FilterSpecConstraint')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def FilterSpecConstraint(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualVMIROMOption(vim, *args, **kwargs):
     '''This data object type contains the options for the VirtualVMIROM data object
     type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualVMIROMOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualVMIROMOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

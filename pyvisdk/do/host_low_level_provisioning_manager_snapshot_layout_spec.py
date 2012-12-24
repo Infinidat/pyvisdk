@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostLowLevelProvisioningManagerSnapshotLayoutSpec(vim, *args, **kwargs):
     '''File layout spec of a snapshot, including path to the vmsn file of the snapshot
     and the layout of virtual disks when the snapshot was taken.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostLowLevelProvisioningManagerSnapshotLayoutSpec')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostLowLevelProvisioningManagerSnapshotLayoutSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

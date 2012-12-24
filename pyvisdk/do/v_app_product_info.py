@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VAppProductInfo(vim, *args, **kwargs):
     '''Information that describes what product a vApp contains, e.g., what software
     that is installed in the contained virtual machines.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VAppProductInfo')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VAppProductInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

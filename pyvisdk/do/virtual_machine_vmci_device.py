@@ -17,7 +17,7 @@ def VirtualMachineVMCIDevice(vim, *args, **kwargs):
     running on a virtual machine uses the VMCI Sockets API for communication with
     other virtual machines on the same host, or for communication with the host.
     For information about using the vSphere VMCI Sockets API, see the .'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMCIDevice')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def VirtualMachineVMCIDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

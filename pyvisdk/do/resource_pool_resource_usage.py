@@ -15,7 +15,7 @@ def ResourcePoolResourceUsage(vim, *args, **kwargs):
     can simply say talk about unreserved resources.If the reservation on the
     resource pool is not expandable, then the following is true:If the reservation
     on the resource pool is expandable, then the following is true:'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolResourceUsage')
 
     # do some validation checking...
@@ -36,4 +36,3 @@ def ResourcePoolResourceUsage(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

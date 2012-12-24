@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def IntPolicy(vim, *args, **kwargs):
     '''The integer type of setting or configuration that may get an inherited value.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IntPolicy')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def IntPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

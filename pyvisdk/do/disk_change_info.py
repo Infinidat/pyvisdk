@@ -14,7 +14,7 @@ def DiskChangeInfo(vim, *args, **kwargs):
     QueryChangedDiskAreas. This data structure describes a subset of the disk
     identified by startOffset and length. All areas that have been modified within
     this interval are listed under changedArea.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DiskChangeInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def DiskChangeInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

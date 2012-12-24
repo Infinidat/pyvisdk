@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasAamNodeState(vim, *args, **kwargs):
     '''The ClusterDasAamNodeState data object represents the state of the HA service
     on an ESX host. (AAM is a component of this service.)'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterDasAamNodeState')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterDasAamNodeState(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineVMCIDeviceOption(vim, *args, **kwargs):
     '''The VirtualMachineVMCIDeviceOption data object contains the options for the
     virtual VMCI device (VirtualMachineVMCIDevice).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMCIDeviceOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualMachineVMCIDeviceOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

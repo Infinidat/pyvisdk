@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PasswordField(vim, *args, **kwargs):
     '''DataObject which represents a Password field. Password is functionally
     equivalent to String.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PasswordField')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def PasswordField(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

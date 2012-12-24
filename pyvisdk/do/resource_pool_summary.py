@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourcePoolSummary(vim, *args, **kwargs):
     '''This data object type encapsulates a typical set of resource pool information
     that is useful for list views and summary pages.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ResourcePoolSummary')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ResourcePoolSummary(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

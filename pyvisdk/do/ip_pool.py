@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IpPool(vim, *args, **kwargs):
     '''Specifications of the network configuration to be used on a network. This is
     used to generate IP addresses and for self-customization of vApps.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}IpPool')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def IpPool(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

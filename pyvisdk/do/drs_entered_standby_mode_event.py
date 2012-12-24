@@ -12,7 +12,7 @@ def DrsEnteredStandbyModeEvent(vim, *args, **kwargs):
     '''This event records that the host has successfully entered standby mode
     initiated by Distributed Power Management. A host in this mode has no running
     virtual machines and no provisioning operations are occurring.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DrsEnteredStandbyModeEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DrsEnteredStandbyModeEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

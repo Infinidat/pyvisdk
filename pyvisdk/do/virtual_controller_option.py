@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualControllerOption(vim, *args, **kwargs):
     '''The VirtualControllerOption data object type contains information about a
     virtual controller type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualControllerOption')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualControllerOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

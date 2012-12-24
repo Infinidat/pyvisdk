@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FailoverLevelRestored(vim, *args, **kwargs):
     '''This event records that the amount of cluster resources has increased and is
     now sufficient to satisfy the configured HA failover level.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FailoverLevelRestored')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def FailoverLevelRestored(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualDiskRawDiskVer2BackingOption(vim, *args, **kwargs):
     '''The VirtualDiskOption.RawDiskVer2BackingOption object type contains the
     available options when backing a virtual disk using a host device on VMware
     Server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskRawDiskVer2BackingOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualDiskRawDiskVer2BackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

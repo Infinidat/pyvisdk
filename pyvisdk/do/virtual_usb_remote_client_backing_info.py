@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualUSBRemoteClientBackingInfo(vim, *args, **kwargs):
     '''The virtual remote client USB device backing class.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualUSBRemoteClientBackingInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualUSBRemoteClientBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

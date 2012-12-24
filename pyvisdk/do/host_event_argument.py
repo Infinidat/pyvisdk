@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostEventArgument(vim, *args, **kwargs):
     '''The event argument is a Host object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostEventArgument')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostEventArgument(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -27,7 +27,7 @@ def HostScsiTopology(vim, *args, **kwargs):
     defined or does not exist on the HostStorageDeviceInfo object, only native
     multipathing exists. That means for these hosts, the ScsiTopology object
     contains the complete set of LUNs and targets available on the host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostScsiTopology')
 
     # do some validation checking...
@@ -47,4 +47,3 @@ def HostScsiTopology(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

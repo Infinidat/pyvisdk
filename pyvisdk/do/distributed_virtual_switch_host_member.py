@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostMember(vim, *args, **kwargs):
     '''The data object that represents a host member in the distributed virtual
     switch.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMember')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DistributedVirtualSwitchHostMember(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

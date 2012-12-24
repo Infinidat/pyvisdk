@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ProfileExpressionMetadata(vim, *args, **kwargs):
     '''DataObject to represent the metadata associated with a SimpleExpression.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ProfileExpressionMetadata')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ProfileExpressionMetadata(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

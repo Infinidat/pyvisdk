@@ -13,7 +13,7 @@ def FcoeConfig(vim, *args, **kwargs):
     underlying physical NIC. Terminology is borrowed from T11's working draft of
     the Fibre Channel Backbone 5 standard (FC-BB-5). The draft can be found at
     http://www.t11.org.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}FcoeConfig')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def FcoeConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

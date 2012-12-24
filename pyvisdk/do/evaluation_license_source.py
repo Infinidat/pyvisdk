@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EvaluationLicenseSource(vim, *args, **kwargs):
     '''Specify an evaluation license source. Feature licensing is not required while
     the remaining hours is greater than zero.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}EvaluationLicenseSource')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def EvaluationLicenseSource(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -14,7 +14,7 @@ def VirtualDeviceRemoteDeviceBackingInfo(vim, *args, **kwargs):
     backing and a local device backing is that the VirtualCenter server cannot
     provide a list of remote host devices available for this virtual device
     backing.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceRemoteDeviceBackingInfo')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualDeviceRemoteDeviceBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

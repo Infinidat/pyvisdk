@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSFailureCriteria(vim, *args, **kwargs):
     '''This data object type describes the network adapter failover detection
     algorithm for a network adapter team.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSFailureCriteria')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DVSFailureCriteria(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

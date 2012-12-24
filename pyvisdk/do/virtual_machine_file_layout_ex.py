@@ -10,12 +10,9 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineFileLayoutEx(vim, *args, **kwargs):
     '''Detailed description of files that make up a virtual machine on disk. The file
-    layout is broken into 4 major sections:* Configuration: Files stored in the
-    configuration directory * Log: Files stored in the log directory * Disk: Files
-    stored relative to a disk configuration file * Snapshot: Stored in the snapshot
-    directoryOften the same directory is used for configuration, log, disk and
-    snapshots.'''
-    
+    layout is broken into 4 major sections:Often the same directory is used for
+    configuration, log, disk and snapshots.'''
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutEx')
 
     # do some validation checking...
@@ -35,4 +32,3 @@ def VirtualMachineFileLayoutEx(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

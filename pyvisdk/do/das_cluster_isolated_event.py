@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DasClusterIsolatedEvent(vim, *args, **kwargs):
     '''This event records that all hosts have been isolated from the network in a HA
     cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasClusterIsolatedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DasClusterIsolatedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def CustomizationStartedEvent(vim, *args, **kwargs):
     '''The customization sequence has started in the VM guest.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}CustomizationStartedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def CustomizationStartedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

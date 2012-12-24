@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DistributedVirtualSwitchHostMemberRuntimeState(vim, *args, **kwargs):
     '''RuntimeState of a HostMember.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberRuntimeState')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DistributedVirtualSwitchHostMemberRuntimeState(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

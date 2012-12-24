@@ -12,12 +12,9 @@ def TaskScheduler(vim, *args, **kwargs):
     '''The TaskScheduler data object is the base type for the scheduler objects. The
     hierarchy of scheduler objects is as follows:Use a scheduler object to set the
     time(s) for task execution. You can use two scheduling modes - single execution
-    or recurring execution:* Use the AfterStartupTaskScheduler or the
-    OnceTaskScheduler to schedule a single instance of task execution. * Use one of
-    the recurrent task schedulers to schedule hourly, daily, weekly, or monthly
-    task execution.After you have established the task timing, use the scheduler
-    object for the ScheduledTaskSpec scheduler property value.'''
-    
+    or recurring execution:After you have established the task timing, use the
+    scheduler object for the ScheduledTaskSpec scheduler property value.'''
+
     obj = vim.client.factory.create('{urn:vim25}TaskScheduler')
 
     # do some validation checking...
@@ -37,4 +34,3 @@ def TaskScheduler(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

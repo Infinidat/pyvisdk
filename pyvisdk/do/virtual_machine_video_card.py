@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineVideoCard(vim, *args, **kwargs):
     '''The VirtualVideoCard data object type represents a video card in a virtual
     machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineVideoCard')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualMachineVideoCard(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

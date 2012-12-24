@@ -13,7 +13,7 @@ def HostDiskDimensionsChs(vim, *args, **kwargs):
     (CHS) coordinate system. This coordinate system is generally needed for
     partitioning for legacy reasons. When defining partitions, many partitioning
     utilities do not function correctly when certain CHS constraints are not met.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDiskDimensionsChs')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostDiskDimensionsChs(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

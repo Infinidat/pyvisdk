@@ -12,7 +12,7 @@ def EntityReference(vim, *args, **kwargs):
     '''Unique identifier of a given entity with the storage management service. It is
     similar to the VirtualCenter ManagedObjectReference but also identifies certain
     non-managed objects.'''
-    
+
     obj = vim.client.factory.create('{urn:sms}EntityReference')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def EntityReference(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIsolationIpPingFailedEvent(vim, *args, **kwargs):
     '''This event records that the isolation address could not be pinged. The default
     isolation address is the service console's default gateway.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostIsolationIpPingFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostIsolationIpPingFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

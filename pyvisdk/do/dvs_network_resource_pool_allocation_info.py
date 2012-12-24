@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DVSNetworkResourcePoolAllocationInfo(vim, *args, **kwargs):
     '''Resource allocation information for a network resource pool.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DVSNetworkResourcePoolAllocationInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def DVSNetworkResourcePoolAllocationInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def UserProfile(vim, *args, **kwargs):
     '''The UserProfile data object represents a user. Use the policy list for access
     to configuration data for the user profile. Use the property list for access to
     subprofile configuration data, if any.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UserProfile')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def UserProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

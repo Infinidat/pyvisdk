@@ -12,7 +12,7 @@ def HostVirtualSwitch(vim, *args, **kwargs):
     '''The virtual switch is a software entity to which multiple virtual network
     adapters can connect to create a virtual network. It can also be bridged to a
     physical network.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitch')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostVirtualSwitch(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

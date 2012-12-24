@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VirtualMachineFileLayoutSnapshotLayout(vim, *args, **kwargs):
     '''Enumerates the set of files that make up a snapshot or redo-point'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutSnapshotLayout')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def VirtualMachineFileLayoutSnapshotLayout(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

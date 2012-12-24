@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AboutInfo(vim, *args, **kwargs):
     '''This data object type describes system information including the name, type,
     version, and build number.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AboutInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def AboutInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

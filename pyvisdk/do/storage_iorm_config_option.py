@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def StorageIORMConfigOption(vim, *args, **kwargs):
     '''Configuration setting ranges for IORMConfigSpec object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StorageIORMConfigOption')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def StorageIORMConfigOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

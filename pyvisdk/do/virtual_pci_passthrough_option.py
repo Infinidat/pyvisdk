@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualPCIPassthroughOption(vim, *args, **kwargs):
     '''The VirtualPCIPassthroughOption data object type describes the options for the
     VirtualPCIPassthrough data object type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualPCIPassthroughOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualPCIPassthroughOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

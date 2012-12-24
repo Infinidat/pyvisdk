@@ -15,7 +15,7 @@ def AlarmTriggeringActionTransitionSpec(vim, *args, **kwargs):
     finalState} pairs: {green, yellow}, {yellow, red}, {red, yellow} and {yellow,
     green}. At least one of these pairs must be specified. Any deviation from the
     above will render the enclosing AlarmSpec invalid.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmTriggeringActionTransitionSpec')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def AlarmTriggeringActionTransitionSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def HostConnectInfo(vim, *args, **kwargs):
     '''This data object type contains information about a single host that can be used
     by the connection wizard. This can be returned without adding the host to
     VirtualCenter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostConnectInfo')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def HostConnectInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

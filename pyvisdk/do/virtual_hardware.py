@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualHardware(vim, *args, **kwargs):
     '''The VirtualHardware data object type contains the complete configuration of the
     hardware in a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualHardware')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualHardware(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

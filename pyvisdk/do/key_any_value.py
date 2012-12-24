@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def KeyAnyValue(vim, *args, **kwargs):
     '''Non-localized key/value pair in which the the value can be of any type.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}KeyAnyValue')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def KeyAnyValue(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

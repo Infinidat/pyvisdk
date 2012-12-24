@@ -12,7 +12,7 @@ def HostDhcpServiceConfig(vim, *args, **kwargs):
     '''This data object type describes the configuration of a DHCP service instance
     representing both the configured properties on the instance and identification
     information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostDhcpServiceConfig')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostDhcpServiceConfig(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

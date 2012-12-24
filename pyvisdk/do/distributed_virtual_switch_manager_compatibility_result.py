@@ -13,7 +13,7 @@ def DistributedVirtualSwitchManagerCompatibilityResult(vim, *args, **kwargs):
     host property and optionally a fault which would be populated only if that host
     is not compatible with a given dvsProductSpec. If the host is compatible then
     the error property would be unset.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerCompatibilityResult')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def DistributedVirtualSwitchManagerCompatibilityResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ScsiLunCapabilities(vim, *args, **kwargs):
     '''Scsi device specific capabilities.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ScsiLunCapabilities')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ScsiLunCapabilities(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

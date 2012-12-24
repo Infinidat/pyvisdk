@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostUpgradeFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to an installation or
     upgrade issue.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostUpgradeFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostUpgradeFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

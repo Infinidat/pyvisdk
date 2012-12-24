@@ -13,7 +13,7 @@ def VirtualDisk(vim, *args, **kwargs):
     machine.The virtual disk backing object types describe the different virtual
     disk backings available. The disk format version in each case describes the
     version of the format that is used.Supported virtual disk backings:'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDisk')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualDisk(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

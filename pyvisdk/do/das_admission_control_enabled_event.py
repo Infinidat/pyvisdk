@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DasAdmissionControlEnabledEvent(vim, *args, **kwargs):
     '''This event records when admission control checks have been enabled in a HA
     cluster.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DasAdmissionControlEnabledEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def DasAdmissionControlEnabledEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -17,7 +17,7 @@ def VirtualDeviceOption(vim, *args, **kwargs):
     for virtual device backing options that are independent of the virtual device.
     Backing-dependent options should appear in a subtype of
     VirtualDeviceBackingOption.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDeviceOption')
 
     # do some validation checking...
@@ -38,4 +38,3 @@ def VirtualDeviceOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

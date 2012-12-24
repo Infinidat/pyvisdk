@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def ToolsConfigInfoToolsLastInstallInfo(vim, *args, **kwargs):
     '''Describes status of last tools upgrade attempt'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ToolsConfigInfoToolsLastInstallInfo')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def ToolsConfigInfoToolsLastInstallInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

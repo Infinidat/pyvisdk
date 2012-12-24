@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostUnresolvedVmfsResignatureSpec(vim, *args, **kwargs):
     '''Specification to resignature an Unresolved VMFS volume.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsResignatureSpec')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostUnresolvedVmfsResignatureSpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

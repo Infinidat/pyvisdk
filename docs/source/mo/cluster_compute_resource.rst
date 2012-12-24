@@ -13,10 +13,12 @@ ClusterComputeResource
     :py:class:`~pyvisdk.do.cluster_drs_faults.ClusterDrsFaults`,
     :py:class:`~pyvisdk.do.cluster_drs_migration.ClusterDrsMigration`,
     :py:class:`~pyvisdk.do.cluster_drs_recommendation.ClusterDrsRecommendation`,
+    :py:class:`~pyvisdk.do.cluster_enter_maintenance_result.ClusterEnterMaintenanceResult`,
     :py:class:`~pyvisdk.do.cluster_host_recommendation.ClusterHostRecommendation`,
     :py:class:`~pyvisdk.do.cluster_recommendation.ClusterRecommendation`,
     :py:class:`~pyvisdk.do.host_connect_spec.HostConnectSpec`,
     :py:class:`~pyvisdk.do.host_system.HostSystem`,
+    :py:class:`~pyvisdk.do.option_value.OptionValue`,
     :py:class:`~pyvisdk.do.resource_pool.ResourcePool`,
     :py:class:`~pyvisdk.do.virtual_machine.VirtualMachine`
     

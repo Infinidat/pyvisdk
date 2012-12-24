@@ -21,7 +21,7 @@ def HostHyperThreadScheduleInfo(vim, *args, **kwargs):
     optimization can take effect only after a system restart. Therefore, while it
     is possible to change the configuration at any time, the change will take
     effect only on the next boot.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostHyperThreadScheduleInfo')
 
     # do some validation checking...
@@ -41,4 +41,3 @@ def HostHyperThreadScheduleInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

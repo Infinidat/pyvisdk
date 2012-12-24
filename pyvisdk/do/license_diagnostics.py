@@ -12,7 +12,7 @@ def LicenseDiagnostics(vim, *args, **kwargs):
     '''This data object type provides summary status and diagnostic information for
     LicenseManager. Counters in this property can be reset to zero. The property
     specified as a discontinuity is used to determine when this last occurred.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}LicenseDiagnostics')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def LicenseDiagnostics(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

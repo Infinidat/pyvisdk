@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmSecondaryDisabledBySystemEvent(vim, *args, **kwargs):
     '''This event records that a fault tolerance secondary VM has been disabled by
     vCenter because the VM could not be powered on.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmSecondaryDisabledBySystemEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmSecondaryDisabledBySystemEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

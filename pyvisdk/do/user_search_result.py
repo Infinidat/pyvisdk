@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UserSearchResult(vim, *args, **kwargs):
     '''When searching for users, the search results in some additional information.
     This object describes the additional information.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}UserSearchResult')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def UserSearchResult(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -12,7 +12,7 @@ def VirtualDiskPartitionedRawDiskVer2BackingOption(vim, *args, **kwargs):
     '''The VirtualDiskOption.PartitionedRawDiskVer2BackingOption object type contains
     the available options when backing a virtual disk using one or more partitions
     on a physical disk device. This backing is supported in VMware Server.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskPartitionedRawDiskVer2BackingOption')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VirtualDiskPartitionedRawDiskVer2BackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

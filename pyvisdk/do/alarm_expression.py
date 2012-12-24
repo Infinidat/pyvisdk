@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmExpression(vim, *args, **kwargs):
     '''Base type for the expressions specifying the conditions that define the status
     of an alarm.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}AlarmExpression')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def AlarmExpression(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

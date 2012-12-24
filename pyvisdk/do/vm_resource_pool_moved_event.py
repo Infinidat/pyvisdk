@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmResourcePoolMovedEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine is moved from one resource pool to
     another.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmResourcePoolMovedEvent')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VmResourcePoolMovedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

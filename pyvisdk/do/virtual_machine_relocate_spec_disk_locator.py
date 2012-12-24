@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineRelocateSpecDiskLocator(vim, *args, **kwargs):
     '''The DiskLocator data object type specifies a virtual disk device (by ID) and a
     datastore locator for the disk's storage.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineRelocateSpecDiskLocator')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualMachineRelocateSpecDiskLocator(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

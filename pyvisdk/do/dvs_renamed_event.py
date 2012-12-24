@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def DvsRenamedEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was renamed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}DvsRenamedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def DvsRenamedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

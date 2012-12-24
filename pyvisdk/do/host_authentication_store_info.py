@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostAuthenticationStoreInfo(vim, *args, **kwargs):
     '''The HostAuthenticationStoreInfo base class defines status information for local
     and host Active Directory authentication.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostAuthenticationStoreInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostAuthenticationStoreInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

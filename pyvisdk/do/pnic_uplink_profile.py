@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PnicUplinkProfile(vim, *args, **kwargs):
     '''The PnicUplinkProfile data object specifies the mapping between a physical NIC
     and an uplink port. The policy property contains the configuration data values.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}PnicUplinkProfile')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def PnicUplinkProfile(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

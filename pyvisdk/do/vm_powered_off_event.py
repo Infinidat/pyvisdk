@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmPoweredOffEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine finished powering off.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmPoweredOffEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmPoweredOffEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

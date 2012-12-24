@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFirewallRuleset(vim, *args, **kwargs):
     '''Data object that describes a single network ruleset that can be allowed or
     blocked by the firewall using the HostFirewallSystem object.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFirewallRuleset')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostFirewallRuleset(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

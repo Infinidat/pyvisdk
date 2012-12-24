@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDevicePipeBackingInfo(vim, *args, **kwargs):
     '''The data object type defines information for using a named pipe as backing for
     a device in a virtual machine.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDevicePipeBackingInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VirtualDevicePipeBackingInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

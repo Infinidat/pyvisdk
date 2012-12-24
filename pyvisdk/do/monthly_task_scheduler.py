@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MonthlyTaskScheduler(vim, *args, **kwargs):
     '''The MonthlyTaskScheduler data object is the base type for the monthly
     schedulers (MonthlyByDayTaskScheduler and MonthlyByWeekdayTaskScheduler).'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}MonthlyTaskScheduler')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def MonthlyTaskScheduler(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

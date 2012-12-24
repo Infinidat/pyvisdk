@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostVirtualSwitchSimpleBridge(vim, *args, **kwargs):
     '''A bridge that is statically bound to a single physical network adapter.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchSimpleBridge')
 
     # do some validation checking...
@@ -30,4 +30,3 @@ def HostVirtualSwitchSimpleBridge(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

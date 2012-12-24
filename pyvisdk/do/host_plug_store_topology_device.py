@@ -12,7 +12,7 @@ def HostPlugStoreTopologyDevice(vim, *args, **kwargs):
     '''This data object type is an association class that describes a ScsiLun and its
     associated Path objects. The ScsiLun is a Device that is formed from a set of
     Paths.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyDevice')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostPlugStoreTopologyDevice(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

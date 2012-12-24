@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def StringOption(vim, *args, **kwargs):
     '''The StringOption data object type is used to define an open-ended string value
     based on an optional subset of valid characters.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}StringOption')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def StringOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

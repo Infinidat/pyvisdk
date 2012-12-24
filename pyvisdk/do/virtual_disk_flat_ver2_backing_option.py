@@ -13,7 +13,7 @@ def VirtualDiskFlatVer2BackingOption(vim, *args, **kwargs):
     disk using a host file with the flat file format used in VMware Server and in
     ESX Server 2.x and greater. Flat disks are pre-allocated, whereas sparse disks
     are grown as needed.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualDiskFlatVer2BackingOption')
 
     # do some validation checking...
@@ -34,4 +34,3 @@ def VirtualDiskFlatVer2BackingOption(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostMultipathInfoLogicalUnit(vim, *args, **kwargs):
     '''The HostMultipathInfoLogicalUnit data object represents a storage entity that
     provides disk blocks to a host.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnit')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostMultipathInfoLogicalUnit(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

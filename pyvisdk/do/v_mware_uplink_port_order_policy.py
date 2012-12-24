@@ -12,7 +12,7 @@ def VMwareUplinkPortOrderPolicy(vim, *args, **kwargs):
     '''This data object type describes uplink port ordering policy for a distributed
     virtual port. A uplink port can be in the active list, the standby list, or
     neither. It cannot be in both lists.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VMwareUplinkPortOrderPolicy')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VMwareUplinkPortOrderPolicy(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

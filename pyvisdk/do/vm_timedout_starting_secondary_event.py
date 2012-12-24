@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmTimedoutStartingSecondaryEvent(vim, *args, **kwargs):
     '''This event records timeout when starting a secondary VM. A default alarm will
     be triggered upon this event, which by default would trigger a SNMP trap.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmTimedoutStartingSecondaryEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmTimedoutStartingSecondaryEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

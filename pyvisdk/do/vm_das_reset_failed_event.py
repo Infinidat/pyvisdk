@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDasResetFailedEvent(vim, *args, **kwargs):
     '''This event records when HA VM Health Monitoring fails to reset a virtual
     machine after failure'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmDasResetFailedEvent')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def VmDasResetFailedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

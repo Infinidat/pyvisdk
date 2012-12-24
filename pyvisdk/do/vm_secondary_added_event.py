@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def VmSecondaryAddedEvent(vim, *args, **kwargs):
     '''This event records a secondary VM is added.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VmSecondaryAddedEvent')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def VmSecondaryAddedEvent(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

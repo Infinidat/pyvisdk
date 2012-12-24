@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterRecommendation(vim, *args, **kwargs):
     '''Recommendation is the base class for any packaged group of actions that are
     intended to take the system from one state to another one.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}ClusterRecommendation')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def ClusterRecommendation(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

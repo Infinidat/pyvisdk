@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPlugStoreTopologyPlugin(vim, *args, **kwargs):
     '''This data object type represents a Plugin in the plug store architecture. A
     Plugin claims a set of paths and groups them into Devices.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyPlugin')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostPlugStoreTopologyPlugin(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

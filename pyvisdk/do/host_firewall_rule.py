@@ -12,7 +12,7 @@ def HostFirewallRule(vim, *args, **kwargs):
     '''This data object type describes a port (or range of ports), identified by port
     number(s), direction and protocol. It is used as a convenient way for users to
     express what ports they want to permit through the firewall.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostFirewallRule')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostFirewallRule(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

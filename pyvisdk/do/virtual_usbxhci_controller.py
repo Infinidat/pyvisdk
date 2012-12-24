@@ -12,7 +12,7 @@ def VirtualUSBXHCIController(vim, *args, **kwargs):
     '''The VirtualUSBXHCIController data object describes a virtual USB Extensible
     Host Controller Interface (USB 3.0). For more informatino see
     VirtualUSBController.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualUSBXHCIController')
 
     # do some validation checking...
@@ -33,4 +33,3 @@ def VirtualUSBXHCIController(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

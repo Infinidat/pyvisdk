@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVirtualNicManagerNicTypeSelection(vim, *args, **kwargs):
     '''DataObject which lets a VirtualNic be marked for use as a
     HostVirtualNicManagerNicType.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostVirtualNicManagerNicTypeSelection')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HostVirtualNicManagerNicTypeSelection(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 
 def HostInternetScsiHbaAuthenticationProperties(vim, *args, **kwargs):
     '''The authentication settings for this host bus adapter or target.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaAuthenticationProperties')
 
     # do some validation checking...
@@ -32,4 +32,3 @@ def HostInternetScsiHbaAuthenticationProperties(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

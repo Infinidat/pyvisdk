@@ -14,7 +14,7 @@ def VirtualMachineBootOptions(vim, *args, **kwargs):
     which you can enter the virtual machine BIOS setup. These options provide a
     solution for the situation that occurs when the console attaches to the virtual
     machine after the boot sequence has passed the BIOS setup entry point.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptions')
 
     # do some validation checking...
@@ -35,4 +35,3 @@ def VirtualMachineBootOptions(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

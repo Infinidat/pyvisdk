@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HttpNfcLeaseDatastoreLeaseInfo(vim, *args, **kwargs):
     '''For a given datastore, represented by datastoreKey, contains a list of leased
     multi-POST-capable hosts connected to it.'''
-    
+
     obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseDatastoreLeaseInfo')
 
     # do some validation checking...
@@ -31,4 +31,3 @@ def HttpNfcLeaseDatastoreLeaseInfo(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    
