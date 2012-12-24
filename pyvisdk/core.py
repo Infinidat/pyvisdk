@@ -19,9 +19,12 @@ from .do.property_spec import PropertySpec
 from .do.selection_spec import SelectionSpec
 from .do.retrieve_options import RetrieveOptions
 from .enums.task_info_state import TaskInfoState
+from .enums.sms_task_state import SmsTaskState
 from .exceptions import VisdkTaskError
 from .mo.service_instance import ServiceInstance
 from .mo.task import Task
+from .mo.sms_task import SmsTask
+from .mo.sms_service_instance import SmsServiceInstance
 from .utils import camel_to_under
 from brownie.importing import import_string
 
@@ -30,78 +33,7 @@ log.setLevel(logging.INFO)
 
 HTTP_TUNNEL = 'sdkTunnel:8089'
 
-class VimBase(object):
-    '''
-    Base class to hold the nuts and bolts for the web services grunt work.
-    '''
-
-
-    def __init__(self, server, connect=True, verbose=3, certfile=None, keyfile=None, wait_for_task=True):
-        '''
-        Constructor
-        '''
-        self.server = server
-        self.verbose = verbose
-        self.connected = False
-        self.certfile = certfile
-        self.keyfile = keyfile
-        self.proxy = None
-        self.wait_for_task = wait_for_task
-        if certfile and keyfile:
-            self.server = HTTP_TUNNEL
-            self.proxy = '%s:80' % server
-
-        # setup logging...
-        logging.getLogger('suds.client').setLevel(logging.INFO)
-        logging.getLogger('suds.wsdl').setLevel(logging.INFO)
-        logging.getLogger('suds.transport').setLevel(logging.INFO)
-        logging.getLogger('suds.xsd.schema').setLevel(logging.INFO)
-
-        if self.verbose > 5:
-            logging.getLogger('suds.client').setLevel(logging.DEBUG)
-            logging.getLogger('suds.transport').setLevel(logging.DEBUG)
-
-        if connect:
-            self.connect()
-
-    def connect(self, timeout=1800):
-        from .client import Client
-        from .transport import HttpAuthenticated
-        if self.connected:
-            return
-
-        self.client = Client(self.server, timeout=timeout)
-        transport = HttpAuthenticated(proxy=self.proxy, certfile=self.certfile, keyfile=self.keyfile)
-        self.client.client.set_options(transport=transport)
-        # create the Service Instance managed object
-        ref = Property('ServiceInstance')
-        ref._type = 'ServiceInstance'
-        self.service_instance = ServiceInstance(self, name='ServiceInstance', ref=ref)
-
-        # get the service content
-        self.service_content = self.service_instance.RetrieveServiceContent()
-        self.property_collector = self.service_content.propertyCollector
-        self.session_manager = self.service_content.sessionManager
-
-        self.root = self.service_content.rootFolder
-        self.connected = True
-
-    def getVersions(self):
-        versions = []
-
-        def get_namespace_name(elem):
-            for child in list(elem):
-                if child.tag == "name":
-                    return child.text
-
-        url = urllib2.urlopen("https://" + self.server + "/sdk/vimServiceVersions.xml")
-        root = etree.fromstring(url.read())
-        names = root.findall(".//namespace")
-        for namesp in names:
-            if "urn:vim25" in get_namespace_name(namesp):
-                versions = [x.text for x in namesp.findall(".//version")]
-                log.debug("versions found: " + str(versions))
-        return versions
+class CoreMixin(object):
 
     def getObjectProperties(self, mobj, properties, parent=None):
         """
@@ -129,16 +61,16 @@ class VimBase(object):
         """
          * Get the ManagedObjectReference for an item under the specified root
          * folder that has the type and name specified.
-         * 
+         *
          * @param _type
          *            type of the managed object
-         * @param properties 
+         * @param properties
          *            names of properties of object to retrieve
          * @param name
          *            name to match
          * @param root
          *            a root folder if available, or null for default
-         * 
+         *
          * @return First ManagedObjectReference of the type / name pair found
         """
         if not "name" in properties:
@@ -272,7 +204,7 @@ class VimBase(object):
         """
          * This method creates a SelectionSpec[] to traverses the entire inventory
          * tree starting at a Folder
-         * 
+         *
          * @return The SelectionSpec[]
         """
         # Recurse through all ResourcePools
@@ -336,6 +268,78 @@ class VimBase(object):
 
         return changeData, version
 
+
+class VimBase(CoreMixin):
+    '''
+    Base class to hold the nuts and bolts for the web services grunt work.
+    '''
+    def __init__(self, server, connect=True, verbose=3, certfile=None, keyfile=None, wait_for_task=True):
+        '''
+        Constructor
+        '''
+        self.server_fqdn = self.server = server
+        self.verbose = verbose
+        self.connected = False
+        self.certfile = certfile
+        self.keyfile = keyfile
+        self.proxy = None
+        self.wait_for_task = wait_for_task
+        if certfile and keyfile:
+            self.server = HTTP_TUNNEL
+            self.proxy = '%s:80' % server
+
+        # setup logging...
+        logging.getLogger('suds.client').setLevel(logging.INFO)
+        logging.getLogger('suds.wsdl').setLevel(logging.INFO)
+        logging.getLogger('suds.transport').setLevel(logging.INFO)
+        logging.getLogger('suds.xsd.schema').setLevel(logging.INFO)
+
+        if self.verbose > 5:
+            logging.getLogger('suds.client').setLevel(logging.DEBUG)
+            logging.getLogger('suds.transport').setLevel(logging.DEBUG)
+
+        if connect:
+            self.connect()
+
+    def connect(self, timeout=1800):
+        from .client import Client
+        from .transport import HttpAuthenticated
+        if self.connected:
+            return
+
+        self.client = Client(self.server, timeout=timeout)
+        transport = HttpAuthenticated(proxy=self.proxy, certfile=self.certfile, keyfile=self.keyfile)
+        self.client.client.set_options(transport=transport)
+        # create the Service Instance managed object
+        ref = Property('ServiceInstance')
+        ref._type = 'ServiceInstance'
+        self.service_instance = ServiceInstance(self, name='ServiceInstance', ref=ref)
+
+        # get the service content
+        self.service_content = self.service_instance.RetrieveServiceContent()
+        self.property_collector = self.service_content.propertyCollector
+        self.session_manager = self.service_content.sessionManager
+
+        self.root = self.service_content.rootFolder
+        self.connected = True
+
+    def getVersions(self):
+        versions = []
+
+        def get_namespace_name(elem):
+            for child in list(elem):
+                if child.tag == "name":
+                    return child.text
+
+        url = urllib2.urlopen("https://" + self.server + "/sdk/vimServiceVersions.xml")
+        root = etree.fromstring(url.read())
+        names = root.findall(".//namespace")
+        for namesp in names:
+            if "urn:vim25" in get_namespace_name(namesp):
+                versions = [x.text for x in namesp.findall(".//version")]
+                log.debug("versions found: " + str(versions))
+        return versions
+
     def waitForTask(self, task, timeout=None):
         if not isinstance(task, Task):
             task = self._parse_object_content(task)
@@ -353,5 +357,45 @@ class VimBase(object):
         if task.info.state == TaskInfoState.error:
             error = task.info.error
             raise VisdkTaskError(error.localizedMessage)
-        
+
         return task.info.state
+
+
+class SmsBase(CoreMixin):
+    def __init__(self, vim, wait_for_task=True):
+        super(SmsBase, self).__init__()
+        self._vim = vim
+        self.wait_for_task = wait_for_task
+
+    def connect(self):
+        from .client import SmsClient
+        from suds.sax.element import Element
+        self.client = SmsClient("{0}:8443".format(self._vim.server_fqdn))
+        session = eval(list(self._vim.client.client.options.transport.cookiejar)[0].value)
+        cookie = Element("vcSessionCookie")
+        cookie.setText(session)
+        self.client.wsdl.options.__pts__.set("soapheaders", cookie)
+        ref = Property('ServiceInstance')
+        ref._type = 'ServiceInstance'
+        self.service_instance = SmsServiceInstance(self, name='ServiceInstance', ref=ref)
+        self.connected = True
+
+    def waitForTask(self, task, timeout=None):
+        if not isinstance(task, SmsTask):
+            task = self._parse_object_content(task)
+
+        log.debug("Waiting for task to complete...")
+        t0 = time.time()
+        while task.QuerySmsTaskInfo().state in [SmsTaskState.running, ]:
+            time.sleep(0.1)
+            t1 = time.time()
+            if timeout is not None and (t1 - t0) > timeout:
+                raise VisdkTaskError("Timeout waiting for task")
+
+        log.debug("Finished task...")
+
+        if task.QuerySmsTaskInfo().state == SmsTaskState.error:
+            error = task.QuerySmsTaskInfo().error
+            raise VisdkTaskError(error.localizedMessage)
+
+        return task.QuerySmsTaskInfo().state

@@ -16,12 +16,21 @@ WSDL_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'wsdl')
 
 class SudsClientFactory(object):
     _client = None
+    _sms_client = None
     @classmethod
     def get_suds_client(cls):
         if cls._client is None:
             cls._client = suds.client.Client("file://" + urllib.pathname2url(os.path.join(WSDL_DIR, 'vimService.wsdl')),
                                              cachingpolicy=1, autoblend=True)
         return cls._client.clone()
+
+    @classmethod
+    def get_sms_suds_client(cls):
+        if cls._sms_client is None:
+            cls._sms_client = suds.client.Client("file://" + urllib.pathname2url(os.path.join(WSDL_DIR, 'smsService.wsdl')),
+                                             cachingpolicy=1, autoblend=True)
+        return cls._sms_client.clone()
+
 
 class Client(object):
     '''
@@ -65,3 +74,19 @@ class Client(object):
             except (AttributeError, MethodNotFound):
                 # if it's a member of this class...
                 return super(Client, self).__getattribute__(attr)
+
+
+class SmsClient(Client):
+    def __init__(self, server, timeout=90):
+        '''
+        Constructor
+        '''
+        url = "https://" + server + '/sms/sdk'
+        client = SudsClientFactory.get_sms_suds_client()
+        client.set_options(faults=True)
+        client.set_options(location=url)
+        client.set_options(timeout=timeout)
+        self.service = client.service
+        self.url = url
+        self.client = client
+        self.server = server

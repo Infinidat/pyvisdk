@@ -9,11 +9,49 @@ import pyvisdk.core
 #
 # Assumptions:  Must connect to the vSphere vCenter
 #               Must be version 4.0 or greater
-# 
+#
 
 log = logging.getLogger(__name__)
 
-class Vim(pyvisdk.core.VimBase):
+class VimMixin(object):
+    def getReferenceToManagedObject(self, mo):
+        """
+        Returns reference of managed object as string. For example: VirtualMachine:vm-16
+        """
+        return "{}:{}".format(mo.ref._type, mo.ref.value)
+
+    def _managedObjectExists(self, mo):
+        from suds import WebFault
+        try:
+            mo.value    # test any member of managed object.. 'value' is common to all objects
+        except WebFault, e:
+            if e.fault.detail.__keylist__ == ['ManagedObjectNotFoundFault']:
+                return False
+        return True
+
+    def getManagedObjectByReference(self, moref):
+        """
+        Returns the managed object
+        :param moref: moref string. For example: VirtualMachine:vm-16
+        :rtype: :py:class:`ManagedEntity`
+        """
+        # http://www.doublecloud.org/2011/03/how-to-get-a-managed-object-with-its-id-like-task-id/
+        class_name, object_id = moref.split(':', 1)
+        ref = ManagedObjectReference(self, type=class_name, value=object_id)
+        mo = self._getManagedObjectType(class_name)(self, ref=ref)
+        if not self._managedObjectExists(mo):
+            raise ValueError(object_id)
+        return mo
+
+    def _getManagedObjectType(self, class_name):
+        # inspired by pyvisdk.vim
+        try:
+            return import_string("pyvisdk.mo.{}.{}".format(camel_to_under(class_name), class_name))
+        except ImportError:
+            raise ValueError(class_name)
+
+
+class Vim(VimMixin, pyvisdk.core.VimBase):
     def __init__(self, server, connect=True, verbose=3, certfile=None, keyfile=None, wait_for_task=True):
         super(Vim, self).__init__(server, connect, verbose, certfile, keyfile, wait_for_task=wait_for_task)
         self.loggedin = False
@@ -37,7 +75,7 @@ class Vim(pyvisdk.core.VimBase):
         if self.verbose > 5:
             self.displayAbout()
 
-        self.session_manager.Login(self.username, self.password, locale)
+        self.session = self.session_manager.Login(self.username, self.password, locale)
         if self.verbose > 2:
             log.info("Successfully logged into %s" % self.client.url)
         self.loggedin = True
@@ -56,10 +94,10 @@ class Vim(pyvisdk.core.VimBase):
 
         if self.verbose > 5:
             self.displayAbout()
-        session = self.session_manager.LoginExtensionByCertificate(extension_key, locale)
+        self.session = self.session_manager.LoginExtensionByCertificate(extension_key, locale)
         if self.verbose > 2:
             log.info("Successfully logged into %s" % self.proxy)
-        self.username = session.userName
+        self.username = self.session.userName
         self.loggedin = True
         self.facades = dict()
 
@@ -101,8 +139,8 @@ class Vim(pyvisdk.core.VimBase):
     def getApiType(self):
         """
         Get the API type
-        
-        :returns: Indicates whether or not the service instance represents a standalone host. If the service instance represents a standalone host, then the physical inventory for that service instance is fixed to that single host. VirtualCenter server provides additional features over single hosts. For example, VirtualCenter offers multi-host management. 
+
+        :returns: Indicates whether or not the service instance represents a standalone host. If the service instance represents a standalone host, then the physical inventory for that service instance is fixed to that single host. VirtualCenter server provides additional features over single hosts. For example, VirtualCenter offers multi-host management.
         :rtype: xsd:string
         """
         return self.service_content.about.apiType
@@ -113,7 +151,7 @@ class Vim(pyvisdk.core.VimBase):
     def getHostSystems(self):
         """
         Get all the hosts on the server
-        
+
         :rtype: :py:class:`HostSystem`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.HostSystem, properties=["name"]) #@UndefinedVariable
@@ -121,7 +159,7 @@ class Vim(pyvisdk.core.VimBase):
     def getHostSystem(self, _name=None):
         """
         Get the host system by name
-        
+
         :rtype: :py:class:`HostSystem`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.HostSystem, properties=["name"], name=_name) #@UndefinedVariable
@@ -132,7 +170,7 @@ class Vim(pyvisdk.core.VimBase):
     def getDatacenters(self):
         """
         Get all the data centers on the server
-        
+
         :rtype: :py:class:`Datacenter`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.Datacenter, properties=["name"]) #@UndefinedVariable
@@ -140,7 +178,7 @@ class Vim(pyvisdk.core.VimBase):
     def getDatacenter(self, _name):
         """
         Get the data center by name
-        
+
         :rtype: :py:class:`Datacenter`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.Datacenter, properties=["name"], name=_name) #@UndefinedVariable
@@ -151,7 +189,7 @@ class Vim(pyvisdk.core.VimBase):
     def getDatastores(self):
         """
         Get all the data centers on the server
-        
+
         :rtype: :py:class:`Datastore`
         """
         datastores = list()
@@ -162,7 +200,7 @@ class Vim(pyvisdk.core.VimBase):
     def getDatastore(self, _name):
         """
         Get the data center by name
-        
+
         :rtype: :py:class:`Datastore`
         """
         for datacenter in self.getDatacenters():
@@ -186,7 +224,7 @@ class Vim(pyvisdk.core.VimBase):
     def getVirtualMachine(self, _name):
         """
         Get the virtual machine by name
-        
+
         :rtype: :py:class:`VirtualMachine`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.VirtualMachine, properties=["name", "runtime.powerState"], name=_name) #@UndefinedVariable
@@ -194,7 +232,7 @@ class Vim(pyvisdk.core.VimBase):
     def getVirtualMachines(self):
         """
         Get all the virtual machines on the server
-        
+
         :rtype: :py:class:`VirtualMachine`
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.VirtualMachine, properties=["name", "runtime.powerState"]) #@UndefinedVariable
@@ -206,41 +244,9 @@ class Vim(pyvisdk.core.VimBase):
         mo = self.getContentsRecursively(props=["configIssue", "configStatus", "name", "parent"])
         return mo
 
-    #------------------------------------------------------------
-    # References
-    #------------------------------------------------------------
-    def getReferenceToManagedObject(self, mo):
-        """
-        Returns reference of managed object as string. For example: VirtualMachine:vm-16
-        """
-        return "{}:{}".format(mo.ref._type, mo.ref.value)
-    
-    def _managedObjectExists(self, mo):
-        from suds import WebFault
-        try:
-            mo.value    # test any member of managed object.. 'value' is common to all objects
-        except WebFault, e:
-            if e.fault.detail.__keylist__ == ['ManagedObjectNotFoundFault']:
-                return False
-        return True
-    
-    def getManagedObjectByReference(self, moref):
-        """
-        Returns the managed object
-        :param moref: moref string. For example: VirtualMachine:vm-16
-        :rtype: :py:class:`ManagedEntity`
-        """
-        # http://www.doublecloud.org/2011/03/how-to-get-a-managed-object-with-its-id-like-task-id/
-        class_name, object_id = moref.split(':', 1)
-        ref = ManagedObjectReference(self, type=class_name, value=object_id)
-        mo = self._getManagedObjectType(class_name)(self, ref=ref)
-        if not self._managedObjectExists(mo):
-            raise ValueError(object_id)
-        return mo
 
-    def _getManagedObjectType(self, class_name):
-        # inspired by pyvisdk.vim
-        try:
-            return import_string("pyvisdk.mo.{}.{}".format(camel_to_under(class_name), class_name))
-        except ImportError:
-            raise ValueError(class_name)
+class Sms(VimMixin, pyvisdk.core.SmsBase):
+    def __init__(self, vim, connect=True, wait_for_task=True):
+        super(Sms, self).__init__(vim, wait_for_task=wait_for_task)
+        if connect:
+            self.connect()

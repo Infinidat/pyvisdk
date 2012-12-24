@@ -106,6 +106,10 @@ ManagedObjectTypes = Enum(
     "VirtualMachineProvisioningChecker",
     "VirtualMachineSnapshot",
     "VirtualizationManager",
-    "VmwareDistributedVirtualSwitch"
+    "VmwareDistributedVirtualSwitch",
+    "SmsProvider",
+    "SmsServiceInstance",
+    "SmsStorageManager",
+    "SmsTask",
+    "VasaProvider"
 )
-
