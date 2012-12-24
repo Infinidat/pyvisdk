@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMFSDatastoreCreatedEvent(vim, *args, **kwargs):
     '''This event records when a VMFS datastore is created.'''
     
-    obj = vim.client.factory.create('ns0:VMFSDatastoreCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VMFSDatastoreCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

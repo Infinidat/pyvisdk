@@ -13,7 +13,7 @@ def HostNatServiceConfig(vim, *args, **kwargs):
     configuration representing both the configured properties on a NAT Service and
     identification information.'''
     
-    obj = vim.client.factory.create('ns0:HostNatServiceConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostNatServiceConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

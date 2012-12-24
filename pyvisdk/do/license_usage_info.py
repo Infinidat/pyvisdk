@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseUsageInfo(vim, *args, **kwargs):
     '''Contains source information, licensed features, and usage.'''
     
-    obj = vim.client.factory.create('ns0:LicenseUsageInfo')
+    obj = vim.client.factory.create('{urn:vim25}LicenseUsageInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

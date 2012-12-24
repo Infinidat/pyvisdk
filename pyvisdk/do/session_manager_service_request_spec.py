@@ -14,7 +14,7 @@ def SessionManagerServiceRequestSpec(vim, *args, **kwargs):
     service request specifications. E.g. for HTTP services the derived class will
     provide a URL property.'''
     
-    obj = vim.client.factory.create('ns0:SessionManagerServiceRequestSpec')
+    obj = vim.client.factory.create('{urn:vim25}SessionManagerServiceRequestSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -13,7 +13,7 @@ def PermissionProfile(vim, *args, **kwargs):
     Use the policy list for access to configuration data for the permission
     profile. Use the property list for access to subprofiles, if any.'''
     
-    obj = vim.client.factory.create('ns0:PermissionProfile')
+    obj = vim.client.factory.create('{urn:vim25}PermissionProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

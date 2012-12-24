@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineFileLayoutDiskLayout(vim, *args, **kwargs):
     '''Enumerats the set of files for each virtual disk.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileLayoutDiskLayout')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutDiskLayout')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

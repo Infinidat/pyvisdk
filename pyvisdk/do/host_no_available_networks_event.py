@@ -12,7 +12,7 @@ def HostNoAvailableNetworksEvent(vim, *args, **kwargs):
     '''This event records the fact that a host does not have any available networks
     for HA communication'''
     
-    obj = vim.client.factory.create('ns0:HostNoAvailableNetworksEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostNoAvailableNetworksEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

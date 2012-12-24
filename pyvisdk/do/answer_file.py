@@ -17,7 +17,7 @@ def AnswerFile(vim, *args, **kwargs):
     The host profile engine will verify the set of parameters for the additional
     configuration data.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFile')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

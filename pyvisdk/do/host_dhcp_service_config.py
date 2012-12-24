@@ -13,7 +13,7 @@ def HostDhcpServiceConfig(vim, *args, **kwargs):
     representing both the configured properties on the instance and identification
     information.'''
     
-    obj = vim.client.factory.create('ns0:HostDhcpServiceConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostDhcpServiceConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

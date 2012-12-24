@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMwareDVSPvlanMapEntry(vim, *args, **kwargs):
     '''The class represents a PVLAN id.'''
     
-    obj = vim.client.factory.create('ns0:VMwareDVSPvlanMapEntry')
+    obj = vim.client.factory.create('{urn:vim25}VMwareDVSPvlanMapEntry')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

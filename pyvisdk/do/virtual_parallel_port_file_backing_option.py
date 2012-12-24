@@ -12,7 +12,7 @@ def VirtualParallelPortFileBackingOption(vim, *args, **kwargs):
     '''Data object type that represents the options for a file backing of a virtual
     parallel port.'''
     
-    obj = vim.client.factory.create('ns0:VirtualParallelPortFileBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualParallelPortFileBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

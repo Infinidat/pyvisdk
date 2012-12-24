@@ -12,7 +12,7 @@ def ManagedByInfo(vim, *args, **kwargs):
     '''The ManagedByInfo data object contains information about the extension
     responsible for the life-cycle of the entity.'''
     
-    obj = vim.client.factory.create('ns0:ManagedByInfo')
+    obj = vim.client.factory.create('{urn:vim25}ManagedByInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

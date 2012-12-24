@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MultipleCertificatesVerifyFaultThumbprintData(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:MultipleCertificatesVerifyFaultThumbprintData')
+    obj = vim.client.factory.create('{urn:vim25}MultipleCertificatesVerifyFaultThumbprintData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

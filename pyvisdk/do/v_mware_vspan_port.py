@@ -12,7 +12,7 @@ def VMwareVspanPort(vim, *args, **kwargs):
     '''This class defines the ports participating in a Distributed Port Mirroring
     session. See VspanSession.'''
     
-    obj = vim.client.factory.create('ns0:VMwareVspanPort')
+    obj = vim.client.factory.create('{urn:vim25}VMwareVspanPort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

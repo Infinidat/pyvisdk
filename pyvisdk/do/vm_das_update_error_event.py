@@ -15,7 +15,7 @@ def VmDasUpdateErrorEvent(vim, *args, **kwargs):
     failure. If it occurs during a powerOff, the virtual machine will be
     automatically powered on if the host it was last running on crashes.'''
     
-    obj = vim.client.factory.create('ns0:VmDasUpdateErrorEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDasUpdateErrorEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

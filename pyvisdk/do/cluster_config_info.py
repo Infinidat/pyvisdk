@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterConfigInfo(vim, *args, **kwargs):
     '''A complete cluster configuration.'''
     
-    obj = vim.client.factory.create('ns0:ClusterConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -15,7 +15,7 @@ def EventDescriptionEventDetail(vim, *args, **kwargs):
     from a specific context. The variable information (vm.name, and so on) is
     derived from the Event object's event arguments (VmEventArgument, and so on).'''
     
-    obj = vim.client.factory.create('ns0:EventDescriptionEventDetail')
+    obj = vim.client.factory.create('{urn:vim25}EventDescriptionEventDetail')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

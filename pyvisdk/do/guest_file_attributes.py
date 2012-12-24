@@ -12,7 +12,7 @@ def GuestFileAttributes(vim, *args, **kwargs):
     '''Different attributes for a guest file.* Check GuestPosixFileAttributes for
     Posix guest files. * Check GuestWindowsFileAttributes for Windows guest files.'''
     
-    obj = vim.client.factory.create('ns0:GuestFileAttributes')
+    obj = vim.client.factory.create('{urn:vim25}GuestFileAttributes')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostBlockAdapterTargetTransport(vim, *args, **kwargs):
     '''Block adapter transport information about a SCSI target.'''
     
-    obj = vim.client.factory.create('ns0:HostBlockAdapterTargetTransport')
+    obj = vim.client.factory.create('{urn:vim25}HostBlockAdapterTargetTransport')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationIpV6Generator(vim, *args, **kwargs):
     '''Base type for the various IpV6 specification possibilities'''
     
-    obj = vim.client.factory.create('ns0:CustomizationIpV6Generator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationIpV6Generator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

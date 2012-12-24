@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterAction(vim, *args, **kwargs):
     '''Base class for all action recommendations in VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:ClusterAction')
+    obj = vim.client.factory.create('{urn:vim25}ClusterAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

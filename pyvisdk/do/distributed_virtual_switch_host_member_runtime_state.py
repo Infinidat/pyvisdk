@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostMemberRuntimeState(vim, *args, **kwargs):
     '''RuntimeState of a HostMember.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostMemberRuntimeState')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberRuntimeState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -30,7 +30,7 @@ def VAppIPAssignmentInfo(vim, *args, **kwargs):
     deployment. Thus,if a vApp or virtual machine is part of another vApp, then the
     settings are ignored, and the ones for the top-most vApp container is used.'''
     
-    obj = vim.client.factory.create('ns0:VAppIPAssignmentInfo')
+    obj = vim.client.factory.create('{urn:vim25}VAppIPAssignmentInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

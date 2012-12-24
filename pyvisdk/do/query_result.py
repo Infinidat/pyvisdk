@@ -15,7 +15,7 @@ def QueryResult(vim, *args, **kwargs):
     Use the propertyName strings to deocde the RowData objects in the result set.
     See for more information and for tables of entity and relationship properties.'''
     
-    obj = vim.client.factory.create('ns0:QueryResult')
+    obj = vim.client.factory.create('{urn:sms}QueryResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

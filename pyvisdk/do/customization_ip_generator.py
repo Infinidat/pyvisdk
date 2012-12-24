@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationIpGenerator(vim, *args, **kwargs):
     '''Base type for the various IP specification possibilities.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationIpGenerator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationIpGenerator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostProfileAppliedEvent(vim, *args, **kwargs):
     '''This event records that a Profile application was done on the host'''
     
-    obj = vim.client.factory.create('ns0:HostProfileAppliedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostProfileAppliedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

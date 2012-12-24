@@ -13,7 +13,7 @@ def DiagnosticManagerLogHeader(vim, *args, **kwargs):
     where entries are located in the log file. Log files typically grow
     dynamically, so indexes based on line numbers may become inaccurate.'''
     
-    obj = vim.client.factory.create('ns0:DiagnosticManagerLogHeader')
+    obj = vim.client.factory.create('{urn:vim25}DiagnosticManagerLogHeader')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

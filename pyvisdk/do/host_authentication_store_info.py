@@ -12,7 +12,7 @@ def HostAuthenticationStoreInfo(vim, *args, **kwargs):
     '''The HostAuthenticationStoreInfo base class defines status information for local
     and host Active Directory authentication.'''
     
-    obj = vim.client.factory.create('ns0:HostAuthenticationStoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostAuthenticationStoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

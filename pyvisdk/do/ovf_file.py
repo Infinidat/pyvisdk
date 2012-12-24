@@ -14,7 +14,7 @@ def OvfFile(vim, *args, **kwargs):
     choices the caller made about a file. This information is needed when the OVF
     descriptor is generated with createDescriptor.'''
     
-    obj = vim.client.factory.create('ns0:OvfFile')
+    obj = vim.client.factory.create('{urn:vim25}OvfFile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

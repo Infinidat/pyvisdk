@@ -12,7 +12,7 @@ def HostLocalAuthenticationInfo(vim, *args, **kwargs):
     '''The HostLocalAuthenticationInfo data object represents local authentication on
     the ESX host. Local authentication is always enabled.'''
     
-    obj = vim.client.factory.create('ns0:HostLocalAuthenticationInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostLocalAuthenticationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

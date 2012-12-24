@@ -12,7 +12,7 @@ def AnswerFileUpdateFailure(vim, *args, **kwargs):
     '''DataObject which represents the errors that ocurred when an answer file update
     was performed.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFileUpdateFailure')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFileUpdateFailure')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

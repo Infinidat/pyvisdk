@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLInetworkfencenetworkportlistFencePort(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLInetworkfencenetworkportlistFencePort')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLInetworkfencenetworkportlistFencePort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

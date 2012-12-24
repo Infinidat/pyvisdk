@@ -13,7 +13,7 @@ def SharesInfo(vim, *args, **kwargs):
     between resource consumers. In general, a consumer with more shares gets
     proportionally more of the resource, subject to certain other constraints.'''
     
-    obj = vim.client.factory.create('ns0:SharesInfo')
+    obj = vim.client.factory.create('{urn:vim25}SharesInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def HostLowLevelProvisioningManagerSnapshotLayoutSpec(vim, *args, **kwargs):
     '''File layout spec of a snapshot, including path to the vmsn file of the snapshot
     and the layout of virtual disks when the snapshot was taken.'''
     
-    obj = vim.client.factory.create('ns0:HostLowLevelProvisioningManagerSnapshotLayoutSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostLowLevelProvisioningManagerSnapshotLayoutSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

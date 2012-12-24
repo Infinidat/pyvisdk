@@ -13,7 +13,7 @@ def PropertyFilterUpdate(vim, *args, **kwargs):
     visible through a specific filter. Note that if a property changes through
     multiple filters, then a client receives an update for each filter.'''
     
-    obj = vim.client.factory.create('ns0:PropertyFilterUpdate')
+    obj = vim.client.factory.create('{urn:vim25}PropertyFilterUpdate')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

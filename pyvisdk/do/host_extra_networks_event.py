@@ -12,7 +12,7 @@ def HostExtraNetworksEvent(vim, *args, **kwargs):
     '''This event records the fact that a host has extra networks not used by other
     hosts for HA communication'''
     
-    obj = vim.client.factory.create('ns0:HostExtraNetworksEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostExtraNetworksEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

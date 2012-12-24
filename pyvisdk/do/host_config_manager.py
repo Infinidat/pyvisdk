@@ -12,7 +12,7 @@ def HostConfigManager(vim, *args, **kwargs):
     '''This data object type describes the configuration of a host across products and
     versions.'''
     
-    obj = vim.client.factory.create('ns0:HostConfigManager')
+    obj = vim.client.factory.create('{urn:vim25}HostConfigManager')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

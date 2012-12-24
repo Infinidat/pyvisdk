@@ -13,7 +13,7 @@ def HostPlugStoreTopologyDevice(vim, *args, **kwargs):
     associated Path objects. The ScsiLun is a Device that is formed from a set of
     Paths.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopologyDevice')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

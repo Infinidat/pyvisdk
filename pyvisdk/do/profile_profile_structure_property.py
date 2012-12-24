@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileProfileStructureProperty(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ProfileProfileStructureProperty')
+    obj = vim.client.factory.create('{urn:vim25}ProfileProfileStructureProperty')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

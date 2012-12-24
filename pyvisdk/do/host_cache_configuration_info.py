@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostCacheConfigurationInfo(vim, *args, **kwargs):
     '''Host solid state drive cache configuration information.'''
     
-    obj = vim.client.factory.create('ns0:HostCacheConfigurationInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostCacheConfigurationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

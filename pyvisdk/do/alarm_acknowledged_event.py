@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmAcknowledgedEvent(vim, *args, **kwargs):
     '''This event records the acknowledgement of an Alarm'''
     
-    obj = vim.client.factory.create('ns0:AlarmAcknowledgedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmAcknowledgedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

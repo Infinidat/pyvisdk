@@ -14,7 +14,7 @@ def VirtualMachineLegacyNetworkSwitchInfo(vim, *args, **kwargs):
     available for the "custom" NetworkBackingType. * ESX Server - The "esxnet"
     NetworkBackingType.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineLegacyNetworkSwitchInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineLegacyNetworkSwitchInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

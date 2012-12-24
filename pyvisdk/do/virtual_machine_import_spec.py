@@ -15,7 +15,7 @@ def VirtualMachineImportSpec(vim, *args, **kwargs):
     VirtualAppImportSpec as part of the ImportSpec for an entity.See also
     ImportSpec.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineImportSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineImportSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

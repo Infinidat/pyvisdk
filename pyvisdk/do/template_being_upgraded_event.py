@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TemplateBeingUpgradedEvent(vim, *args, **kwargs):
     '''This event records the start of a template upgrade.'''
     
-    obj = vim.client.factory.create('ns0:TemplateBeingUpgradedEvent')
+    obj = vim.client.factory.create('{urn:vim25}TemplateBeingUpgradedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

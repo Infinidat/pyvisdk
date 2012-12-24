@@ -12,7 +12,7 @@ def DistributedVirtualPortgroupInfo(vim, *args, **kwargs):
     '''This class describes a DistributedVirtualPortgroup that a device backing can be
     attached to.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualPortgroupInfo')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualPortgroupInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

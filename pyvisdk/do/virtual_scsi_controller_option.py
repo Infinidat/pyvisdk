@@ -12,7 +12,7 @@ def VirtualSCSIControllerOption(vim, *args, **kwargs):
     '''The VirtualSCSIControllerOption data object type contains the options for a
     virtual SCSI controller defined by the VirtualSCSIController data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSCSIControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSCSIControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 12:

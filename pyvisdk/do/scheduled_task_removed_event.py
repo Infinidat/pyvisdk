@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScheduledTaskRemovedEvent(vim, *args, **kwargs):
     '''This event records the removal of a scheduled task.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskRemovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskRemovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

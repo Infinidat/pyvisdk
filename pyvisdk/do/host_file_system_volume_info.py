@@ -18,7 +18,7 @@ def HostFileSystemVolumeInfo(vim, *args, **kwargs):
     but need not use an entire disk.A file system volume by definition must be
     mounted on the file system in order to exist.'''
     
-    obj = vim.client.factory.create('ns0:HostFileSystemVolumeInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostFileSystemVolumeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

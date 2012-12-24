@@ -12,7 +12,7 @@ def VmwareDistributedVirtualSwitchVlanIdSpec(vim, *args, **kwargs):
     '''This data type defines the configuration when single vlanId is used for the
     port.'''
     
-    obj = vim.client.factory.create('ns0:VmwareDistributedVirtualSwitchVlanIdSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmwareDistributedVirtualSwitchVlanIdSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

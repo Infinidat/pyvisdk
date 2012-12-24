@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourcePoolEventArgument(vim, *args, **kwargs):
     '''The event argument is a ResourcePool object.'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

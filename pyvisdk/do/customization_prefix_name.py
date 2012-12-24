@@ -16,7 +16,7 @@ def CustomizationPrefixName(vim, *args, **kwargs):
     guest operating system and reports information to VirtualCenter, including the
     network name of the guest.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationPrefixName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationPrefixName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

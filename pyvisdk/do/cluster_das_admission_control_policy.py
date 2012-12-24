@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasAdmissionControlPolicy(vim, *args, **kwargs):
     '''Base class for specifying how admission control should be done for vSphere HA.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasAdmissionControlPolicy')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasAdmissionControlPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

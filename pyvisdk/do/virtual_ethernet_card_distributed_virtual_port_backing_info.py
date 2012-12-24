@@ -12,7 +12,7 @@ def VirtualEthernetCardDistributedVirtualPortBackingInfo(vim, *args, **kwargs):
     '''The class defines a VirtualEthernetCard backing that connects the device to a
     distributed virtual switch port or portgroup.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCardDistributedVirtualPortBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardDistributedVirtualPortBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostMemorySpec(vim, *args, **kwargs):
     '''DataObject used for configuring the memory setting'''
     
-    obj = vim.client.factory.create('ns0:HostMemorySpec')
+    obj = vim.client.factory.create('{urn:vim25}HostMemorySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

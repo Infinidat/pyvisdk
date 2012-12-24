@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIiscsilogicalnetworkportallistLogicalNetworkPortal(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIiscsilogicalnetworkportallistLogicalNetworkPortal')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIiscsilogicalnetworkportallistLogicalNetworkPortal')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

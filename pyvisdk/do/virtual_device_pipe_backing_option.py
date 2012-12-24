@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDevicePipeBackingOption(vim, *args, **kwargs):
     '''The data object type contains options specific to pipe backings.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDevicePipeBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDevicePipeBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

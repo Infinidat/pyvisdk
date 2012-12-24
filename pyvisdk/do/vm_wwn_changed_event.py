@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmWwnChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a virtual machine's WWN (World Wide Name).'''
     
-    obj = vim.client.factory.create('ns0:VmWwnChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmWwnChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

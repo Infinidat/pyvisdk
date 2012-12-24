@@ -12,7 +12,7 @@ def VirtualEthernetCardOption(vim, *args, **kwargs):
     '''This data object type contains the options for the virtual ethernet card data
     object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCardOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

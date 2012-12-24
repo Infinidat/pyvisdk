@@ -14,7 +14,7 @@ def StorageDrsPodConfigSpec(vim, *args, **kwargs):
     properties are all optional.NOTE: This data object type and all of its methods
     are experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:StorageDrsPodConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}StorageDrsPodConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

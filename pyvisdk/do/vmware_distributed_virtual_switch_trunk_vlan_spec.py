@@ -12,7 +12,7 @@ def VmwareDistributedVirtualSwitchTrunkVlanSpec(vim, *args, **kwargs):
     '''This data type specifies that the port uses trunk mode, which allows the guest
     operating system to manage its own VLAN tags.'''
     
-    obj = vim.client.factory.create('ns0:VmwareDistributedVirtualSwitchTrunkVlanSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmwareDistributedVirtualSwitchTrunkVlanSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

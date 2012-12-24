@@ -18,7 +18,7 @@ def ObjectSpec(vim, *args, **kwargs):
     present, then this specifies additional objects to filter. These objects are
     defined by one or more SelectionSpec objects.'''
     
-    obj = vim.client.factory.create('ns0:ObjectSpec')
+    obj = vim.client.factory.create('{urn:vim25}ObjectSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

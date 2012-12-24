@@ -13,7 +13,7 @@ def HostMultipathInfoLogicalUnitPolicy(vim, *args, **kwargs):
     policy for a device. This policy determines how paths should be utilized when
     accessing a device.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfoLogicalUnitPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnitPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

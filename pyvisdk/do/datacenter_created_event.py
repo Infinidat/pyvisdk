@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatacenterCreatedEvent(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:DatacenterCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatacenterCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

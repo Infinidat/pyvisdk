@@ -15,7 +15,7 @@ def HostDiskPartitionInfo(vim, *args, **kwargs):
     allocations of blocks as a contiguous sequence of block ranges.See
     RetrieveDiskPartitionInfoSee ComputeDiskPartitionInfoSee UpdateDiskPartitions'''
     
-    obj = vim.client.factory.create('ns0:HostDiskPartitionInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

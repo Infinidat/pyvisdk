@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatacenterEventArgument(vim, *args, **kwargs):
     '''The event argument is a Datacenter object.'''
     
-    obj = vim.client.factory.create('ns0:DatacenterEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}DatacenterEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

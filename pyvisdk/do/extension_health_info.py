@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtensionHealthInfo(vim, *args, **kwargs):
     '''This data object encapsulates the health specification for the extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtensionHealthInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtensionHealthInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

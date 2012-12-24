@@ -12,7 +12,7 @@ def LicenseReservationInfo(vim, *args, **kwargs):
     '''A reservation describes how many licenses of a particular feature are being
     used by a particular feature.'''
     
-    obj = vim.client.factory.create('ns0:LicenseReservationInfo')
+    obj = vim.client.factory.create('{urn:vim25}LicenseReservationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

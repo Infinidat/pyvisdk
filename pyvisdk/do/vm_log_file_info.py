@@ -12,7 +12,7 @@ def VmLogFileInfo(vim, *args, **kwargs):
     '''This data object type describes a file that is logging output for a virtual
     machine.'''
     
-    obj = vim.client.factory.create('ns0:VmLogFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}VmLogFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

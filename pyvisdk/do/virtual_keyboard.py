@@ -12,7 +12,7 @@ def VirtualKeyboard(vim, *args, **kwargs):
     '''This data object type contains information about the keyboard on a virtual
     machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualKeyboard')
+    obj = vim.client.factory.create('{urn:vim25}VirtualKeyboard')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def DistributedVirtualSwitchInfo(vim, *args, **kwargs):
     '''This class describes a DistributedVirtualSwitch that a device backing can
     attached to its ports.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchInfo')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

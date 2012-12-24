@@ -15,7 +15,7 @@ def UnlicensedVirtualMachinesFoundEvent(vim, *args, **kwargs):
     UnlicensedVirtualMachinesEvent) (@link vim.ManagedEntity.configIssue
     configIssue) on the host.'''
     
-    obj = vim.client.factory.create('ns0:UnlicensedVirtualMachinesFoundEvent')
+    obj = vim.client.factory.create('{urn:vim25}UnlicensedVirtualMachinesFoundEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

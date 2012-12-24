@@ -12,7 +12,7 @@ def HostIpToShortNameFailedEvent(vim, *args, **kwargs):
     '''This event records that the host's IP address could not be resolved to a short
     name.'''
     
-    obj = vim.client.factory.create('ns0:HostIpToShortNameFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostIpToShortNameFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

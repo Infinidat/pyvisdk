@@ -13,7 +13,7 @@ def HostMultipathInfoLogicalUnitStorageArrayTypePolicy(vim, *args, **kwargs):
     storage array type policy for for a device. This policy determines how device
     I/O and management is performed.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfoLogicalUnitStorageArrayTypePolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnitStorageArrayTypePolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

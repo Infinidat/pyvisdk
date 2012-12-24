@@ -12,7 +12,7 @@ def VirtualMachineScsiPassthroughInfo(vim, *args, **kwargs):
     '''Description of a generic SCSI device, including information about the device
     ID.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineScsiPassthroughInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineScsiPassthroughInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

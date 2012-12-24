@@ -13,7 +13,7 @@ def ModeInfo(vim, *args, **kwargs):
     datastore. The property values specify how to interpret the "what" property for
     a FileAccess object.'''
     
-    obj = vim.client.factory.create('ns0:ModeInfo')
+    obj = vim.client.factory.create('{urn:vim25}ModeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

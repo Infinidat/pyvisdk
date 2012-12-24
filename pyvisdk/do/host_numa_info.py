@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNumaInfo(vim, *args, **kwargs):
     '''Information about the NUMA (non-uniform memory access).'''
     
-    obj = vim.client.factory.create('ns0:HostNumaInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostNumaInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -13,7 +13,7 @@ def StoragePlacementSpec(vim, *args, **kwargs):
     RecommendDatastores method.NOTE: This data object type and all of its methods
     are experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:StoragePlacementSpec')
+    obj = vim.client.factory.create('{urn:vim25}StoragePlacementSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def VirtualVideoCardOption(vim, *args, **kwargs):
     '''This data object type contains the options for the VirtualVideoCard data object
     type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualVideoCardOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualVideoCardOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

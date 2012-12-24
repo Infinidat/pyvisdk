@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDeviceFileBackingOption(vim, *args, **kwargs):
     '''The FileBackingOption data class contains file-specific backing options.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceFileBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceFileBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

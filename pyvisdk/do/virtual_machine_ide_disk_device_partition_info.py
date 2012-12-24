@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineIdeDiskDevicePartitionInfo(vim, *args, **kwargs):
     '''Describes the partition sizes'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineIdeDiskDevicePartitionInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineIdeDiskDevicePartitionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

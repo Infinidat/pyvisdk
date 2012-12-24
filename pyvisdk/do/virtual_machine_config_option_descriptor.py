@@ -12,7 +12,7 @@ def VirtualMachineConfigOptionDescriptor(vim, *args, **kwargs):
     '''Contains the definition of a unique key that can be used to retrieve a
     configOption object.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigOptionDescriptor')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigOptionDescriptor')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

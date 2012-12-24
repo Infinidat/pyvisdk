@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualFloppyImageBackingInfo(vim, *args, **kwargs):
     '''The data object type for file image backing of a virtual floppy drive.'''
     
-    obj = vim.client.factory.create('ns0:VirtualFloppyImageBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualFloppyImageBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

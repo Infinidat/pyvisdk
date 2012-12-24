@@ -12,7 +12,7 @@ def PhysicalNicHint(vim, *args, **kwargs):
     '''This data object type describes each network of a physical network adapter's
     network hint.'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicHint')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicHint')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

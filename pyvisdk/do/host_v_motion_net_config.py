@@ -12,7 +12,7 @@ def HostVMotionNetConfig(vim, *args, **kwargs):
     '''The NetConfig data object type contains the networking configuration for
     VMotion operations.'''
     
-    obj = vim.client.factory.create('ns0:HostVMotionNetConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostVMotionNetConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

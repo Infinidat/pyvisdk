@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtensionPrivilegeInfo(vim, *args, **kwargs):
     '''This data object type describes privileges defined by the extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtensionPrivilegeInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtensionPrivilegeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

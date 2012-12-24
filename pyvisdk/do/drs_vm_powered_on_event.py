@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsVmPoweredOnEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine is powered on by DRS.'''
     
-    obj = vim.client.factory.create('ns0:DrsVmPoweredOnEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsVmPoweredOnEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

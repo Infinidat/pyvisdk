@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsHostLeftEvent(vim, *args, **kwargs):
     '''A host left the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsHostLeftEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsHostLeftEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

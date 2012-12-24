@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseNonComplianceEvent(vim, *args, **kwargs):
     '''This event records that the inventory is not license compliant.'''
     
-    obj = vim.client.factory.create('ns0:LicenseNonComplianceEvent')
+    obj = vim.client.factory.create('{urn:vim25}LicenseNonComplianceEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

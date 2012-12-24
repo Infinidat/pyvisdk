@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtensionEventTypeInfo(vim, *args, **kwargs):
     '''This data object type describes event types defined by the extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtensionEventTypeInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtensionEventTypeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

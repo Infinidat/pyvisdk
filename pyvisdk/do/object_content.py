@@ -12,7 +12,7 @@ def ObjectContent(vim, *args, **kwargs):
     '''The ObjectContent data object type contains the contents retrieved for a single
     managed object.'''
     
-    obj = vim.client.factory.create('ns0:ObjectContent')
+    obj = vim.client.factory.create('{urn:vim25}ObjectContent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

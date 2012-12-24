@@ -12,7 +12,7 @@ def VmRestartedOnAlternateHostEvent(vim, *args, **kwargs):
     '''This event records that the virtual machine was restarted on a host, since its
     original host had failed.'''
     
-    obj = vim.client.factory.create('ns0:VmRestartedOnAlternateHostEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmRestartedOnAlternateHostEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

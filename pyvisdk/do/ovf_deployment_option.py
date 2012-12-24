@@ -12,7 +12,7 @@ def OvfDeploymentOption(vim, *args, **kwargs):
     '''A deployment option as defined in the OVF specfication.This corresponds to the
     Configuration element of the DeploymentOptionSection in the specification.'''
     
-    obj = vim.client.factory.create('ns0:OvfDeploymentOption')
+    obj = vim.client.factory.create('{urn:vim25}OvfDeploymentOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

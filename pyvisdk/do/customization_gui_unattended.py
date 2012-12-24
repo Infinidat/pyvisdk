@@ -13,7 +13,7 @@ def CustomizationGuiUnattended(vim, *args, **kwargs):
     values are plugged directly into the file that VirtualCenter stores on the
     target virtual disk. For more detailed information, see the document .'''
     
-    obj = vim.client.factory.create('ns0:CustomizationGuiUnattended')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationGuiUnattended')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

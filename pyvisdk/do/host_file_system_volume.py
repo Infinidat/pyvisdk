@@ -14,7 +14,7 @@ def HostFileSystemVolume(vim, *args, **kwargs):
     FileSystem is exposed as a datatoreSee DatastoreInfoSee HostVmfsVolumeSee
     HostNasVolumeSee HostLocalFileSystemVolumeSee HostVfatVolume'''
     
-    obj = vim.client.factory.create('ns0:HostFileSystemVolume')
+    obj = vim.client.factory.create('{urn:vim25}HostFileSystemVolume')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

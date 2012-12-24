@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NasDatastoreInfo(vim, *args, **kwargs):
     '''Information details about a network-attached storage (NAS) datastore.'''
     
-    obj = vim.client.factory.create('ns0:NasDatastoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}NasDatastoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

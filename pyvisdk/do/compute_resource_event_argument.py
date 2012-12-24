@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ComputeResourceEventArgument(vim, *args, **kwargs):
     '''The event argument is a ComputeResource object.'''
     
-    obj = vim.client.factory.create('ns0:ComputeResourceEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}ComputeResourceEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

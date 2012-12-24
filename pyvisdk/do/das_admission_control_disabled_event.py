@@ -12,7 +12,7 @@ def DasAdmissionControlDisabledEvent(vim, *args, **kwargs):
     '''This event records when admission control checks have been disabled in a HA
     cluster.'''
     
-    obj = vim.client.factory.create('ns0:DasAdmissionControlDisabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}DasAdmissionControlDisabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

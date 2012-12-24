@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNatServiceNameServiceSpec(vim, *args, **kwargs):
     '''This data object type specifies the information for the name servers.'''
     
-    obj = vim.client.factory.create('ns0:HostNatServiceNameServiceSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostNatServiceNameServiceSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

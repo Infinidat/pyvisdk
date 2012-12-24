@@ -13,7 +13,7 @@ def VmfsDatastoreSpec(vim, *args, **kwargs):
     point to one of the creation specifications that can be used to apply a
     specification to effect the creation or extension of a VMFS datastore.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

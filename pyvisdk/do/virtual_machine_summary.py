@@ -14,7 +14,7 @@ def VirtualMachineSummary(vim, *args, **kwargs):
     retrieve this information very efficiently, even for large sets of virtual
     machines.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineSummary')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

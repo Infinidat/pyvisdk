@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDigestInfo(vim, *args, **kwargs):
     '''This data object type describes the digest information'''
     
-    obj = vim.client.factory.create('ns0:HostDigestInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDigestInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmEmigratingEvent(vim, *args, **kwargs):
     '''This event records a virtual machine emigration.'''
     
-    obj = vim.client.factory.create('ns0:VmEmigratingEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmEmigratingEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

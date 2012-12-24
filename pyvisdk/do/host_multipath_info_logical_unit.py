@@ -12,7 +12,7 @@ def HostMultipathInfoLogicalUnit(vim, *args, **kwargs):
     '''The HostMultipathInfoLogicalUnit data object represents a storage entity that
     provides disk blocks to a host.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfoLogicalUnit')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoLogicalUnit')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

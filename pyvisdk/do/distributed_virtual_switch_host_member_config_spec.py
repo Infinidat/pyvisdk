@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostMemberConfigSpec(vim, *args, **kwargs):
     '''Specification to reconfigure a HostMember.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostMemberConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

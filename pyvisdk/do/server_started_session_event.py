@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ServerStartedSessionEvent(vim, *args, **kwargs):
     '''This event records the starting of the VirtualCenter server.'''
     
-    obj = vim.client.factory.create('ns0:ServerStartedSessionEvent')
+    obj = vim.client.factory.create('{urn:vim25}ServerStartedSessionEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

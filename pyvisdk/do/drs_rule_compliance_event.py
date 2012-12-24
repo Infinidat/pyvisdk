@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsRuleComplianceEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine comes into compliance with DRS rules.'''
     
-    obj = vim.client.factory.create('ns0:DrsRuleComplianceEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsRuleComplianceEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

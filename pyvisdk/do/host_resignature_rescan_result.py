@@ -15,7 +15,7 @@ def HostResignatureRescanResult(vim, *args, **kwargs):
     of hosts. This data object describes the return value of resignature APIs in
     DatastoreSystem.'''
     
-    obj = vim.client.factory.create('ns0:HostResignatureRescanResult')
+    obj = vim.client.factory.create('{urn:vim25}HostResignatureRescanResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

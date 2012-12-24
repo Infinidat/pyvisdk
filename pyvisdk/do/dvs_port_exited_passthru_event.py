@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortExitedPassthruEvent(vim, *args, **kwargs):
     '''A port has exited passthrough mode on the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortExitedPassthruEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortExitedPassthruEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

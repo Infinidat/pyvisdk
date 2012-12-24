@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasVmConfigSpec(vim, *args, **kwargs):
     '''An incremental update to the per-virtual-machine vSphere HA configuration.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasVmConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasVmConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

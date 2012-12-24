@@ -14,7 +14,7 @@ def HostDiskDimensionsChs(vim, *args, **kwargs):
     partitioning for legacy reasons. When defining partitions, many partitioning
     utilities do not function correctly when certain CHS constraints are not met.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskDimensionsChs')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskDimensionsChs')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpConfigIpV6Address(vim, *args, **kwargs):
     '''The ipv6 address specification'''
     
-    obj = vim.client.factory.create('ns0:HostIpConfigIpV6Address')
+    obj = vim.client.factory.create('{urn:vim25}HostIpConfigIpV6Address')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def DrsResourceConfigureSyncedEvent(vim, *args, **kwargs):
     '''This event records when resource configuration specification returns to
     synchronized from previous failure.'''
     
-    obj = vim.client.factory.create('ns0:DrsResourceConfigureSyncedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsResourceConfigureSyncedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -13,7 +13,7 @@ def VirtualDiskAntiAffinityRuleSpec(vim, *args, **kwargs):
     be placed on different datastores.NOTE: This data object type and all of its
     methods are experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskAntiAffinityRuleSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskAntiAffinityRuleSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

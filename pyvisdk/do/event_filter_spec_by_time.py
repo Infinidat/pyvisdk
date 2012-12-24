@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EventFilterSpecByTime(vim, *args, **kwargs):
     '''This option specifies a time range used to filter event history.'''
     
-    obj = vim.client.factory.create('ns0:EventFilterSpecByTime')
+    obj = vim.client.factory.create('{urn:vim25}EventFilterSpecByTime')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

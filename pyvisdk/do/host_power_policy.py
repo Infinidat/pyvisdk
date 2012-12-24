@@ -12,7 +12,7 @@ def HostPowerPolicy(vim, *args, **kwargs):
     '''Power Management Policy data object. Used to retrieve and specify current host
     power management policy.'''
     
-    obj = vim.client.factory.create('ns0:HostPowerPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostPowerPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtendedEventPair(vim, *args, **kwargs):
     '''key/value pair'''
     
-    obj = vim.client.factory.create('ns0:ExtendedEventPair')
+    obj = vim.client.factory.create('{urn:vim25}ExtendedEventPair')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

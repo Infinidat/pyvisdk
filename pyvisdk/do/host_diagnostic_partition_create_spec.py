@@ -12,7 +12,7 @@ def HostDiagnosticPartitionCreateSpec(vim, *args, **kwargs):
     '''The diagnostic create specification is used by the system to create a new
     diagnostic partition on a SCSI disk.'''
     
-    obj = vim.client.factory.create('ns0:HostDiagnosticPartitionCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartitionCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

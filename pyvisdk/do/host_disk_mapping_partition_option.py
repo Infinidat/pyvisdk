@@ -12,7 +12,7 @@ def HostDiskMappingPartitionOption(vim, *args, **kwargs):
     '''The PhysicalPartitionOption data class contains the options for a partition on
     a physical disk.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskMappingPartitionOption')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskMappingPartitionOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

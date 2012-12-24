@@ -12,7 +12,7 @@ def VirtualVmxnetOption(vim, *args, **kwargs):
     '''The VirtualVmxnetOption data object type contains the options for the
     VirtualVmxnet data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualVmxnetOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualVmxnetOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

@@ -14,7 +14,7 @@ def FileQueryFlags(vim, *args, **kwargs):
     This data object type is here to ensure that there is one flag corresponding to
     each FileInfo property other than the path name, which a search always returns.'''
     
-    obj = vim.client.factory.create('ns0:FileQueryFlags')
+    obj = vim.client.factory.create('{urn:vim25}FileQueryFlags')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

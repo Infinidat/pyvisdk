@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseServerSource(vim, *args, **kwargs):
     '''Specify a license server reachable via IPv4 network.'''
     
-    obj = vim.client.factory.create('ns0:LicenseServerSource')
+    obj = vim.client.factory.create('{urn:vim25}LicenseServerSource')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

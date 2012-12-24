@@ -14,7 +14,7 @@ def HostActiveDirectoryInfo(vim, *args, **kwargs):
     , the host is a member of a domain and the ESX Server will set the domain
     information properties.'''
     
-    obj = vim.client.factory.create('ns0:HostActiveDirectoryInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostActiveDirectoryInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def VirtualFloppy(vim, *args, **kwargs):
     '''The VirtualFloppy data object type contains information about a floppy drive in
     a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualFloppy')
+    obj = vim.client.factory.create('{urn:vim25}VirtualFloppy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

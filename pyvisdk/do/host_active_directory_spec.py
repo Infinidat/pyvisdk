@@ -12,7 +12,7 @@ def HostActiveDirectorySpec(vim, *args, **kwargs):
     '''The HostActiveDirectorySpec data object defines properties for Active Directory
     domain access.'''
     
-    obj = vim.client.factory.create('ns0:HostActiveDirectorySpec')
+    obj = vim.client.factory.create('{urn:vim25}HostActiveDirectorySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

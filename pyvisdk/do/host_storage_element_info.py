@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostStorageElementInfo(vim, *args, **kwargs):
     '''Data object describing the operational status of various storage elements.'''
     
-    obj = vim.client.factory.create('ns0:HostStorageElementInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostStorageElementInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

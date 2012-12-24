@@ -12,7 +12,7 @@ def PerfSampleInfo(vim, *args, **kwargs):
     '''This data object type describes information contained in a sample collection,
     its timestamp, and sampling interval.'''
     
-    obj = vim.client.factory.create('ns0:PerfSampleInfo')
+    obj = vim.client.factory.create('{urn:vim25}PerfSampleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

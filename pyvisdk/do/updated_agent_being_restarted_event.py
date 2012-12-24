@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UpdatedAgentBeingRestartedEvent(vim, *args, **kwargs):
     '''This event records that the agent has been patched and will be restarted.'''
     
-    obj = vim.client.factory.create('ns0:UpdatedAgentBeingRestartedEvent')
+    obj = vim.client.factory.create('{urn:vim25}UpdatedAgentBeingRestartedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

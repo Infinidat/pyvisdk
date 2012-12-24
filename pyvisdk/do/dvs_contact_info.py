@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSContactInfo(vim, *args, **kwargs):
     '''Contact information of a human operator.'''
     
-    obj = vim.client.factory.create('ns0:DVSContactInfo')
+    obj = vim.client.factory.create('{urn:vim25}DVSContactInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

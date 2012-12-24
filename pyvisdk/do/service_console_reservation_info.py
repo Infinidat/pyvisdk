@@ -20,7 +20,7 @@ def ServiceConsoleReservationInfo(vim, *args, **kwargs):
     should be reserved for the service console on the next boot. In most cases,
     this amount is the same as the current reservation.'''
     
-    obj = vim.client.factory.create('ns0:ServiceConsoleReservationInfo')
+    obj = vim.client.factory.create('{urn:vim25}ServiceConsoleReservationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

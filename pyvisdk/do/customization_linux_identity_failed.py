@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationLinuxIdentityFailed(vim, *args, **kwargs):
     '''Failed to set Linux identity.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationLinuxIdentityFailed')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationLinuxIdentityFailed')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

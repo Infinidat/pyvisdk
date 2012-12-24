@@ -12,7 +12,7 @@ def HostEnableAdminFailedEvent(vim, *args, **kwargs):
     '''This event records the failure to restore some of the administrator's
     permissions.'''
     
-    obj = vim.client.factory.create('ns0:HostEnableAdminFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostEnableAdminFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

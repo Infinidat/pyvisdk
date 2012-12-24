@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConnectionLostEvent(vim, *args, **kwargs):
     '''This event records the loss of a host connection.'''
     
-    obj = vim.client.factory.create('ns0:HostConnectionLostEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostConnectionLostEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

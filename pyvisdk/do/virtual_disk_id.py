@@ -12,7 +12,7 @@ def VirtualDiskId(vim, *args, **kwargs):
     '''Identifier for a virtual disk.NOTE: This data object type and all of its fields
     are experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskId')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskId')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

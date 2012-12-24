@@ -15,7 +15,7 @@ def HostMultipathStateInfo(vim, *args, **kwargs):
     may actively change. This data object ensures that a request to gather path
     state changes only needs to fetch this data object.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathStateInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathStateInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

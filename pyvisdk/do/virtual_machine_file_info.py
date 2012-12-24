@@ -17,7 +17,7 @@ def VirtualMachineFileInfo(vim, *args, **kwargs):
     configuration is read. This is ignored during configuration and can be left
     out.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

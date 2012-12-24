@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TaskFilterSpecByTime(vim, *args, **kwargs):
     '''This data object type specifies a time range used to filter task history.'''
     
-    obj = vim.client.factory.create('ns0:TaskFilterSpecByTime')
+    obj = vim.client.factory.create('{urn:vim25}TaskFilterSpecByTime')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

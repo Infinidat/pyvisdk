@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourcePoolRuntimeInfo(vim, *args, **kwargs):
     '''Current runtime resource usage and state of the resource pool'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolRuntimeInfo')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolRuntimeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

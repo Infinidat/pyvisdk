@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsRenamedEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was renamed.'''
     
-    obj = vim.client.factory.create('ns0:DvsRenamedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsRenamedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

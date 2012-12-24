@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpRouteConfigSpec(vim, *args, **kwargs):
     '''Dataobject specifying the configuration for IpRoute'''
     
-    obj = vim.client.factory.create('ns0:HostIpRouteConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostIpRouteConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

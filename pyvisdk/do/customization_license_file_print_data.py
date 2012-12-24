@@ -15,7 +15,7 @@ def CustomizationLicenseFilePrintData(vim, *args, **kwargs):
     document . LicenseFilePrintData provides licensing information for Windows
     server operating systems.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationLicenseFilePrintData')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationLicenseFilePrintData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

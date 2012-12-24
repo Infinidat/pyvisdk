@@ -12,7 +12,7 @@ def LicenseServerAvailableEvent(vim, *args, **kwargs):
     '''This event is reported if the LicenseServer was previously unreachable and is
     now reachable.'''
     
-    obj = vim.client.factory.create('ns0:LicenseServerAvailableEvent')
+    obj = vim.client.factory.create('{urn:vim25}LicenseServerAvailableEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationSucceeded(vim, *args, **kwargs):
     '''The customization sequence completed successfully in the guest.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSucceeded')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSucceeded')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

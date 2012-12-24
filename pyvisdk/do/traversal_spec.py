@@ -15,7 +15,7 @@ def TraversalSpec(vim, *args, **kwargs):
     for consideration. This data object can also be named, using the "name" field
     in the base type.'''
     
-    obj = vim.client.factory.create('ns0:TraversalSpec')
+    obj = vim.client.factory.create('{urn:vim25}TraversalSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

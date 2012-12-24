@@ -12,7 +12,7 @@ def NotEnoughResourcesToStartVmEvent(vim, *args, **kwargs):
     '''This event records when the HA does not find sufficient resources to failover a
     virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:NotEnoughResourcesToStartVmEvent')
+    obj = vim.client.factory.create('{urn:vim25}NotEnoughResourcesToStartVmEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

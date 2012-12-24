@@ -15,7 +15,7 @@ def HostConnectSpec(vim, *args, **kwargs):
     conventions of the datacenter, as well as the configuration of a vim account
     (the username/password for the virtual machine files that is created on disk).'''
     
-    obj = vim.client.factory.create('ns0:HostConnectSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostConnectSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

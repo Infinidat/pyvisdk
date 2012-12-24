@@ -14,7 +14,7 @@ def ProfileApplyProfileElement(vim, *args, **kwargs):
     instanced. For example, there may be multiple virtual switch instances
     represented by individual ApplyProfileElement DataObjects.'''
     
-    obj = vim.client.factory.create('ns0:ProfileApplyProfileElement')
+    obj = vim.client.factory.create('{urn:vim25}ProfileApplyProfileElement')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -14,7 +14,7 @@ def VmfsDatastoreExtendSpec(vim, *args, **kwargs):
     same disk. Extension is different from creation in that the VMFS creation
     specification need not be specified.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreExtendSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreExtendSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -12,7 +12,7 @@ def HostNatServicePortForwardSpec(vim, *args, **kwargs):
     '''This data object type describes the Network Address Translation (NAT) port
     forwarding specification.'''
     
-    obj = vim.client.factory.create('ns0:HostNatServicePortForwardSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostNatServicePortForwardSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

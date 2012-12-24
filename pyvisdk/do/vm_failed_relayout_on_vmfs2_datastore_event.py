@@ -12,7 +12,7 @@ def VmFailedRelayoutOnVmfs2DatastoreEvent(vim, *args, **kwargs):
     '''This event records a failure to relay out a virtual machine when the virtual
     machine still has disks on a VMFS2 volume.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedRelayoutOnVmfs2DatastoreEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedRelayoutOnVmfs2DatastoreEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

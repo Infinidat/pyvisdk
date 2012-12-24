@@ -12,7 +12,7 @@ def IpAddressProfile(vim, *args, **kwargs):
     '''The IpAddressProfile represents the Virtual NIC IP address. The policy property
     contains the configuration data values for the IP address.'''
     
-    obj = vim.client.factory.create('ns0:IpAddressProfile')
+    obj = vim.client.factory.create('{urn:vim25}IpAddressProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

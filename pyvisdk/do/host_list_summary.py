@@ -13,7 +13,7 @@ def HostListSummary(vim, *args, **kwargs):
     useful for list views and summary pages.VirtualCenter can retrieve this
     information very efficiently, even for a large set of hosts.'''
     
-    obj = vim.client.factory.create('ns0:HostListSummary')
+    obj = vim.client.factory.create('{urn:vim25}HostListSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

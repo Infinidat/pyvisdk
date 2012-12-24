@@ -12,7 +12,7 @@ def ClusterPowerOnVmResult(vim, *args, **kwargs):
     '''PowerOnVmResult is the base class of the result returned to the
     PowerOnMultiVM_Task method.'''
     
-    obj = vim.client.factory.create('ns0:ClusterPowerOnVmResult')
+    obj = vim.client.factory.create('{urn:vim25}ClusterPowerOnVmResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

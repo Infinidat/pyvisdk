@@ -12,7 +12,7 @@ def HostProfileManagerConfigTaskList(vim, *args, **kwargs):
     '''The HostProfileManagerConfigTaskList data object represents a set of tasks to
     be performed on a host during host profile application.'''
     
-    obj = vim.client.factory.create('ns0:HostProfileManagerConfigTaskList')
+    obj = vim.client.factory.create('{urn:vim25}HostProfileManagerConfigTaskList')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

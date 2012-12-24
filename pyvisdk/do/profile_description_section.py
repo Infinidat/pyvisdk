@@ -12,7 +12,7 @@ def ProfileDescriptionSection(vim, *args, **kwargs):
     '''The ProfileDescriptionSection data object contains a profile element
     description and any messages that may be associated with the profile section.'''
     
-    obj = vim.client.factory.create('ns0:ProfileDescriptionSection')
+    obj = vim.client.factory.create('{urn:vim25}ProfileDescriptionSection')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

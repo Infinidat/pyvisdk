@@ -14,7 +14,7 @@ def VirtualPointingDeviceOption(vim, *args, **kwargs):
     options include the valid selections for the mouse type, the supported mouse
     types, and the default mouse type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPointingDeviceOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPointingDeviceOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseAssignmentManagerLicenseAssignment(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:LicenseAssignmentManagerLicenseAssignment')
+    obj = vim.client.factory.create('{urn:vim25}LicenseAssignmentManagerLicenseAssignment')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -15,7 +15,7 @@ def VirtualDeviceURIBackingOption(vim, *args, **kwargs):
     machine acts as a server, it accepts a connection. When the virtual machine
     acts as a client, it initiates the connection.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceURIBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceURIBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

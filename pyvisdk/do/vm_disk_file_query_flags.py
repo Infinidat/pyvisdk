@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDiskFileQueryFlags(vim, *args, **kwargs):
     '''Details for the virtual disk primary file.'''
     
-    obj = vim.client.factory.create('ns0:VmDiskFileQueryFlags')
+    obj = vim.client.factory.create('{urn:vim25}VmDiskFileQueryFlags')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

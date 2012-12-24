@@ -12,7 +12,7 @@ def VirtualFloppyImageBackingOption(vim, *args, **kwargs):
     '''The ImageBackingOption data object type contains the options for the floppy
     image backing type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualFloppyImageBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualFloppyImageBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

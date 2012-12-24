@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def ReflectManagedMethodExecuterSoapFault(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:ReflectManagedMethodExecuterSoapFault')
+    obj = vim.client.factory.create('{urn:vim25}ReflectManagedMethodExecuterSoapFault')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

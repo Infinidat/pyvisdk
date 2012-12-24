@@ -12,7 +12,7 @@ def ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo(vim, *args, **kwargs):
     '''A slot represents an amount of resources sufficient for any powered on virtual
     machine in the cluster.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasFailoverLevelAdvancedRuntimeInfoSlotInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

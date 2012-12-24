@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineUsageOnDatastore(vim, *args, **kwargs):
     '''Storage space used by this virtual machine on a particular datastore.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineUsageOnDatastore')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineUsageOnDatastore')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDnsConfigSpec(vim, *args, **kwargs):
     '''Dataobject for configuring the DNS settings on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostDnsConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostDnsConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

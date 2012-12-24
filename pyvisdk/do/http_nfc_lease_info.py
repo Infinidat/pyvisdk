@@ -12,7 +12,7 @@ def HttpNfcLeaseInfo(vim, *args, **kwargs):
     '''This class holds information about the lease, such as the entity covered by the
     lease, and HTTP URLs for up/downloading file backings.'''
     
-    obj = vim.client.factory.create('ns0:HttpNfcLeaseInfo')
+    obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

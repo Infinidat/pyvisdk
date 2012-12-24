@@ -12,7 +12,7 @@ def NetIpRouteConfigSpecGatewaySpec(vim, *args, **kwargs):
     '''IpRoute report an individual host, network or default destination network
     reachable through a given gateway.'''
     
-    obj = vim.client.factory.create('ns0:NetIpRouteConfigSpecGatewaySpec')
+    obj = vim.client.factory.create('{urn:vim25}NetIpRouteConfigSpecGatewaySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

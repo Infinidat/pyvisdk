@@ -12,7 +12,7 @@ def VirtualSoundBlaster16(vim, *args, **kwargs):
     '''The VirtualSoundBlaster16 data object type represents a Sound Blaster 16 sound
     card in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSoundBlaster16')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSoundBlaster16')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmConfigMissingEvent(vim, *args, **kwargs):
     '''This event records if the configuration file can not be found.'''
     
-    obj = vim.client.factory.create('ns0:VmConfigMissingEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmConfigMissingEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

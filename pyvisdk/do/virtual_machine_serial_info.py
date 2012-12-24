@@ -12,7 +12,7 @@ def VirtualMachineSerialInfo(vim, *args, **kwargs):
     '''SerialInfo class contains information about a physical serial drive on the
     host.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineSerialInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineSerialInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

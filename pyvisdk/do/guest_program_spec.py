@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestProgramSpec(vim, *args, **kwargs):
     '''This describes the arguments to StartProgramInGuest.'''
     
-    obj = vim.client.factory.create('ns0:GuestProgramSpec')
+    obj = vim.client.factory.create('{urn:vim25}GuestProgramSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

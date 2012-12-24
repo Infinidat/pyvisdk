@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNetworkConfigResult(vim, *args, **kwargs):
     '''The result returned by updateNetworkConfig call.See UpdateNetworkConfig'''
     
-    obj = vim.client.factory.create('ns0:HostNetworkConfigResult')
+    obj = vim.client.factory.create('{urn:vim25}HostNetworkConfigResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

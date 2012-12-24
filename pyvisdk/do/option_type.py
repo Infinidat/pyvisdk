@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OptionType(vim, *args, **kwargs):
     '''The base data object type for all options.'''
     
-    obj = vim.client.factory.create('ns0:OptionType')
+    obj = vim.client.factory.create('{urn:vim25}OptionType')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

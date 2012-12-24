@@ -12,7 +12,7 @@ def ComplianceProfile(vim, *args, **kwargs):
     '''DataObject contains the verifications that need to be done to make sure the
     entity is in compliance.'''
     
-    obj = vim.client.factory.create('ns0:ComplianceProfile')
+    obj = vim.client.factory.create('{urn:vim25}ComplianceProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

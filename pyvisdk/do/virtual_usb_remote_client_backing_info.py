@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualUSBRemoteClientBackingInfo(vim, *args, **kwargs):
     '''The virtual remote client USB device backing class.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBRemoteClientBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBRemoteClientBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

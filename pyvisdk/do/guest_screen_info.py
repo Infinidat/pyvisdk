@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestScreenInfo(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:GuestScreenInfo')
+    obj = vim.client.factory.create('{urn:vim25}GuestScreenInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

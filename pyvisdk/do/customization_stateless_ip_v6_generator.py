@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationStatelessIpV6Generator(vim, *args, **kwargs):
     '''Use stateless autoconfiguration to configure to ipv6 address'''
     
-    obj = vim.client.factory.create('ns0:CustomizationStatelessIpV6Generator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationStatelessIpV6Generator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -13,7 +13,7 @@ def HostSslThumbprintInfo(vim, *args, **kwargs):
     vCenter extension to login into other hosts without username/password
     authentication.'''
     
-    obj = vim.client.factory.create('ns0:HostSslThumbprintInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostSslThumbprintInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -23,7 +23,7 @@ def MetricAlarmExpression(vim, *args, **kwargs):
     the expression is yellow when the metric is over (isAbove) or under (isBelow)
     the yellow value. Otherwise, the expression is green.'''
     
-    obj = vim.client.factory.create('ns0:MetricAlarmExpression')
+    obj = vim.client.factory.create('{urn:vim25}MetricAlarmExpression')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

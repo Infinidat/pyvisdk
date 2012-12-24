@@ -13,7 +13,7 @@ def HostShortNameInconsistentEvent(vim, *args, **kwargs):
     host. Please check your host's network configuration and your DNS
     configuration. There may be duplicate entries.'''
     
-    obj = vim.client.factory.create('ns0:HostShortNameInconsistentEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostShortNameInconsistentEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

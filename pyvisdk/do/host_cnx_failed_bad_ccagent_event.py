@@ -12,7 +12,7 @@ def HostCnxFailedBadCcagentEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to no response being
     received from the host agent.'''
     
-    obj = vim.client.factory.create('ns0:HostCnxFailedBadCcagentEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostCnxFailedBadCcagentEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

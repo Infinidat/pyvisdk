@@ -13,7 +13,7 @@ def VMwareUplinkPortOrderPolicy(vim, *args, **kwargs):
     virtual port. A uplink port can be in the active list, the standby list, or
     neither. It cannot be in both lists.'''
     
-    obj = vim.client.factory.create('ns0:VMwareUplinkPortOrderPolicy')
+    obj = vim.client.factory.create('{urn:vim25}VMwareUplinkPortOrderPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -13,7 +13,7 @@ def VirtualMachineScsiDiskDeviceInfo(vim, *args, **kwargs):
     scsi disk hardware device. These devices are for the
     vim.vm.device.VirtualDisk.RawDiskMappingVer1BackingInfo.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineScsiDiskDeviceInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineScsiDiskDeviceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

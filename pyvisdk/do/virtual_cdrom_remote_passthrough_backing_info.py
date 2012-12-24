@@ -13,7 +13,7 @@ def VirtualCdromRemotePassthroughBackingInfo(vim, *args, **kwargs):
     information to specify a remote pass-through device backing of a virtual CD-
     ROM.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromRemotePassthroughBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemotePassthroughBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

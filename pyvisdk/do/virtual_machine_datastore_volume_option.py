@@ -12,7 +12,7 @@ def VirtualMachineDatastoreVolumeOption(vim, *args, **kwargs):
     '''This data object type describes a file system volume option for this virtual
     machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineDatastoreVolumeOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineDatastoreVolumeOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

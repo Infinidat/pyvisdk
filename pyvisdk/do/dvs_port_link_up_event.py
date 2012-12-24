@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortLinkUpEvent(vim, *args, **kwargs):
     '''A port of which link status is changed to up in the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortLinkUpEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortLinkUpEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -13,7 +13,7 @@ def DrsEnteredStandbyModeEvent(vim, *args, **kwargs):
     initiated by Distributed Power Management. A host in this mode has no running
     virtual machines and no provisioning operations are occurring.'''
     
-    obj = vim.client.factory.create('ns0:DrsEnteredStandbyModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsEnteredStandbyModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

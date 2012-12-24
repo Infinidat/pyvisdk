@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostStorageDeviceInfo(vim, *args, **kwargs):
     '''This data object type describes the storage subsystem configuration.'''
     
-    obj = vim.client.factory.create('ns0:HostStorageDeviceInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostStorageDeviceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

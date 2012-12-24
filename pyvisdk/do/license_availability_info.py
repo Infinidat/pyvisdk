@@ -12,7 +12,7 @@ def LicenseAvailabilityInfo(vim, *args, **kwargs):
     '''Describes how many licenses of a particular feature is provided by the
     licensing source.'''
     
-    obj = vim.client.factory.create('ns0:LicenseAvailabilityInfo')
+    obj = vim.client.factory.create('{urn:vim25}LicenseAvailabilityInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

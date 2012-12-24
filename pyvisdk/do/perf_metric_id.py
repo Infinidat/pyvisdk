@@ -16,7 +16,7 @@ def PerfMetricId(vim, *args, **kwargs):
     special characters:* An asterisk (*) to specify all instances of the metric for
     the specified counterId * Double-quotes ("") to specify aggregated statistics'''
     
-    obj = vim.client.factory.create('ns0:PerfMetricId')
+    obj = vim.client.factory.create('{urn:vim25}PerfMetricId')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

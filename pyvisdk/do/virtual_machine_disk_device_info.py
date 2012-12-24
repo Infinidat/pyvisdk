@@ -12,7 +12,7 @@ def VirtualMachineDiskDeviceInfo(vim, *args, **kwargs):
     '''The DiskDeviceInfo class contains basic information about a specific disk
     hardware device.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineDiskDeviceInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineDiskDeviceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

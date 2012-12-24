@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationAutoIpV6Generator(vim, *args, **kwargs):
     '''Use automatic address configuration to generate linklocal ipv6 addresses'''
     
-    obj = vim.client.factory.create('ns0:CustomizationAutoIpV6Generator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationAutoIpV6Generator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

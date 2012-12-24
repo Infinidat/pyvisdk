@@ -12,7 +12,7 @@ def DasAgentFoundEvent(vim, *args, **kwargs):
     '''This event records that VirtualCenter has re-established contact with a primary
     host in this HA cluster.'''
     
-    obj = vim.client.factory.create('ns0:DasAgentFoundEvent')
+    obj = vim.client.factory.create('{urn:vim25}DasAgentFoundEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

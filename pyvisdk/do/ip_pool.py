@@ -12,7 +12,7 @@ def IpPool(vim, *args, **kwargs):
     '''Specifications of the network configuration to be used on a network. This is
     used to generate IP addresses and for self-customization of vApps.'''
     
-    obj = vim.client.factory.create('ns0:IpPool')
+    obj = vim.client.factory.create('{urn:vim25}IpPool')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

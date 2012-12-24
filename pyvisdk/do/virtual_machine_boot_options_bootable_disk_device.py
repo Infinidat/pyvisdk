@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineBootOptionsBootableDiskDevice(vim, *args, **kwargs):
     '''Bootable disk.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineBootOptionsBootableDiskDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptionsBootableDiskDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

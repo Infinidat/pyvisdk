@@ -13,7 +13,7 @@ def StorageDrsSpaceLoadBalanceConfig(vim, *args, **kwargs):
     and all of its methods are experimental and subject to change in future
     releases.'''
     
-    obj = vim.client.factory.create('ns0:StorageDrsSpaceLoadBalanceConfig')
+    obj = vim.client.factory.create('{urn:vim25}StorageDrsSpaceLoadBalanceConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

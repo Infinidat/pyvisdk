@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationIdentitySettings(vim, *args, **kwargs):
     '''Base type for sysprep, sysprepText, or linuxPrep object type.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationIdentitySettings')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationIdentitySettings')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNotInClusterEvent(vim, *args, **kwargs):
     '''This event records that the host is not a cluster member.'''
     
-    obj = vim.client.factory.create('ns0:HostNotInClusterEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostNotInClusterEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostSystemInfo(vim, *args, **kwargs):
     '''Information about the system as a whole.'''
     
-    obj = vim.client.factory.create('ns0:HostSystemInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostSystemInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

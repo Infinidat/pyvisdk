@@ -25,7 +25,7 @@ def ScsiLun(vim, *args, **kwargs):
     following are some examples of device names. * deviceType - A string describing
     the type of device. The following are some examples of device types.'''
     
-    obj = vim.client.factory.create('ns0:ScsiLun')
+    obj = vim.client.factory.create('{urn:vim25}ScsiLun')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

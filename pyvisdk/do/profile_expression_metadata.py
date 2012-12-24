@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileExpressionMetadata(vim, *args, **kwargs):
     '''DataObject to represent the metadata associated with a SimpleExpression.'''
     
-    obj = vim.client.factory.create('ns0:ProfileExpressionMetadata')
+    obj = vim.client.factory.create('{urn:vim25}ProfileExpressionMetadata')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

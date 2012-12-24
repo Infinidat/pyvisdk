@@ -18,7 +18,7 @@ def ClusterFailoverResourcesAdmissionControlPolicy(vim, *args, **kwargs):
     is controlled by the same HA advanced options used for the failover level
     policy (ClusterFailoverLevelAdmissionControlPolicy).'''
     
-    obj = vim.client.factory.create('ns0:ClusterFailoverResourcesAdmissionControlPolicy')
+    obj = vim.client.factory.create('{urn:vim25}ClusterFailoverResourcesAdmissionControlPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

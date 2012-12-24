@@ -13,7 +13,7 @@ def SendEmailAction(vim, *args, **kwargs):
     use any elements of the ActionParameter enumerated list as part of your strings
     to provide information available at runtime.'''
     
-    obj = vim.client.factory.create('ns0:SendEmailAction')
+    obj = vim.client.factory.create('{urn:vim25}SendEmailAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

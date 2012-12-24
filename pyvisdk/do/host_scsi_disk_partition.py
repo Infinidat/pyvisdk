@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostScsiDiskPartition(vim, *args, **kwargs):
     '''This data object type describes the specification of a Disk partition.'''
     
-    obj = vim.client.factory.create('ns0:HostScsiDiskPartition')
+    obj = vim.client.factory.create('{urn:vim25}HostScsiDiskPartition')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

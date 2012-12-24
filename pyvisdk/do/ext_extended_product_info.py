@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtExtendedProductInfo(vim, *args, **kwargs):
     '''This data object encapsulates extended product information for an extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtExtendedProductInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtExtendedProductInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

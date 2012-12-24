@@ -20,7 +20,7 @@ def Capability(vim, *args, **kwargs):
     version. These are specified by using the vim.host.Capability and
     vim.vm.Capability objects.'''
     
-    obj = vim.client.factory.create('ns0:Capability')
+    obj = vim.client.factory.create('{urn:vim25}Capability')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -13,7 +13,7 @@ def EnteringMaintenanceModeEvent(vim, *args, **kwargs):
     mode. All virtual machine operations are blocked, except the following:*
     MigrateVM * PowerOffVM * SuspendVM * ShutdownGuest * StandbyGuest'''
     
-    obj = vim.client.factory.create('ns0:EnteringMaintenanceModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}EnteringMaintenanceModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

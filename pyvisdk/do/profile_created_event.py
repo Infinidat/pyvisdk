@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileCreatedEvent(vim, *args, **kwargs):
     '''This event records that a Profile was created.'''
     
-    obj = vim.client.factory.create('ns0:ProfileCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ProfileCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

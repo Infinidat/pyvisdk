@@ -12,7 +12,7 @@ def VirtualDeviceConnectOption(vim, *args, **kwargs):
     '''The ConnectOption data object type contains information about options for
     connectable virtual devices.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceConnectOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceConnectOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

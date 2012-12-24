@@ -14,7 +14,7 @@ def VirtualCdromRemotePassthroughBackingOption(vim, *args, **kwargs):
     server cannot present a list of valid remote backing devices because it is
     unable to scan remote hosts.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromRemotePassthroughBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemotePassthroughBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

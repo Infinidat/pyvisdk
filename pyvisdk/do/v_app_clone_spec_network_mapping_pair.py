@@ -12,7 +12,7 @@ def VAppCloneSpecNetworkMappingPair(vim, *args, **kwargs):
     '''Maps one network to another as part of the clone process.Instances of this
     class are used in the field networkMapping'''
     
-    obj = vim.client.factory.create('ns0:VAppCloneSpecNetworkMappingPair')
+    obj = vim.client.factory.create('{urn:vim25}VAppCloneSpecNetworkMappingPair')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

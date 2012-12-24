@@ -12,7 +12,7 @@ def VirtualDevicePipeBackingInfo(vim, *args, **kwargs):
     '''The data object type defines information for using a named pipe as backing for
     a device in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDevicePipeBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDevicePipeBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

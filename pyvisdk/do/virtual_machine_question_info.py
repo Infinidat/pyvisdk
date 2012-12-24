@@ -12,7 +12,7 @@ def VirtualMachineQuestionInfo(vim, *args, **kwargs):
     '''This data object type describes the question that is currently blocking a
     virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineQuestionInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineQuestionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

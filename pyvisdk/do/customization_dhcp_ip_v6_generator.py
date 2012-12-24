@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationDhcpIpV6Generator(vim, *args, **kwargs):
     '''Use a DHCP server to configure ipv6 address'''
     
-    obj = vim.client.factory.create('ns0:CustomizationDhcpIpV6Generator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationDhcpIpV6Generator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterEvent(vim, *args, **kwargs):
     '''These are cluster events.'''
     
-    obj = vim.client.factory.create('ns0:ClusterEvent')
+    obj = vim.client.factory.create('{urn:vim25}ClusterEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

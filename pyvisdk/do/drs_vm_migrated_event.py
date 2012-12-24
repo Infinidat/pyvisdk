@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsVmMigratedEvent(vim, *args, **kwargs):
     '''This event records a virtual machine migration that was recommended by DRS.'''
     
-    obj = vim.client.factory.create('ns0:DrsVmMigratedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsVmMigratedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

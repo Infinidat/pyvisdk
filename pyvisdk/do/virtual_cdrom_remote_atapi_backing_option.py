@@ -14,7 +14,7 @@ def VirtualCdromRemoteAtapiBackingOption(vim, *args, **kwargs):
     present a list of valid remote backing devices because it is unable to scan
     remote hosts.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromRemoteAtapiBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemoteAtapiBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

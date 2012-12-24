@@ -12,7 +12,7 @@ def VirtualMachineSnapshotInfo(vim, *args, **kwargs):
     '''The SnapshotInfo data object type provides all the information about the
     hierarchy of snapshots in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineSnapshotInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineSnapshotInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

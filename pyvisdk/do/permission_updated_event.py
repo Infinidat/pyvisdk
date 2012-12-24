@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PermissionUpdatedEvent(vim, *args, **kwargs):
     '''This event records the update of a permission.'''
     
-    obj = vim.client.factory.create('ns0:PermissionUpdatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}PermissionUpdatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 9:

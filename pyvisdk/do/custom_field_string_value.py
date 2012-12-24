@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomFieldStringValue(vim, *args, **kwargs):
     '''Subtype for string values (currently the only supported type).'''
     
-    obj = vim.client.factory.create('ns0:CustomFieldStringValue')
+    obj = vim.client.factory.create('{urn:vim25}CustomFieldStringValue')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

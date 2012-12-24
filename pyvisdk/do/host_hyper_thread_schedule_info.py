@@ -22,7 +22,7 @@ def HostHyperThreadScheduleInfo(vim, *args, **kwargs):
     is possible to change the configuration at any time, the change will take
     effect only on the next boot.'''
     
-    obj = vim.client.factory.create('ns0:HostHyperThreadScheduleInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostHyperThreadScheduleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -13,7 +13,7 @@ def HostConnectInfo(vim, *args, **kwargs):
     by the connection wizard. This can be returned without adding the host to
     VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:HostConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

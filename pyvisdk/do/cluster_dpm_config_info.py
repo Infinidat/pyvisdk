@@ -12,7 +12,7 @@ def ClusterDpmConfigInfo(vim, *args, **kwargs):
     '''Configuration of the VMware DPM service.All fields are defined as optional. In
     case of a reconfiguration, unset fields are not changed.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDpmConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDpmConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

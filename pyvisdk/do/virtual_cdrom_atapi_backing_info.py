@@ -12,7 +12,7 @@ def VirtualCdromAtapiBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.AtapiBackingInfo data object type represents an ATAPI device
     backing for a virtual CD-ROM.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromAtapiBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromAtapiBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

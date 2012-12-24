@@ -14,7 +14,7 @@ def HostConfigInfo(vim, *args, **kwargs):
     can retrieve this set of information very efficiently even for a large set of
     hosts.'''
     
-    obj = vim.client.factory.create('ns0:HostConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

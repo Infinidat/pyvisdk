@@ -13,7 +13,7 @@ def HostDiskPartitionSpec(vim, *args, **kwargs):
     configure the partitions on a disk. This data object represents the fundamental
     data needed to specify a partition table.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskPartitionSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

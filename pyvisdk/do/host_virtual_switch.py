@@ -13,7 +13,7 @@ def HostVirtualSwitch(vim, *args, **kwargs):
     adapters can connect to create a virtual network. It can also be bridged to a
     physical network.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualSwitch')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitch')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

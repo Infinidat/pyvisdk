@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreFileMovedEvent(vim, *args, **kwargs):
     '''This event records move of a file or directory.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreFileMovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreFileMovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

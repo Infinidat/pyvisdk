@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineDatastoreInfo(vim, *args, **kwargs):
     '''DatastoreInfo describes a datastore that a virtual disk can be stored on.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineDatastoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineDatastoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

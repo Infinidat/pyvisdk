@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDiskFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to create a virtual disk in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmDiskFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDiskFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

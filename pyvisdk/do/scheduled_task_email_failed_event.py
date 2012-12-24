@@ -12,7 +12,7 @@ def ScheduledTaskEmailFailedEvent(vim, *args, **kwargs):
     '''This event records the failure of an attempt to send a notification via email
     for a scheduled task.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskEmailFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskEmailFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

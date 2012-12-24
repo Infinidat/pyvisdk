@@ -12,7 +12,7 @@ def ResourceConfigSpec(vim, *args, **kwargs):
     '''This data object type is a specification for a set of resources allocated to a
     virtual machine or a resource pool.'''
     
-    obj = vim.client.factory.create('ns0:ResourceConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}ResourceConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

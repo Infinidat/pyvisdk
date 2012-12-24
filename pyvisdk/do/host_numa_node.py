@@ -14,7 +14,7 @@ def HostNumaNode(vim, *args, **kwargs):
     are multiple memory ranges, the client will see one memory ranges from this
     NumaNode object, and the memory range may or may not belong to this NUMA node.'''
     
-    obj = vim.client.factory.create('ns0:HostNumaNode')
+    obj = vim.client.factory.create('{urn:vim25}HostNumaNode')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

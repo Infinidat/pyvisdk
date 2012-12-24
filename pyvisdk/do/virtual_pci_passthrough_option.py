@@ -12,7 +12,7 @@ def VirtualPCIPassthroughOption(vim, *args, **kwargs):
     '''The VirtualPCIPassthroughOption data object type describes the options for the
     VirtualPCIPassthrough data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCIPassthroughOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCIPassthroughOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

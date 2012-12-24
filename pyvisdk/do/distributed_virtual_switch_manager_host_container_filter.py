@@ -12,7 +12,7 @@ def DistributedVirtualSwitchManagerHostContainerFilter(vim, *args, **kwargs):
     '''Check host compatibility against all hosts in this
     DistributedVirtualSwitchManagerHostContainer'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchManagerHostContainerFilter')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostContainerFilter')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

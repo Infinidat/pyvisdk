@@ -23,7 +23,7 @@ def HostNetworkPolicy(vim, *args, **kwargs):
     If a host does not support a policy group, the policy group is not set on both
     the virtual switches and the port groups.See HostNetCapabilities'''
     
-    obj = vim.client.factory.create('ns0:HostNetworkPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostNetworkPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

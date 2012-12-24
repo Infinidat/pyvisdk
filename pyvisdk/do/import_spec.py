@@ -15,7 +15,7 @@ def ImportSpec(vim, *args, **kwargs):
     VirtualAppImportSpec. These three classes form a composite structure that
     allows us to contain arbitrarily complex entitites in a single ImportSpec.'''
     
-    obj = vim.client.factory.create('ns0:ImportSpec')
+    obj = vim.client.factory.create('{urn:vim25}ImportSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

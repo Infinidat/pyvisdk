@@ -13,7 +13,7 @@ def HostVirtualSwitchSpec(vim, *args, **kwargs):
     the properties on a VirtualSwitch that can be configured once the object
     exists.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualSwitchSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

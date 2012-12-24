@@ -15,7 +15,7 @@ def VmfsDatastoreMultipleExtentOption(vim, *args, **kwargs):
     datastore. Multiple extents are needed when unpartitioned space is fragmented
     in the existing partition layout of the disk.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreMultipleExtentOption')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreMultipleExtentOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

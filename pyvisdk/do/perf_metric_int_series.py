@@ -13,7 +13,7 @@ def PerfMetricIntSeries(vim, *args, **kwargs):
     must match the size of sampleInfo property in the PerfEntityMetric that
     contains this series.'''
     
-    obj = vim.client.factory.create('ns0:PerfMetricIntSeries')
+    obj = vim.client.factory.create('{urn:vim25}PerfMetricIntSeries')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -30,7 +30,7 @@ def ClusterDasFdmHostState(vim, *args, **kwargs):
     and restarting VMs as required. All FDMs provide the VM/Application Health
     Monitoring Service.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasFdmHostState')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasFdmHostState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

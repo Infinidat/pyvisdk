@@ -12,7 +12,7 @@ def PnicUplinkProfile(vim, *args, **kwargs):
     '''The PnicUplinkProfile data object specifies the mapping between a physical NIC
     and an uplink port. The policy property contains the configuration data values.'''
     
-    obj = vim.client.factory.create('ns0:PnicUplinkProfile')
+    obj = vim.client.factory.create('{urn:vim25}PnicUplinkProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

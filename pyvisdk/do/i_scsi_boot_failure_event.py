@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IScsiBootFailureEvent(vim, *args, **kwargs):
     '''Could not boot from iScsi.'''
     
-    obj = vim.client.factory.create('ns0:IScsiBootFailureEvent')
+    obj = vim.client.factory.create('{urn:vim25}IScsiBootFailureEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

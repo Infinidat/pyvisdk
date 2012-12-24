@@ -12,7 +12,7 @@ def VirtualSoundCardOption(vim, *args, **kwargs):
     '''The VirtualSoundCardOption data class contains the options for the virtual
     sound card class.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSoundCardOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSoundCardOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

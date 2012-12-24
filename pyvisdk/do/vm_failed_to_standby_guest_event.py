@@ -12,7 +12,7 @@ def VmFailedToStandbyGuestEvent(vim, *args, **kwargs):
     '''This event records a failure to set the guest on a virtual machine to a standby
     state.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedToStandbyGuestEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedToStandbyGuestEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

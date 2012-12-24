@@ -20,7 +20,7 @@ def VirtualMachineConfigOption(vim, *args, **kwargs):
     describes environment capabilities and is used by VirtualCenter to choose hosts
     on which to run virtual machines.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

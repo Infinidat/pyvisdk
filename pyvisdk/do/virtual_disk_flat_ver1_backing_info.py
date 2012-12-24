@@ -14,7 +14,7 @@ def VirtualDiskFlatVer1BackingInfo(vim, *args, **kwargs):
     Server 2.x.Flat disks are allocated when created, unlike sparse disks, which
     grow as needed.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskFlatVer1BackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskFlatVer1BackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

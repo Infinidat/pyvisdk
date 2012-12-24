@@ -14,7 +14,7 @@ def HostPatchManagerStatusPrerequisitePatch(vim, *args, **kwargs):
     additional requirement on the server or services running on the server
     pertaining to the prerequisite update.'''
     
-    obj = vim.client.factory.create('ns0:HostPatchManagerStatusPrerequisitePatch')
+    obj = vim.client.factory.create('{urn:vim25}HostPatchManagerStatusPrerequisitePatch')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

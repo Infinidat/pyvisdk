@@ -14,7 +14,7 @@ def HostNetworkConfig(vim, *args, **kwargs):
     runtime information is available from the NetworkInfo data object type.See
     HostNetworkInfo'''
     
-    obj = vim.client.factory.create('ns0:HostNetworkConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostNetworkConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

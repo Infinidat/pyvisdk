@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UserSession(vim, *args, **kwargs):
     '''Information about a current user session.'''
     
-    obj = vim.client.factory.create('ns0:UserSession')
+    obj = vim.client.factory.create('{urn:vim25}UserSession')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

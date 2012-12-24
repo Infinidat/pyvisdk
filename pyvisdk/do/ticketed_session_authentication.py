@@ -18,7 +18,7 @@ def TicketedSessionAuthentication(vim, *args, **kwargs):
     you should call ReleaseCredentialsInGuest to free associated resources and
     session data.'''
     
-    obj = vim.client.factory.create('ns0:TicketedSessionAuthentication')
+    obj = vim.client.factory.create('{urn:vim25}TicketedSessionAuthentication')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

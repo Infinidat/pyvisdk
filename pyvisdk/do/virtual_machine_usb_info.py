@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineUsbInfo(vim, *args, **kwargs):
     '''This data object contains information about a physical USB device on the host.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineUsbInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineUsbInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -13,7 +13,7 @@ def VirtualMachineMemoryReservationInfo(vim, *args, **kwargs):
     memory that is being reserved for virtual machines on the host, and how
     additional memory may be acquired.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineMemoryReservationInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineMemoryReservationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

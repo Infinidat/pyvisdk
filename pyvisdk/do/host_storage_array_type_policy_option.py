@@ -12,7 +12,7 @@ def HostStorageArrayTypePolicyOption(vim, *args, **kwargs):
     '''Description of options associated with a native multipathing storage array type
     plugin.'''
     
-    obj = vim.client.factory.create('ns0:HostStorageArrayTypePolicyOption')
+    obj = vim.client.factory.create('{urn:vim25}HostStorageArrayTypePolicyOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

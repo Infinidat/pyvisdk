@@ -50,7 +50,7 @@ def ClusterRuleInfo(vim, *args, **kwargs):
     required to act on the recommendations, but the Server maintains the
     recommendations until the rules are satisfied.'''
     
-    obj = vim.client.factory.create('ns0:ClusterRuleInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterRuleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def LicenseSource(vim, *args, **kwargs):
     '''This data object type is used to communicate configuration about where to find
     licenses to use for this system.'''
     
-    obj = vim.client.factory.create('ns0:LicenseSource')
+    obj = vim.client.factory.create('{urn:vim25}LicenseSource')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

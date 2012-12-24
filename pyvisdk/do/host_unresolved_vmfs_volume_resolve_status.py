@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostUnresolvedVmfsVolumeResolveStatus(vim, *args, **kwargs):
     '''Data object that describes the resolvability of a volume.'''
     
-    obj = vim.client.factory.create('ns0:HostUnresolvedVmfsVolumeResolveStatus')
+    obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsVolumeResolveStatus')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

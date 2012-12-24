@@ -13,7 +13,7 @@ def LockerMisconfiguredEvent(vim, *args, **kwargs):
     configured to back the locker does not exist or when connectivity to the
     datastore is lost.'''
     
-    obj = vim.client.factory.create('ns0:LockerMisconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}LockerMisconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

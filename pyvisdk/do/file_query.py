@@ -14,7 +14,7 @@ def FileQuery(vim, *args, **kwargs):
     generally does not require opening files and so is an efficient query. Derived
     types add query parameters specific to the type of file.'''
     
-    obj = vim.client.factory.create('ns0:FileQuery')
+    obj = vim.client.factory.create('{urn:vim25}FileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

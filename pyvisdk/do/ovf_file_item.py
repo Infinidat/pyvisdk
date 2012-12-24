@@ -15,7 +15,7 @@ def OvfFileItem(vim, *args, **kwargs):
     "create" flag will be true, or updates to existing files in VI. The latter is
     used to support the OVF parentRef mechanism for Disks.'''
     
-    obj = vim.client.factory.create('ns0:OvfFileItem')
+    obj = vim.client.factory.create('{urn:vim25}OvfFileItem')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

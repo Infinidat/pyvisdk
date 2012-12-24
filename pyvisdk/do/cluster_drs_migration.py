@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDrsMigration(vim, *args, **kwargs):
     '''Describes a single virtual machine migration.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDrsMigration')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDrsMigration')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

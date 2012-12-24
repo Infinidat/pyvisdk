@@ -12,7 +12,7 @@ def VirtualMachineRelocateSpec(vim, *args, **kwargs):
     '''Specification for moving or copying a virtual machine to a different datastore
     or host.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineRelocateSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineRelocateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

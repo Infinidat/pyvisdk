@@ -12,7 +12,7 @@ def CheckResult(vim, *args, **kwargs):
     '''The result of a call to any of the methods in either
     VirtualMachineCompatibilityChecker or VirtualMachineProvisioningChecker.'''
     
-    obj = vim.client.factory.create('ns0:CheckResult')
+    obj = vim.client.factory.create('{urn:vim25}CheckResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

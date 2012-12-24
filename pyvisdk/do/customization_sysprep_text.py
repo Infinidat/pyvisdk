@@ -12,7 +12,7 @@ def CustomizationSysprepText(vim, *args, **kwargs):
     '''An alternate way to specify the answer file. This string is more or less
     written exactly to the answer file on the target virtual disk.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSysprepText')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSysprepText')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

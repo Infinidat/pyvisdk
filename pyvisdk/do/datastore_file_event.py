@@ -13,7 +13,7 @@ def DatastoreFileEvent(vim, *args, **kwargs):
     operations.Property inherited from DatastoreEvent refers to the destination
     datastore in case there is more than datastore involved in the operation.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreFileEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreFileEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

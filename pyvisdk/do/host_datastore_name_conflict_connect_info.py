@@ -12,7 +12,7 @@ def HostDatastoreNameConflictConnectInfo(vim, *args, **kwargs):
     '''This data object type describes a datastore on the host that has the same name
     as a different datastore on VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:HostDatastoreNameConflictConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDatastoreNameConflictConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsCreatedEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was created.'''
     
-    obj = vim.client.factory.create('ns0:DvsCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

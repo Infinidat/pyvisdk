@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDhcpServiceSpec(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:HostDhcpServiceSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostDhcpServiceSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

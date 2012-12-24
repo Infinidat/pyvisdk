@@ -12,7 +12,7 @@ def DrsRecoveredFromFailureEvent(vim, *args, **kwargs):
     '''This event records that DRS has recovered from failure. It is triggered by a
     successful DRS invocation after repeated failure.'''
     
-    obj = vim.client.factory.create('ns0:DrsRecoveredFromFailureEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsRecoveredFromFailureEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

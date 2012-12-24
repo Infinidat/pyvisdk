@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScheduledTaskDetail(vim, *args, **kwargs):
     '''Descriptive detail for each scheduler type.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskDetail')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskDetail')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

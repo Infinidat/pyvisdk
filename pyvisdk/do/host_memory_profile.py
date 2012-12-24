@@ -14,7 +14,7 @@ def HostMemoryProfile(vim, *args, **kwargs):
     to configuration data for the host memory profile. Use the property list for
     access to subprofile configuration data, if any.'''
     
-    obj = vim.client.factory.create('ns0:HostMemoryProfile')
+    obj = vim.client.factory.create('{urn:vim25}HostMemoryProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -13,7 +13,7 @@ def HostPlugStoreTopologyAdapter(vim, *args, **kwargs):
     and its associated storage Paths. The set of Paths on all the host bus adapters
     is the complete set of Paths in the system.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopologyAdapter')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyAdapter')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

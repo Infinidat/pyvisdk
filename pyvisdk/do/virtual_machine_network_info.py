@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineNetworkInfo(vim, *args, **kwargs):
     '''NetworkInfo describes a network that a device backing can attached to.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineNetworkInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineNetworkInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

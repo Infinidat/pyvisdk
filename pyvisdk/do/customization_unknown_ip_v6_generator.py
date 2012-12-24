@@ -12,7 +12,7 @@ def CustomizationUnknownIpV6Generator(vim, *args, **kwargs):
     '''The ipv6 address is left unspecified. The user must be prompted to supply an
     ipv6 address.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationUnknownIpV6Generator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationUnknownIpV6Generator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

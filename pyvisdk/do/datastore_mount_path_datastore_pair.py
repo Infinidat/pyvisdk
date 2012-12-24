@@ -12,7 +12,7 @@ def DatastoreMountPathDatastorePair(vim, *args, **kwargs):
     '''Contains a mapping of an old mount path and its corresponding resignatured or
     remounted datastore'''
     
-    obj = vim.client.factory.create('ns0:DatastoreMountPathDatastorePair')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreMountPathDatastorePair')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

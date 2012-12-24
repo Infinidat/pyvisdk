@@ -12,7 +12,7 @@ def ProfileExecuteResult(vim, *args, **kwargs):
     '''The ProfileExecuteResult data object contains the results from a
     HostProfile.ExecuteHostProfile operation.'''
     
-    obj = vim.client.factory.create('ns0:ProfileExecuteResult')
+    obj = vim.client.factory.create('{urn:vim25}ProfileExecuteResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

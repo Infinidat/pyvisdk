@@ -12,7 +12,7 @@ def DatastoreIORMReconfiguredEvent(vim, *args, **kwargs):
     '''This event records that the configuration of storage I/O resource management
     for a datastore has changed.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreIORMReconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreIORMReconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

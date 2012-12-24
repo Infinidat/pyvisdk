@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortgroupDestroyedEvent(vim, *args, **kwargs):
     '''Two distributed virtual portgroup was destroyed.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupDestroyedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupDestroyedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

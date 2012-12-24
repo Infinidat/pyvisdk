@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FilterSpec(vim, *args, **kwargs):
     '''Specification of a set of filter constraints to be applied on a query result.'''
     
-    obj = vim.client.factory.create('ns0:FilterSpec')
+    obj = vim.client.factory.create('{urn:sms}FilterSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

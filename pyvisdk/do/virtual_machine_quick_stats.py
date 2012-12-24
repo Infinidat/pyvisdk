@@ -14,7 +14,7 @@ def VirtualMachineQuickStats(vim, *args, **kwargs):
     Therefore, changes in QuickStats do not generate property collector updates. To
     monitor statistics values, use the statistics and alarms modules instead.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineQuickStats')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineQuickStats')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

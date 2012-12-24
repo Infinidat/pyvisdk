@@ -12,7 +12,7 @@ def VmNvramFileInfo(vim, *args, **kwargs):
     '''This data object type describes a file that is a virtual machine non-volatile
     memory file.'''
     
-    obj = vim.client.factory.create('ns0:VmNvramFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}VmNvramFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

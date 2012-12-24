@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreFileDeletedEvent(vim, *args, **kwargs):
     '''This event records deletion of a file or directory.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreFileDeletedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreFileDeletedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

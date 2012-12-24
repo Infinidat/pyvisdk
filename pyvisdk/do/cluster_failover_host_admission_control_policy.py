@@ -21,7 +21,7 @@ def ClusterFailoverHostAdmissionControlPolicy(vim, *args, **kwargs):
     failover host, use the hostStatus property
     (ClusterComputeResourceSummary.admissionControlInfo.hostStatus).'''
     
-    obj = vim.client.factory.create('ns0:ClusterFailoverHostAdmissionControlPolicy')
+    obj = vim.client.factory.create('{urn:vim25}ClusterFailoverHostAdmissionControlPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def VirtualMachineConfigInfoDatastoreUrlPair(vim, *args, **kwargs):
     '''Contains the name of a datastore, and its local file path on the host currently
     affiliated with this virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigInfoDatastoreUrlPair')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigInfoDatastoreUrlPair')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

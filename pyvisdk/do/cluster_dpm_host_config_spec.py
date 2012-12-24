@@ -28,7 +28,7 @@ def ClusterDpmHostConfigSpec(vim, *args, **kwargs):
     (add, edit, or remove). If you set the modify parameter to false, you can use
     only the add operation.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDpmHostConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDpmHostConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

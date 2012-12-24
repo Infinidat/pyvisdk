@@ -13,7 +13,7 @@ def VirtualDiskPartitionedRawDiskVer2BackingOption(vim, *args, **kwargs):
     the available options when backing a virtual disk using one or more partitions
     on a physical disk device. This backing is supported in VMware Server.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskPartitionedRawDiskVer2BackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskPartitionedRawDiskVer2BackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

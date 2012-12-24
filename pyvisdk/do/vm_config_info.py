@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmConfigInfo(vim, *args, **kwargs):
     '''VM Configuration.'''
     
-    obj = vim.client.factory.create('ns0:VmConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}VmConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

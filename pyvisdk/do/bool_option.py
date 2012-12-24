@@ -12,7 +12,7 @@ def BoolOption(vim, *args, **kwargs):
     '''The BoolOption data object type describes if an option is supported ("true")
     and if the option is set to "true" or "false" by default.'''
     
-    obj = vim.client.factory.create('ns0:BoolOption')
+    obj = vim.client.factory.create('{urn:vim25}BoolOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

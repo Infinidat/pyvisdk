@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def RoleEventArgument(vim, *args, **kwargs):
     '''The event argument is a Role object.'''
     
-    obj = vim.client.factory.create('ns0:RoleEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}RoleEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

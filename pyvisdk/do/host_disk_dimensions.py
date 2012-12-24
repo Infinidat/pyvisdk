@@ -12,7 +12,7 @@ def HostDiskDimensions(vim, *args, **kwargs):
     '''This data object type describes multiple coordinate systems used to refer to a
     location or size on a disk.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskDimensions')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskDimensions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

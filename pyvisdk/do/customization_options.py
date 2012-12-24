@@ -12,7 +12,7 @@ def CustomizationOptions(vim, *args, **kwargs):
     '''Base object type for optional operations supported by the customization
     process.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationOptions')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationOptions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

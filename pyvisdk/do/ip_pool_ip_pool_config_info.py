@@ -14,7 +14,7 @@ def IpPoolIpPoolConfigInfo(vim, *args, **kwargs):
     notation, e.g.: 192.0.2.235IPv6 addresses are in colon-hexadecimal notation,
     e.g.: 2001:0db8:85a3::0370:7334'''
     
-    obj = vim.client.factory.create('ns0:IpPoolIpPoolConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}IpPoolIpPoolConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

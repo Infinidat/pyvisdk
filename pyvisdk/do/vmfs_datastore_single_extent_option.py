@@ -13,7 +13,7 @@ def VmfsDatastoreSingleExtentOption(vim, *args, **kwargs):
     datastore. A single extent implies that one disk partition will be created on
     the disk for creating or increasing the capacity of a VMFS datastore.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreSingleExtentOption')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreSingleExtentOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

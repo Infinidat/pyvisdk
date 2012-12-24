@@ -12,7 +12,7 @@ def ClusterConfigSpec(vim, *args, **kwargs):
     '''A complete cluster configuration. All fields are defined as optional. In case
     of a reconfiguration, unset fields are unchanged.'''
     
-    obj = vim.client.factory.create('ns0:ClusterConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

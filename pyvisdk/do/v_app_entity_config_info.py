@@ -27,7 +27,7 @@ def VAppEntityConfigInfo(vim, *args, **kwargs):
     startAction is none or powerOn, and the valid values for stopAction is none or
     powerOff.'''
     
-    obj = vim.client.factory.create('ns0:VAppEntityConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}VAppEntityConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

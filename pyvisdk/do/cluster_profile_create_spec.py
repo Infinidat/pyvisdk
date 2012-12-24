@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterProfileCreateSpec(vim, *args, **kwargs):
     '''Base class for Cluster CreateSpecs'''
     
-    obj = vim.client.factory.create('ns0:ClusterProfileCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterProfileCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

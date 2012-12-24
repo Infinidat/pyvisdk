@@ -12,7 +12,7 @@ def HostLowLevelProvisioningManagerDiskLayoutSpec(vim, *args, **kwargs):
     '''File layout spec of a virtual disk. The disk could be either a base-disk or a
     delta disk.'''
     
-    obj = vim.client.factory.create('ns0:HostLowLevelProvisioningManagerDiskLayoutSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostLowLevelProvisioningManagerDiskLayoutSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

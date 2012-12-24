@@ -12,7 +12,7 @@ def TaskFilterSpecByUsername(vim, *args, **kwargs):
     '''This data object type enables you to filter task history according to the users
     who performed the tasks.'''
     
-    obj = vim.client.factory.create('ns0:TaskFilterSpecByUsername')
+    obj = vim.client.factory.create('{urn:vim25}TaskFilterSpecByUsername')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

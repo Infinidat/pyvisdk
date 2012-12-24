@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPatchManagerPatchManagerOperationSpec(vim, *args, **kwargs):
     '''Optional parameters for hostd to pass to exupdate.'''
     
-    obj = vim.client.factory.create('ns0:HostPatchManagerPatchManagerOperationSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostPatchManagerPatchManagerOperationSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

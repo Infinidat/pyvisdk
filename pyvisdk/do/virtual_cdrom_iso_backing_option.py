@@ -12,7 +12,7 @@ def VirtualCdromIsoBackingOption(vim, *args, **kwargs):
     '''The VirtualCdromOption.IsoBackingOption data object type contains the options
     for an ISO image backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromIsoBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromIsoBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConnectedEvent(vim, *args, **kwargs):
     '''This event records a successful host connection.'''
     
-    obj = vim.client.factory.create('ns0:HostConnectedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostConnectedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

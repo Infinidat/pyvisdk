@@ -12,7 +12,7 @@ def HostCnxFailedEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to an unspecified
     condition.'''
     
-    obj = vim.client.factory.create('ns0:HostCnxFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostCnxFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

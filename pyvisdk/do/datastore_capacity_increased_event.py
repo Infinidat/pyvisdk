@@ -12,7 +12,7 @@ def DatastoreCapacityIncreasedEvent(vim, *args, **kwargs):
     '''This event records when increase in a datastore's capacity is observed. It may
     happen due to different reasons, like extending or expanding a datastore.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreCapacityIncreasedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreCapacityIncreasedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

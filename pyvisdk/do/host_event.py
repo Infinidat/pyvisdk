@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostEvent(vim, *args, **kwargs):
     '''These are host-related events.'''
     
-    obj = vim.client.factory.create('ns0:HostEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

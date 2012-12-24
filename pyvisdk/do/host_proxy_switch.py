@@ -12,7 +12,7 @@ def HostProxySwitch(vim, *args, **kwargs):
     '''The HostProxySwitch is a software entity which represents the component of a
     DistributedVirtualSwitch on a particular host.'''
     
-    obj = vim.client.factory.create('ns0:HostProxySwitch')
+    obj = vim.client.factory.create('{urn:vim25}HostProxySwitch')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

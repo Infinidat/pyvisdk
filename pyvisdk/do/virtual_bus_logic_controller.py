@@ -12,7 +12,7 @@ def VirtualBusLogicController(vim, *args, **kwargs):
     '''VirtualBusLogicController is the data object that represents a BusLogic SCSI
     controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualBusLogicController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualBusLogicController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -13,7 +13,7 @@ def NetIpStackInfoNetToMedia(vim, *args, **kwargs):
     underlying physical address it maps to as learned by: IPv4: Address Resolution
     Protocol (ARP) RFC 826 IPv6: Neighbor Discovery Protocol (NDP) RFC 4861'''
     
-    obj = vim.client.factory.create('ns0:NetIpStackInfoNetToMedia')
+    obj = vim.client.factory.create('{urn:vim25}NetIpStackInfoNetToMedia')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

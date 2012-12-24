@@ -12,7 +12,7 @@ def VirtualSIOController(vim, *args, **kwargs):
     '''This data object type defines a Super IO Controller for floppy drives, parallel
     ports, and serial ports.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSIOController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSIOController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def CustomizationUnknownName(vim, *args, **kwargs):
     '''Indicates that the name is not specified in advance. The client should prompt
     the user for the value to complete the specification.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationUnknownName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationUnknownName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

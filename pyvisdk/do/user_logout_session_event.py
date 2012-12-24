@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UserLogoutSessionEvent(vim, *args, **kwargs):
     '''This event records a user logoff, disconnection, or session timeout.'''
     
-    obj = vim.client.factory.create('ns0:UserLogoutSessionEvent')
+    obj = vim.client.factory.create('{urn:vim25}UserLogoutSessionEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

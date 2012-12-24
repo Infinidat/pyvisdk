@@ -14,7 +14,7 @@ def HostVmfsRescanResult(vim, *args, **kwargs):
     underlying storage luns. As part of the operation, we rescan host. This data
     object describes the outcome of rescan operation on a host'''
     
-    obj = vim.client.factory.create('ns0:HostVmfsRescanResult')
+    obj = vim.client.factory.create('{urn:vim25}HostVmfsRescanResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

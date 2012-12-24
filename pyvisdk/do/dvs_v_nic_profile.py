@@ -13,7 +13,7 @@ def DvsVNicProfile(vim, *args, **kwargs):
     Virtual NIC subprofiles. If a profile plug-in defines additional policies or
     subprofiles, use the policy or property list to access the configuration data.'''
     
-    obj = vim.client.factory.create('ns0:DvsVNicProfile')
+    obj = vim.client.factory.create('{urn:vim25}DvsVNicProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

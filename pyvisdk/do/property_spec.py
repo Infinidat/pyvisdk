@@ -18,8 +18,8 @@ def PropertySpec(vim, *args, **kwargs):
     the union of the properties implied by the PropertySpec objects even, in the
     case of a RetrieveResult, where there may be an applicable PropertySpec in more
     than one filter.'''
-    
-    obj = vim.client.factory.create('ns0:PropertySpec')
+
+    obj = vim.client.factory.create('{urn:vim25}PropertySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:
@@ -38,4 +38,3 @@ def PropertySpec(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

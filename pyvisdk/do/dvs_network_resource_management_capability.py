@@ -12,7 +12,7 @@ def DVSNetworkResourceManagementCapability(vim, *args, **kwargs):
     '''Dataobject representing the feature capabilities of network resource management
     supported by the vSphere Distributed Switch.'''
     
-    obj = vim.client.factory.create('ns0:DVSNetworkResourceManagementCapability')
+    obj = vim.client.factory.create('{urn:vim25}DVSNetworkResourceManagementCapability')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

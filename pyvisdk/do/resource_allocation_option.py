@@ -12,7 +12,7 @@ def ResourceAllocationOption(vim, *args, **kwargs):
     '''The ResourceAllocationOption data object specifies value ranges and default
     values for ResourceAllocationInfo.'''
     
-    obj = vim.client.factory.create('ns0:ResourceAllocationOption')
+    obj = vim.client.factory.create('{urn:vim25}ResourceAllocationOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

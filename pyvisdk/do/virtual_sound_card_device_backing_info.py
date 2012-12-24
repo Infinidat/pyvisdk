@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSoundCardDeviceBackingInfo(vim, *args, **kwargs):
     '''The sound card device backing data class.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSoundCardDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSoundCardDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

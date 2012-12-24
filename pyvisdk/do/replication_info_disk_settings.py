@@ -12,7 +12,7 @@ def ReplicationInfoDiskSettings(vim, *args, **kwargs):
     '''The ReplicationConfigSpec.DiskSettings object type encapsulates the replication
     properties of a replicated disk of a replicated virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:ReplicationInfoDiskSettings')
+    obj = vim.client.factory.create('{urn:vim25}ReplicationInfoDiskSettings')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

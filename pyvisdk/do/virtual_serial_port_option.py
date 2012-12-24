@@ -14,7 +14,7 @@ def VirtualSerialPortOption(vim, *args, **kwargs):
     the device is backed physically on the host: by a network socket, a host file,
     a host serial port device, or a pipe to another process.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

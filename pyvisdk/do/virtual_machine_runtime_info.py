@@ -12,7 +12,7 @@ def VirtualMachineRuntimeInfo(vim, *args, **kwargs):
     '''The RuntimeInfo data object type provides information about the execution state
     and history of a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineRuntimeInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineRuntimeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

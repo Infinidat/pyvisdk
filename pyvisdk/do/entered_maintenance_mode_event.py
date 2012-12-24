@@ -13,7 +13,7 @@ def EnteredMaintenanceModeEvent(vim, *args, **kwargs):
     host in this mode has no running virtual machines and no provisioning
     operations are occuring.'''
     
-    obj = vim.client.factory.create('ns0:EnteredMaintenanceModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}EnteredMaintenanceModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostAutoStartManagerConfig(vim, *args, **kwargs):
     '''Contains the entire auto-start/auto-stop configuration.'''
     
-    obj = vim.client.factory.create('ns0:HostAutoStartManagerConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostAutoStartManagerConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -13,7 +13,7 @@ def CustomizationLinuxPrep(vim, *args, **kwargs):
     machine-wide settings that identify a Linux machine in the same way that the
     Sysprep type identifies a Windows machine.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationLinuxPrep')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationLinuxPrep')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

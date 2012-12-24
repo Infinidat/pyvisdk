@@ -12,7 +12,7 @@ def VirtualCdromAtapiBackingOption(vim, *args, **kwargs):
     '''The VirtualCdromOption.AtapiBackingOption data object type contains the options
     for the ATAPI CD-ROM device backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromAtapiBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromAtapiBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

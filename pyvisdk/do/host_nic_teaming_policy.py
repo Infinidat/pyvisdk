@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNicTeamingPolicy(vim, *args, **kwargs):
     '''Policy for a network adapter team.'''
     
-    obj = vim.client.factory.create('ns0:HostNicTeamingPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostNicTeamingPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

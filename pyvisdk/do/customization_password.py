@@ -12,7 +12,7 @@ def CustomizationPassword(vim, *args, **kwargs):
     '''Contains a password string and a flag that specifies whether the string is in
     plain text or encrypted.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationPassword')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationPassword')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

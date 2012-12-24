@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def KernelModuleSectionInfo(vim, *args, **kwargs):
     '''Information about a module section.'''
     
-    obj = vim.client.factory.create('ns0:KernelModuleSectionInfo')
+    obj = vim.client.factory.create('{urn:vim25}KernelModuleSectionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

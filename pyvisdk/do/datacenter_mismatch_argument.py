@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatacenterMismatchArgument(vim, *args, **kwargs):
     '''An input entity argument that belongs to a mismatched datacenter.'''
     
-    obj = vim.client.factory.create('ns0:DatacenterMismatchArgument')
+    obj = vim.client.factory.create('{urn:vim25}DatacenterMismatchArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

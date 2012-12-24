@@ -12,7 +12,7 @@ def HostVirtualNicManagerNicTypeSelection(vim, *args, **kwargs):
     '''DataObject which lets a VirtualNic be marked for use as a
     HostVirtualNicManagerNicType.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualNicManagerNicTypeSelection')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualNicManagerNicTypeSelection')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

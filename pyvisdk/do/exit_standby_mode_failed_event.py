@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExitStandbyModeFailedEvent(vim, *args, **kwargs):
     '''This event records that the host failed to exit standby mode.'''
     
-    obj = vim.client.factory.create('ns0:ExitStandbyModeFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ExitStandbyModeFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

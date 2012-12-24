@@ -17,7 +17,7 @@ def ClusterDasVmConfigInfo(vim, *args, **kwargs):
     configuration is reverted to the default values, then the new configuration
     values are applied.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasVmConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasVmConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

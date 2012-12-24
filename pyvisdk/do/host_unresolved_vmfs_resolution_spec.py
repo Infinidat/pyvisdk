@@ -17,7 +17,7 @@ def HostUnresolvedVmfsResolutionSpec(vim, *args, **kwargs):
     head-extent needs to be specified. In future releases, we will allow user to
     specify explicitly all the extents which makes up a new Vmfs Volume.'''
     
-    obj = vim.client.factory.create('ns0:HostUnresolvedVmfsResolutionSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsResolutionSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

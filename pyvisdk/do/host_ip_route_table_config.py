@@ -12,7 +12,7 @@ def HostIpRouteTableConfig(vim, *args, **kwargs):
     '''IpRouteEntry. Routing entries are individual static routes which combined with
     the default route form all of the routing rules for a host.'''
     
-    obj = vim.client.factory.create('ns0:HostIpRouteTableConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostIpRouteTableConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

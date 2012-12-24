@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmBeingDeployedEvent(vim, *args, **kwargs):
     '''This event records a virtual machine being deployed from a template.'''
     
-    obj = vim.client.factory.create('ns0:VmBeingDeployedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmBeingDeployedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

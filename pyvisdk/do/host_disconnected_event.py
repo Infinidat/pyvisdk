@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDisconnectedEvent(vim, *args, **kwargs):
     '''This event records a disconnection from a host.'''
     
-    obj = vim.client.factory.create('ns0:HostDisconnectedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostDisconnectedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def DistributedVirtualSwitchHostProductSpec(vim, *args, **kwargs):
     '''This data object type is a subset of AboutInfo. An object of this type can be
     used to describe the specification for a host.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostProductSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostProductSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

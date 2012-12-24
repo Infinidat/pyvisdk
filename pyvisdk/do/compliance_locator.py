@@ -12,7 +12,7 @@ def ComplianceLocator(vim, *args, **kwargs):
     '''This dataObject contains information about location of applyProfile which was
     responsible for generation of a particular ComplianceExpression.'''
     
-    obj = vim.client.factory.create('ns0:ComplianceLocator')
+    obj = vim.client.factory.create('{urn:vim25}ComplianceLocator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

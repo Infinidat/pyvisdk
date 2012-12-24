@@ -12,7 +12,7 @@ def VmPrimaryFailoverEvent(vim, *args, **kwargs):
     '''This event records a fault tolerance failover. The reason could be : lost
     connection to primary, partial hardware failure of primary or by user.'''
     
-    obj = vim.client.factory.create('ns0:VmPrimaryFailoverEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmPrimaryFailoverEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -12,7 +12,7 @@ def VirtualMachineRuntimeInfoDasProtectionState(vim, *args, **kwargs):
     '''The DasProtectionState object describes the vSphere HA protection state of a
     virtual machine (VM).'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineRuntimeInfoDasProtectionState')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineRuntimeInfoDasProtectionState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

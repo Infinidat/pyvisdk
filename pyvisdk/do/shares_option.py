@@ -12,7 +12,7 @@ def SharesOption(vim, *args, **kwargs):
     '''Specification of shares.Object of this class specifies value ranges for object
     of instance SharesInfo'''
     
-    obj = vim.client.factory.create('ns0:SharesOption')
+    obj = vim.client.factory.create('{urn:vim25}SharesOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

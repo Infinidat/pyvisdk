@@ -12,7 +12,7 @@ def PhysicalNicConfig(vim, *args, **kwargs):
     '''The configuration of the physical network adapter containing both the
     configurable properties and identification information.'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicConfig')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

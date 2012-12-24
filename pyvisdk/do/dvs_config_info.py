@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSConfigInfo(vim, *args, **kwargs):
     '''Configuration of a DistributedVirtualSwitch.'''
     
-    obj = vim.client.factory.create('ns0:DVSConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}DVSConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 12:

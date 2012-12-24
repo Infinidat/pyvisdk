@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIsoftwareprofileinstallInstallationResult(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIsoftwareprofileinstallInstallationResult')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIsoftwareprofileinstallInstallationResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

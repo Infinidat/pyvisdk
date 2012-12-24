@@ -12,7 +12,7 @@ def DVSManagerDvsConfigTarget(vim, *args, **kwargs):
     '''Configuration specification for a DistributedVirtualSwitch or
     DistributedVirtualPortgroup.'''
     
-    obj = vim.client.factory.create('ns0:DVSManagerDvsConfigTarget')
+    obj = vim.client.factory.create('{urn:vim25}DVSManagerDvsConfigTarget')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

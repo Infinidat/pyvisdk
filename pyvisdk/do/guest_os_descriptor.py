@@ -12,7 +12,7 @@ def GuestOsDescriptor(vim, *args, **kwargs):
     '''This data object type contains information to describe a particular guest
     operating system.'''
     
-    obj = vim.client.factory.create('ns0:GuestOsDescriptor')
+    obj = vim.client.factory.create('{urn:vim25}GuestOsDescriptor')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 30:

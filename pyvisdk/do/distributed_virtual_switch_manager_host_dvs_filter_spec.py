@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchManagerHostDvsFilterSpec(vim, *args, **kwargs):
     '''Base class for filters to check host compatibility.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchManagerHostDvsFilterSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostDvsFilterSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

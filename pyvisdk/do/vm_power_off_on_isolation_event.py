@@ -12,7 +12,7 @@ def VmPowerOffOnIsolationEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine has been powered off on an isolated
     host in a HA cluster.'''
     
-    obj = vim.client.factory.create('ns0:VmPowerOffOnIsolationEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmPowerOffOnIsolationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

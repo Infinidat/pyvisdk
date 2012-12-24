@@ -15,7 +15,7 @@ def FileInfo(vim, *args, **kwargs):
     files that are associated with virtual machines. Derived types describe the
     known file types for a datastore.'''
     
-    obj = vim.client.factory.create('ns0:FileInfo')
+    obj = vim.client.factory.create('{urn:vim25}FileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

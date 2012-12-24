@@ -16,7 +16,7 @@ def OptionDef(vim, *args, **kwargs):
     hierarchy descends to a new sublevel with each dot. For example,
     "Ethernet.NetworkConnection.Bridged".'''
     
-    obj = vim.client.factory.create('ns0:OptionDef')
+    obj = vim.client.factory.create('{urn:vim25}OptionDef')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

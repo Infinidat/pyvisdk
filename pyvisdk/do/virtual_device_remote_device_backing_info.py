@@ -15,7 +15,7 @@ def VirtualDeviceRemoteDeviceBackingInfo(vim, *args, **kwargs):
     provide a list of remote host devices available for this virtual device
     backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceRemoteDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceRemoteDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

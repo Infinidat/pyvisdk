@@ -12,7 +12,7 @@ def VirtualLsiLogicSASController(vim, *args, **kwargs):
     '''VirtualLsiLogicSASController is the data object that represents a LSI Logic SAS
     SCSI controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualLsiLogicSASController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualLsiLogicSASController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

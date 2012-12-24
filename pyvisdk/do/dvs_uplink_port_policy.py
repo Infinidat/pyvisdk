@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSUplinkPortPolicy(vim, *args, **kwargs):
     '''The base class for uplink port policy.'''
     
-    obj = vim.client.factory.create('ns0:DVSUplinkPortPolicy')
+    obj = vim.client.factory.create('{urn:vim25}DVSUplinkPortPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

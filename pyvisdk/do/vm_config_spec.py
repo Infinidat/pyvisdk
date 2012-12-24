@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmConfigSpec(vim, *args, **kwargs):
     '''vApp related configuration of a VM.'''
     
-    obj = vim.client.factory.create('ns0:VmConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

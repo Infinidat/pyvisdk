@@ -13,7 +13,7 @@ def HostVmfsSpec(vim, *args, **kwargs):
     specification. Once created, these properties for the most part cannot be
     changed. There are a few exceptions.'''
     
-    obj = vim.client.factory.create('ns0:HostVmfsSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostVmfsSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

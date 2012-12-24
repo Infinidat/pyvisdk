@@ -23,7 +23,7 @@ def EventEx(vim, *args, **kwargs):
     filled in only if the object is actually present in the VC Server's
     ManagedEntity inventory.'''
     
-    obj = vim.client.factory.create('ns0:EventEx')
+    obj = vim.client.factory.create('{urn:vim25}EventEx')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

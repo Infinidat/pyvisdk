@@ -13,7 +13,7 @@ def VirtualSCSIPassthroughDeviceBackingInfo(vim, *args, **kwargs):
     information about the backing that maps the virtual device onto a physical
     device.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSCSIPassthroughDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSCSIPassthroughDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

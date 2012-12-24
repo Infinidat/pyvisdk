@@ -12,7 +12,7 @@ def VirtualMachineVMIROM(vim, *args, **kwargs):
     '''The VirtualVMIROM data object type represents the ROM on the virtual machine's
     PCI bus that provides support for VMI.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineVMIROM')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMIROM')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

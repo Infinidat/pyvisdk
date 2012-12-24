@@ -12,7 +12,7 @@ def VmFaultToleranceTurnedOffEvent(vim, *args, **kwargs):
     '''This event records that all secondary virtual machines have been removed and
     fault tolerance protection turned off for this virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmFaultToleranceTurnedOffEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceTurnedOffEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

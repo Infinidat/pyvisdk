@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MethodActionArgument(vim, *args, **kwargs):
     '''This data object type defines a named argument for an operation.'''
     
-    obj = vim.client.factory.create('ns0:MethodActionArgument')
+    obj = vim.client.factory.create('{urn:vim25}MethodActionArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

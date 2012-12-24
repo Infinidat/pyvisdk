@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFeatureVersionInfo(vim, *args, **kwargs):
     '''Feature-specific version information for a host'''
     
-    obj = vim.client.factory.create('ns0:HostFeatureVersionInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostFeatureVersionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

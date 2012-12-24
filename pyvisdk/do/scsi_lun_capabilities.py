@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScsiLunCapabilities(vim, *args, **kwargs):
     '''Scsi device specific capabilities.'''
     
-    obj = vim.client.factory.create('ns0:ScsiLunCapabilities')
+    obj = vim.client.factory.create('{urn:vim25}ScsiLunCapabilities')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

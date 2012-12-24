@@ -16,7 +16,7 @@ def VirtualMachineFileLayout(vim, *args, **kwargs):
     directoryOften the same directory is used for configuration, log, disk and
     snapshots.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileLayout')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayout')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

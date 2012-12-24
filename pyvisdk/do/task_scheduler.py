@@ -18,7 +18,7 @@ def TaskScheduler(vim, *args, **kwargs):
     task execution.After you have established the task timing, use the scheduler
     object for the ScheduledTaskSpec scheduler property value.'''
     
-    obj = vim.client.factory.create('ns0:TaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}TaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

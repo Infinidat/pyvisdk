@@ -12,7 +12,7 @@ def HostNewNetworkConnectInfo(vim, *args, **kwargs):
     '''Network information for a network that will be added to VirtualCenter when the
     host is added.'''
     
-    obj = vim.client.factory.create('ns0:HostNewNetworkConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostNewNetworkConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

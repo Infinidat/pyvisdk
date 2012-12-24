@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmPoweredOnEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine finished powering on.'''
     
-    obj = vim.client.factory.create('ns0:VmPoweredOnEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmPoweredOnEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

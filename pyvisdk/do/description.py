@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Description(vim, *args, **kwargs):
     '''Static strings used for describing an object or property.'''
     
-    obj = vim.client.factory.create('ns0:Description')
+    obj = vim.client.factory.create('{urn:vim25}Description')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

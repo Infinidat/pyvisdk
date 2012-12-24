@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostMonitoringStateChangedEvent(vim, *args, **kwargs):
     '''This event records when host monitoring state has changed.'''
     
-    obj = vim.client.factory.create('ns0:HostMonitoringStateChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostMonitoringStateChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

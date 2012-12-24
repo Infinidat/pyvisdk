@@ -14,7 +14,7 @@ def HostDiagnosticPartitionCreateDescription(vim, *args, **kwargs):
     submitted to create the partition and information that can be shown to the
     user.'''
     
-    obj = vim.client.factory.create('ns0:HostDiagnosticPartitionCreateDescription')
+    obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartitionCreateDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostReconnectionFailedEvent(vim, *args, **kwargs):
     '''This event records a failed attempt to re-establish a host connection.'''
     
-    obj = vim.client.factory.create('ns0:HostReconnectionFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostReconnectionFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

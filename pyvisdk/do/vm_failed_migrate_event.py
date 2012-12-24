@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFailedMigrateEvent(vim, *args, **kwargs):
     '''This event records a failure to migrate a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedMigrateEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedMigrateEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

@@ -17,7 +17,7 @@ def OvfConsumerOstNode(vim, *args, **kwargs):
     the OVF descriptor. It is provided to OVF consumers as a more convenient way to
     navigate and modify the OVF than by working directly on the XML.'''
     
-    obj = vim.client.factory.create('ns0:OvfConsumerOstNode')
+    obj = vim.client.factory.create('{urn:vim25}OvfConsumerOstNode')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

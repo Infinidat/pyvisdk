@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmRemovedEvent(vim, *args, **kwargs):
     '''This event records the removal of an alarm.'''
     
-    obj = vim.client.factory.create('ns0:AlarmRemovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmRemovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

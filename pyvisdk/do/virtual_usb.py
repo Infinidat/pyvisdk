@@ -48,7 +48,7 @@ def VirtualUSB(vim, *args, **kwargs):
     connections to USB devices on the host. * DRS (Distributed Resource Scheduling)
     may power-off hosts that have USB connections to virtual machines.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSB')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSB')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

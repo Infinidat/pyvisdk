@@ -12,7 +12,7 @@ def HostScsiTopologyInterface(vim, *args, **kwargs):
     '''This data object type describes the SCSI interface that is associated with a
     list of targets.'''
     
-    obj = vim.client.factory.create('ns0:HostScsiTopologyInterface')
+    obj = vim.client.factory.create('{urn:vim25}HostScsiTopologyInterface')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -33,7 +33,7 @@ def SSPIAuthentication(vim, *args, **kwargs):
     privilege is enabled for the user. Similarly, access to network resources may
     fail due to the limitations of the token.'''
     
-    obj = vim.client.factory.create('ns0:SSPIAuthentication')
+    obj = vim.client.factory.create('{urn:vim25}SSPIAuthentication')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

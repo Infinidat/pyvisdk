@@ -12,7 +12,7 @@ def Edge(vim, *args, **kwargs):
     '''Topological representation of a physical or logical relationship between two
     entities in the system.'''
     
-    obj = vim.client.factory.create('ns0:Edge')
+    obj = vim.client.factory.create('{urn:sms}Edge')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

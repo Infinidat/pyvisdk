@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetworkSummary(vim, *args, **kwargs):
     '''General information about a network.'''
     
-    obj = vim.client.factory.create('ns0:NetworkSummary')
+    obj = vim.client.factory.create('{urn:vim25}NetworkSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

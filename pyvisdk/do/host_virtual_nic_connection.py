@@ -16,7 +16,7 @@ def HostVirtualNicConnection(vim, *args, **kwargs):
     the created VirtualNic is referred to in some other part of configuration. e.g:
     for configuring VMotion'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualNicConnection')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualNicConnection')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

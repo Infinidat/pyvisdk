@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortgroupReconfiguredEvent(vim, *args, **kwargs):
     '''Two distributed virtual portgroup was reconfigured.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupReconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupReconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

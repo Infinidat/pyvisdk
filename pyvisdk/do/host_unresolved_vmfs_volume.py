@@ -23,7 +23,7 @@ def HostUnresolvedVmfsVolume(vim, *args, **kwargs):
     representing the possible operations on UnresolvedVmfsVolumeSee
     HostStorageSystem'''
     
-    obj = vim.client.factory.create('ns0:HostUnresolvedVmfsVolume')
+    obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsVolume')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

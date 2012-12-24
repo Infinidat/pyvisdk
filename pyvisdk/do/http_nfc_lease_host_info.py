@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HttpNfcLeaseHostInfo(vim, *args, **kwargs):
     '''Contains information about how to connect to a given host.'''
     
-    obj = vim.client.factory.create('ns0:HttpNfcLeaseHostInfo')
+    obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseHostInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

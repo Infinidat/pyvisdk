@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortgroupRenamedEvent(vim, *args, **kwargs):
     '''Two distributed virtual portgroup was renamed.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupRenamedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupRenamedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

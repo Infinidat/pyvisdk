@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PrivilegePolicyDef(vim, *args, **kwargs):
     '''Describes a basic privilege policy.'''
     
-    obj = vim.client.factory.create('ns0:PrivilegePolicyDef')
+    obj = vim.client.factory.create('{urn:vim25}PrivilegePolicyDef')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

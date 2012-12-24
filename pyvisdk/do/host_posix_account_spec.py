@@ -12,7 +12,7 @@ def HostPosixAccountSpec(vim, *args, **kwargs):
     '''This data object type contains a POSIX-specific parameter for local account
     creation.'''
     
-    obj = vim.client.factory.create('ns0:HostPosixAccountSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostPosixAccountSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

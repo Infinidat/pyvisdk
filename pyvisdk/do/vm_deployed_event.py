@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDeployedEvent(vim, *args, **kwargs):
     '''This event records the completion of a virtual machine deployment operation.'''
     
-    obj = vim.client.factory.create('ns0:VmDeployedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDeployedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

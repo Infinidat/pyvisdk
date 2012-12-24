@@ -12,7 +12,7 @@ def DatastoreRemovedOnHostEvent(vim, *args, **kwargs):
     '''This event records when a datastore is removed from a host but not from
     VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreRemovedOnHostEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreRemovedOnHostEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

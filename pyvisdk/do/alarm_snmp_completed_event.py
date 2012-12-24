@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmSnmpCompletedEvent(vim, *args, **kwargs):
     '''This event records the completion of an alarm SNMP notification.'''
     
-    obj = vim.client.factory.create('ns0:AlarmSnmpCompletedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmSnmpCompletedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

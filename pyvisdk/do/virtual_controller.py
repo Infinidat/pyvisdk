@@ -14,7 +14,7 @@ def VirtualController(vim, *args, **kwargs):
     information about a controller (such as name and description), and to allow
     controllers to appear in a generic list of virtual devices.'''
     
-    obj = vim.client.factory.create('ns0:VirtualController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

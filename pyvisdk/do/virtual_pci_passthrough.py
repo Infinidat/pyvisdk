@@ -13,7 +13,7 @@ def VirtualPCIPassthrough(vim, *args, **kwargs):
     device on the virtual machine that is being backed by a generic PCI device on
     the host via passthrough.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCIPassthrough')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCIPassthrough')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

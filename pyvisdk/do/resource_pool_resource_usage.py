@@ -16,7 +16,7 @@ def ResourcePoolResourceUsage(vim, *args, **kwargs):
     resource pool is not expandable, then the following is true:If the reservation
     on the resource pool is expandable, then the following is true:'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolResourceUsage')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolResourceUsage')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

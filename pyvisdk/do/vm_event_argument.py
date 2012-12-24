@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmEventArgument(vim, *args, **kwargs):
     '''The event argument is a VirtualMachine object.'''
     
-    obj = vim.client.factory.create('ns0:VmEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}VmEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

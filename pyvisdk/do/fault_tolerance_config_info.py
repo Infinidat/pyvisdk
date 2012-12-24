@@ -13,7 +13,7 @@ def FaultToleranceConfigInfo(vim, *args, **kwargs):
     settings for this virtual machine. role, instanceUuids and configPaths contain
     information about the whole fault tolerance group.'''
     
-    obj = vim.client.factory.create('ns0:FaultToleranceConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}FaultToleranceConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

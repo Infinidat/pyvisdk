@@ -12,7 +12,7 @@ def HostConfigSpec(vim, *args, **kwargs):
     '''The HostConfigSpec data object provides access to data objects that specify
     configuration changes to be applied to an ESX host.'''
     
-    obj = vim.client.factory.create('ns0:HostConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

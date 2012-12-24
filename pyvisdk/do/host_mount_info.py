@@ -13,7 +13,7 @@ def HostMountInfo(vim, *args, **kwargs):
     mount point. This object does not include information about the mounted file
     system. (See HostFileSystemMountInfo.)'''
     
-    obj = vim.client.factory.create('ns0:HostMountInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostMountInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

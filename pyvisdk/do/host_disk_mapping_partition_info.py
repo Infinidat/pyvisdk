@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDiskMappingPartitionInfo(vim, *args, **kwargs):
     '''The PhysicalPartitionInfo data class.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskMappingPartitionInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskMappingPartitionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

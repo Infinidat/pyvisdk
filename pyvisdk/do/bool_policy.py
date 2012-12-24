@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def BoolPolicy(vim, *args, **kwargs):
     '''The boolean type of setting or configuration that may get an inherited value.'''
     
-    obj = vim.client.factory.create('ns0:BoolPolicy')
+    obj = vim.client.factory.create('{urn:vim25}BoolPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

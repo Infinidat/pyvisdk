@@ -12,7 +12,7 @@ def HostPathSelectionPolicyOption(vim, *args, **kwargs):
     '''Description of options associated with a native multipathing path selection
     policy plugin.'''
     
-    obj = vim.client.factory.create('ns0:HostPathSelectionPolicyOption')
+    obj = vim.client.factory.create('{urn:vim25}HostPathSelectionPolicyOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

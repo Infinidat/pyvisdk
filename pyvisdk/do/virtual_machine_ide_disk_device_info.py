@@ -14,7 +14,7 @@ def VirtualMachineIdeDiskDeviceInfo(vim, *args, **kwargs):
     vim.vm.device.VirtualDisk.RawDiskVer2BackingInfo and
     vim.vm.device.VirtualDisk.PartitionedRawDiskVer2BackingInfo backings.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineIdeDiskDeviceInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineIdeDiskDeviceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

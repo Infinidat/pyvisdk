@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmUuidAssignedEvent(vim, *args, **kwargs):
     '''This event records the assignment of a new BIOS UUID to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmUuidAssignedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmUuidAssignedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

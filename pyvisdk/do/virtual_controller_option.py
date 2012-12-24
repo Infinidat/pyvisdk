@@ -12,7 +12,7 @@ def VirtualControllerOption(vim, *args, **kwargs):
     '''The VirtualControllerOption data object type contains information about a
     virtual controller type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -13,7 +13,7 @@ def RunScriptAction(vim, *args, **kwargs):
     use any elements of the ActionParameter enumerated list as part of your script
     to provide information available at runtime.'''
     
-    obj = vim.client.factory.create('ns0:RunScriptAction')
+    obj = vim.client.factory.create('{urn:vim25}RunScriptAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

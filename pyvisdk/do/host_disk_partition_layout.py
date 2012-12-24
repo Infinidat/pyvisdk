@@ -13,7 +13,7 @@ def HostDiskPartitionLayout(vim, *args, **kwargs):
     of ordered BlockRanges. This view of the disk partitions shows the data on the
     disk as a contiguous set of BlockRanges.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskPartitionLayout')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionLayout')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

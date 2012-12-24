@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomFieldDefRenamedEvent(vim, *args, **kwargs):
     '''This event records the renaming of a custom field definition.'''
     
-    obj = vim.client.factory.create('ns0:CustomFieldDefRenamedEvent')
+    obj = vim.client.factory.create('{urn:vim25}CustomFieldDefRenamedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

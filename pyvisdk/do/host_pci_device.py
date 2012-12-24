@@ -12,7 +12,7 @@ def HostPciDevice(vim, *args, **kwargs):
     '''This data object type describes information about a single Peripheral Component
     Interconnect (PCI) device.'''
     
-    obj = vim.client.factory.create('ns0:HostPciDevice')
+    obj = vim.client.factory.create('{urn:vim25}HostPciDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 11:

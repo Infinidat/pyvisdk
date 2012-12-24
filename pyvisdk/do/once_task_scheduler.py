@@ -12,7 +12,7 @@ def OnceTaskScheduler(vim, *args, **kwargs):
     '''The OnceTaskScheduler data object establishes the time for running a scheduled
     task only once.'''
     
-    obj = vim.client.factory.create('ns0:OnceTaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}OnceTaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

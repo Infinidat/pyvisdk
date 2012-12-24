@@ -12,7 +12,7 @@ def VirtualPCNet32(vim, *args, **kwargs):
     '''This data object type defines the properties of an AMD Lance PCNet32 Ethernet
     card attached to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCNet32')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCNet32')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

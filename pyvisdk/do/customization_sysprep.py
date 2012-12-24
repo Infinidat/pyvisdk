@@ -13,7 +13,7 @@ def CustomizationSysprep(vim, *args, **kwargs):
     all the individual keys listed in a file. For more detailed information, see
     the document .'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSysprep')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSysprep')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

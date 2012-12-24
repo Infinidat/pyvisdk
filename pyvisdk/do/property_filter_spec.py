@@ -14,7 +14,7 @@ def PropertyFilterSpec(vim, *args, **kwargs):
     in an inventory hierarchy - for example, to collect updates from all virtual
     machines in a given folder.'''
     
-    obj = vim.client.factory.create('ns0:PropertyFilterSpec')
+    obj = vim.client.factory.create('{urn:vim25}PropertyFilterSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

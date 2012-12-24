@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LinkLayerDiscoveryProtocolInfo(vim, *args, **kwargs):
     '''The Link Layer Discovery Protocol information.'''
     
-    obj = vim.client.factory.create('ns0:LinkLayerDiscoveryProtocolInfo')
+    obj = vim.client.factory.create('{urn:vim25}LinkLayerDiscoveryProtocolInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostComplianceCheckedEvent(vim, *args, **kwargs):
     '''This event records that a compliance check was triggered on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostComplianceCheckedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostComplianceCheckedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

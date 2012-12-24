@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ElementDescription(vim, *args, **kwargs):
     '''Static strings used for describing an object model string or enumeration.'''
     
-    obj = vim.client.factory.create('ns0:ElementDescription')
+    obj = vim.client.factory.create('{urn:vim25}ElementDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

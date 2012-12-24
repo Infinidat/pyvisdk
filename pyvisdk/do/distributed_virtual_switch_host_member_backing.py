@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchHostMemberBacking(vim, *args, **kwargs):
     '''Base class.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostMemberBacking')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberBacking')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

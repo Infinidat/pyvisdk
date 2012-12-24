@@ -13,7 +13,7 @@ def ProfilePropertyPath(vim, *args, **kwargs):
     a policy option. If both and are specified, the combination of the two
     identifies a specific profile policy option.'''
     
-    obj = vim.client.factory.create('ns0:ProfilePropertyPath')
+    obj = vim.client.factory.create('{urn:vim25}ProfilePropertyPath')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

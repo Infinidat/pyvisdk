@@ -12,7 +12,7 @@ def HostInventoryUnreadableEvent(vim, *args, **kwargs):
     '''Event indicating that the virtual machine inventory file on the host is damaged
     or unreadable.'''
     
-    obj = vim.client.factory.create('ns0:HostInventoryUnreadableEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostInventoryUnreadableEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

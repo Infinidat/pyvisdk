@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualPort(vim, *args, **kwargs):
     '''The data object that represents a port in the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualPort')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualPort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

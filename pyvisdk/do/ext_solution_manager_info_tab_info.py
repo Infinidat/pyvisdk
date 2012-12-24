@@ -12,7 +12,7 @@ def ExtSolutionManagerInfoTabInfo(vim, *args, **kwargs):
     '''This data object contains information about a tab to show in the Solution
     Manager for this extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtSolutionManagerInfoTabInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtSolutionManagerInfoTabInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

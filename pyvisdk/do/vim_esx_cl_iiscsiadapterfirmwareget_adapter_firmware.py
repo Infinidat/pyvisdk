@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIiscsiadapterfirmwaregetAdapterFirmware(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIiscsiadapterfirmwaregetAdapterFirmware')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIiscsiadapterfirmwaregetAdapterFirmware')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

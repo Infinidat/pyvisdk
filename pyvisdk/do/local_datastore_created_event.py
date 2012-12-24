@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LocalDatastoreCreatedEvent(vim, *args, **kwargs):
     '''This event records when a local datastore is created.'''
     
-    obj = vim.client.factory.create('ns0:LocalDatastoreCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}LocalDatastoreCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

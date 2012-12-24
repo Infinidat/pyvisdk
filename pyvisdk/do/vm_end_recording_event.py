@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmEndRecordingEvent(vim, *args, **kwargs):
     '''This event indicates the end of a recording session on a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmEndRecordingEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmEndRecordingEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

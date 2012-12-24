@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsMergedEvent(vim, *args, **kwargs):
     '''Two distributed virtual switches was merged.'''
     
-    obj = vim.client.factory.create('ns0:DvsMergedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsMergedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

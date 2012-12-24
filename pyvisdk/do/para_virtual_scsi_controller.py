@@ -12,7 +12,7 @@ def ParaVirtualSCSIController(vim, *args, **kwargs):
     '''ParaVirtualSCSIController is the data object that represents a paravirtualized
     SCSI controller.'''
     
-    obj = vim.client.factory.create('ns0:ParaVirtualSCSIController')
+    obj = vim.client.factory.create('{urn:vim25}ParaVirtualSCSIController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

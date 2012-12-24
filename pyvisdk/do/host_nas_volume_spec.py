@@ -16,7 +16,7 @@ def HostNasVolumeSpec(vim, *args, **kwargs):
     references it as "/mnt/mount1/", it will not be recognized as the same
     datastore.'''
     
-    obj = vim.client.factory.create('ns0:HostNasVolumeSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostNasVolumeSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

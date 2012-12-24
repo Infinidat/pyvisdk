@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfValidateHostResult(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:OvfValidateHostResult')
+    obj = vim.client.factory.create('{urn:vim25}OvfValidateHostResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

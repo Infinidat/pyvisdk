@@ -12,7 +12,7 @@ def VirtualSIOControllerOption(vim, *args, **kwargs):
     '''The VirtualSIOControllerOption data object type contains the options for a
     virtual Super IO Controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSIOControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSIOControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

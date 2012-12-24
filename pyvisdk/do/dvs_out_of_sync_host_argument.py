@@ -12,7 +12,7 @@ def DvsOutOfSyncHostArgument(vim, *args, **kwargs):
     '''The host on which the DVS configuration is different from that of Virtual
     Center server.'''
     
-    obj = vim.client.factory.create('ns0:DvsOutOfSyncHostArgument')
+    obj = vim.client.factory.create('{urn:vim25}DvsOutOfSyncHostArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

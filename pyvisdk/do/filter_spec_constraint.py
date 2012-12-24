@@ -12,7 +12,7 @@ def FilterSpecConstraint(vim, *args, **kwargs):
     '''Basic building block of a filter spec that specifies a single constraint in the
     form of a comparitive operation.'''
     
-    obj = vim.client.factory.create('ns0:FilterSpecConstraint')
+    obj = vim.client.factory.create('{urn:sms}FilterSpecConstraint')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

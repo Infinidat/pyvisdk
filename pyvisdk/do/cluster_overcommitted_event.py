@@ -12,7 +12,7 @@ def ClusterOvercommittedEvent(vim, *args, **kwargs):
     '''This event records when a cluster's host capacity cannot satisfy resource
     configuration constraints.'''
     
-    obj = vim.client.factory.create('ns0:ClusterOvercommittedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ClusterOvercommittedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

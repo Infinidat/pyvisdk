@@ -13,7 +13,7 @@ def HostHostBusAdapter(vim, *args, **kwargs):
     adapter (HBA) is a hardware or software adapter that connects the host to
     storage devices.'''
     
-    obj = vim.client.factory.create('ns0:HostHostBusAdapter')
+    obj = vim.client.factory.create('{urn:vim25}HostHostBusAdapter')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

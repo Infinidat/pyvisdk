@@ -17,7 +17,7 @@ def HostIpRouteConfig(vim, *args, **kwargs):
     to represent multiple 16-bit groups of contiguous 0's only once in an address
     as described in RFC 2373.'''
     
-    obj = vim.client.factory.create('ns0:HostIpRouteConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostIpRouteConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

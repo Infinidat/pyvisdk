@@ -12,7 +12,7 @@ def RecurrentTaskScheduler(vim, *args, **kwargs):
     '''The RecurrentTaskScheduler data object is the base type for the hierarchy that
     includes hourly, daily, weekly, and monthly task schedulers.'''
     
-    obj = vim.client.factory.create('ns0:RecurrentTaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}RecurrentTaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

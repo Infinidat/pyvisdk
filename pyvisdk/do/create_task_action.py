@@ -12,7 +12,7 @@ def CreateTaskAction(vim, *args, **kwargs):
     '''This data object type specifies the type of task to be created when this action
     is triggered.'''
     
-    obj = vim.client.factory.create('ns0:CreateTaskAction')
+    obj = vim.client.factory.create('{urn:vim25}CreateTaskAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

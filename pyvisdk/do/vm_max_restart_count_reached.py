@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmMaxRestartCountReached(vim, *args, **kwargs):
     '''This event is fired when the VM reached the max restart count'''
     
-    obj = vim.client.factory.create('ns0:VmMaxRestartCountReached')
+    obj = vim.client.factory.create('{urn:vim25}VmMaxRestartCountReached')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -13,7 +13,7 @@ def VirtualMachineFileLayoutExDiskUnit(vim, *args, **kwargs):
     delta-disk.A disk-unit consists of at least one descriptor file, and zero or
     more extent files.Sometimes, a disk-unit is also referred to as a .'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileLayoutExDiskUnit')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutExDiskUnit')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

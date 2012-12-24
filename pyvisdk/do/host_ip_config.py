@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpConfig(vim, *args, **kwargs):
     '''The IP configuration.'''
     
-    obj = vim.client.factory.create('ns0:HostIpConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostIpConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

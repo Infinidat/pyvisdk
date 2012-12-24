@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsReconfiguredEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was reconfigured.'''
     
-    obj = vim.client.factory.create('ns0:DvsReconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsReconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

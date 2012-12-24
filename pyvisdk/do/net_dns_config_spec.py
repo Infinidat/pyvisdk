@@ -16,7 +16,7 @@ def NetDnsConfigSpec(vim, *args, **kwargs):
     specific should go into a separate config spec. http://technet.microsoft.com
     /en-us/library/cc778792.aspx http://en.wikipedia.org/wiki/Microsoft_DNS'''
     
-    obj = vim.client.factory.create('ns0:NetDnsConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}NetDnsConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

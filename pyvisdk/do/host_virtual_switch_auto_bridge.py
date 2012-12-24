@@ -13,7 +13,7 @@ def HostVirtualSwitchAutoBridge(vim, *args, **kwargs):
     physical network adapter on the host according to some predetermined policy.
     Used primarily to support mobility scenarios.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualSwitchAutoBridge')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchAutoBridge')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def GuestWindowsProgramSpec(vim, *args, **kwargs):
     '''This describes the arguments to StartProgramInGuest that apply only for Windows
     guests.'''
     
-    obj = vim.client.factory.create('ns0:GuestWindowsProgramSpec')
+    obj = vim.client.factory.create('{urn:vim25}GuestWindowsProgramSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfCreateImportSpecParams(vim, *args, **kwargs):
     '''Parameters for deploying an OVF.'''
     
-    obj = vim.client.factory.create('ns0:OvfCreateImportSpecParams')
+    obj = vim.client.factory.create('{urn:vim25}OvfCreateImportSpecParams')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

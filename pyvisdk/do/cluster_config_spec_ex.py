@@ -102,7 +102,7 @@ def ClusterConfigSpecEx(vim, *args, **kwargs):
     (defaultVmBehavior).High Availability was previously called Distributed
     Availability Services.'''
     
-    obj = vim.client.factory.create('ns0:ClusterConfigSpecEx')
+    obj = vim.client.factory.create('{urn:vim25}ClusterConfigSpecEx')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -14,7 +14,7 @@ def VirtualPCNet32Option(vim, *args, **kwargs):
     option, the options are inherited from the VirtualEthernetCardOption data
     object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCNet32Option')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCNet32Option')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 9:

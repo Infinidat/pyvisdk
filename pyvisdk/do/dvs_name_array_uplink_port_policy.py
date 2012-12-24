@@ -20,7 +20,7 @@ def DVSNameArrayUplinkPortPolicy(vim, *args, **kwargs):
     overrides the portgroup's port naming format, if both are defined and the
     uplink ports are created in a uplink portgroup.'''
     
-    obj = vim.client.factory.create('ns0:DVSNameArrayUplinkPortPolicy')
+    obj = vim.client.factory.create('{urn:vim25}DVSNameArrayUplinkPortPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def HostInternetScsiHbaParamValue(vim, *args, **kwargs):
     '''Describes the the value of an iSCSI parameter, and whether the value is being
     inherited.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiHbaParamValue')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaParamValue')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

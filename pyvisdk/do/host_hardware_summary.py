@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostHardwareSummary(vim, *args, **kwargs):
     '''This data object type summarizes hardware used by the host.'''
     
-    obj = vim.client.factory.create('ns0:HostHardwareSummary')
+    obj = vim.client.factory.create('{urn:vim25}HostHardwareSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 11:

@@ -14,7 +14,7 @@ def CompositePolicyOption(vim, *args, **kwargs):
     derived from the possible options as indicated by the
     CompositePolicyOptionMetadata.'''
     
-    obj = vim.client.factory.create('ns0:CompositePolicyOption')
+    obj = vim.client.factory.create('{urn:vim25}CompositePolicyOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

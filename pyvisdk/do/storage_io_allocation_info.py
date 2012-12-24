@@ -17,7 +17,7 @@ def StorageIOAllocationInfo(vim, *args, **kwargs):
     we can specify that a virtual machine has 500 shares on the first virtual disk,
     1000 shares on the second virtual disk, etc.'''
     
-    obj = vim.client.factory.create('ns0:StorageIOAllocationInfo')
+    obj = vim.client.factory.create('{urn:vim25}StorageIOAllocationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

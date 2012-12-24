@@ -12,7 +12,7 @@ def VirtualMachineTicket(vim, *args, **kwargs):
     '''This data object contains the information needed to establish a connection to a
     running virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineTicket')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineTicket')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

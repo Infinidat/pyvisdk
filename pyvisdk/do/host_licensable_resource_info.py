@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostLicensableResourceInfo(vim, *args, **kwargs):
     '''Encapsulates information about all licensable resources on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostLicensableResourceInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostLicensableResourceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

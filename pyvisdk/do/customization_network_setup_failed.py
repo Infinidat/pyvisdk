@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationNetworkSetupFailed(vim, *args, **kwargs):
     '''Network setup failed in the guest during customization.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationNetworkSetupFailed')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationNetworkSetupFailed')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

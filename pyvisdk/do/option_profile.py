@@ -13,7 +13,7 @@ def OptionProfile(vim, *args, **kwargs):
     policy list for access to configuration data for the option profile. Use the
     property list for access to subprofile configuration data, if any.'''
     
-    obj = vim.client.factory.create('ns0:OptionProfile')
+    obj = vim.client.factory.create('{urn:vim25}OptionProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

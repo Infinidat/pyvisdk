@@ -12,7 +12,7 @@ def VirtualSerialPortURIBackingOption(vim, *args, **kwargs):
     '''The data object type contains the options for using a network socket as backing
     for a virtual serial port.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortURIBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortURIBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

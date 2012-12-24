@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExitMaintenanceModeEvent(vim, *args, **kwargs):
     '''This event records that the host is no longer in maintenance mode.'''
     
-    obj = vim.client.factory.create('ns0:ExitMaintenanceModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}ExitMaintenanceModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

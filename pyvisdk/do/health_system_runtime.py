@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HealthSystemRuntime(vim, *args, **kwargs):
     '''The system health runtime information'''
     
-    obj = vim.client.factory.create('ns0:HealthSystemRuntime')
+    obj = vim.client.factory.create('{urn:vim25}HealthSystemRuntime')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

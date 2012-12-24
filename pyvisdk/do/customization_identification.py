@@ -15,7 +15,7 @@ def CustomizationIdentification(vim, *args, **kwargs):
     file that VirtualCenter stores on the target virtual disk. For more detailed
     information, see the document .'''
     
-    obj = vim.client.factory.create('ns0:CustomizationIdentification')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationIdentification')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

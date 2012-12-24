@@ -12,7 +12,7 @@ def PerfCounterInfo(vim, *args, **kwargs):
     '''This data object type contains metadata for a performance counter. See
     PerformanceManager for definitions of available counters.'''
     
-    obj = vim.client.factory.create('ns0:PerfCounterInfo')
+    obj = vim.client.factory.create('{urn:vim25}PerfCounterInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

@@ -13,7 +13,7 @@ def VirtualDeviceConfigSpec(vim, *args, **kwargs):
     an individual virtual device. The virtual device being added or modified must
     be fully specified.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

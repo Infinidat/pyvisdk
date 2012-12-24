@@ -15,7 +15,7 @@ def VirtualMachineBootOptions(vim, *args, **kwargs):
     solution for the situation that occurs when the console attaches to the virtual
     machine after the boot sequence has passed the BIOS setup entry point.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineBootOptions')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

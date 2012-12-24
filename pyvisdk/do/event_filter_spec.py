@@ -13,7 +13,7 @@ def EventFilterSpec(vim, *args, **kwargs):
     creates an event history collector with a filter specification, then retrieves
     the events from the event history collector.'''
     
-    obj = vim.client.factory.create('ns0:EventFilterSpec')
+    obj = vim.client.factory.create('{urn:vim25}EventFilterSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

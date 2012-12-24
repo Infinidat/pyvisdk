@@ -13,7 +13,7 @@ def DistributedVirtualSwitchManagerDvsProductSpec(vim, *args, **kwargs):
     strictly mutually exclusive. If both properties are set, then an
     InvalidArgument fault would be thrown.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchManagerDvsProductSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerDvsProductSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

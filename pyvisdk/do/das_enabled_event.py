@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DasEnabledEvent(vim, *args, **kwargs):
     '''This event records when a cluster has been enabled for HA.'''
     
-    obj = vim.client.factory.create('ns0:DasEnabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}DasEnabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

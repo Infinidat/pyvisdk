@@ -12,7 +12,7 @@ def StringOption(vim, *args, **kwargs):
     '''The StringOption data object type is used to define an open-ended string value
     based on an optional subset of valid characters.'''
     
-    obj = vim.client.factory.create('ns0:StringOption')
+    obj = vim.client.factory.create('{urn:vim25}StringOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

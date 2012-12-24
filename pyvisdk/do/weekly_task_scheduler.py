@@ -18,7 +18,7 @@ def WeeklyTaskScheduler(vim, *args, **kwargs):
     interval of 2 will cause the task to execute on the specified days every 2
     weeks.)'''
     
-    obj = vim.client.factory.create('ns0:WeeklyTaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}WeeklyTaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 10:

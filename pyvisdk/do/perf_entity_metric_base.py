@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def PerfEntityMetricBase(vim, *args, **kwargs):
     '''Base type for the various PerfEntityMetric encodings.'''
     
-    obj = vim.client.factory.create('ns0:PerfEntityMetricBase')
+    obj = vim.client.factory.create('{urn:vim25}PerfEntityMetricBase')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

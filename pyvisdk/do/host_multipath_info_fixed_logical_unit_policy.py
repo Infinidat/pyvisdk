@@ -13,7 +13,7 @@ def HostMultipathInfoFixedLogicalUnitPolicy(vim, *args, **kwargs):
     multipathing policy for a logical unit which uses a preferred path whenever
     possible.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfoFixedLogicalUnitPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoFixedLogicalUnitPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -13,7 +13,7 @@ def VirtualSwitchSelectionProfile(vim, *args, **kwargs):
     that is connected to a port group. The policy property contains the
     configuration data values for the virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSwitchSelectionProfile')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSwitchSelectionProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

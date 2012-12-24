@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmDisconnectedEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine disconnected.'''
     
-    obj = vim.client.factory.create('ns0:VmDisconnectedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDisconnectedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

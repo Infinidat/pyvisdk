@@ -12,7 +12,7 @@ def HostHardwareInfo(vim, *args, **kwargs):
     '''The HardwareInfo data object type describes the hardware configuration of the
     host.'''
     
-    obj = vim.client.factory.create('ns0:HostHardwareInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostHardwareInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

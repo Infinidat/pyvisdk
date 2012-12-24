@@ -14,7 +14,7 @@ def DynamicArray(vim, *args, **kwargs):
     type is unknown (meaning the type is newer than the client). Otherwise, a
     client would see the type as T[] where T is known.'''
     
-    obj = vim.client.factory.create('ns0:DynamicArray')
+    obj = vim.client.factory.create('{urn:sms}DynamicArray')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -13,7 +13,7 @@ def PerfMetricSeries(vim, *args, **kwargs):
     performance metric. Useful data objects that store actual metric values extend
     this data object (see PerfMetricIntSeries).'''
     
-    obj = vim.client.factory.create('ns0:PerfMetricSeries')
+    obj = vim.client.factory.create('{urn:vim25}PerfMetricSeries')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

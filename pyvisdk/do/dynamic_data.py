@@ -14,7 +14,7 @@ def DynamicData(vim, *args, **kwargs):
     be extended with subtypes in the future, where new properties should be sent to
     old clients as a set of dynamic properties.'''
     
-    obj = vim.client.factory.create('ns0:DynamicData')
+    obj = vim.client.factory.create('{urn:sms}DynamicData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

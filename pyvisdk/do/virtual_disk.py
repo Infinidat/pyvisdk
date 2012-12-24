@@ -14,7 +14,7 @@ def VirtualDisk(vim, *args, **kwargs):
     disk backings available. The disk format version in each case describes the
     version of the format that is used.Supported virtual disk backings:'''
     
-    obj = vim.client.factory.create('ns0:VirtualDisk')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDisk')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

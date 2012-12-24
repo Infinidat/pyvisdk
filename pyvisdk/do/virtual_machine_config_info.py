@@ -13,7 +13,7 @@ def VirtualMachineConfigInfo(vim, *args, **kwargs):
     virtual hardware for a virtual machine. This type holds all the information
     that is present in the .vmx configuration file for the virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 13:

@@ -15,7 +15,7 @@ def FileTransferInformation(vim, *args, **kwargs):
     the URL. Entire file content will be returned in the body of the response
     message.'''
     
-    obj = vim.client.factory.create('ns0:FileTransferInformation')
+    obj = vim.client.factory.create('{urn:vim25}FileTransferInformation')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

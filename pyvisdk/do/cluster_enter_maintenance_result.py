@@ -12,7 +12,7 @@ def ClusterEnterMaintenanceResult(vim, *args, **kwargs):
     '''EnterMaintenanceResult is the base class of the result returned to the
     ClusterEnterMaintenanceMode method.'''
     
-    obj = vim.client.factory.create('ns0:ClusterEnterMaintenanceResult')
+    obj = vim.client.factory.create('{urn:vim25}ClusterEnterMaintenanceResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

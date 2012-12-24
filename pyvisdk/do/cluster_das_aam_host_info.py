@@ -33,7 +33,7 @@ def ClusterDasAamHostInfo(vim, *args, **kwargs):
     virtual machine.If the active primary host fails, another primary host replaces
     it.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasAamHostInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasAamHostInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

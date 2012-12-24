@@ -12,7 +12,7 @@ def HostUserWorldSwapNotEnabledEvent(vim, *args, **kwargs):
     '''This event records that the userworld swap is not enabled on the host. HA needs
     userworld swap to be configured on embedded ESX hosts to function.'''
     
-    obj = vim.client.factory.create('ns0:HostUserWorldSwapNotEnabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostUserWorldSwapNotEnabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

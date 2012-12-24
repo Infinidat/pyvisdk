@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DistributedVirtualSwitchPortConnectee(vim, *args, **kwargs):
     '''Information about the entity that connects to a DistributedVirtualPort.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchPortConnectee')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchPortConnectee')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -13,7 +13,7 @@ def ApplyProfile(vim, *args, **kwargs):
     profile configuration data. defines ESX configuration data storage and it
     supports recursive profile definition for the profile plug-in architecture.'''
     
-    obj = vim.client.factory.create('ns0:ApplyProfile')
+    obj = vim.client.factory.create('{urn:vim25}ApplyProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

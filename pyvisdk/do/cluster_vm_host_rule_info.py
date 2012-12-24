@@ -19,7 +19,7 @@ def ClusterVmHostRuleInfo(vim, *args, **kwargs):
     group contents are stored in the virtual machine and host group objects.When
     you modify a VM-Host rule, only the fields that are specified are set.'''
     
-    obj = vim.client.factory.create('ns0:ClusterVmHostRuleInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterVmHostRuleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

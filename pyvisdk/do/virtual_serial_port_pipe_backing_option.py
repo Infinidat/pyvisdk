@@ -12,7 +12,7 @@ def VirtualSerialPortPipeBackingOption(vim, *args, **kwargs):
     '''The data object contains the options for backing a serial port device with a
     pipe to another process.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortPipeBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortPipeBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

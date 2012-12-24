@@ -12,7 +12,7 @@ def PhysicalNicIpHint(vim, *args, **kwargs):
     '''This data object type describes a network in network hint where the network is
     specified using IP addresses, for example, 10.27.49.1-10.27.49.254'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicIpHint')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicIpHint')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

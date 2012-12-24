@@ -12,7 +12,7 @@ def InsufficientFailoverResourcesEvent(vim, *args, **kwargs):
     '''This event records that the cluster resources are insufficient to satisfy the
     configured HA failover level.'''
     
-    obj = vim.client.factory.create('ns0:InsufficientFailoverResourcesEvent')
+    obj = vim.client.factory.create('{urn:vim25}InsufficientFailoverResourcesEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

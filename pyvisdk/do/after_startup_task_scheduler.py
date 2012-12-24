@@ -12,7 +12,7 @@ def AfterStartupTaskScheduler(vim, *args, **kwargs):
     '''The AfterStartupTaskScheduler data object establishes the time that a scheduled
     task will run after the vCenter server restarts.'''
     
-    obj = vim.client.factory.create('ns0:AfterStartupTaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}AfterStartupTaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

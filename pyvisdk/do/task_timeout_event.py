@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TaskTimeoutEvent(vim, *args, **kwargs):
     '''This event records when a task is cleaned up b/c of timeout'''
     
-    obj = vim.client.factory.create('ns0:TaskTimeoutEvent')
+    obj = vim.client.factory.create('{urn:vim25}TaskTimeoutEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

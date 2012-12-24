@@ -12,7 +12,7 @@ def ScheduledTaskEmailCompletedEvent(vim, *args, **kwargs):
     '''This event records the sending of a notification via email for a scheduled
     task.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskEmailCompletedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskEmailCompletedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

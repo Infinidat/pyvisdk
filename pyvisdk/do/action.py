@@ -13,7 +13,7 @@ def Action(vim, *args, **kwargs):
     alarm.This is an abstract type. A client creates a scheduled task or an alarm
     each of which triggers an action, defined by a subclass of this type.'''
     
-    obj = vim.client.factory.create('ns0:Action')
+    obj = vim.client.factory.create('{urn:vim25}Action')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

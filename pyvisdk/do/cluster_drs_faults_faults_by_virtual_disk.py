@@ -13,7 +13,7 @@ def ClusterDrsFaultsFaultsByVirtualDisk(vim, *args, **kwargs):
     This data object type and all of its fields are experimental and subject to
     change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDrsFaultsFaultsByVirtualDisk')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDrsFaultsFaultsByVirtualDisk')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

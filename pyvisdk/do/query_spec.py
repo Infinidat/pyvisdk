@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def QuerySpec(vim, *args, **kwargs):
     '''Specification of constraints to be applied on the result set of a query.'''
     
-    obj = vim.client.factory.create('ns0:QuerySpec')
+    obj = vim.client.factory.create('{urn:sms}QuerySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

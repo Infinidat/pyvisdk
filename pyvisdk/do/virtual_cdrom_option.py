@@ -12,7 +12,7 @@ def VirtualCdromOption(vim, *args, **kwargs):
     '''The VirtualCdromOption data object type contains the options for the virtual
     CD-ROM class.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

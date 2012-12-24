@@ -12,7 +12,7 @@ def VmConfigFileQuery(vim, *args, **kwargs):
     '''This data object type describes query specification for the virtual machine
     configuration file.'''
     
-    obj = vim.client.factory.create('ns0:VmConfigFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}VmConfigFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

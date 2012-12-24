@@ -13,7 +13,7 @@ def HostDatastoreBrowserSearchResults(vim, *args, **kwargs):
     datastore. A search method typically returns a set of these objects as an
     array.'''
     
-    obj = vim.client.factory.create('ns0:HostDatastoreBrowserSearchResults')
+    obj = vim.client.factory.create('{urn:vim25}HostDatastoreBrowserSearchResults')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

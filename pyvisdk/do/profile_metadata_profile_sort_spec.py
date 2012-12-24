@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileMetadataProfileSortSpec(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ProfileMetadataProfileSortSpec')
+    obj = vim.client.factory.create('{urn:vim25}ProfileMetadataProfileSortSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

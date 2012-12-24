@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsHostJoinedEvent(vim, *args, **kwargs):
     '''A host joined the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsHostJoinedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsHostJoinedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNetworkInfo(vim, *args, **kwargs):
     '''This data object type describes networking host configuration data objects.'''
     
-    obj = vim.client.factory.create('ns0:HostNetworkInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostNetworkInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def ProfilePolicyOptionMetadata(vim, *args, **kwargs):
     '''The ProfilePolicyOptionMetadata data object contains the metadata information
     for a PolicyOption.'''
     
-    obj = vim.client.factory.create('ns0:ProfilePolicyOptionMetadata')
+    obj = vim.client.factory.create('{urn:vim25}ProfilePolicyOptionMetadata')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def VirtualEthernetCard(vim, *args, **kwargs):
     '''This data object type contains the properties of an Ethernet adapter attached
     to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCard')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCard')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

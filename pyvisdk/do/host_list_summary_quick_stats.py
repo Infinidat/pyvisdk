@@ -18,7 +18,7 @@ def HostListSummaryQuickStats(vim, *args, **kwargs):
     representing 0.990, is more fair than a fairness score of 1015, which
     represents 1.015. This is because 1.015 is further from 1 than 0.990.'''
     
-    obj = vim.client.factory.create('ns0:HostListSummaryQuickStats')
+    obj = vim.client.factory.create('{urn:vim25}HostListSummaryQuickStats')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

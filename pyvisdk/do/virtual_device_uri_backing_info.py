@@ -12,7 +12,7 @@ def VirtualDeviceURIBackingInfo(vim, *args, **kwargs):
     '''The data object type defines information for using a network socket as backing
     for a virtual device.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceURIBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceURIBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

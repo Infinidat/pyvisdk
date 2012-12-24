@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmConfigFileQueryFilter(vim, *args, **kwargs):
     '''The filter for the virtual machine configuration file.'''
     
-    obj = vim.client.factory.create('ns0:VmConfigFileQueryFilter')
+    obj = vim.client.factory.create('{urn:vim25}VmConfigFileQueryFilter')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

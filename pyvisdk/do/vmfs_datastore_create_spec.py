@@ -12,7 +12,7 @@ def VmfsDatastoreCreateSpec(vim, *args, **kwargs):
     '''This data object type is used when creating a new VMFS datastore, to create a
     specification for the VMFS datastore.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

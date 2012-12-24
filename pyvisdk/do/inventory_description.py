@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def InventoryDescription(vim, *args, **kwargs):
     '''Data object to capture all information needed to describe a sample inventory.'''
     
-    obj = vim.client.factory.create('ns0:InventoryDescription')
+    obj = vim.client.factory.create('{urn:vim25}InventoryDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

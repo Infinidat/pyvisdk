@@ -17,7 +17,7 @@ def HostVirtualNic(vim, *args, **kwargs):
     through a virtual switch that is bridged through a PhysicalNic to a physical
     network.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualNic')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualNic')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

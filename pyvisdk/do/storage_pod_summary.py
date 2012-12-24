@@ -13,7 +13,7 @@ def StoragePodSummary(vim, *args, **kwargs):
     StoragePod.NOTE: This data object type and all of its methods are experimental
     and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:StoragePodSummary')
+    obj = vim.client.factory.create('{urn:vim25}StoragePodSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

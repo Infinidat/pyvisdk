@@ -13,7 +13,7 @@ def HostFibreChannelOverEthernetHbaLinkInfo(vim, *args, **kwargs):
     VFPort Virtual Link, as described in the FC-BB-5 standard, with the addition of
     the VLAN ID over which a link exists.'''
     
-    obj = vim.client.factory.create('ns0:HostFibreChannelOverEthernetHbaLinkInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostFibreChannelOverEthernetHbaLinkInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

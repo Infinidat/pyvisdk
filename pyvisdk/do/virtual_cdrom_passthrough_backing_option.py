@@ -12,7 +12,7 @@ def VirtualCdromPassthroughBackingOption(vim, *args, **kwargs):
     '''The VirtualCdromOption.PassthroughBackingOption data object type contains the
     options for a pass-through CD-ROM device backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromPassthroughBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromPassthroughBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

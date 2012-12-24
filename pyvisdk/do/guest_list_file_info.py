@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestListFileInfo(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:GuestListFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}GuestListFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

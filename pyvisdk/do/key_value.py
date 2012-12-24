@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def KeyValue(vim, *args, **kwargs):
     '''Non-localized key/value pair'''
     
-    obj = vim.client.factory.create('ns0:KeyValue')
+    obj = vim.client.factory.create('{urn:vim25}KeyValue')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

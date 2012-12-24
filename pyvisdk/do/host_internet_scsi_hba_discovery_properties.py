@@ -12,7 +12,7 @@ def HostInternetScsiHbaDiscoveryProperties(vim, *args, **kwargs):
     '''The discovery settings for this host bus adapter. At least one discovery mode
     must always be active. Multiple modes may be active at the same time.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiHbaDiscoveryProperties')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaDiscoveryProperties')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

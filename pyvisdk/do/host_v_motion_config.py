@@ -12,7 +12,7 @@ def HostVMotionConfig(vim, *args, **kwargs):
     '''This data object configuring VMotion on the host. The runtime information is
     available from the VMotionInfo data object type.'''
     
-    obj = vim.client.factory.create('ns0:HostVMotionConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostVMotionConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def VirtualMachineVMCIDeviceOption(vim, *args, **kwargs):
     '''The VirtualMachineVMCIDeviceOption data object contains the options for the
     virtual VMCI device (VirtualMachineVMCIDevice).'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineVMCIDeviceOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMCIDeviceOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

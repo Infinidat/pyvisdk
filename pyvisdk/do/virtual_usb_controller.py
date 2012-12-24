@@ -23,7 +23,7 @@ def VirtualUSBController(vim, *args, **kwargs):
     machines on the host.You must remove all USB devices from a virtual machine
     before you can remove the USB controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

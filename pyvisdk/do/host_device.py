@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDevice(vim, *args, **kwargs):
     '''This data object type defines a device on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostDevice')
+    obj = vim.client.factory.create('{urn:vim25}HostDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

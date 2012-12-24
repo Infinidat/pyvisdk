@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MigrationEvent(vim, *args, **kwargs):
     '''These are events used to describe migration warning and errors'''
     
-    obj = vim.client.factory.create('ns0:MigrationEvent')
+    obj = vim.client.factory.create('{urn:vim25}MigrationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

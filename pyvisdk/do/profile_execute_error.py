@@ -12,7 +12,7 @@ def ProfileExecuteError(vim, *args, **kwargs):
     '''The ProfileExecuteError data object describes an error encountered during host
     profile execution.'''
     
-    obj = vim.client.factory.create('ns0:ProfileExecuteError')
+    obj = vim.client.factory.create('{urn:vim25}ProfileExecuteError')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

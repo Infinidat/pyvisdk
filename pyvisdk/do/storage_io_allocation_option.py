@@ -12,7 +12,7 @@ def StorageIOAllocationOption(vim, *args, **kwargs):
     '''The IOAllocationOption specifies value ranges that can be used to initialize
     IOAllocationInfo object.'''
     
-    obj = vim.client.factory.create('ns0:StorageIOAllocationOption')
+    obj = vim.client.factory.create('{urn:vim25}StorageIOAllocationOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

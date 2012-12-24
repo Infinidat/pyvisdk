@@ -12,7 +12,7 @@ def VirtualMachineStorageSummary(vim, *args, **kwargs):
     '''A subset of the storage information of this virtual machine.See
     VirtualMachineStorageInfo for a detailed storage break-up.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineStorageSummary')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineStorageSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

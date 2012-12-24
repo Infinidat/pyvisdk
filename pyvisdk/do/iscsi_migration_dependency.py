@@ -13,7 +13,7 @@ def IscsiMigrationDependency(vim, *args, **kwargs):
     the iSCSI and networking resources impacted if migration of a given Physical
     NIC is to take place.'''
     
-    obj = vim.client.factory.create('ns0:IscsiMigrationDependency')
+    obj = vim.client.factory.create('{urn:vim25}IscsiMigrationDependency')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

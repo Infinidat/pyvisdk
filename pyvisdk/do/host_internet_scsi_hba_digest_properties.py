@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostInternetScsiHbaDigestProperties(vim, *args, **kwargs):
     '''The digest settings for this host bus adapter.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiHbaDigestProperties')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaDigestProperties')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

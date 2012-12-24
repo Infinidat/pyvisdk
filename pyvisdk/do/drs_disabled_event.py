@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DrsDisabledEvent(vim, *args, **kwargs):
     '''This event records when DRS is disabled on a cluster.'''
     
-    obj = vim.client.factory.create('ns0:DrsDisabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsDisabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

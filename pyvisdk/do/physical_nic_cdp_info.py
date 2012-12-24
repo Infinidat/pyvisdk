@@ -17,7 +17,7 @@ def PhysicalNicCdpInfo(vim, *args, **kwargs):
     information allows ESX Server admins to know which Cisco switch port is
     connected to any given virtual switch uplink (PNIC).'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicCdpInfo')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicCdpInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

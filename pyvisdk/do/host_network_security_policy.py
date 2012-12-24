@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNetworkSecurityPolicy(vim, *args, **kwargs):
     '''This data object type describes security policy governing ports.'''
     
-    obj = vim.client.factory.create('ns0:HostNetworkSecurityPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostNetworkSecurityPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

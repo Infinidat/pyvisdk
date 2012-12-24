@@ -12,7 +12,7 @@ def VirtualCdromRemoteAtapiBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.RemoteAtapiBackingInfo data class represents a remote ATAPI
     device backing for a virtual CD-ROM.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromRemoteAtapiBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromRemoteAtapiBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

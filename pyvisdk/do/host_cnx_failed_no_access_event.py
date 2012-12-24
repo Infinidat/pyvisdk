@@ -12,7 +12,7 @@ def HostCnxFailedNoAccessEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to insufficient account
     privileges.'''
     
-    obj = vim.client.factory.create('ns0:HostCnxFailedNoAccessEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostCnxFailedNoAccessEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

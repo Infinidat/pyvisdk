@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmState(vim, *args, **kwargs):
     '''Information about the alarm's state.'''
     
-    obj = vim.client.factory.create('ns0:AlarmState')
+    obj = vim.client.factory.create('{urn:vim25}AlarmState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

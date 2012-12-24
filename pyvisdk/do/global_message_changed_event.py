@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GlobalMessageChangedEvent(vim, *args, **kwargs):
     '''This event records a change to the global message.'''
     
-    obj = vim.client.factory.create('ns0:GlobalMessageChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}GlobalMessageChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

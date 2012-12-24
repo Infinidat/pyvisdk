@@ -12,7 +12,7 @@ def UpdateVirtualMachineFilesResult(vim, *args, **kwargs):
     '''UpdateVirtualMachineFilesResult is the result returned to the
     UpdateVirtualMachineFiles_Task method.'''
     
-    obj = vim.client.factory.create('ns0:UpdateVirtualMachineFilesResult')
+    obj = vim.client.factory.create('{urn:vim25}UpdateVirtualMachineFilesResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

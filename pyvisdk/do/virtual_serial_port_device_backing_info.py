@@ -16,7 +16,7 @@ def VirtualSerialPortDeviceBackingInfo(vim, *args, **kwargs):
     backing using that device will fail (a recoverable error, see the connection
     info ).'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

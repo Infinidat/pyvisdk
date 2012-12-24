@@ -12,7 +12,7 @@ def DatabaseSizeEstimate(vim, *args, **kwargs):
     '''DatabaseSizeEstimate contains information about the size required to by the
     database.'''
     
-    obj = vim.client.factory.create('ns0:DatabaseSizeEstimate')
+    obj = vim.client.factory.create('{urn:vim25}DatabaseSizeEstimate')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

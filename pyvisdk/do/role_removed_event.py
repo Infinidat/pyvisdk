@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def RoleRemovedEvent(vim, *args, **kwargs):
     '''This class records the removal of a role.'''
     
-    obj = vim.client.factory.create('ns0:RoleRemovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}RoleRemovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

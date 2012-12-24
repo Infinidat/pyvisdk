@@ -12,7 +12,7 @@ def HostProfileConfigInfo(vim, *args, **kwargs):
     '''The HostProfileConfigInfo data object contains host profile data and
     information about profile compliance.'''
     
-    obj = vim.client.factory.create('ns0:HostProfileConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostProfileConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

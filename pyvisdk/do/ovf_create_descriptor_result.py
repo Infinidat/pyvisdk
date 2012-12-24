@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfCreateDescriptorResult(vim, *args, **kwargs):
     '''The result of creating the OVF descriptor for the entity.'''
     
-    obj = vim.client.factory.create('ns0:OvfCreateDescriptorResult')
+    obj = vim.client.factory.create('{urn:vim25}OvfCreateDescriptorResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

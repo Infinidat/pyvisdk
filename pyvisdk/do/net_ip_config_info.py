@@ -12,7 +12,7 @@ def NetIpConfigInfo(vim, *args, **kwargs):
     '''Protocol version independent address reporting data object for network
     interfaces.'''
     
-    obj = vim.client.factory.create('ns0:NetIpConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}NetIpConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UpdateVirtualMachineFilesResultFailedVmFileInfo(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:UpdateVirtualMachineFilesResultFailedVmFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}UpdateVirtualMachineFilesResultFailedVmFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

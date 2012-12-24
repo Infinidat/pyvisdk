@@ -12,7 +12,7 @@ def VirtualEnsoniq1371(vim, *args, **kwargs):
     '''The VirtualEnsoniq1371 data object type represents an Ensoniq 1371 sound card
     in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEnsoniq1371')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEnsoniq1371')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

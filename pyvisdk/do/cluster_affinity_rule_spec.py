@@ -12,7 +12,7 @@ def ClusterAffinityRuleSpec(vim, *args, **kwargs):
     '''The ClusterAffinityRuleSpec data object defines a set of virtual machines. DRS
     will attempt to schedule the virtual machines to run on the same host.'''
     
-    obj = vim.client.factory.create('ns0:ClusterAffinityRuleSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterAffinityRuleSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

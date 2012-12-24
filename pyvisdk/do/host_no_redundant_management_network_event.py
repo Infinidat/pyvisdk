@@ -13,7 +13,7 @@ def HostNoRedundantManagementNetworkEvent(vim, *args, **kwargs):
     network. It is recommended that host management networks be configured with
     redundancy.'''
     
-    obj = vim.client.factory.create('ns0:HostNoRedundantManagementNetworkEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostNoRedundantManagementNetworkEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

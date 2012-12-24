@@ -13,7 +13,7 @@ def HostDiskDimensionsLba(vim, *args, **kwargs):
     block numbers and block sizes to refer to a block. This scheme is employed by
     SCSI. If a SCSI disk is not involved, then blockSize is 512 bytes.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskDimensionsLba')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskDimensionsLba')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

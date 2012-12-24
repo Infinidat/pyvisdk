@@ -12,7 +12,7 @@ def HostTpmDigestInfo(vim, *args, **kwargs):
     '''This data object type describes the digest values in the Platform Configuration
     Register (PCR) of a Trusted Platform Module (TPM) device.'''
     
-    obj = vim.client.factory.create('ns0:HostTpmDigestInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostTpmDigestInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

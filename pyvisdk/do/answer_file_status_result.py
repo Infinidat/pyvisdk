@@ -12,7 +12,7 @@ def AnswerFileStatusResult(vim, *args, **kwargs):
     '''The AnswerFileStatusResult data object shows the validity of the answer file
     associated with a host.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFileStatusResult')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFileStatusResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

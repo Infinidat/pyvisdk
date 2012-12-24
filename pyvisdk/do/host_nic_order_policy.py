@@ -22,7 +22,7 @@ def HostNicOrderPolicy(vim, *args, **kwargs):
     active Ethernet adapters in the team. An empty standbyNic array means there are
     no standby Ethernet adapters.'''
     
-    obj = vim.client.factory.create('ns0:HostNicOrderPolicy')
+    obj = vim.client.factory.create('{urn:vim25}HostNicOrderPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

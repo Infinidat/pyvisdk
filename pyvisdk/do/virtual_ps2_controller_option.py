@@ -14,7 +14,7 @@ def VirtualPS2ControllerOption(vim, *args, **kwargs):
     defined in the VirtualControllerOption data object type, these options include
     the number of keyboards and mice.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPS2ControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPS2ControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

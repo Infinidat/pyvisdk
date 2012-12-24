@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def RetrieveOptions(vim, *args, **kwargs):
     '''Options for RetrievePropertiesEx.'''
     
-    obj = vim.client.factory.create('ns0:RetrieveOptions')
+    obj = vim.client.factory.create('{urn:vim25}RetrieveOptions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

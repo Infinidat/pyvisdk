@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AdminPasswordNotChangedEvent(vim, *args, **kwargs):
     '''Default password for the Admin user on the host has not been changed.'''
     
-    obj = vim.client.factory.create('ns0:AdminPasswordNotChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AdminPasswordNotChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

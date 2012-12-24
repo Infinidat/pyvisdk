@@ -12,7 +12,7 @@ def ProfileCompositeExpression(vim, *args, **kwargs):
     '''DataObject to Compose expressions. It is used to group expressions together.
     They are similar to a parentheses in an expression.'''
     
-    obj = vim.client.factory.create('ns0:ProfileCompositeExpression')
+    obj = vim.client.factory.create('{urn:vim25}ProfileCompositeExpression')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

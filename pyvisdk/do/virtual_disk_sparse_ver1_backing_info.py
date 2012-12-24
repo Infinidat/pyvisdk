@@ -13,7 +13,7 @@ def VirtualDiskSparseVer1BackingInfo(vim, *args, **kwargs):
     using a virtual disk file on the host, in the sparse disk format used by GSX
     Server 2.x.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskSparseVer1BackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskSparseVer1BackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

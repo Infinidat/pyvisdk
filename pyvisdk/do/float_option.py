@@ -12,7 +12,7 @@ def FloatOption(vim, *args, **kwargs):
     '''The FloatOption data object type defines the minimum, maximum, and default
     values for a float option.'''
     
-    obj = vim.client.factory.create('ns0:FloatOption')
+    obj = vim.client.factory.create('{urn:vim25}FloatOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

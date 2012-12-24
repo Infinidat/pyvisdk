@@ -12,7 +12,7 @@ def ReplicationVmProgressInfo(vim, *args, **kwargs):
     '''A set of statistics related to the progress of the current operation (full sync
     or lwd).'''
     
-    obj = vim.client.factory.create('ns0:ReplicationVmProgressInfo')
+    obj = vim.client.factory.create('{urn:vim25}ReplicationVmProgressInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

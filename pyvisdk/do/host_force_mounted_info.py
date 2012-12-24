@@ -15,7 +15,7 @@ def HostForceMountedInfo(vim, *args, **kwargs):
     flag and 'forceMountedInfo' set. 'ForceMountedInfo' provides additional
     information specific to user-mounted VmfsVolume.'''
     
-    obj = vim.client.factory.create('ns0:HostForceMountedInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostForceMountedInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

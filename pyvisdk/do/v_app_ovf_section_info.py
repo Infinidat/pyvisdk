@@ -14,7 +14,7 @@ def VAppOvfSectionInfo(vim, *args, **kwargs):
     sections will be stored as OvfSection object. During the creation of an OVF
     package, these sections will be placed in the OVF descriptor.'''
     
-    obj = vim.client.factory.create('ns0:VAppOvfSectionInfo')
+    obj = vim.client.factory.create('{urn:vim25}VAppOvfSectionInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

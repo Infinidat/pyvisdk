@@ -15,7 +15,7 @@ def ScsiLunDurableName(vim, *args, **kwargs):
     where each namespace uses a different set of properties of the LUN to generate
     the identifier. The namespace itself is encoded in the identifier.'''
     
-    obj = vim.client.factory.create('ns0:ScsiLunDurableName')
+    obj = vim.client.factory.create('{urn:vim25}ScsiLunDurableName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

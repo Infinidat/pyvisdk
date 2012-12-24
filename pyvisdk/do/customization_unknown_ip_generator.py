@@ -12,7 +12,7 @@ def CustomizationUnknownIpGenerator(vim, *args, **kwargs):
     '''The IP address is left unspecified. The user must be prompted to supply an IP
     address.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationUnknownIpGenerator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationUnknownIpGenerator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

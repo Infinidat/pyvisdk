@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScheduledTaskEventArgument(vim, *args, **kwargs):
     '''The event argument is a scheduled task object.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

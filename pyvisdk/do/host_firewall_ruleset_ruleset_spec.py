@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFirewallRulesetRulesetSpec(vim, *args, **kwargs):
     '''The ruleset update specification.'''
     
-    obj = vim.client.factory.create('ns0:HostFirewallRulesetRulesetSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostFirewallRulesetRulesetSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

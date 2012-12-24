@@ -12,7 +12,7 @@ def EventArgDesc(vim, *args, **kwargs):
     '''Describes an available event argument name for an Event type, which can be used
     in EventAlarmExpression.'''
     
-    obj = vim.client.factory.create('ns0:EventArgDesc')
+    obj = vim.client.factory.create('{urn:vim25}EventArgDesc')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

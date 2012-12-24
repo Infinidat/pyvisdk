@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualPCIControllerOption(vim, *args, **kwargs):
     '''This data object type contains the options for a virtual PCI Controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCIControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCIControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 15:

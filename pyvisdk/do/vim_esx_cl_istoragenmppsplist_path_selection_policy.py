@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIstoragenmppsplistPathSelectionPolicy(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIstoragenmppsplistPathSelectionPolicy')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIstoragenmppsplistPathSelectionPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

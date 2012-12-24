@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AnswerFileCreateSpec(vim, *args, **kwargs):
     '''Base class for host-specific answer file options.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFileCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFileCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

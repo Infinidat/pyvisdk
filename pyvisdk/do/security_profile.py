@@ -13,7 +13,7 @@ def SecurityProfile(vim, *args, **kwargs):
     profile plug-in defines policies or subprofiles, use the policy or property
     list to access the additional configuration data.'''
     
-    obj = vim.client.factory.create('ns0:SecurityProfile')
+    obj = vim.client.factory.create('{urn:vim25}SecurityProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

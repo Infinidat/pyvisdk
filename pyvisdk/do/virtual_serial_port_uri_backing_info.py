@@ -27,7 +27,7 @@ def VirtualSerialPortURIBackingInfo(vim, *args, **kwargs):
     username and password in the proxy URI. Any text following the port
     specification is ignored.For information about URI format, see .'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortURIBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortURIBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

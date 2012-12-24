@@ -12,7 +12,7 @@ def VirtualEthernetCardDVPortBackingOption(vim, *args, **kwargs):
     '''This data object type contains the options for using a distributed virtual port
     virtual network card backing data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCardDVPortBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardDVPortBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

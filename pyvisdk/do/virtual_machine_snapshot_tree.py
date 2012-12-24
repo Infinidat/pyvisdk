@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineSnapshotTree(vim, *args, **kwargs):
     '''SnapshotTree encapsulates all the read-only data produced by the snapshot.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineSnapshotTree')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineSnapshotTree')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

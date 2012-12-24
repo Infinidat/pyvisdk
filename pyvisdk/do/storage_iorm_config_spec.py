@@ -13,7 +13,7 @@ def StorageIORMConfigSpec(vim, *args, **kwargs):
     management.All fields are defined as optional. If a field is unset, the
     property is not changed.'''
     
-    obj = vim.client.factory.create('ns0:StorageIORMConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}StorageIORMConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

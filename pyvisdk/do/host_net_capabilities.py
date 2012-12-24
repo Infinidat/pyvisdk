@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostNetCapabilities(vim, *args, **kwargs):
     '''Capability vector indicating the available product features.'''
     
-    obj = vim.client.factory.create('ns0:HostNetCapabilities')
+    obj = vim.client.factory.create('{urn:vim25}HostNetCapabilities')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 11:

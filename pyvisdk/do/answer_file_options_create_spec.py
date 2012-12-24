@@ -12,7 +12,7 @@ def AnswerFileOptionsCreateSpec(vim, *args, **kwargs):
     '''The AnswerFileOptionsCreateSpec data object contains host-specific user input
     for an answer file.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFileOptionsCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFileOptionsCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

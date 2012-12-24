@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def RoleAddedEvent(vim, *args, **kwargs):
     '''This event records the creation of a role.'''
     
-    obj = vim.client.factory.create('ns0:RoleAddedEvent')
+    obj = vim.client.factory.create('{urn:vim25}RoleAddedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

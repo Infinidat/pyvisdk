@@ -12,7 +12,7 @@ def VirtualPCIPassthroughDeviceBackingOption(vim, *args, **kwargs):
     '''This data object type describes the options for the
     VirtualPCIPassthroughDeviceBackingInfo data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPCIPassthroughDeviceBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPCIPassthroughDeviceBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

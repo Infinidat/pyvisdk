@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostService(vim, *args, **kwargs):
     '''Data object that describes a single service that runs on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostService')
+    obj = vim.client.factory.create('{urn:vim25}HostService')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

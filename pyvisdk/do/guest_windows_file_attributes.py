@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestWindowsFileAttributes(vim, *args, **kwargs):
     '''Different attributes for a Windows guest file.'''
     
-    obj = vim.client.factory.create('ns0:GuestWindowsFileAttributes')
+    obj = vim.client.factory.create('{urn:vim25}GuestWindowsFileAttributes')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def VirtualMachineRelocateSpecDiskLocator(vim, *args, **kwargs):
     '''The DiskLocator data object type specifies a virtual disk device (by ID) and a
     datastore locator for the disk's storage.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineRelocateSpecDiskLocator')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineRelocateSpecDiskLocator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

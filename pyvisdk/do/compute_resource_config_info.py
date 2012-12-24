@@ -12,7 +12,7 @@ def ComputeResourceConfigInfo(vim, *args, **kwargs):
     '''Configuration of the compute resource; applies to both standalone hosts and
     clusters.'''
     
-    obj = vim.client.factory.create('ns0:ComputeResourceConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}ComputeResourceConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

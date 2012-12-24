@@ -12,7 +12,7 @@ def HostDirectoryStoreInfo(vim, *args, **kwargs):
     '''HostDirectoryStoreInfo is a base class for objects that provide information
     about directory-based authentication stores.'''
     
-    obj = vim.client.factory.create('ns0:HostDirectoryStoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDirectoryStoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

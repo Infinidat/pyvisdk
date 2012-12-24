@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmStatusChangedEvent(vim, *args, **kwargs):
     '''This event records a status change for an alarm.'''
     
-    obj = vim.client.factory.create('ns0:AlarmStatusChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmStatusChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 9:

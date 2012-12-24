@@ -12,7 +12,7 @@ def VMwareDVSPortSetting(vim, *args, **kwargs):
     '''This class defines the VMware specific configuration for
     DistributedVirtualPort.'''
     
-    obj = vim.client.factory.create('ns0:VMwareDVSPortSetting')
+    obj = vim.client.factory.create('{urn:vim25}VMwareDVSPortSetting')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def HostDatastoreExistsConnectInfo(vim, *args, **kwargs):
     '''This data object type describes a datastore on the host that matches an
     existing datastore on VirtualCenter that has a different name.'''
     
-    obj = vim.client.factory.create('ns0:HostDatastoreExistsConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDatastoreExistsConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

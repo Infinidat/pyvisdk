@@ -12,7 +12,7 @@ def AuthorizationRole(vim, *args, **kwargs):
     '''This data object type specifies a collection of privileges used to grant access
     to users on managed entities.'''
     
-    obj = vim.client.factory.create('ns0:AuthorizationRole')
+    obj = vim.client.factory.create('{urn:vim25}AuthorizationRole')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

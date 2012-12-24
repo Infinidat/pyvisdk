@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSPolicy(vim, *args, **kwargs):
     '''The switch usage policy types'''
     
-    obj = vim.client.factory.create('ns0:DVSPolicy')
+    obj = vim.client.factory.create('{urn:vim25}DVSPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

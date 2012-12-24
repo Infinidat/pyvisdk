@@ -13,7 +13,7 @@ def NetworkProfileDnsConfigProfile(vim, *args, **kwargs):
     the host. Use the policy list for access to configuration data for the DNS
     profile. Use the property list for access to subprofiles, if any.'''
     
-    obj = vim.client.factory.create('ns0:NetworkProfileDnsConfigProfile')
+    obj = vim.client.factory.create('{urn:vim25}NetworkProfileDnsConfigProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

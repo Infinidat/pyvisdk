@@ -15,7 +15,7 @@ def HostVmciAccessManagerAccessSpec(vim, *args, **kwargs):
     specified. In case of a revoke, an empty or non-existing service list indicates
     that all granted services should be revoked.'''
     
-    obj = vim.client.factory.create('ns0:HostVmciAccessManagerAccessSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostVmciAccessManagerAccessSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

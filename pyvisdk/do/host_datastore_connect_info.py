@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDatastoreConnectInfo(vim, *args, **kwargs):
     '''The base data object type for information about datastores on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostDatastoreConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDatastoreConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmGuestRebootEvent(vim, *args, **kwargs):
     '''This is a virtual machine guest reboot request event.'''
     
-    obj = vim.client.factory.create('ns0:VmGuestRebootEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmGuestRebootEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

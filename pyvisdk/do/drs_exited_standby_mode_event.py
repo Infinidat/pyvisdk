@@ -12,7 +12,7 @@ def DrsExitedStandbyModeEvent(vim, *args, **kwargs):
     '''This event records that Distributed Power Management brings this host out from
     standby mode.'''
     
-    obj = vim.client.factory.create('ns0:DrsExitedStandbyModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsExitedStandbyModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

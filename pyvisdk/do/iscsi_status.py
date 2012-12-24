@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IscsiStatus(vim, *args, **kwargs):
     '''The IscsiStatus data object describes the status of an operation.'''
     
-    obj = vim.client.factory.create('ns0:IscsiStatus')
+    obj = vim.client.factory.create('{urn:vim25}IscsiStatus')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

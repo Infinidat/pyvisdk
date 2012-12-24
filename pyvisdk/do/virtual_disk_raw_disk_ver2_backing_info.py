@@ -12,7 +12,7 @@ def VirtualDiskRawDiskVer2BackingInfo(vim, *args, **kwargs):
     '''This data object type contains information about backing a virtual disk by
     using a host device, as used by VMware Server.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskRawDiskVer2BackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskRawDiskVer2BackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

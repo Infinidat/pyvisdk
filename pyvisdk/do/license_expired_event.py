@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseExpiredEvent(vim, *args, **kwargs):
     '''This event records the expiration of a license.'''
     
-    obj = vim.client.factory.create('ns0:LicenseExpiredEvent')
+    obj = vim.client.factory.create('{urn:vim25}LicenseExpiredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

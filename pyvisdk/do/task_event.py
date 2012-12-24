@@ -15,7 +15,7 @@ def TaskEvent(vim, *args, **kwargs):
     current state of the Task using the eventChainId in the embedded TaskInfo
     object.'''
     
-    obj = vim.client.factory.create('ns0:TaskEvent')
+    obj = vim.client.factory.create('{urn:vim25}TaskEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

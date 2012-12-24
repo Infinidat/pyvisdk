@@ -13,7 +13,7 @@ def ClusterDrsFaults(vim, *args, **kwargs):
     enforcement, power management, etc., and indexed in a tree structure with
     reason for recommendations and VM to migrate (optional) as the index keys.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDrsFaults')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDrsFaults')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

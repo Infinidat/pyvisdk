@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterCreatedEvent(vim, *args, **kwargs):
     '''This event records when a cluster is created.'''
     
-    obj = vim.client.factory.create('ns0:ClusterCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ClusterCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

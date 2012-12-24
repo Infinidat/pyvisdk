@@ -16,7 +16,7 @@ def ProductComponentInfo(vim, *args, **kwargs):
     ProductComponentInfo type may be used to describe installed components. For
     example, ESX product may bundle VI Client in its releases.'''
     
-    obj = vim.client.factory.create('ns0:ProductComponentInfo')
+    obj = vim.client.factory.create('{urn:vim25}ProductComponentInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

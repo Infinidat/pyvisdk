@@ -12,7 +12,7 @@ def HostSystemReconnectSpec(vim, *args, **kwargs):
     '''Specifies the parameters needed to merge vCenter Server settings and host
     settings on reconnect.'''
     
-    obj = vim.client.factory.create('ns0:HostSystemReconnectSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostSystemReconnectSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

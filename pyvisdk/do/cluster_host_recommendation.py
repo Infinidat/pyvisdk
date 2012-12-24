@@ -12,7 +12,7 @@ def ClusterHostRecommendation(vim, *args, **kwargs):
     '''A DRS recommended host for either powering on, resuming or reverting a virtual
     machine, or migrating a virtual machine from outside the cluster.'''
     
-    obj = vim.client.factory.create('ns0:ClusterHostRecommendation')
+    obj = vim.client.factory.create('{urn:vim25}ClusterHostRecommendation')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

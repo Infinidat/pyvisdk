@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetDhcpConfigInfo(vim, *args, **kwargs):
     '''Dynamic Host Configuration Protocol reporting for IP version 4 and version 6.'''
     
-    obj = vim.client.factory.create('ns0:NetDhcpConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}NetDhcpConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

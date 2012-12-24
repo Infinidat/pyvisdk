@@ -13,7 +13,7 @@ def ServiceProfile(vim, *args, **kwargs):
     policy list for access to configuration data for the service profile. Use the
     property list for access to subprofiles, if any.'''
     
-    obj = vim.client.factory.create('ns0:ServiceProfile')
+    obj = vim.client.factory.create('{urn:vim25}ServiceProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

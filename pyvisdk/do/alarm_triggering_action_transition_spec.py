@@ -16,7 +16,7 @@ def AlarmTriggeringActionTransitionSpec(vim, *args, **kwargs):
     green}. At least one of these pairs must be specified. Any deviation from the
     above will render the enclosing AlarmSpec invalid.'''
     
-    obj = vim.client.factory.create('ns0:AlarmTriggeringActionTransitionSpec')
+    obj = vim.client.factory.create('{urn:vim25}AlarmTriggeringActionTransitionSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

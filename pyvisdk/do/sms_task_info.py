@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def SmsTaskInfo(vim, *args, **kwargs):
     '''This data object type contains all information about a task.'''
     
-    obj = vim.client.factory.create('ns0:SmsTaskInfo')
+    obj = vim.client.factory.create('{urn:sms}SmsTaskInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

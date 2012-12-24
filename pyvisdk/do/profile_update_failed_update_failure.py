@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileUpdateFailedUpdateFailure(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ProfileUpdateFailedUpdateFailure')
+    obj = vim.client.factory.create('{urn:vim25}ProfileUpdateFailedUpdateFailure')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

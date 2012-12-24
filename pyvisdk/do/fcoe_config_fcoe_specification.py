@@ -12,7 +12,7 @@ def FcoeConfigFcoeSpecification(vim, *args, **kwargs):
     '''An FcoeSpecification contains values relevant to issuing FCoE discovery. Non-
     mandatory values are denoted '@optional'.'''
     
-    obj = vim.client.factory.create('ns0:FcoeConfigFcoeSpecification')
+    obj = vim.client.factory.create('{urn:vim25}FcoeConfigFcoeSpecification')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

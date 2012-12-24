@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualEthernetCardLegacyNetworkBackingInfo(vim, *args, **kwargs):
     '''The virtual Ethernet card legacy backing class.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCardLegacyNetworkBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardLegacyNetworkBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

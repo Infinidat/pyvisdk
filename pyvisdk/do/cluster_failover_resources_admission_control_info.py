@@ -12,7 +12,7 @@ def ClusterFailoverResourcesAdmissionControlInfo(vim, *args, **kwargs):
     '''The current admission control related information if the cluster was configured
     with a FailoverResourcesAdmissionControlPolicy.'''
     
-    obj = vim.client.factory.create('ns0:ClusterFailoverResourcesAdmissionControlInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterFailoverResourcesAdmissionControlInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

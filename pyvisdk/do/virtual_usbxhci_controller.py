@@ -13,7 +13,7 @@ def VirtualUSBXHCIController(vim, *args, **kwargs):
     Host Controller Interface (USB 3.0). For more informatino see
     VirtualUSBController.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBXHCIController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBXHCIController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

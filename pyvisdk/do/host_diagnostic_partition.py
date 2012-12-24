@@ -12,7 +12,7 @@ def HostDiagnosticPartition(vim, *args, **kwargs):
     '''This data object type contains information about an available or active
     diagnostic partition.'''
     
-    obj = vim.client.factory.create('ns0:HostDiagnosticPartition')
+    obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartition')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

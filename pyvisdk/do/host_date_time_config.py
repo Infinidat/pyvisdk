@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDateTimeConfig(vim, *args, **kwargs):
     '''This data object represents the dateTime configuration of the host.'''
     
-    obj = vim.client.factory.create('ns0:HostDateTimeConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostDateTimeConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

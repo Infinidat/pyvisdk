@@ -13,7 +13,7 @@ def GuestInfo(vim, *args, **kwargs):
     collected by VMware Tools. In general, be sure you have VMware Tools installed
     and that the virtual machine is running when you access this information.'''
     
-    obj = vim.client.factory.create('ns0:GuestInfo')
+    obj = vim.client.factory.create('{urn:vim25}GuestInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

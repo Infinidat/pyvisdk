@@ -13,7 +13,7 @@ def EntityReference(vim, *args, **kwargs):
     similar to the VirtualCenter ManagedObjectReference but also identifies certain
     non-managed objects.'''
     
-    obj = vim.client.factory.create('ns0:EntityReference')
+    obj = vim.client.factory.create('{urn:sms}EntityReference')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

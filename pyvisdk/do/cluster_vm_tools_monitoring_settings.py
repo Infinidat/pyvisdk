@@ -18,7 +18,7 @@ def ClusterVmToolsMonitoringSettings(vim, *args, **kwargs):
     are defined as optional. In case of a reconfiguration, fields left unset are
     not changed.'''
     
-    obj = vim.client.factory.create('ns0:ClusterVmToolsMonitoringSettings')
+    obj = vim.client.factory.create('{urn:vim25}ClusterVmToolsMonitoringSettings')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

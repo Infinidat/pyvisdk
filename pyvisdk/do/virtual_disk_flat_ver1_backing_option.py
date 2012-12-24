@@ -13,7 +13,7 @@ def VirtualDiskFlatVer1BackingOption(vim, *args, **kwargs):
     disk using a host file with the flat file format from GSX Server 2.x. Flat
     disks are pre-allocated, whereas sparse disks are grown as needed.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskFlatVer1BackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskFlatVer1BackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

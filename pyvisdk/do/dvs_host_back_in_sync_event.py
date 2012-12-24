@@ -13,7 +13,7 @@ def DvsHostBackInSyncEvent(vim, *args, **kwargs):
     Center Server and the configuration is the same on the host and Virtual Center
     Server.'''
     
-    obj = vim.client.factory.create('ns0:DvsHostBackInSyncEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsHostBackInSyncEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

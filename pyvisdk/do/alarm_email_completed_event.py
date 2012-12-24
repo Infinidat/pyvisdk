@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmEmailCompletedEvent(vim, *args, **kwargs):
     '''This event records the completion of an alarm email notification.'''
     
-    obj = vim.client.factory.create('ns0:AlarmEmailCompletedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmEmailCompletedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

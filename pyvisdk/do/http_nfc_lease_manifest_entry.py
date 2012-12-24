@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HttpNfcLeaseManifestEntry(vim, *args, **kwargs):
     '''Provides a manifest for downloaded (exported) files and disks.'''
     
-    obj = vim.client.factory.create('ns0:HttpNfcLeaseManifestEntry')
+    obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseManifestEntry')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

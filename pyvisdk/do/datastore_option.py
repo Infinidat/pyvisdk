@@ -12,7 +12,7 @@ def DatastoreOption(vim, *args, **kwargs):
     '''The DatastoreOption data object describes datastore options for a virtual
     machine.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreOption')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

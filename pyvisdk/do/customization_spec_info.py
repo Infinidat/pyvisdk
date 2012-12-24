@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationSpecInfo(vim, *args, **kwargs):
     '''Information about a specification.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSpecInfo')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSpecInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

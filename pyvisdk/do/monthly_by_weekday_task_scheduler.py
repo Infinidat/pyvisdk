@@ -18,7 +18,7 @@ def MonthlyByWeekdayTaskScheduler(vim, *args, **kwargs):
     example, an interval of 2 will cause the task to execute on the specified day,
     hour, and minute every 2 months.)'''
     
-    obj = vim.client.factory.create('ns0:MonthlyByWeekdayTaskScheduler')
+    obj = vim.client.factory.create('{urn:vim25}MonthlyByWeekdayTaskScheduler')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

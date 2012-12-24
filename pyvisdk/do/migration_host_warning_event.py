@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def MigrationHostWarningEvent(vim, *args, **kwargs):
     '''A migration warning that includes the destination host.'''
     
-    obj = vim.client.factory.create('ns0:MigrationHostWarningEvent')
+    obj = vim.client.factory.create('{urn:vim25}MigrationHostWarningEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

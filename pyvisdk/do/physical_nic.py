@@ -12,7 +12,7 @@ def PhysicalNic(vim, *args, **kwargs):
     '''This data object type describes the physical network adapter as seen by the
     primary operating system.'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNic')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNic')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

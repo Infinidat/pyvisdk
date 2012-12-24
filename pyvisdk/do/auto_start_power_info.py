@@ -33,7 +33,7 @@ def AutoStartPowerInfo(vim, *args, **kwargs):
     begin sending heartbeats, perhaps because it could not start up, other machines
     are not blocked from starting up since the startDelay eventually elapses.'''
     
-    obj = vim.client.factory.create('ns0:AutoStartPowerInfo')
+    obj = vim.client.factory.create('{urn:vim25}AutoStartPowerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

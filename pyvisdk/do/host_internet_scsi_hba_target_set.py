@@ -12,7 +12,7 @@ def HostInternetScsiHbaTargetSet(vim, *args, **kwargs):
     '''A collection of one or more static targets or discovery addresses. At least one
     of the arrays must be non-empty.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiHbaTargetSet')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaTargetSet')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

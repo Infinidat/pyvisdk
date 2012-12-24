@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineBootOptionsBootableEthernetDevice(vim, *args, **kwargs):
     '''Bootable ethernet adapter. PXE boot is attempted from the device.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineBootOptionsBootableEthernetDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptionsBootableEthernetDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

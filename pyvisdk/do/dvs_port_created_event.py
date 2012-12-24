@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortCreatedEvent(vim, *args, **kwargs):
     '''New ports are created in the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

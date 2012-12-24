@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDateTimeSystemTimeZone(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:HostDateTimeSystemTimeZone')
+    obj = vim.client.factory.create('{urn:vim25}HostDateTimeSystemTimeZone')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

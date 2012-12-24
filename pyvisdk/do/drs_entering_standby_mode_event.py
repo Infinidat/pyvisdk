@@ -12,7 +12,7 @@ def DrsEnteringStandbyModeEvent(vim, *args, **kwargs):
     '''This event records that a host has begun the process of entering standby mode
     initiated by Distributed Power Management.'''
     
-    obj = vim.client.factory.create('ns0:DrsEnteringStandbyModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}DrsEnteringStandbyModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

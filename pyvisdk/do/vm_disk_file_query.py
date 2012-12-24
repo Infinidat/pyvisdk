@@ -12,7 +12,7 @@ def VmDiskFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for the virtual disk
     primary file.'''
     
-    obj = vim.client.factory.create('ns0:VmDiskFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}VmDiskFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

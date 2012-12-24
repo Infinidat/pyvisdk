@@ -18,7 +18,7 @@ def NamePasswordAuthentication(vim, *args, **kwargs):
     NamePasswordAuthentication.Once populated, you can use
     NamePasswordAuthentication in any guest operations function call.'''
     
-    obj = vim.client.factory.create('ns0:NamePasswordAuthentication')
+    obj = vim.client.factory.create('{urn:vim25}NamePasswordAuthentication')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

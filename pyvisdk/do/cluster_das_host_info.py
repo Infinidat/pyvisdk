@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasHostInfo(vim, *args, **kwargs):
     '''HA specific advanced information pertaining to the hosts in the cluster.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasHostInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasHostInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

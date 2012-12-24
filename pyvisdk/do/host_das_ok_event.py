@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDasOkEvent(vim, *args, **kwargs):
     '''This event records when HA on a host returns to normal after an error.'''
     
-    obj = vim.client.factory.create('ns0:HostDasOkEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostDasOkEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmEvent(vim, *args, **kwargs):
     '''These are virtual machine events.'''
     
-    obj = vim.client.factory.create('ns0:VmEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

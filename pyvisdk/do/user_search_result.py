@@ -12,7 +12,7 @@ def UserSearchResult(vim, *args, **kwargs):
     '''When searching for users, the search results in some additional information.
     This object describes the additional information.'''
     
-    obj = vim.client.factory.create('ns0:UserSearchResult')
+    obj = vim.client.factory.create('{urn:vim25}UserSearchResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

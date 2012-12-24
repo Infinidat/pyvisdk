@@ -13,7 +13,7 @@ def VirtualSCSIPassthrough(vim, *args, **kwargs):
     device on the virtual machine that is being backed by a generic SCSI device on
     the host via passthrough.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSCSIPassthrough')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSCSIPassthrough')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -13,7 +13,7 @@ def DateTimeProfile(vim, *args, **kwargs):
     Use the policy list for access to configuration data for the date and time
     profile. Use the property list for access to subprofiles, if any.'''
     
-    obj = vim.client.factory.create('ns0:DateTimeProfile')
+    obj = vim.client.factory.create('{urn:vim25}DateTimeProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

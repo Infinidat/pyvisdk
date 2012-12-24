@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmGuestShutdownEvent(vim, *args, **kwargs):
     '''This is a virtual machine guest shutdown request event.'''
     
-    obj = vim.client.factory.create('ns0:VmGuestShutdownEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmGuestShutdownEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -12,7 +12,7 @@ def EvaluationLicenseSource(vim, *args, **kwargs):
     '''Specify an evaluation license source. Feature licensing is not required while
     the remaining hours is greater than zero.'''
     
-    obj = vim.client.factory.create('ns0:EvaluationLicenseSource')
+    obj = vim.client.factory.create('{urn:vim25}EvaluationLicenseSource')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -14,7 +14,7 @@ def VirtualDeviceBackingInfo(vim, *args, **kwargs):
     namespace for general-purpose subtypes. Specific devices are represented by
     subtypes which define properties for device-specific backing information.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

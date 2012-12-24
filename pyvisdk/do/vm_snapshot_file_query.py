@@ -12,7 +12,7 @@ def VmSnapshotFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for a virtual machine
     snapshot file.'''
     
-    obj = vim.client.factory.create('ns0:VmSnapshotFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}VmSnapshotFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

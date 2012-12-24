@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfilePolicy(vim, *args, **kwargs):
     '''The ProfilePolicy data object represents a policy.'''
     
-    obj = vim.client.factory.create('ns0:ProfilePolicy')
+    obj = vim.client.factory.create('{urn:vim25}ProfilePolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

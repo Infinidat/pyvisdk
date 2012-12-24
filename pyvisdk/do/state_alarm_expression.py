@@ -25,7 +25,7 @@ def StateAlarmExpression(vim, *args, **kwargs):
     (isUnequal) the state of the managed entity. Otherwise, the expression is
     green.'''
     
-    obj = vim.client.factory.create('ns0:StateAlarmExpression')
+    obj = vim.client.factory.create('{urn:vim25}StateAlarmExpression')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

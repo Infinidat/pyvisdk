@@ -12,7 +12,7 @@ def VirtualPS2Controller(vim, *args, **kwargs):
     '''The VirtualPS2Controller data object type represents a controller for keyboards
     and mice.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPS2Controller')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPS2Controller')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

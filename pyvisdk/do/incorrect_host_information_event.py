@@ -12,7 +12,7 @@ def IncorrectHostInformationEvent(vim, *args, **kwargs):
     '''This event records if the host did not provide the information needed to
     acquire the correct set of licenses.'''
     
-    obj = vim.client.factory.create('ns0:IncorrectHostInformationEvent')
+    obj = vim.client.factory.create('{urn:vim25}IncorrectHostInformationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

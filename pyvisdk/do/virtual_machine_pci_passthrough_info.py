@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachinePciPassthroughInfo(vim, *args, **kwargs):
     '''Description of a generic PCI device that can be attached to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachinePciPassthroughInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachinePciPassthroughInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

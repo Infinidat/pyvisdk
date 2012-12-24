@@ -12,7 +12,7 @@ def VmRelayoutUpToDateEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine is already in the correct format. No
     relay out is necessary.'''
     
-    obj = vim.client.factory.create('ns0:VmRelayoutUpToDateEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmRelayoutUpToDateEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

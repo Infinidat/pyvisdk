@@ -14,7 +14,7 @@ def PhysicalNicLinkInfo(vim, *args, **kwargs):
     second. The duplex boolean indicates if the link is capable of full-duplex or
     half-duplex communication.'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicLinkInfo')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicLinkInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

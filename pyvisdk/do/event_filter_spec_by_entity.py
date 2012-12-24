@@ -14,7 +14,7 @@ def EventFilterSpecByEntity(vim, *args, **kwargs):
     be performed on the entities contained within that Folder or ResourcePool, so
     you cannot query for events on Folders and ResourcePools themselves this way.'''
     
-    obj = vim.client.factory.create('ns0:EventFilterSpecByEntity')
+    obj = vim.client.factory.create('{urn:vim25}EventFilterSpecByEntity')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortJoinPortgroupEvent(vim, *args, **kwargs):
     '''A port was moved into the distributed virtual portgroup.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortJoinPortgroupEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortJoinPortgroupEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

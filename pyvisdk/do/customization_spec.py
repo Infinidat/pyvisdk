@@ -12,7 +12,7 @@ def CustomizationSpec(vim, *args, **kwargs):
     '''The Specification data object type contains information required to customize a
     virtual machine when deploying it or migrating it to a new host.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSpec')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

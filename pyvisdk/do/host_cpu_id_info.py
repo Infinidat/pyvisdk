@@ -53,7 +53,7 @@ def HostCpuIdInfo(vim, *args, **kwargs):
     are marked 'H' or 'R', the advertised value of that feature for the source host
     must match that of the destination host.'''
     
-    obj = vim.client.factory.create('ns0:HostCpuIdInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostCpuIdInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

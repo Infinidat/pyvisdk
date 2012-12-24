@@ -13,7 +13,7 @@ def TimedOutHostOperationEvent(vim, *args, **kwargs):
     Typically, a previous event in the sequence of events contains more information
     about the cause of the operation timing out.'''
     
-    obj = vim.client.factory.create('ns0:TimedOutHostOperationEvent')
+    obj = vim.client.factory.create('{urn:vim25}TimedOutHostOperationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

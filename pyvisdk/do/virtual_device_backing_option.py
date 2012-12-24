@@ -12,7 +12,7 @@ def VirtualDeviceBackingOption(vim, *args, **kwargs):
     '''The VirtualDeviceBackingOption data class defines options for device-specific
     virtual backing objects.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

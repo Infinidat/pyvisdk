@@ -12,7 +12,7 @@ def UpgradeEvent(vim, *args, **kwargs):
     '''These event types represent events converted from VirtualCenter 1.x. All
     upgraded events are converted to string values.'''
     
-    obj = vim.client.factory.create('ns0:UpgradeEvent')
+    obj = vim.client.factory.create('{urn:vim25}UpgradeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

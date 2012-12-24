@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostLicenseSpec(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:HostLicenseSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostLicenseSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

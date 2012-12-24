@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def DynamicTypeMgrAnnotation(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:DynamicTypeMgrAnnotation')
+    obj = vim.client.factory.create('{urn:vim25}DynamicTypeMgrAnnotation')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

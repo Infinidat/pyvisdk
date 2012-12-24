@@ -12,7 +12,7 @@ def VimAccountPasswordChangedEvent(vim, *args, **kwargs):
     '''Password for the Vim account user on the host has been changed. This is an
     account created by VirtualCenter and used to manage the host.'''
     
-    obj = vim.client.factory.create('ns0:VimAccountPasswordChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VimAccountPasswordChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

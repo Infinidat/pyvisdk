@@ -13,7 +13,7 @@ def BadUsernameSessionEvent(vim, *args, **kwargs):
     existing between the provided user name and password combination and the
     combinations stored for authentication.'''
     
-    obj = vim.client.factory.create('ns0:BadUsernameSessionEvent')
+    obj = vim.client.factory.create('{urn:vim25}BadUsernameSessionEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

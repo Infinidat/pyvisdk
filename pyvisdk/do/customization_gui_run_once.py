@@ -16,7 +16,7 @@ def CustomizationGuiRunOnce(vim, *args, **kwargs):
     VirtualCenter stores on the target virtual disk. For more detailed information,
     see the document .'''
     
-    obj = vim.client.factory.create('ns0:CustomizationGuiRunOnce')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationGuiRunOnce')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

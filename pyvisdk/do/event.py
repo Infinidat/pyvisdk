@@ -14,7 +14,7 @@ def Event(vim, *args, **kwargs):
     objects are data structures that describe events, event data type documentation
     may describe what the event records, rather than the data structure, itself.'''
     
-    obj = vim.client.factory.create('ns0:Event')
+    obj = vim.client.factory.create('{urn:vim25}Event')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

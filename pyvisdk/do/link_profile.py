@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LinkProfile(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:LinkProfile')
+    obj = vim.client.factory.create('{urn:vim25}LinkProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

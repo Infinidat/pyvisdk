@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GeneralHostInfoEvent(vim, *args, **kwargs):
     '''This event is the general information event for a host.'''
     
-    obj = vim.client.factory.create('ns0:GeneralHostInfoEvent')
+    obj = vim.client.factory.create('{urn:vim25}GeneralHostInfoEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

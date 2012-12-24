@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ScheduledTaskReconfiguredEvent(vim, *args, **kwargs):
     '''This event records the reconfiguration of a scheduled task.'''
     
-    obj = vim.client.factory.create('ns0:ScheduledTaskReconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}ScheduledTaskReconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

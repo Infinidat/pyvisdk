@@ -12,7 +12,7 @@ def VMwareDVSConfigInfo(vim, *args, **kwargs):
     '''This class defines the VMware specific configuration for
     DistributedVirtualSwitch.'''
     
-    obj = vim.client.factory.create('ns0:VMwareDVSConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}VMwareDVSConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 13:

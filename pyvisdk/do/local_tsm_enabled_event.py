@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LocalTSMEnabledEvent(vim, *args, **kwargs):
     '''Local Tech Support Mode for the host has been enabled.'''
     
-    obj = vim.client.factory.create('ns0:LocalTSMEnabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}LocalTSMEnabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

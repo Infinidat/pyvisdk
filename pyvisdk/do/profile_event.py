@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileEvent(vim, *args, **kwargs):
     '''This event records a Profile specific event.'''
     
-    obj = vim.client.factory.create('ns0:ProfileEvent')
+    obj = vim.client.factory.create('{urn:vim25}ProfileEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

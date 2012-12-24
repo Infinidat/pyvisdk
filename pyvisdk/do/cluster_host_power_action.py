@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterHostPowerAction(vim, *args, **kwargs):
     '''Describes a single host power action.'''
     
-    obj = vim.client.factory.create('ns0:ClusterHostPowerAction')
+    obj = vim.client.factory.create('{urn:vim25}ClusterHostPowerAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

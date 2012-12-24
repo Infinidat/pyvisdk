@@ -12,7 +12,7 @@ def DVPortgroupPolicy(vim, *args, **kwargs):
     '''The DistributedVirtualPortgroup policies. This field is not applicable when
     queried directly against an ESX host.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupPolicy')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreFileCopiedEvent(vim, *args, **kwargs):
     '''This event records copy of a file or directory.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreFileCopiedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreFileCopiedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

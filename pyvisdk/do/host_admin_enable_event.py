@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostAdminEnableEvent(vim, *args, **kwargs):
     '''This event records that the administrator permission has been restored.'''
     
-    obj = vim.client.factory.create('ns0:HostAdminEnableEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostAdminEnableEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

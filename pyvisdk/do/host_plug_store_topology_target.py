@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPlugStoreTopologyTarget(vim, *args, **kwargs):
     '''This data object represents target information.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopologyTarget')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyTarget')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

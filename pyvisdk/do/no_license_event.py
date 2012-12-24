@@ -13,7 +13,7 @@ def NoLicenseEvent(vim, *args, **kwargs):
     the required licenses could not be reserved. Each feature that is not fully
     licensed is reported.'''
     
-    obj = vim.client.factory.create('ns0:NoLicenseEvent')
+    obj = vim.client.factory.create('{urn:vim25}NoLicenseEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

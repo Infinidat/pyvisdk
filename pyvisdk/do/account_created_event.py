@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AccountCreatedEvent(vim, *args, **kwargs):
     '''This event records that an account was created on a host.'''
     
-    obj = vim.client.factory.create('ns0:AccountCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AccountCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

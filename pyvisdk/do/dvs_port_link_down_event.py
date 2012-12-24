@@ -12,7 +12,7 @@ def DvsPortLinkDownEvent(vim, *args, **kwargs):
     '''A port of which link status is changed to down in the distributed virtual
     switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortLinkDownEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortLinkDownEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

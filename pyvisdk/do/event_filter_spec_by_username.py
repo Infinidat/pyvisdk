@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EventFilterSpecByUsername(vim, *args, **kwargs):
     '''This option specifies users used to filter event history.'''
     
-    obj = vim.client.factory.create('ns0:EventFilterSpecByUsername')
+    obj = vim.client.factory.create('{urn:vim25}EventFilterSpecByUsername')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

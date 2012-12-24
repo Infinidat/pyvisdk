@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsDestroyedEvent(vim, *args, **kwargs):
     '''A distributed virtual switch was destroyed.'''
     
-    obj = vim.client.factory.create('ns0:DvsDestroyedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsDestroyedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

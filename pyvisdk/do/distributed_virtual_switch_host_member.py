@@ -12,7 +12,7 @@ def DistributedVirtualSwitchHostMember(vim, *args, **kwargs):
     '''The data object that represents a host member in the distributed virtual
     switch.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostMember')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMember')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

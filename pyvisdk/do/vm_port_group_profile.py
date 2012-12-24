@@ -15,7 +15,7 @@ def VmPortGroupProfile(vim, *args, **kwargs):
     list for access to subprofiles, if any.vSphere Servers use Network managed
     objects to represent virtual machine port groups in the vSphere inventory.'''
     
-    obj = vim.client.factory.create('ns0:VmPortGroupProfile')
+    obj = vim.client.factory.create('{urn:vim25}VmPortGroupProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

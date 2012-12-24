@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def RowData(vim, *args, **kwargs):
     '''Collection of values representing a single row in a query result set.'''
     
-    obj = vim.client.factory.create('ns0:RowData')
+    obj = vim.client.factory.create('{urn:sms}RowData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -25,7 +25,7 @@ def HostServiceTicket(vim, *args, **kwargs):
     the required service directly, then the server provides a hostname and port for
     a server that accepts the ticketed connection and provides the service.'''
     
-    obj = vim.client.factory.create('ns0:HostServiceTicket')
+    obj = vim.client.factory.create('{urn:vim25}HostServiceTicket')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

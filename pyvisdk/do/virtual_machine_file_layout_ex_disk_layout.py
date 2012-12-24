@@ -12,7 +12,7 @@ def VirtualMachineFileLayoutExDiskLayout(vim, *args, **kwargs):
     '''Layout of a virtual disk, including the base- and delta- disks.A virtual disk
     typically is made up of a chain of disk-units.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileLayoutExDiskLayout')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutExDiskLayout')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

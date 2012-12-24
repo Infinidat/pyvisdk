@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmSuspendingEvent(vim, *args, **kwargs):
     '''This event records a virtual machine suspending.'''
     
-    obj = vim.client.factory.create('ns0:VmSuspendingEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmSuspendingEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

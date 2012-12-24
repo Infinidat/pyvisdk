@@ -12,7 +12,7 @@ def ConfigTarget(vim, *args, **kwargs):
     '''The ConfigTarget class contains information about "physical" devices that can
     be used to back virtual devices.'''
     
-    obj = vim.client.factory.create('ns0:ConfigTarget')
+    obj = vim.client.factory.create('{urn:vim25}ConfigTarget')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

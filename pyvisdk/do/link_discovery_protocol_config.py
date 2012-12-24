@@ -12,7 +12,7 @@ def LinkDiscoveryProtocolConfig(vim, *args, **kwargs):
     '''Dataobject representing the link discovery protocol configuration for a virtual
     or distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:LinkDiscoveryProtocolConfig')
+    obj = vim.client.factory.create('{urn:vim25}LinkDiscoveryProtocolConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

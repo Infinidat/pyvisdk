@@ -13,7 +13,7 @@ def HostScsiDisk(vim, *args, **kwargs):
     table which can be changed. To change a SCSI disk, use the device name and the
     partition specification.See RetrieveDiskPartitionInfoSee UpdateDiskPartitions'''
     
-    obj = vim.client.factory.create('ns0:HostScsiDisk')
+    obj = vim.client.factory.create('{urn:vim25}HostScsiDisk')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

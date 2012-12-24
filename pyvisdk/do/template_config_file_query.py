@@ -12,7 +12,7 @@ def TemplateConfigFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for a template virtual
     machine configuration file.'''
     
-    obj = vim.client.factory.create('ns0:TemplateConfigFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}TemplateConfigFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

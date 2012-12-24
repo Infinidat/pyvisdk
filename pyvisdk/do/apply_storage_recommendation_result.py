@@ -18,7 +18,7 @@ def ApplyStorageRecommendationResult(vim, *args, **kwargs):
     recommendations.NOTE: This data object type and all of its methods are
     experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:ApplyStorageRecommendationResult')
+    obj = vim.client.factory.create('{urn:vim25}ApplyStorageRecommendationResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

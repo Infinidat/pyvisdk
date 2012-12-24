@@ -12,7 +12,7 @@ def HttpNfcLeaseDatastoreLeaseInfo(vim, *args, **kwargs):
     '''For a given datastore, represented by datastoreKey, contains a list of leased
     multi-POST-capable hosts connected to it.'''
     
-    obj = vim.client.factory.create('ns0:HttpNfcLeaseDatastoreLeaseInfo')
+    obj = vim.client.factory.create('{urn:vim25}HttpNfcLeaseDatastoreLeaseInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

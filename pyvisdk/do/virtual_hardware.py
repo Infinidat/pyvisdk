@@ -12,7 +12,7 @@ def VirtualHardware(vim, *args, **kwargs):
     '''The VirtualHardware data object type contains the complete configuration of the
     hardware in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualHardware')
+    obj = vim.client.factory.create('{urn:vim25}VirtualHardware')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

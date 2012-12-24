@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ToolsConfigInfoToolsLastInstallInfo(vim, *args, **kwargs):
     '''Describes status of last tools upgrade attempt'''
     
-    obj = vim.client.factory.create('ns0:ToolsConfigInfoToolsLastInstallInfo')
+    obj = vim.client.factory.create('{urn:vim25}ToolsConfigInfoToolsLastInstallInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

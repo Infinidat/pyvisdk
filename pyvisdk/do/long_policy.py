@@ -12,7 +12,7 @@ def LongPolicy(vim, *args, **kwargs):
     '''The long integer type of setting or configuration that may get an inherited
     value.'''
     
-    obj = vim.client.factory.create('ns0:LongPolicy')
+    obj = vim.client.factory.create('{urn:vim25}LongPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

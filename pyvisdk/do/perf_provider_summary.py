@@ -15,7 +15,7 @@ def PerfProviderSummary(vim, *args, **kwargs):
     historical statistics (or boththe currentSupported and summarySupported
     properties are not mutually exclusive).'''
     
-    obj = vim.client.factory.create('ns0:PerfProviderSummary')
+    obj = vim.client.factory.create('{urn:vim25}PerfProviderSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

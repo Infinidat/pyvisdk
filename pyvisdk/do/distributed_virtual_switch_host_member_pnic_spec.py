@@ -12,7 +12,7 @@ def DistributedVirtualSwitchHostMemberPnicSpec(vim, *args, **kwargs):
     '''Specification to select individual physical NICs. In this case, a proxy switch
     will be created on the host from scratch with the pNICs as the uplinks.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchHostMemberPnicSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchHostMemberPnicSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

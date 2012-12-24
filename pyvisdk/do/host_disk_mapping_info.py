@@ -12,7 +12,7 @@ def HostDiskMappingInfo(vim, *args, **kwargs):
     '''The HostDiskMappingInfo data object type describes a virtual disk mapping to a
     host disk.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskMappingInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskMappingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

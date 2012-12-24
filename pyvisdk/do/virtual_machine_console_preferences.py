@@ -12,7 +12,7 @@ def VirtualMachineConsolePreferences(vim, *args, **kwargs):
     '''Preferences for the legacy console application that affect the way it behaves
     during power operations on the virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConsolePreferences')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConsolePreferences')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -17,7 +17,7 @@ def SessionManagerGenericServiceTicket(vim, *args, **kwargs):
     CGI requests the name of this cookie is 'vmware_cgi_ticket'. The use of the
     returned ticket for other services is to be defined.'''
     
-    obj = vim.client.factory.create('ns0:SessionManagerGenericServiceTicket')
+    obj = vim.client.factory.create('{urn:vim25}SessionManagerGenericServiceTicket')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

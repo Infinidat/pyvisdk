@@ -13,7 +13,7 @@ def VirtualMachineFlagInfo(vim, *args, **kwargs):
     machine. These properties are optional since the same structure is used to
     change the values during an edit or create operation.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFlagInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFlagInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

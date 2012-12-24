@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreEvent(vim, *args, **kwargs):
     '''These are datastore events.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

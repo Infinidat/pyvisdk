@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostConfigSummary(vim, *args, **kwargs):
     '''An overview of the key configuration parameters.'''
     
-    obj = vim.client.factory.create('ns0:HostConfigSummary')
+    obj = vim.client.factory.create('{urn:vim25}HostConfigSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

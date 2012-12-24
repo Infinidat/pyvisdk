@@ -13,7 +13,7 @@ def ExtManagedEntityInfo(vim, *args, **kwargs):
     The data can be used by clients to show extra information about managed virtual
     machines or vApps, such as a custom icon and a description of the entity.'''
     
-    obj = vim.client.factory.create('ns0:ExtManagedEntityInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtManagedEntityInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

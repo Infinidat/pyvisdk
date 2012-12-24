@@ -12,7 +12,7 @@ def NetBIOSConfigInfo(vim, *args, **kwargs):
     '''This data object type describes the NetBIOS configuration of an operating
     system.'''
     
-    obj = vim.client.factory.create('ns0:NetBIOSConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}NetBIOSConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

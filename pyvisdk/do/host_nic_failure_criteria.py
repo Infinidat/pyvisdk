@@ -12,7 +12,7 @@ def HostNicFailureCriteria(vim, *args, **kwargs):
     '''This data object type describes the network adapter failover detection
     algorithm for a network adapter team.'''
     
-    obj = vim.client.factory.create('ns0:HostNicFailureCriteria')
+    obj = vim.client.factory.create('{urn:vim25}HostNicFailureCriteria')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

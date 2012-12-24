@@ -12,7 +12,7 @@ def FaultToleranceSecondaryConfigInfo(vim, *args, **kwargs):
     '''FaultToleranceSecondaryConfigInfo is a data object type containing Fault
     Tolerance settings for a secondary virtual machine in a fault tolerance group'''
     
-    obj = vim.client.factory.create('ns0:FaultToleranceSecondaryConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}FaultToleranceSecondaryConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

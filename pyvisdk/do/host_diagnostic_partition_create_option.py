@@ -12,7 +12,7 @@ def HostDiagnosticPartitionCreateOption(vim, *args, **kwargs):
     '''This data object describes a disk that can be used to create a diagnostic
     partition.'''
     
-    obj = vim.client.factory.create('ns0:HostDiagnosticPartitionCreateOption')
+    obj = vim.client.factory.create('{urn:vim25}HostDiagnosticPartitionCreateOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -13,7 +13,7 @@ def CustomizationSysprepFailed(vim, *args, **kwargs):
     have been caused by the fact that the wrong sysprep was used for the guest, so
     we include the version information in the event.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationSysprepFailed')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationSysprepFailed')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

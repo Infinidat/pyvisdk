@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIsystemsettingskeyboardlayoutlistLayout(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIsystemsettingskeyboardlayoutlistLayout')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIsystemsettingskeyboardlayoutlistLayout')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

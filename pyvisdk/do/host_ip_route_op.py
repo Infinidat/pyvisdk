@@ -12,7 +12,7 @@ def HostIpRouteOp(vim, *args, **kwargs):
     '''Routing Entry Operation. Routing entries are individual static routes which
     combined with the default route form all of the routing rules for a host.'''
     
-    obj = vim.client.factory.create('ns0:HostIpRouteOp')
+    obj = vim.client.factory.create('{urn:vim25}HostIpRouteOp')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

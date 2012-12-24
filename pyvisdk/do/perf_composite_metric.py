@@ -14,7 +14,7 @@ def PerfCompositeMetric(vim, *args, **kwargs):
     aggregated entity statistics are optional because some entities, such as
     folders, do not have their own statistics.'''
     
-    obj = vim.client.factory.create('ns0:PerfCompositeMetric')
+    obj = vim.client.factory.create('{urn:vim25}PerfCompositeMetric')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

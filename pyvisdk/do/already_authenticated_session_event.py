@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlreadyAuthenticatedSessionEvent(vim, *args, **kwargs):
     '''This event records a failed user logon due to the user already being logged on.'''
     
-    obj = vim.client.factory.create('ns0:AlreadyAuthenticatedSessionEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlreadyAuthenticatedSessionEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

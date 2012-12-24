@@ -12,7 +12,7 @@ def UpdateSet(vim, *args, **kwargs):
     '''A set of updates that represent the changes since a prior call to
     CheckForUpdates, WaitForUpdates, or WaitForUpdatesEx.'''
     
-    obj = vim.client.factory.create('ns0:UpdateSet')
+    obj = vim.client.factory.create('{urn:vim25}UpdateSet')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

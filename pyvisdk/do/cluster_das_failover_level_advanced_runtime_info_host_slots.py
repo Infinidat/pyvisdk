@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasFailoverLevelAdvancedRuntimeInfoHostSlots')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -13,7 +13,7 @@ def HostDiskPartitionBlockRange(vim, *args, **kwargs):
     BlockRange may describe either a partition or unpartitioned (primordial) blocks
     on the disk.'''
     
-    obj = vim.client.factory.create('ns0:HostDiskPartitionBlockRange')
+    obj = vim.client.factory.create('{urn:vim25}HostDiskPartitionBlockRange')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

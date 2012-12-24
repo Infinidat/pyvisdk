@@ -12,7 +12,7 @@ def Extension(vim, *args, **kwargs):
     '''This data object type contains all information about an extension. An extension
     may contain zero or more server interfaces and zero or more clients.'''
     
-    obj = vim.client.factory.create('ns0:Extension')
+    obj = vim.client.factory.create('{urn:vim25}Extension')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def ProfileSerializedCreateSpec(vim, *args, **kwargs):
     '''The ProfileSerializedCreateSpec data object defines a string that contains a
     serialized representation of a host profile.'''
     
-    obj = vim.client.factory.create('ns0:ProfileSerializedCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}ProfileSerializedCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -12,7 +12,7 @@ def DistributedVirtualSwitchPortConnection(vim, *args, **kwargs):
     '''The class that represents a connection or an association between
     DistributedVirtualPort and a Virtual NIC or Physical NIC.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchPortConnection')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchPortConnection')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

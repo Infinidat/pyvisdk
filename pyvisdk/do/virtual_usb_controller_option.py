@@ -12,7 +12,7 @@ def VirtualUSBControllerOption(vim, *args, **kwargs):
     '''The VirtualUSBControllerOption data object type contains the options for a
     virtual USB Host Controller Interface.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

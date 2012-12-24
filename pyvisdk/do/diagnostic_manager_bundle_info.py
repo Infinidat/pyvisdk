@@ -12,7 +12,7 @@ def DiagnosticManagerBundleInfo(vim, *args, **kwargs):
     '''Describes a location of a diagnostic bundle and the server to which it belongs.
     This is a return type for the generateLogBundles operation.'''
     
-    obj = vim.client.factory.create('ns0:DiagnosticManagerBundleInfo')
+    obj = vim.client.factory.create('{urn:vim25}DiagnosticManagerBundleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

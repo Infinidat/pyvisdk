@@ -13,7 +13,7 @@ def VmDasBeingResetEvent(vim, *args, **kwargs):
     on hosts that do not support the create screenshot api or if the
     createscreenshot api fails.'''
     
-    obj = vim.client.factory.create('ns0:VmDasBeingResetEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDasBeingResetEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

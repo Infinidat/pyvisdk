@@ -12,7 +12,7 @@ def HostFileAccess(vim, *args, **kwargs):
     '''This data object type contains a single access control entry for a file
     permissions list.'''
     
-    obj = vim.client.factory.create('ns0:HostFileAccess')
+    obj = vim.client.factory.create('{urn:vim25}HostFileAccess')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLIsystemmodulegetModuleDetails(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLIsystemmodulegetModuleDetails')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLIsystemmodulegetModuleDetails')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

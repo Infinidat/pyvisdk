@@ -18,7 +18,7 @@ def SelectionSpec(vim, *args, **kwargs):
     When used as the base type only, the "name" field indicates recursion to the
     derived object by name.Names are meaningful only within the same FilterSpec.'''
     
-    obj = vim.client.factory.create('ns0:SelectionSpec')
+    obj = vim.client.factory.create('{urn:vim25}SelectionSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

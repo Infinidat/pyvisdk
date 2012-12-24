@@ -12,7 +12,7 @@ def HbrManagerReplicationVmInfo(vim, *args, **kwargs):
     '''This data object represents the essential information about the state of a
     given replicated VirtualMachine.'''
     
-    obj = vim.client.factory.create('ns0:HbrManagerReplicationVmInfo')
+    obj = vim.client.factory.create('{urn:vim25}HbrManagerReplicationVmInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

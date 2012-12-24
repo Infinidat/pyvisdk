@@ -13,7 +13,7 @@ def FcoeConfigVlanRange(vim, *args, **kwargs):
     the range [0,4094], and the low value of a VlanRange must be less than or equal
     to the high value.'''
     
-    obj = vim.client.factory.create('ns0:FcoeConfigVlanRange')
+    obj = vim.client.factory.create('{urn:vim25}FcoeConfigVlanRange')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

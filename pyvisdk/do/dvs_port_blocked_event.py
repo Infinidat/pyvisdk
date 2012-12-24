@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortBlockedEvent(vim, *args, **kwargs):
     '''A port is blocked in the distributed virtual switch.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortBlockedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortBlockedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationWinOptions(vim, *args, **kwargs):
     '''Optional operations supported by the customization process for Windows.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationWinOptions')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationWinOptions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

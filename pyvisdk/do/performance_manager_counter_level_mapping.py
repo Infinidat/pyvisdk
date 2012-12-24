@@ -20,7 +20,7 @@ def PerformanceManagerCounterLevelMapping(vim, *args, **kwargs):
     PerformanceManagerCounterLevelMapping is used to update the levels for a
     counter.'''
     
-    obj = vim.client.factory.create('ns0:PerformanceManagerCounterLevelMapping')
+    obj = vim.client.factory.create('{urn:vim25}PerformanceManagerCounterLevelMapping')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

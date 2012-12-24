@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileDissociatedEvent(vim, *args, **kwargs):
     '''This event records that a Profile was dissociated from a managed entity'''
     
-    obj = vim.client.factory.create('ns0:ProfileDissociatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ProfileDissociatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

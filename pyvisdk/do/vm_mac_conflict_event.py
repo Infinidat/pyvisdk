@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmMacConflictEvent(vim, *args, **kwargs):
     '''This event records a MAC address conflict for a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmMacConflictEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmMacConflictEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

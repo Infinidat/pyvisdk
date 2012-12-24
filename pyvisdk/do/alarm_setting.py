@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmSetting(vim, *args, **kwargs):
     '''Tolerance and frequency limits of an alarm.'''
     
-    obj = vim.client.factory.create('ns0:AlarmSetting')
+    obj = vim.client.factory.create('{urn:vim25}AlarmSetting')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFirewallRulesetIpList(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:HostFirewallRulesetIpList')
+    obj = vim.client.factory.create('{urn:vim25}HostFirewallRulesetIpList')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

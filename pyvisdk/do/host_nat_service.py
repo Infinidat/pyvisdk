@@ -12,7 +12,7 @@ def HostNatService(vim, *args, **kwargs):
     '''A network address translation (NAT) service instance provides firewall and
     network address translation services for a virtual network.'''
     
-    obj = vim.client.factory.create('ns0:HostNatService')
+    obj = vim.client.factory.create('{urn:vim25}HostNatService')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

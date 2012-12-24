@@ -12,7 +12,7 @@ def NetworkProfile(vim, *args, **kwargs):
     '''The NetworkProfile data object contains a set of subprofiles for network
     configuration.'''
     
-    obj = vim.client.factory.create('ns0:NetworkProfile')
+    obj = vim.client.factory.create('{urn:vim25}NetworkProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

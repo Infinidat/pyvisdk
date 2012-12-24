@@ -14,7 +14,7 @@ def VirtualUSBRemoteHostBackingOption(vim, *args, **kwargs):
     USB connections when vMotion operations migrate virtual machines to different
     hosts.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBRemoteHostBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBRemoteHostBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

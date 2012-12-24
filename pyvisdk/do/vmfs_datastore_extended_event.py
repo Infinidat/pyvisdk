@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VMFSDatastoreExtendedEvent(vim, *args, **kwargs):
     '''This event records when a datastore is extended.'''
     
-    obj = vim.client.factory.create('ns0:VMFSDatastoreExtendedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VMFSDatastoreExtendedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

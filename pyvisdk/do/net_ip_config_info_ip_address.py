@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetIpConfigInfoIpAddress(vim, *args, **kwargs):
     '''Information about a specific IP Address.'''
     
-    obj = vim.client.factory.create('ns0:NetIpConfigInfoIpAddress')
+    obj = vim.client.factory.create('{urn:vim25}NetIpConfigInfoIpAddress')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

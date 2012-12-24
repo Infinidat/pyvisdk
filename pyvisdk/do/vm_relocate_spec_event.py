@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmRelocateSpecEvent(vim, *args, **kwargs):
     '''This event is the base event for relocate and clone base events.'''
     
-    obj = vim.client.factory.create('ns0:VmRelocateSpecEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmRelocateSpecEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -12,7 +12,7 @@ def VirtualPointingDeviceBackingOption(vim, *args, **kwargs):
     '''The DeviceBackingOption data object type represents the options for a pointing
     device backing a VirtualPointingDevice data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPointingDeviceBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPointingDeviceBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

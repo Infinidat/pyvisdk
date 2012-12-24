@@ -12,7 +12,7 @@ def VirtualMachineNetworkShaperInfo(vim, *args, **kwargs):
     '''Network traffic shaping specification.Traffic shaping is used to configure the
     network utilization characteristics of a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineNetworkShaperInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineNetworkShaperInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

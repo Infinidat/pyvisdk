@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationIPSettings(vim, *args, **kwargs):
     '''IP settings for a virtual network adapter.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationIPSettings')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationIPSettings')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

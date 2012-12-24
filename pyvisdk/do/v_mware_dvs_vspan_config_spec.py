@@ -12,7 +12,7 @@ def VMwareDVSVspanConfigSpec(vim, *args, **kwargs):
     '''This class defines the configuration of a Distributed Port Mirroring session. A
     Distributed Port Mirroring session'''
     
-    obj = vim.client.factory.create('ns0:VMwareDVSVspanConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}VMwareDVSVspanConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def VirtualEthernetCardLegacyNetworkBackingOption(vim, *args, **kwargs):
     '''This data object type contains the options for using a legacy virtual network
     card backing data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualEthernetCardLegacyNetworkBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualEthernetCardLegacyNetworkBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

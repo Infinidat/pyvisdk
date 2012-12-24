@@ -14,7 +14,7 @@ def HostUnresolvedVmfsExtent(vim, *args, **kwargs):
     VMFS volume. Such a copy can be created via replication or snapshots, for
     example.See HostUnresolvedVmfsVolume'''
     
-    obj = vim.client.factory.create('ns0:HostUnresolvedVmfsExtent')
+    obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsExtent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

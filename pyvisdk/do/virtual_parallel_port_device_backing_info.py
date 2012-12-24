@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualParallelPortDeviceBackingInfo(vim, *args, **kwargs):
     '''The data object type for a device backing of a virtual parallel port.'''
     
-    obj = vim.client.factory.create('ns0:VirtualParallelPortDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualParallelPortDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

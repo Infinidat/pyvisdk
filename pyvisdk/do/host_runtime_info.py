@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostRuntimeInfo(vim, *args, **kwargs):
     '''This data object type describes the runtime state of a host.'''
     
-    obj = vim.client.factory.create('ns0:HostRuntimeInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostRuntimeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

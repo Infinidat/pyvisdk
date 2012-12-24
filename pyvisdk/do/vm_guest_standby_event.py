@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmGuestStandbyEvent(vim, *args, **kwargs):
     '''This is a virtual machine guest standby request event.'''
     
-    obj = vim.client.factory.create('ns0:VmGuestStandbyEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmGuestStandbyEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

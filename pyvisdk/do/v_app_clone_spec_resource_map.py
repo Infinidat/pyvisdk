@@ -13,7 +13,7 @@ def VAppCloneSpecResourceMap(vim, *args, **kwargs):
     If a mapping is not specified, a child is copied as a direct child of the
     parent.'''
     
-    obj = vim.client.factory.create('ns0:VAppCloneSpecResourceMap')
+    obj = vim.client.factory.create('{urn:vim25}VAppCloneSpecResourceMap')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

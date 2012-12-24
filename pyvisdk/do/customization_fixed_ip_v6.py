@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationFixedIpV6(vim, *args, **kwargs):
     '''Use a static ipv6 address for the virtual network adapter'''
     
-    obj = vim.client.factory.create('ns0:CustomizationFixedIpV6')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationFixedIpV6')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

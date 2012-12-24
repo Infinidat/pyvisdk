@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationCustomIpGenerator(vim, *args, **kwargs):
     '''Use a command-line program configured with the VirtualCenter server.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationCustomIpGenerator')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationCustomIpGenerator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -16,7 +16,7 @@ def OvfCreateImportSpecResult(vim, *args, **kwargs):
     until the VMs have been created, ie. until ResourcePool.importVApp has been
     called.'''
     
-    obj = vim.client.factory.create('ns0:OvfCreateImportSpecResult')
+    obj = vim.client.factory.create('{urn:vim25}OvfCreateImportSpecResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

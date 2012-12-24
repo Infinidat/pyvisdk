@@ -15,7 +15,7 @@ def DiskChangeInfo(vim, *args, **kwargs):
     identified by startOffset and length. All areas that have been modified within
     this interval are listed under changedArea.'''
     
-    obj = vim.client.factory.create('ns0:DiskChangeInfo')
+    obj = vim.client.factory.create('{urn:vim25}DiskChangeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

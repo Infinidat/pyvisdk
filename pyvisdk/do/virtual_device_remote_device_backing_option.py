@@ -14,7 +14,7 @@ def VirtualDeviceRemoteDeviceBackingOption(vim, *args, **kwargs):
     and a local device backing is that the VirtualCenter server cannot provide a
     list of remote host devices available for this virtual device backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceRemoteDeviceBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceRemoteDeviceBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

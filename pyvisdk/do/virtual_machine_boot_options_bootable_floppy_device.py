@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineBootOptionsBootableFloppyDevice(vim, *args, **kwargs):
     '''Bootable floppy disk.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineBootOptionsBootableFloppyDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptionsBootableFloppyDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def VirtualVmxnet3(vim, *args, **kwargs):
     '''The VirtualVmxnet3 data object type represents an instance of the Vmxnet3
     virtual Ethernet adapter attached to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualVmxnet3')
+    obj = vim.client.factory.create('{urn:vim25}VirtualVmxnet3')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

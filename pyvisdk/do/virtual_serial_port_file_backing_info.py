@@ -12,7 +12,7 @@ def VirtualSerialPortFileBackingInfo(vim, *args, **kwargs):
     '''The data object provides information for backing a virtual serial port with a
     host file.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortFileBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortFileBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

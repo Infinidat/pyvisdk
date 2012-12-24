@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfManagerCommonParams(vim, *args, **kwargs):
     '''A common super-class for basic OVF descriptor parameters'''
     
-    obj = vim.client.factory.create('ns0:OvfManagerCommonParams')
+    obj = vim.client.factory.create('{urn:vim25}OvfManagerCommonParams')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

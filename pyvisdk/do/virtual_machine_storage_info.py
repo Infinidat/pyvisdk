@@ -12,7 +12,7 @@ def VirtualMachineStorageInfo(vim, *args, **kwargs):
     '''Information about the amount of storage used by a virtual machine across
     datastores that it is located on.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineStorageInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineStorageInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

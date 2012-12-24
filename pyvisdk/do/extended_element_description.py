@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtendedElementDescription(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ExtendedElementDescription')
+    obj = vim.client.factory.create('{urn:vim25}ExtendedElementDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VnicPortArgument(vim, *args, **kwargs):
     '''This argument records a Virtual NIC device that connects to a DVPort.'''
     
-    obj = vim.client.factory.create('ns0:VnicPortArgument')
+    obj = vim.client.factory.create('{urn:vim25}VnicPortArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

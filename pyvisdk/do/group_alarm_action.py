@@ -12,7 +12,7 @@ def GroupAlarmAction(vim, *args, **kwargs):
     '''This data object type describes a group of actions that occur when the alarm is
     triggered. These actions are not necessarily executed in order.'''
     
-    obj = vim.client.factory.create('ns0:GroupAlarmAction')
+    obj = vim.client.factory.create('{urn:vim25}GroupAlarmAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

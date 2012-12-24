@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSTrafficShapingPolicy(vim, *args, **kwargs):
     '''This data object type describes traffic shaping policy.'''
     
-    obj = vim.client.factory.create('ns0:DVSTrafficShapingPolicy')
+    obj = vim.client.factory.create('{urn:vim25}DVSTrafficShapingPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

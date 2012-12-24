@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetworkEventArgument(vim, *args, **kwargs):
     '''The event argument is a Network object.'''
     
-    obj = vim.client.factory.create('ns0:NetworkEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}NetworkEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

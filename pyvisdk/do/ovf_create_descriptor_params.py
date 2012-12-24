@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfCreateDescriptorParams(vim, *args, **kwargs):
     '''Collection of parameters for createDescriptor'''
     
-    obj = vim.client.factory.create('ns0:OvfCreateDescriptorParams')
+    obj = vim.client.factory.create('{urn:vim25}OvfCreateDescriptorParams')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

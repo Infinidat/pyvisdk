@@ -12,7 +12,7 @@ def PortGroupProfile(vim, *args, **kwargs):
     '''PortGroupProfile is the base class for the different port group subprofile
     objects.'''
     
-    obj = vim.client.factory.create('ns0:PortGroupProfile')
+    obj = vim.client.factory.create('{urn:vim25}PortGroupProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

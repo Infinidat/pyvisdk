@@ -12,7 +12,7 @@ def PasswordField(vim, *args, **kwargs):
     '''DataObject which represents a Password field. Password is functionally
     equivalent to String.'''
     
-    obj = vim.client.factory.create('ns0:PasswordField')
+    obj = vim.client.factory.create('{urn:vim25}PasswordField')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

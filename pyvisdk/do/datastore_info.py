@@ -13,7 +13,7 @@ def DatastoreInfo(vim, *args, **kwargs):
     that have more specific details about a datastore.See HostVmfsVolumeSee
     HostNasVolumeSee HostLocalFileSystemVolume'''
     
-    obj = vim.client.factory.create('ns0:DatastoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

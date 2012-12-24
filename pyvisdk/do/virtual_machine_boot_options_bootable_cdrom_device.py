@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineBootOptionsBootableCdromDevice(vim, *args, **kwargs):
     '''Bootable CDROM. First CDROM with bootable media found is used.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineBootOptionsBootableCdromDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineBootOptionsBootableCdromDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

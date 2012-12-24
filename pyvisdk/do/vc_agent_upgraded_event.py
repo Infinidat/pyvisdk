@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VcAgentUpgradedEvent(vim, *args, **kwargs):
     '''This event records when the VirtualCenter agent on a host upgraded.'''
     
-    obj = vim.client.factory.create('ns0:VcAgentUpgradedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VcAgentUpgradedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

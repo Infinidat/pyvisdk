@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EnumDescription(vim, *args, **kwargs):
     '''Static strings used for describing an enumerated type.'''
     
-    obj = vim.client.factory.create('ns0:EnumDescription')
+    obj = vim.client.factory.create('{urn:vim25}EnumDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

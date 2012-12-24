@@ -13,7 +13,7 @@ def ClusterDasDataSummary(vim, *args, **kwargs):
     data is available in ClusterDasDataDetails and can be retrieved using the
     RetrieveDasData method. This class is meant for VMware internal use only.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasDataSummary')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasDataSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

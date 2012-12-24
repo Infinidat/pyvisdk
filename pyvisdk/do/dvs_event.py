@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsEvent(vim, *args, **kwargs):
     '''These are dvs-related events.'''
     
-    obj = vim.client.factory.create('ns0:DvsEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -15,7 +15,7 @@ def ArrayUpdateSpec(vim, *args, **kwargs):
     case of a remove operation, the key value that identifies the array to be
     removed.'''
     
-    obj = vim.client.factory.create('ns0:ArrayUpdateSpec')
+    obj = vim.client.factory.create('{urn:vim25}ArrayUpdateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

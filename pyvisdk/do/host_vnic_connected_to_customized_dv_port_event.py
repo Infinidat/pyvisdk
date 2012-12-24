@@ -12,7 +12,7 @@ def HostVnicConnectedToCustomizedDVPortEvent(vim, *args, **kwargs):
     '''This event records when some host Virtual NICs were reconfigured to use DVPorts
     with port level configuration, which might be different from the DVportgroup.'''
     
-    obj = vim.client.factory.create('ns0:HostVnicConnectedToCustomizedDVPortEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostVnicConnectedToCustomizedDVPortEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

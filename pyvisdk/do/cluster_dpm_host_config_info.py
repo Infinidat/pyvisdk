@@ -12,7 +12,7 @@ def ClusterDpmHostConfigInfo(vim, *args, **kwargs):
     '''DPM configuration for a single host. This makes it possible to override the
     default behavior for an individual host.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDpmHostConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDpmHostConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

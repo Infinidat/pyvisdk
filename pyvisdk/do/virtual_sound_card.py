@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualSoundCard(vim, *args, **kwargs):
     '''This data object type represents a sound card in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSoundCard')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSoundCard')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

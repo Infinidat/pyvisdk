@@ -12,7 +12,7 @@ def PhysicalNicCdpDeviceCapability(vim, *args, **kwargs):
     '''The capability of the CDP-awared device that connects to a Physical NIC.
     PhysicalNicCdpInfo'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicCdpDeviceCapability')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicCdpDeviceCapability')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

@@ -14,7 +14,7 @@ def UserInputRequiredParameterMetadata(vim, *args, **kwargs):
     configuration data from the user input options in the host AnswerFile. See the
     ExecuteHostProfile and ApplyHostConfig_Task methods.'''
     
-    obj = vim.client.factory.create('ns0:UserInputRequiredParameterMetadata')
+    obj = vim.client.factory.create('{urn:vim25}UserInputRequiredParameterMetadata')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

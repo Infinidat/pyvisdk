@@ -12,7 +12,7 @@ def VirtualHardwareOption(vim, *args, **kwargs):
     '''The VirtualHardwareOption data object contains the options available for all
     virtual devices.'''
     
-    obj = vim.client.factory.create('ns0:VirtualHardwareOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualHardwareOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 14:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfParseDescriptorResult(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:OvfParseDescriptorResult')
+    obj = vim.client.factory.create('{urn:vim25}OvfParseDescriptorResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

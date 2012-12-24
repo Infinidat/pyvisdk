@@ -12,7 +12,7 @@ def HostPlugStoreTopologyPath(vim, *args, **kwargs):
     '''This data object type is an association class that describes a Path and its
     associated Device. A Path may be claimed by at most one Device.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopologyPath')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyPath')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

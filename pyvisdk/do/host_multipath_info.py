@@ -22,7 +22,7 @@ def HostMultipathInfo(vim, *args, **kwargs):
     these hosts, the MultipathInfo object contains the complete set of LUNs and
     paths on the LUNs available on the host.'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

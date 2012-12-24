@@ -12,7 +12,7 @@ def VmFailedUpdatingSecondaryConfig(vim, *args, **kwargs):
     '''This event records after a failover the new new primary failed to update the
     config of the secondary vm.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedUpdatingSecondaryConfig')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedUpdatingSecondaryConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

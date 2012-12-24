@@ -12,7 +12,7 @@ def HostScsiTopologyTarget(vim, *args, **kwargs):
     '''This data object type describes the SCSI target that is associated with a list
     of logical units.'''
     
-    obj = vim.client.factory.create('ns0:HostScsiTopologyTarget')
+    obj = vim.client.factory.create('{urn:vim25}HostScsiTopologyTarget')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

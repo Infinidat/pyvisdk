@@ -12,7 +12,7 @@ def VirtualUSBRemoteClientBackingOption(vim, *args, **kwargs):
     '''This data object type contains the options for the virtual remote USB client
     backing data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBRemoteClientBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBRemoteClientBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

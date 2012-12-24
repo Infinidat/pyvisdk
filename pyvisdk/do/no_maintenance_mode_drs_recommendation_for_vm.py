@@ -22,7 +22,7 @@ def NoMaintenanceModeDrsRecommendationForVM(vim, *args, **kwargs):
     virtual machine was in the process of migrating to another host when the host
     tried to enter maintenance mode.'''
     
-    obj = vim.client.factory.create('ns0:NoMaintenanceModeDrsRecommendationForVM')
+    obj = vim.client.factory.create('{urn:vim25}NoMaintenanceModeDrsRecommendationForVM')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestPosixFileAttributes(vim, *args, **kwargs):
     '''Different attributes for Posix guest file.'''
     
-    obj = vim.client.factory.create('ns0:GuestPosixFileAttributes')
+    obj = vim.client.factory.create('{urn:vim25}GuestPosixFileAttributes')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

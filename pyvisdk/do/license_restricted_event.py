@@ -12,7 +12,7 @@ def LicenseRestrictedEvent(vim, *args, **kwargs):
     '''This event records if the required licenses could not be reserved because of a
     restriction in the option file.'''
     
-    obj = vim.client.factory.create('ns0:LicenseRestrictedEvent')
+    obj = vim.client.factory.create('{urn:vim25}LicenseRestrictedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

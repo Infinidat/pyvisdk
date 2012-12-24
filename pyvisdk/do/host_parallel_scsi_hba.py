@@ -12,7 +12,7 @@ def HostParallelScsiHba(vim, *args, **kwargs):
     '''The ParallelScsiHba data object type describes a parallel SCSI host bus
     adapter.'''
     
-    obj = vim.client.factory.create('ns0:HostParallelScsiHba')
+    obj = vim.client.factory.create('{urn:vim25}HostParallelScsiHba')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def VirtualDiskRawDiskMappingVer1BackingInfo(vim, *args, **kwargs):
     '''This data object type contains information about backing a virtual disk using a
     raw device mapping. Supported for ESX Server 2.5 and 3.x.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskRawDiskMappingVer1BackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskRawDiskMappingVer1BackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

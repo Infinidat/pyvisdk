@@ -13,7 +13,7 @@ def VmNoCompatibleHostForSecondaryEvent(vim, *args, **kwargs):
     default alarm will be triggered upon this event, which by default would trigger
     a SNMP trap.'''
     
-    obj = vim.client.factory.create('ns0:VmNoCompatibleHostForSecondaryEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmNoCompatibleHostForSecondaryEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

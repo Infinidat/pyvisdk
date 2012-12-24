@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostInternetScsiHbaSendTarget(vim, *args, **kwargs):
     '''The iSCSI send target.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiHbaSendTarget')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiHbaSendTarget')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

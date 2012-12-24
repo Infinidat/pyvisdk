@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DynamicProperty(vim, *args, **kwargs):
     '''The DynamicProperty data object type represents a name-value pair.'''
     
-    obj = vim.client.factory.create('ns0:DynamicProperty')
+    obj = vim.client.factory.create('{urn:sms}DynamicProperty')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

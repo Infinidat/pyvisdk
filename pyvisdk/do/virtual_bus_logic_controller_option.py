@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualBusLogicControllerOption(vim, *args, **kwargs):
     '''This data object contains the options for a BusLogic SCSI controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualBusLogicControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualBusLogicControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 12:

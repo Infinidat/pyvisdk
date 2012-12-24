@@ -16,7 +16,7 @@ def ClusterVmGroup(vim, *args, **kwargs):
     loses its DRS group affiliation. The Server does not restore any group
     affiliations if the virtual machine is returned to the cluster.'''
     
-    obj = vim.client.factory.create('ns0:ClusterVmGroup')
+    obj = vim.client.factory.create('{urn:vim25}ClusterVmGroup')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

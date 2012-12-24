@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostWwnChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a host's WWN (World Wide Name).'''
     
-    obj = vim.client.factory.create('ns0:HostWwnChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostWwnChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

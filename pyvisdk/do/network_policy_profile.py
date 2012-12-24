@@ -12,7 +12,7 @@ def NetworkPolicyProfile(vim, *args, **kwargs):
     '''The NetworkPolicyProfile data object represents a network policy. The policy
     property contains network configuration data values.'''
     
-    obj = vim.client.factory.create('ns0:NetworkPolicyProfile')
+    obj = vim.client.factory.create('{urn:vim25}NetworkPolicyProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

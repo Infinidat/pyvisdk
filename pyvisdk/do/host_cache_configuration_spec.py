@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostCacheConfigurationSpec(vim, *args, **kwargs):
     '''Host cache configuration specification.'''
     
-    obj = vim.client.factory.create('ns0:HostCacheConfigurationSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostCacheConfigurationSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VAppPropertyInfo(vim, *args, **kwargs):
     '''A vApp Property description, including deployment values'''
     
-    obj = vim.client.factory.create('ns0:VAppPropertyInfo')
+    obj = vim.client.factory.create('{urn:vim25}VAppPropertyInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

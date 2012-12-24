@@ -13,7 +13,7 @@ def ClusterGroupInfo(vim, *args, **kwargs):
     virtual machines and hosts that are part of a group must be part of the same
     cluster.'''
     
-    obj = vim.client.factory.create('ns0:ClusterGroupInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterGroupInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

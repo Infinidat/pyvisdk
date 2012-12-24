@@ -13,7 +13,7 @@ def HostAccountSpec(vim, *args, **kwargs):
     The password and description properties are not supported for group accounts on
     POSIX hosts.'''
     
-    obj = vim.client.factory.create('ns0:HostAccountSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostAccountSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

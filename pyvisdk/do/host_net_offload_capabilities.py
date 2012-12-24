@@ -19,7 +19,7 @@ def HostNetOffloadCapabilities(vim, *args, **kwargs):
     optional. As a result, all properties on the NetOffloadCapabilities object must
     be optional.See HostNetworkPolicy'''
     
-    obj = vim.client.factory.create('ns0:HostNetOffloadCapabilities')
+    obj = vim.client.factory.create('{urn:vim25}HostNetOffloadCapabilities')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DeviceBackedVirtualDiskSpec(vim, *args, **kwargs):
     '''Specification used to create a host device backed virtual disk'''
     
-    obj = vim.client.factory.create('ns0:DeviceBackedVirtualDiskSpec')
+    obj = vim.client.factory.create('{urn:vim25}DeviceBackedVirtualDiskSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -13,7 +13,7 @@ def IscsiPortInfo(vim, *args, **kwargs):
     iSCSI adapter and also it describes the candidate Virtual NICs that can be
     bound to a given iSCSI adapter.'''
     
-    obj = vim.client.factory.create('ns0:IscsiPortInfo')
+    obj = vim.client.factory.create('{urn:vim25}IscsiPortInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -20,7 +20,7 @@ def VMwareVspanSession(vim, *args, **kwargs):
     destination ports among different Distributed Port Mirroring session is not
     permitted.'''
     
-    obj = vim.client.factory.create('ns0:VMwareVspanSession')
+    obj = vim.client.factory.create('{urn:vim25}VMwareVspanSession')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

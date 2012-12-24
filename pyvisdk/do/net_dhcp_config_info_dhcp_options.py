@@ -12,7 +12,7 @@ def NetDhcpConfigInfoDhcpOptions(vim, *args, **kwargs):
     '''Provides for reporting of DHCP client. This data object may be used at a per
     interface or per system scope.'''
     
-    obj = vim.client.factory.create('ns0:NetDhcpConfigInfoDhcpOptions')
+    obj = vim.client.factory.create('{urn:vim25}NetDhcpConfigInfoDhcpOptions')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

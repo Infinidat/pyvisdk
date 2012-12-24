@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseEvent(vim, *args, **kwargs):
     '''This is a base licensing event to group all license events.'''
     
-    obj = vim.client.factory.create('ns0:LicenseEvent')
+    obj = vim.client.factory.create('{urn:vim25}LicenseEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def VirtualCdromIsoBackingInfo(vim, *args, **kwargs):
     '''The VirtualCdrom.IsoBackingInfo data class represents an ISO backing for a
     virtual CD-ROM.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdromIsoBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdromIsoBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

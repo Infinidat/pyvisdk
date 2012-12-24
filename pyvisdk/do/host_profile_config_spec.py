@@ -12,7 +12,7 @@ def HostProfileConfigSpec(vim, *args, **kwargs):
     '''HostProfileConfigSpec is the base data object for all HostProfile configuration
     specifications.'''
     
-    obj = vim.client.factory.create('ns0:HostProfileConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostProfileConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

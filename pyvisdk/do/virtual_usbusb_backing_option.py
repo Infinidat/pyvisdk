@@ -14,7 +14,7 @@ def VirtualUSBUSBBackingOption(vim, *args, **kwargs):
     connection where the virtual machine will remain on the host to which the USB
     device is attached.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBUSBBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBUSBBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

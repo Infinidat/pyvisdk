@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortgroupCreatedEvent(vim, *args, **kwargs):
     '''Two distributed virtual portgroup was created.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def HostCnxFailedBadUsernameEvent(vim, *args, **kwargs):
     '''This event records a failure to connect to a host due to an invalid user name
     and password combination.'''
     
-    obj = vim.client.factory.create('ns0:HostCnxFailedBadUsernameEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostCnxFailedBadUsernameEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

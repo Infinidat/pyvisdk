@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileEventArgument(vim, *args, **kwargs):
     '''The event argument is a Profile object'''
     
-    obj = vim.client.factory.create('ns0:ProfileEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}ProfileEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

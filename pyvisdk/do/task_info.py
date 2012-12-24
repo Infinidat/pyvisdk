@@ -12,7 +12,7 @@ def TaskInfo(vim, *args, **kwargs):
     '''This data object type contains all information about a task. A task represents
     an operation performed by VirtualCenter or ESX.'''
     
-    obj = vim.client.factory.create('ns0:TaskInfo')
+    obj = vim.client.factory.create('{urn:vim25}TaskInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 9:

@@ -12,7 +12,7 @@ def VmDasUpdateOkEvent(vim, *args, **kwargs):
     '''This event records that HA agents have been updated with the current state of
     the virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmDasUpdateOkEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDasUpdateOkEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

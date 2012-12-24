@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DasHeartbeatDatastoreInfo(vim, *args, **kwargs):
     '''Class for the selection of heartbeat datastores'''
     
-    obj = vim.client.factory.create('ns0:DasHeartbeatDatastoreInfo')
+    obj = vim.client.factory.create('{urn:vim25}DasHeartbeatDatastoreInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

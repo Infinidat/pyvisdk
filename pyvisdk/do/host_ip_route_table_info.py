@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostIpRouteTableInfo(vim, *args, **kwargs):
     '''IpRouteTableInfo. This is the list of all static routes on the host'''
     
-    obj = vim.client.factory.create('ns0:HostIpRouteTableInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostIpRouteTableInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

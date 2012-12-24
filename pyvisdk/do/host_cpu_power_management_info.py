@@ -12,7 +12,7 @@ def HostCpuPowerManagementInfo(vim, *args, **kwargs):
     '''The CpuPowerManagementInfo data object type describes supported power
     management and current policy.'''
     
-    obj = vim.client.factory.create('ns0:HostCpuPowerManagementInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostCpuPowerManagementInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -14,7 +14,7 @@ def VirtualDiskFlatVer2BackingOption(vim, *args, **kwargs):
     ESX Server 2.x and greater. Flat disks are pre-allocated, whereas sparse disks
     are grown as needed.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskFlatVer2BackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskFlatVer2BackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 10:

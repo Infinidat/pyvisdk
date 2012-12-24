@@ -14,7 +14,7 @@ def HostSystemResourceInfo(vim, *args, **kwargs):
     objects for virtual machines; however, their structure is fixed and groups may
     not be created nor destroyed, only configured.'''
     
-    obj = vim.client.factory.create('ns0:HostSystemResourceInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostSystemResourceInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

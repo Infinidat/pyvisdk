@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def KernelModuleInfo(vim, *args, **kwargs):
     '''Information about a kernel module.'''
     
-    obj = vim.client.factory.create('ns0:KernelModuleInfo')
+    obj = vim.client.factory.create('{urn:vim25}KernelModuleInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 13:

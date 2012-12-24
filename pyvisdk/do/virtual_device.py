@@ -15,7 +15,7 @@ def VirtualDevice(vim, *args, **kwargs):
     version than the server to which it connects may see a device without knowing
     what it is.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

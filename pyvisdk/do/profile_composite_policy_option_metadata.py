@@ -14,7 +14,7 @@ def ProfileCompositePolicyOptionMetadata(vim, *args, **kwargs):
     information about a composite policy and then combine policy options to produce
     the composite policy option.'''
     
-    obj = vim.client.factory.create('ns0:ProfileCompositePolicyOptionMetadata')
+    obj = vim.client.factory.create('{urn:vim25}ProfileCompositePolicyOptionMetadata')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

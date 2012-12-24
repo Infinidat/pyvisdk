@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostShutdownEvent(vim, *args, **kwargs):
     '''This event records the shutdown of a host.'''
     
-    obj = vim.client.factory.create('ns0:HostShutdownEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostShutdownEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

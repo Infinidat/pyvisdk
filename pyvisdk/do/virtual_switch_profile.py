@@ -13,7 +13,7 @@ def VirtualSwitchProfile(vim, *args, **kwargs):
     switch. If a profile plug-in defines policies or subprofiles, use the policy or
     property list to access the additional configuration data.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSwitchProfile')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSwitchProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

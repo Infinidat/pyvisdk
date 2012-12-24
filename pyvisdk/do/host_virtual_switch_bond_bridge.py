@@ -12,7 +12,7 @@ def HostVirtualSwitchBondBridge(vim, *args, **kwargs):
     '''This data object type describes a bridge that provides network adapter teaming
     capabilities.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualSwitchBondBridge')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchBondBridge')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

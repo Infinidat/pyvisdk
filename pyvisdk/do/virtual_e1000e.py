@@ -12,7 +12,7 @@ def VirtualE1000e(vim, *args, **kwargs):
     '''The VirtualE1000e data object type represents an instance of the E1000e virtual
     Ethernet adapter attached to a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualE1000e')
+    obj = vim.client.factory.create('{urn:vim25}VirtualE1000e')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

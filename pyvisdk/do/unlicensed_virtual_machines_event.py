@@ -13,7 +13,7 @@ def UnlicensedVirtualMachinesEvent(vim, *args, **kwargs):
     host. This can be both a (@link vim.ManagedEntity.configIssue configIssue) and
     an entry in the event log.'''
     
-    obj = vim.client.factory.create('ns0:UnlicensedVirtualMachinesEvent')
+    obj = vim.client.factory.create('{urn:vim25}UnlicensedVirtualMachinesEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

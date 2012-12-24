@@ -45,7 +45,7 @@ def HostActiveDirectory(vim, *args, **kwargs):
     periodically check the domain controller for the group and will assign the role
     when the group exists.'''
     
-    obj = vim.client.factory.create('ns0:HostActiveDirectory')
+    obj = vim.client.factory.create('{urn:vim25}HostActiveDirectory')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

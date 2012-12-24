@@ -13,7 +13,7 @@ def VmMessageErrorEvent(vim, *args, **kwargs):
     "observations") is thrown by the virtual machine. This is a generic event for
     such messages.'''
     
-    obj = vim.client.factory.create('ns0:VmMessageErrorEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmMessageErrorEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

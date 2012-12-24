@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileApplyProfileProperty(vim, *args, **kwargs):
     '''The ProfileApplyProfileProperty data object defines one or more subprofiles.'''
     
-    obj = vim.client.factory.create('ns0:ProfileApplyProfileProperty')
+    obj = vim.client.factory.create('{urn:vim25}ProfileApplyProfileProperty')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

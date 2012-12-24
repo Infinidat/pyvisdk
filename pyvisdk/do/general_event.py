@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GeneralEvent(vim, *args, **kwargs):
     '''These are general events.'''
     
-    obj = vim.client.factory.create('ns0:GeneralEvent')
+    obj = vim.client.factory.create('{urn:vim25}GeneralEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

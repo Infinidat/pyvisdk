@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostDasEnabledEvent(vim, *args, **kwargs):
     '''This event records when HA has been enabled on a host.'''
     
-    obj = vim.client.factory.create('ns0:HostDasEnabledEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostDasEnabledEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

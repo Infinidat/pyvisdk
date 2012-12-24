@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TemplateConfigFileInfo(vim, *args, **kwargs):
     '''This data object type describes a template virtual machine configuration file.'''
     
-    obj = vim.client.factory.create('ns0:TemplateConfigFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}TemplateConfigFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

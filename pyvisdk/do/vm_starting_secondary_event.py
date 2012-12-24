@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmStartingSecondaryEvent(vim, *args, **kwargs):
     '''This event records a vmotion to start a secondary VM.'''
     
-    obj = vim.client.factory.create('ns0:VmStartingSecondaryEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmStartingSecondaryEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

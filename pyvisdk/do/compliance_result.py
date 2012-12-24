@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ComplianceResult(vim, *args, **kwargs):
     '''DataObject representing the result from a ComplianceCheck'''
     
-    obj = vim.client.factory.create('ns0:ComplianceResult')
+    obj = vim.client.factory.create('{urn:vim25}ComplianceResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

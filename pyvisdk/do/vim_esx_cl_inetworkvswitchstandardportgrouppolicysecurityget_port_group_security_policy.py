@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimEsxCLInetworkvswitchstandardportgrouppolicysecuritygetPortGroupSecurityPolicy(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimEsxCLInetworkvswitchstandardportgrouppolicysecuritygetPortGroupSecurityPolicy')
+    obj = vim.client.factory.create('{urn:vim25}VimEsxCLInetworkvswitchstandardportgrouppolicysecuritygetPortGroupSecurityPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

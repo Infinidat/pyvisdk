@@ -39,7 +39,7 @@ def HostPlugStoreTopology(vim, *args, **kwargs):
     which plugin a path belongs to by accessing its device and finding that device
     in the Plugin list.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopology')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopology')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

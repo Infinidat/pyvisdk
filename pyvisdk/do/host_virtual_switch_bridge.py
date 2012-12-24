@@ -12,7 +12,7 @@ def HostVirtualSwitchBridge(vim, *args, **kwargs):
     '''A bridge connects a virtual switch to a physical network adapter. There are
     multiple types of bridges.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualSwitchBridge')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualSwitchBridge')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

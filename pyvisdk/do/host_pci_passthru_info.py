@@ -12,7 +12,7 @@ def HostPciPassthruInfo(vim, *args, **kwargs):
     '''This data object provides information about the state of PciPassthru for all
     pci devices.'''
     
-    obj = vim.client.factory.create('ns0:HostPciPassthruInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostPciPassthruInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

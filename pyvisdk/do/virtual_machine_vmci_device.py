@@ -18,7 +18,7 @@ def VirtualMachineVMCIDevice(vim, *args, **kwargs):
     other virtual machines on the same host, or for communication with the host.
     For information about using the vSphere VMCI Sockets API, see the .'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineVMCIDevice')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineVMCIDevice')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

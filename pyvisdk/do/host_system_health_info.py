@@ -12,7 +12,7 @@ def HostSystemHealthInfo(vim, *args, **kwargs):
     '''This data object provides information about the health of the phyical system.
     The data is retrieved from numeric sensor probes.'''
     
-    obj = vim.client.factory.create('ns0:HostSystemHealthInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostSystemHealthInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

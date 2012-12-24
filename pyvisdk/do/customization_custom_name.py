@@ -14,7 +14,7 @@ def CustomizationCustomName(vim, *args, **kwargs):
     specified in the server configuration file (vpxd.cfg) in the vpxd/name-ip-
     generator key.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationCustomName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationCustomName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomFieldDefRemovedEvent(vim, *args, **kwargs):
     '''This event records the removal of a custom field definition.'''
     
-    obj = vim.client.factory.create('ns0:CustomFieldDefRemovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}CustomFieldDefRemovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

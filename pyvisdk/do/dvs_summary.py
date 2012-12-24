@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVSSummary(vim, *args, **kwargs):
     '''Summary of the switch configuration.'''
     
-    obj = vim.client.factory.create('ns0:DVSSummary')
+    obj = vim.client.factory.create('{urn:vim25}DVSSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

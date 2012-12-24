@@ -12,7 +12,7 @@ def DVSNetworkResourcePoolConfigSpec(vim, *args, **kwargs):
     '''The configuration specification data object to update the resource
     configuration for a network resource pool.'''
     
-    obj = vim.client.factory.create('ns0:DVSNetworkResourcePoolConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}DVSNetworkResourcePoolConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

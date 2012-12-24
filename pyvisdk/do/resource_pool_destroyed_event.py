@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourcePoolDestroyedEvent(vim, *args, **kwargs):
     '''This event records when a resource pool is destroyed.'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolDestroyedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolDestroyedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

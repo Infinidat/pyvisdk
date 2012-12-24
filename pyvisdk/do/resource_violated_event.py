@@ -12,7 +12,7 @@ def ResourceViolatedEvent(vim, *args, **kwargs):
     '''This event records when a conflict with a resource pool's resource
     configuration is detected.'''
     
-    obj = vim.client.factory.create('ns0:ResourceViolatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ResourceViolatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

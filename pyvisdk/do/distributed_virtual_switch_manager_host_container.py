@@ -14,7 +14,7 @@ def DistributedVirtualSwitchManagerHostContainer(vim, *args, **kwargs):
     only at the container level. In case of container being a Datacenter, the
     recursive flag is applied to its HostFolder.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchManagerHostContainer')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchManagerHostContainer')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

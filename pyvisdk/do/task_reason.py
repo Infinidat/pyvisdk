@@ -12,7 +12,7 @@ def TaskReason(vim, *args, **kwargs):
     '''Base type for all task reasons. Task reasons represent the kind of entity
     responsible for a task's creation.'''
     
-    obj = vim.client.factory.create('ns0:TaskReason')
+    obj = vim.client.factory.create('{urn:vim25}TaskReason')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

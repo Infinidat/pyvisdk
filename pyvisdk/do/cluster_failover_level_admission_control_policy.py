@@ -32,7 +32,7 @@ def ClusterFailoverLevelAdmissionControlPolicy(vim, *args, **kwargs):
     makes the same calculation for host memory resource amount. HA compares the
     results; the lower of the two numbers is the host slot capacity.'''
     
-    obj = vim.client.factory.create('ns0:ClusterFailoverLevelAdmissionControlPolicy')
+    obj = vim.client.factory.create('{urn:vim25}ClusterFailoverLevelAdmissionControlPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

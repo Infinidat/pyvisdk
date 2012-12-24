@@ -14,7 +14,7 @@ def ObjectUpdate(vim, *args, **kwargs):
     destroyed, or modified, as well as when the object enters or leaves the set of
     objects dynamically associated with a filter.'''
     
-    obj = vim.client.factory.create('ns0:ObjectUpdate')
+    obj = vim.client.factory.create('{urn:vim25}ObjectUpdate')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

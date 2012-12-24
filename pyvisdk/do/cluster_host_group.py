@@ -14,7 +14,7 @@ def ClusterHostGroup(vim, *args, **kwargs):
     specified in a ClusterVmHostRuleInfo object determines where virtual machines
     can be powered-on.'''
     
-    obj = vim.client.factory.create('ns0:ClusterHostGroup')
+    obj = vim.client.factory.create('{urn:vim25}ClusterHostGroup')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

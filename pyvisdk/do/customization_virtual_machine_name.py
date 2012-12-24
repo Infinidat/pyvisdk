@@ -15,7 +15,7 @@ def CustomizationVirtualMachineName(vim, *args, **kwargs):
     hosts and virtual machines known to the VirtualCenter instance. VMware Tools
     reports the names of existing virtual machines.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationVirtualMachineName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationVirtualMachineName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

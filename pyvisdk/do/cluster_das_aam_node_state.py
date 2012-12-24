@@ -12,7 +12,7 @@ def ClusterDasAamNodeState(vim, *args, **kwargs):
     '''The ClusterDasAamNodeState data object represents the state of the HA service
     on an ESX host. (AAM is a component of this service.)'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasAamNodeState')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasAamNodeState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

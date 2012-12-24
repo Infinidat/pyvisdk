@@ -13,7 +13,7 @@ def HostProfileSerializedHostProfileSpec(vim, *args, **kwargs):
     representation of a host profile. Use this object when you create a host
     profile from a file.'''
     
-    obj = vim.client.factory.create('ns0:HostProfileSerializedHostProfileSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostProfileSerializedHostProfileSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

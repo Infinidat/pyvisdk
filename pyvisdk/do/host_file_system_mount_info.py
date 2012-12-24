@@ -12,7 +12,7 @@ def HostFileSystemMountInfo(vim, *args, **kwargs):
     '''The HostFileSystemMountInfo data object describes a host mount point for a file
     system.'''
     
-    obj = vim.client.factory.create('ns0:HostFileSystemMountInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostFileSystemMountInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

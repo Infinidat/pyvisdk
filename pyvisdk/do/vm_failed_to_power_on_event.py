@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFailedToPowerOnEvent(vim, *args, **kwargs):
     '''This event records a failure to power on a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedToPowerOnEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedToPowerOnEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

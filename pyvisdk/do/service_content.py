@@ -16,7 +16,7 @@ def ServiceContent(vim, *args, **kwargs):
     ServiceInstance. For this reason, use the method RetrieveServiceContent to
     retrieve the ServiceContent object.'''
     
-    obj = vim.client.factory.create('ns0:ServiceContent')
+    obj = vim.client.factory.create('{urn:vim25}ServiceContent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

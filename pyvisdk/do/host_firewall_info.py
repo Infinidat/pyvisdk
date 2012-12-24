@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostFirewallInfo(vim, *args, **kwargs):
     '''Data object describing the firewall configuration.'''
     
-    obj = vim.client.factory.create('ns0:HostFirewallInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostFirewallInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

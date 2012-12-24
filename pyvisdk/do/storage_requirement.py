@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def StorageRequirement(vim, *args, **kwargs):
     '''Describes the storage requirment to perform a consolidation operation.'''
     
-    obj = vim.client.factory.create('ns0:StorageRequirement')
+    obj = vim.client.factory.create('{urn:vim25}StorageRequirement')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

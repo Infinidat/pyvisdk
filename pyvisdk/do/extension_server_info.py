@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtensionServerInfo(vim, *args, **kwargs):
     '''This data object type describes a server for the extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtensionServerInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtensionServerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

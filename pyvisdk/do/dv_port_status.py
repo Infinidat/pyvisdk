@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortStatus(vim, *args, **kwargs):
     '''The runtime information of a DistributedVirtualPort.'''
     
-    obj = vim.client.factory.create('ns0:DVPortStatus')
+    obj = vim.client.factory.create('{urn:vim25}DVPortStatus')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

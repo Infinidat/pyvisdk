@@ -13,7 +13,7 @@ def CanceledHostOperationEvent(vim, *args, **kwargs):
     the sequence of events contains more information about the cause of this
     cancellation.'''
     
-    obj = vim.client.factory.create('ns0:CanceledHostOperationEvent')
+    obj = vim.client.factory.create('{urn:vim25}CanceledHostOperationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

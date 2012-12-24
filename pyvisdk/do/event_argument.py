@@ -13,7 +13,7 @@ def EventArgument(vim, *args, **kwargs):
     inherit from a common subtype, are used to manage supplementary properties of
     different kinds of event objects.'''
     
-    obj = vim.client.factory.create('ns0:EventArgument')
+    obj = vim.client.factory.create('{urn:vim25}EventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -13,7 +13,7 @@ def ClusterDasFailoverLevelAdvancedRuntimeInfo(vim, *args, **kwargs):
     cluster that has been configured with a failover level admission control
     policy. See ClusterFailoverLevelAdmissionControlPolicy.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDasFailoverLevelAdvancedRuntimeInfo')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDasFailoverLevelAdvancedRuntimeInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

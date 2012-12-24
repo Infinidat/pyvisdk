@@ -15,7 +15,7 @@ def DvsHostVNicProfile(vim, *args, **kwargs):
     subprofiles, use the policy or property list to access the additional
     configuration data.'''
     
-    obj = vim.client.factory.create('ns0:DvsHostVNicProfile')
+    obj = vim.client.factory.create('{urn:vim25}DvsHostVNicProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

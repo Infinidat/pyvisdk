@@ -16,7 +16,7 @@ def VmfsDatastoreOption(vim, *args, **kwargs):
     that can be applied to provisiong VMFS datastore storage. Only options that
     follow ESX Server best practice guidelines will be presented.'''
     
-    obj = vim.client.factory.create('ns0:VmfsDatastoreOption')
+    obj = vim.client.factory.create('{urn:vim25}VmfsDatastoreOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

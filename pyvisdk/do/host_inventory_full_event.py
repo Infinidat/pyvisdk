@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostInventoryFullEvent(vim, *args, **kwargs):
     '''This event records if the inventory of hosts has reached capacity.'''
     
-    obj = vim.client.factory.create('ns0:HostInventoryFullEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostInventoryFullEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

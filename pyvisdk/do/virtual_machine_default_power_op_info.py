@@ -13,7 +13,7 @@ def VirtualMachineDefaultPowerOpInfo(vim, *args, **kwargs):
     power operations on a virtual machine. The properties indicated whether to do a
     "soft" or guest initiated operation, or a "hard" operation.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineDefaultPowerOpInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineDefaultPowerOpInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

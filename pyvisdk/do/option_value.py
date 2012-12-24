@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OptionValue(vim, *args, **kwargs):
     '''Describes the key/value pair of a configured option.'''
     
-    obj = vim.client.factory.create('ns0:OptionValue')
+    obj = vim.client.factory.create('{urn:vim25}OptionValue')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

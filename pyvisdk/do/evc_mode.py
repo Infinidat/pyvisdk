@@ -36,7 +36,7 @@ def EVCMode(vim, *args, **kwargs):
     The property values for a given mode may change across releases as the set of
     available EVC modes changes, to better represent mode relationships.'''
     
-    obj = vim.client.factory.create('ns0:EVCMode')
+    obj = vim.client.factory.create('{urn:vim25}EVCMode')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

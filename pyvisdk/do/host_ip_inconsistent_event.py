@@ -12,7 +12,7 @@ def HostIpInconsistentEvent(vim, *args, **kwargs):
     '''This event records that the IP address resolution returned different addresses
     on the host. Please check your host's network configuration.'''
     
-    obj = vim.client.factory.create('ns0:HostIpInconsistentEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostIpInconsistentEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

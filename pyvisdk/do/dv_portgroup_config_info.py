@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DVPortgroupConfigInfo(vim, *args, **kwargs):
     '''Configuration of a DistributedVirtualPortgroup.'''
     
-    obj = vim.client.factory.create('ns0:DVPortgroupConfigInfo')
+    obj = vim.client.factory.create('{urn:vim25}DVPortgroupConfigInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DatastoreDestroyedEvent(vim, *args, **kwargs):
     '''This event records when a datastore is removed from VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreDestroyedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreDestroyedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

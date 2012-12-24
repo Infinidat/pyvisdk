@@ -12,7 +12,7 @@ def HostFirewallRuleset(vim, *args, **kwargs):
     '''Data object that describes a single network ruleset that can be allowed or
     blocked by the firewall using the HostFirewallSystem object.'''
     
-    obj = vim.client.factory.create('ns0:HostFirewallRuleset')
+    obj = vim.client.factory.create('{urn:vim25}HostFirewallRuleset')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

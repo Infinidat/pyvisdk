@@ -12,7 +12,7 @@ def VmReloadFromPathFailedEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine reload from a new configuration path
     failed.'''
     
-    obj = vim.client.factory.create('ns0:VmReloadFromPathFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmReloadFromPathFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualMachineFileLayoutExFileInfo(vim, *args, **kwargs):
     '''Basic information about a file.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineFileLayoutExFileInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineFileLayoutExFileInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

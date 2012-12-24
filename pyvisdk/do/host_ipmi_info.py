@@ -12,7 +12,7 @@ def HostIpmiInfo(vim, *args, **kwargs):
     '''The IpmiInfo data object contains IPMI (Intelligent Platform Management
     Interface) and BMC (Baseboard Management Controller) information for the host.'''
     
-    obj = vim.client.factory.create('ns0:HostIpmiInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostIpmiInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -19,7 +19,7 @@ def PerfQuerySpec(vim, *args, **kwargs):
     multiple sample interval periods, the result contains data from the longest
     interval in the period.'''
     
-    obj = vim.client.factory.create('ns0:PerfQuerySpec')
+    obj = vim.client.factory.create('{urn:vim25}PerfQuerySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

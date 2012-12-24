@@ -13,7 +13,7 @@ def HostProxySwitchSpec(vim, *args, **kwargs):
     the properties on a HostProxySwitch that can be configured once the object
     exists.'''
     
-    obj = vim.client.factory.create('ns0:HostProxySwitchSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostProxySwitchSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

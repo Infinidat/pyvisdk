@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsOperationBulkFaultFaultOnHost(vim, *args, **kwargs):
     '''The fault occured on the host during an operation.'''
     
-    obj = vim.client.factory.create('ns0:DvsOperationBulkFaultFaultOnHost')
+    obj = vim.client.factory.create('{urn:vim25}DvsOperationBulkFaultFaultOnHost')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

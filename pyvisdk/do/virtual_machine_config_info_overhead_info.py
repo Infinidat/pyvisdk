@@ -12,7 +12,7 @@ def VirtualMachineConfigInfoOverheadInfo(vim, *args, **kwargs):
     '''Information about virtualization overhead required to power on the virtual
     machine on the registered host.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigInfoOverheadInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigInfoOverheadInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def HostSystemIdentificationInfo(vim, *args, **kwargs):
     '''This data object describes system identifying information of the host. This
     information may be vendor specific.'''
     
-    obj = vim.client.factory.create('ns0:HostSystemIdentificationInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostSystemIdentificationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

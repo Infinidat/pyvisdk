@@ -13,7 +13,7 @@ def PhysicalNicSpec(vim, *args, **kwargs):
     representing the properties on a physical network adapter that can be
     configured once the object exists.'''
     
-    obj = vim.client.factory.create('ns0:PhysicalNicSpec')
+    obj = vim.client.factory.create('{urn:vim25}PhysicalNicSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def HostUnresolvedVmfsResolutionResult(vim, *args, **kwargs):
     '''When an UnresolvedVmfsVolume has been resignatured or forceMounted, we want to
     return the original spec information along with newly created VMFS volume.'''
     
-    obj = vim.client.factory.create('ns0:HostUnresolvedVmfsResolutionResult')
+    obj = vim.client.factory.create('{urn:vim25}HostUnresolvedVmfsResolutionResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

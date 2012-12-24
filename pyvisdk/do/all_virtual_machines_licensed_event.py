@@ -15,7 +15,7 @@ def AllVirtualMachinesLicensedEvent(vim, *args, **kwargs):
     vim.event.Event.UnlicensedVirtualMachinesEvent UnlicensedVirtualMachinesEvent)
     (@link vim.ManagedEntity.configIssue configIssue) is removed from the host.'''
     
-    obj = vim.client.factory.create('ns0:AllVirtualMachinesLicensedEvent')
+    obj = vim.client.factory.create('{urn:vim25}AllVirtualMachinesLicensedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

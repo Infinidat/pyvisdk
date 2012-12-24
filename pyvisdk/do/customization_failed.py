@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationFailed(vim, *args, **kwargs):
     '''The customization sequence in the guest failed.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationFailed')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationFailed')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

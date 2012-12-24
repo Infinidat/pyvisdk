@@ -15,7 +15,7 @@ def VmFaultToleranceStateChangedEvent(vim, *args, **kwargs):
     disabled; the vm state is green if the newState is notConfigured, starting,
     enabled or running'''
     
-    obj = vim.client.factory.create('ns0:VmFaultToleranceStateChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceStateChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetIpConfigSpec(vim, *args, **kwargs):
     '''Internet Protocol Address Configuration for version 4 and version 6.'''
     
-    obj = vim.client.factory.create('ns0:NetIpConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}NetIpConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

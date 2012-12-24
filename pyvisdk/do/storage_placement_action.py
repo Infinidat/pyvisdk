@@ -14,7 +14,7 @@ def StoragePlacementAction(vim, *args, **kwargs):
     and all of its methods are experimental and subject to change in future
     releases.'''
     
-    obj = vim.client.factory.create('ns0:StoragePlacementAction')
+    obj = vim.client.factory.create('{urn:vim25}StoragePlacementAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

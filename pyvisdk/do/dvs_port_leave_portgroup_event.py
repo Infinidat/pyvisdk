@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsPortLeavePortgroupEvent(vim, *args, **kwargs):
     '''A port was moved out of the distributed virtual portgroup.'''
     
-    obj = vim.client.factory.create('ns0:DvsPortLeavePortgroupEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsPortLeavePortgroupEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

@@ -13,7 +13,7 @@ def DistributedVirtualSwitchProductSpec(vim, *args, **kwargs):
     used to describe the specification for a proxy switch module of a
     DistributedVirtualSwitch.'''
     
-    obj = vim.client.factory.create('ns0:DistributedVirtualSwitchProductSpec')
+    obj = vim.client.factory.create('{urn:vim25}DistributedVirtualSwitchProductSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

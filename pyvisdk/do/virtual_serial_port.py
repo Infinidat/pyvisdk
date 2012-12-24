@@ -35,7 +35,7 @@ def VirtualSerialPort(vim, *args, **kwargs):
     device backing ( ), you should also use the method to determine if a serial
     device is available before configuring device backing.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPort')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -12,7 +12,7 @@ def VirtualMachineMksTicket(vim, *args, **kwargs):
     '''This data object contains the information needed to establish an MKS (mouse-
     keyboard-screen) connection to a running virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineMksTicket')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineMksTicket')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

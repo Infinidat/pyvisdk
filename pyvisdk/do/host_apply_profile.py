@@ -14,7 +14,7 @@ def HostApplyProfile(vim, *args, **kwargs):
     any configuration data that you supply to overwrite the host configuration. See
     the ExecuteHostProfile and ApplyHostConfig_Task methods.'''
     
-    obj = vim.client.factory.create('ns0:HostApplyProfile')
+    obj = vim.client.factory.create('{urn:vim25}HostApplyProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

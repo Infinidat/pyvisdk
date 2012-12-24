@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmScriptCompleteEvent(vim, *args, **kwargs):
     '''This event records the completion of an alarm-triggered script.'''
     
-    obj = vim.client.factory.create('ns0:AlarmScriptCompleteEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmScriptCompleteEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ExtendedEvent(vim, *args, **kwargs):
     '''This event is the base class for extended events.'''
     
-    obj = vim.client.factory.create('ns0:ExtendedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ExtendedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

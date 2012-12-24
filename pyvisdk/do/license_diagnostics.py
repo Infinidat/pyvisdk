@@ -13,7 +13,7 @@ def LicenseDiagnostics(vim, *args, **kwargs):
     LicenseManager. Counters in this property can be reset to zero. The property
     specified as a discontinuity is used to determine when this last occurred.'''
     
-    obj = vim.client.factory.create('ns0:LicenseDiagnostics')
+    obj = vim.client.factory.create('{urn:vim25}LicenseDiagnostics')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 9:

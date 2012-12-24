@@ -13,7 +13,7 @@ def UserProfile(vim, *args, **kwargs):
     to configuration data for the user profile. Use the property list for access to
     subprofile configuration data, if any.'''
     
-    obj = vim.client.factory.create('ns0:UserProfile')
+    obj = vim.client.factory.create('{urn:vim25}UserProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

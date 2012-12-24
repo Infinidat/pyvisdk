@@ -12,7 +12,7 @@ def PerfEntityMetric(vim, *args, **kwargs):
     '''This data object type stores values and metadata for metrics associated with a
     specific entity, in 'normal' format.'''
     
-    obj = vim.client.factory.create('ns0:PerfEntityMetric')
+    obj = vim.client.factory.create('{urn:vim25}PerfEntityMetric')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -16,7 +16,7 @@ def VirtualMachineConfigSpec(vim, *args, **kwargs):
     a valid value for the property. To determine whether 'unset' is a valid value
     for a particular property, refer to the documentation for that property.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -14,7 +14,7 @@ def DasHostIsolatedEvent(vim, *args, **kwargs):
     except by the isolated host itself, this event is logged when the isolated host
     regains network connectivity.'''
     
-    obj = vim.client.factory.create('ns0:DasHostIsolatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DasHostIsolatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

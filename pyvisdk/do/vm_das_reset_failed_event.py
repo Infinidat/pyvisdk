@@ -12,7 +12,7 @@ def VmDasResetFailedEvent(vim, *args, **kwargs):
     '''This event records when HA VM Health Monitoring fails to reset a virtual
     machine after failure'''
     
-    obj = vim.client.factory.create('ns0:VmDasResetFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmDasResetFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

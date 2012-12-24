@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def SessionManagerHttpServiceRequestSpec(vim, *args, **kwargs):
     '''This data object type describes a request to an HTTP or HTTPS service.'''
     
-    obj = vim.client.factory.create('ns0:SessionManagerHttpServiceRequestSpec')
+    obj = vim.client.factory.create('{urn:vim25}SessionManagerHttpServiceRequestSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

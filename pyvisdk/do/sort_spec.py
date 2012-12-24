@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def SortSpec(vim, *args, **kwargs):
     '''Specification of a single sort criterion to be applied on a query result set.'''
     
-    obj = vim.client.factory.create('ns0:SortSpec')
+    obj = vim.client.factory.create('{urn:sms}SortSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

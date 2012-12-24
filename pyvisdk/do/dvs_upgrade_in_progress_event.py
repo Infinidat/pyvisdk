@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsUpgradeInProgressEvent(vim, *args, **kwargs):
     '''An upgrade for the distributed virtual switch is in progress.'''
     
-    obj = vim.client.factory.create('ns0:DvsUpgradeInProgressEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsUpgradeInProgressEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

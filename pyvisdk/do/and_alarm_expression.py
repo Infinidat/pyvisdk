@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AndAlarmExpression(vim, *args, **kwargs):
     '''A data object type that links multiple alarm expressions with AND operators.'''
     
-    obj = vim.client.factory.create('ns0:AndAlarmExpression')
+    obj = vim.client.factory.create('{urn:vim25}AndAlarmExpression')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

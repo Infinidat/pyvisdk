@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GuestDiskInfo(vim, *args, **kwargs):
     '''Information about each virtual disk configured in the guest operating system.'''
     
-    obj = vim.client.factory.create('ns0:GuestDiskInfo')
+    obj = vim.client.factory.create('{urn:vim25}GuestDiskInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

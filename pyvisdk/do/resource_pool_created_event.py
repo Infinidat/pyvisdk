@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ResourcePoolCreatedEvent(vim, *args, **kwargs):
     '''This event records when a new resource pool is created.'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolCreatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolCreatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

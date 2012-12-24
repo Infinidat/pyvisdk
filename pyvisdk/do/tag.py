@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Tag(vim, *args, **kwargs):
     '''Defines a tag that can be associated with a managed entity.'''
     
-    obj = vim.client.factory.create('ns0:Tag')
+    obj = vim.client.factory.create('{urn:vim25}Tag')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

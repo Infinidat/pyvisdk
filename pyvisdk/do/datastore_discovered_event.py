@@ -12,7 +12,7 @@ def DatastoreDiscoveredEvent(vim, *args, **kwargs):
     '''This event records when a host is added to VirtualCenter and datastores are
     discovered.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreDiscoveredEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreDiscoveredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

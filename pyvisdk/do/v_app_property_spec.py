@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VAppPropertySpec(vim, *args, **kwargs):
     '''An incremental update to the Property list.'''
     
-    obj = vim.client.factory.create('ns0:VAppPropertySpec')
+    obj = vim.client.factory.create('{urn:vim25}VAppPropertySpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

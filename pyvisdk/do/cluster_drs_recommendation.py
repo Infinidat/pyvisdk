@@ -12,7 +12,7 @@ def ClusterDrsRecommendation(vim, *args, **kwargs):
     '''DrsRecommendation describes a recommendation to migrate one or more virtual
     machines.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDrsRecommendation')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDrsRecommendation')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -12,7 +12,7 @@ def PodDiskLocator(vim, *args, **kwargs):
     '''The disk locator class. NOTE: This data object type and all of its methods are
     experimental and subject to change in future releases.'''
     
-    obj = vim.client.factory.create('ns0:PodDiskLocator')
+    obj = vim.client.factory.create('{urn:vim25}PodDiskLocator')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

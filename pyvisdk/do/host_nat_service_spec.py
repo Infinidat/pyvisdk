@@ -12,7 +12,7 @@ def HostNatServiceSpec(vim, *args, **kwargs):
     '''This data object type provides the details about the Network Address
     Translation (NAT) service.'''
     
-    obj = vim.client.factory.create('ns0:HostNatServiceSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostNatServiceSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

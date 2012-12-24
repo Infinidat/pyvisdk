@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostVirtualNicManagerInfo(vim, *args, **kwargs):
     '''This data object type describes VirtualNic host configuration data objects.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualNicManagerInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualNicManagerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

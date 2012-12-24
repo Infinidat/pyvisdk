@@ -12,7 +12,7 @@ def HostAuthenticationManagerInfo(vim, *args, **kwargs):
     '''The HostAuthenticationManagerInfo data object provides access to authentication
     information for the ESX host.'''
     
-    obj = vim.client.factory.create('ns0:HostAuthenticationManagerInfo')
+    obj = vim.client.factory.create('{urn:vim25}HostAuthenticationManagerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

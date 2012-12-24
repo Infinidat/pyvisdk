@@ -12,7 +12,7 @@ def DatastoreDuplicatedEvent(vim, *args, **kwargs):
     '''This event records when a duplicate datastore name is found. This event is used
     in VirtualCenter 1.x and is included for backward compatibility.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreDuplicatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreDuplicatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

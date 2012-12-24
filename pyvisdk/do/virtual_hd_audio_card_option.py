@@ -12,7 +12,7 @@ def VirtualHdAudioCardOption(vim, *args, **kwargs):
     '''The VirtualHdAudioCardOption data object type contains the options for a
     virtual HD Audio sound card.'''
     
-    obj = vim.client.factory.create('ns0:VirtualHdAudioCardOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualHdAudioCardOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

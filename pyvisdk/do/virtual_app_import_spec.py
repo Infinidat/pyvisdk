@@ -13,7 +13,7 @@ def VirtualAppImportSpec(vim, *args, **kwargs):
     (single VM or multi-VM).It provides all information needed to import a
     VirtualApp.See also ImportSpec.'''
     
-    obj = vim.client.factory.create('ns0:VirtualAppImportSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualAppImportSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

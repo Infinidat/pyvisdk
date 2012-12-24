@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationAdapterMapping(vim, *args, **kwargs):
     '''Data object type to associate a virtual network adapter with its IP settings.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationAdapterMapping')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationAdapterMapping')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

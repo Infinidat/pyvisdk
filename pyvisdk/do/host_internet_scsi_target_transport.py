@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostInternetScsiTargetTransport(vim, *args, **kwargs):
     '''Internet SCSI transport information about a SCSI target.'''
     
-    obj = vim.client.factory.create('ns0:HostInternetScsiTargetTransport')
+    obj = vim.client.factory.create('{urn:vim25}HostInternetScsiTargetTransport')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

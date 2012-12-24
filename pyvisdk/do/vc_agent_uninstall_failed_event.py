@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VcAgentUninstallFailedEvent(vim, *args, **kwargs):
     '''This event records when the VirtualCenter agent on a host failed to uninstall.'''
     
-    obj = vim.client.factory.create('ns0:VcAgentUninstallFailedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VcAgentUninstallFailedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

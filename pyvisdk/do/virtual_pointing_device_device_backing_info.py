@@ -12,7 +12,7 @@ def VirtualPointingDeviceDeviceBackingInfo(vim, *args, **kwargs):
     '''The VirtualPointingDevice.DeviceBackingInfo provides information about the
     physical mouse backing the VirtualPointingDevice data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualPointingDeviceDeviceBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualPointingDeviceDeviceBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

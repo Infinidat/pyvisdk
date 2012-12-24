@@ -16,7 +16,7 @@ def HostMultipathInfoPath(vim, *args, **kwargs):
     formatted are dependent on the implementation. Example implementations include
     using strings like "vmhba1:0:0:0".'''
     
-    obj = vim.client.factory.create('ns0:HostMultipathInfoPath')
+    obj = vim.client.factory.create('{urn:vim25}HostMultipathInfoPath')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

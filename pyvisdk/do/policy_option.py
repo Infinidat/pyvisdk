@@ -13,7 +13,7 @@ def PolicyOption(vim, *args, **kwargs):
     policy option is one of the configuration options from the
     ProfilePolicyMetadata.possibleOption list.'''
     
-    obj = vim.client.factory.create('ns0:PolicyOption')
+    obj = vim.client.factory.create('{urn:vim25}PolicyOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmMacChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a virtual machine's MAC address.'''
     
-    obj = vim.client.factory.create('ns0:VmMacChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmMacChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

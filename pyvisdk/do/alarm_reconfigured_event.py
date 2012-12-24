@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def AlarmReconfiguredEvent(vim, *args, **kwargs):
     '''This event records the reconfiguration of an alarm.'''
     
-    obj = vim.client.factory.create('ns0:AlarmReconfiguredEvent')
+    obj = vim.client.factory.create('{urn:vim25}AlarmReconfiguredEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

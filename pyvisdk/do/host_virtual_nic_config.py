@@ -12,7 +12,7 @@ def HostVirtualNicConfig(vim, *args, **kwargs):
     '''This data object type describes the VirtualNic configuration representing both
     the configured properties on a VirtualNic and identification information.'''
     
-    obj = vim.client.factory.create('ns0:HostVirtualNicConfig')
+    obj = vim.client.factory.create('{urn:vim25}HostVirtualNicConfig')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

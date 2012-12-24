@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def LicenseManagerLicenseInfo(vim, *args, **kwargs):
     '''Encapsulates information about a license'''
     
-    obj = vim.client.factory.create('ns0:LicenseManagerLicenseInfo')
+    obj = vim.client.factory.create('{urn:vim25}LicenseManagerLicenseInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

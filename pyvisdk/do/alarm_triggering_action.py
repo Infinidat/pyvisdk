@@ -14,7 +14,7 @@ def AlarmTriggeringAction(vim, *args, **kwargs):
     transitions; at least one of them must be provided. A gray state is considered
     the same as a green state, for the purpose of detecting transitions.'''
     
-    obj = vim.client.factory.create('ns0:AlarmTriggeringAction')
+    obj = vim.client.factory.create('{urn:vim25}AlarmTriggeringAction')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

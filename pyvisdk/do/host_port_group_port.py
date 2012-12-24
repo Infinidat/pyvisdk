@@ -14,7 +14,7 @@ def HostPortGroupPort(vim, *args, **kwargs):
     different from a port group in that the port group represents the configuration
     aspects of the network connection. The Port object provides runtime statistics.'''
     
-    obj = vim.client.factory.create('ns0:HostPortGroupPort')
+    obj = vim.client.factory.create('{urn:vim25}HostPortGroupPort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

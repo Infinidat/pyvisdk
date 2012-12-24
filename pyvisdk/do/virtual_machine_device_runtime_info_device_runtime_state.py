@@ -12,7 +12,7 @@ def VirtualMachineDeviceRuntimeInfoDeviceRuntimeState(vim, *args, **kwargs):
     '''Runtime state of a device. Subclassed for information that is specific to
     certain device types.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineDeviceRuntimeInfoDeviceRuntimeState')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineDeviceRuntimeInfoDeviceRuntimeState')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def OvfConsumerOvfSection(vim, *args, **kwargs):
     '''A self-contained OVF section'''
     
-    obj = vim.client.factory.create('ns0:OvfConsumerOvfSection')
+    obj = vim.client.factory.create('{urn:vim25}OvfConsumerOvfSection')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

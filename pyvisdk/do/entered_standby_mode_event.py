@@ -13,7 +13,7 @@ def EnteredStandbyModeEvent(vim, *args, **kwargs):
     in this mode has no running virtual machines and no provisioning operations are
     occurring.'''
     
-    obj = vim.client.factory.create('ns0:EnteredStandbyModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}EnteredStandbyModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

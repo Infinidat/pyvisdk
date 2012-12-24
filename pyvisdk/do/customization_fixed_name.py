@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationFixedName(vim, *args, **kwargs):
     '''A fixed name.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationFixedName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationFixedName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

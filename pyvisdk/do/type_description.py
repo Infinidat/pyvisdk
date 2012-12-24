@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def TypeDescription(vim, *args, **kwargs):
     '''Static strings used for describing an object type.'''
     
-    obj = vim.client.factory.create('ns0:TypeDescription')
+    obj = vim.client.factory.create('{urn:vim25}TypeDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

@@ -12,7 +12,7 @@ def VmRelayoutSuccessfulEvent(vim, *args, **kwargs):
     '''This event records that a virtual machine was successfully converted to the new
     virtual machine format on a VMFS3 volume.'''
     
-    obj = vim.client.factory.create('ns0:VmRelayoutSuccessfulEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmRelayoutSuccessfulEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

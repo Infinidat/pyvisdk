@@ -12,7 +12,7 @@ def FloppyImageFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for a floppy disk
     image.'''
     
-    obj = vim.client.factory.create('ns0:FloppyImageFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}FloppyImageFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

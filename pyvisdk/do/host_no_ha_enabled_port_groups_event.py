@@ -12,7 +12,7 @@ def HostNoHAEnabledPortGroupsEvent(vim, *args, **kwargs):
     '''This event records the fact that a host does not have any HA-enabled port
     groups'''
     
-    obj = vim.client.factory.create('ns0:HostNoHAEnabledPortGroupsEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostNoHAEnabledPortGroupsEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

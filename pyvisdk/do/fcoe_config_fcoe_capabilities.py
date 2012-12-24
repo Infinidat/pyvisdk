@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def FcoeConfigFcoeCapabilities(vim, *args, **kwargs):
     '''Flags which indicate what parameters are settable for this FcoeConfig.'''
     
-    obj = vim.client.factory.create('ns0:FcoeConfigFcoeCapabilities')
+    obj = vim.client.factory.create('{urn:vim25}FcoeConfigFcoeCapabilities')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

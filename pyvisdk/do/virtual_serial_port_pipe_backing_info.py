@@ -14,7 +14,7 @@ def VirtualSerialPortPipeBackingInfo(vim, *args, **kwargs):
     virtual machine on the host computer. This is useful for capturing debugging
     information sent through the virtual serial port.'''
     
-    obj = vim.client.factory.create('ns0:VirtualSerialPortPipeBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualSerialPortPipeBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

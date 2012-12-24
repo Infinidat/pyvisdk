@@ -18,7 +18,7 @@ def DasAgentUnavailableEvent(vim, *args, **kwargs):
     the first node to be configured. For example, if all the other hosts are
     disconnected first.'''
     
-    obj = vim.client.factory.create('ns0:DasAgentUnavailableEvent')
+    obj = vim.client.factory.create('{urn:vim25}DasAgentUnavailableEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

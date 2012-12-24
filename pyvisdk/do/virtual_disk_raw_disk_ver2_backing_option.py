@@ -13,7 +13,7 @@ def VirtualDiskRawDiskVer2BackingOption(vim, *args, **kwargs):
     available options when backing a virtual disk using a host device on VMware
     Server.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskRawDiskVer2BackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskRawDiskVer2BackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

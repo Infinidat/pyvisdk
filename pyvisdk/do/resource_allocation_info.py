@@ -23,7 +23,7 @@ def ResourceAllocationInfo(vim, *args, **kwargs):
     internal use only.)If the limit is configured, it must be greater than or equal
     to the reservation.'''
     
-    obj = vim.client.factory.create('ns0:ResourceAllocationInfo')
+    obj = vim.client.factory.create('{urn:vim25}ResourceAllocationInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

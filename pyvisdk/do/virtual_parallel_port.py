@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualParallelPort(vim, *args, **kwargs):
     '''This data object type represents a parallel port in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualParallelPort')
+    obj = vim.client.factory.create('{urn:vim25}VirtualParallelPort')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

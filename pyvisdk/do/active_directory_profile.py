@@ -14,7 +14,7 @@ def ActiveDirectoryProfile(vim, *args, **kwargs):
     Active Directory profile. Use the property list for access to subprofiles, if
     any.'''
     
-    obj = vim.client.factory.create('ns0:ActiveDirectoryProfile')
+    obj = vim.client.factory.create('{urn:vim25}ActiveDirectoryProfile')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

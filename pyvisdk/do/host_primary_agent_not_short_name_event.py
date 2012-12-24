@@ -13,7 +13,7 @@ def HostPrimaryAgentNotShortNameEvent(vim, *args, **kwargs):
     name of the primary agent is usually stored as a short name. You should not
     normally see this error. Please check the network configurations of your hosts.'''
     
-    obj = vim.client.factory.create('ns0:HostPrimaryAgentNotShortNameEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostPrimaryAgentNotShortNameEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

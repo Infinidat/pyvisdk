@@ -12,7 +12,7 @@ def VirtualE1000eOption(vim, *args, **kwargs):
     '''The VirtualE1000e option data object type contains the options for the
     VirtualE1000e data object type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualE1000eOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualE1000eOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 8:

@@ -13,7 +13,7 @@ def IscsiDependencyEntity(vim, *args, **kwargs):
     iSCSI HBA name (if Virtual NIC is associated with the HBA). See
     IscsiMigrationDependency'''
     
-    obj = vim.client.factory.create('ns0:IscsiDependencyEntity')
+    obj = vim.client.factory.create('{urn:vim25}IscsiDependencyEntity')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

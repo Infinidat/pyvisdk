@@ -12,7 +12,7 @@ def IsoImageFileQuery(vim, *args, **kwargs):
     '''This data object type describes the query specification for an ISO CD-ROM
     image.'''
     
-    obj = vim.client.factory.create('ns0:IsoImageFileQuery')
+    obj = vim.client.factory.create('{urn:vim25}IsoImageFileQuery')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

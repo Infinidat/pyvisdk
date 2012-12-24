@@ -13,7 +13,7 @@ def CustomizationGlobalIPSettings(vim, *args, **kwargs):
     server settings are global. The settings can either be statically set or
     supplied by a DHCP server.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationGlobalIPSettings')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationGlobalIPSettings')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

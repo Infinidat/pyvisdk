@@ -14,7 +14,7 @@ def CustomizationUserData(vim, *args, **kwargs):
     transferred directly into the file that VirtualCenter stores on the target
     virtual disk. For more detailed information, see the document .'''
     
-    obj = vim.client.factory.create('ns0:CustomizationUserData')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationUserData')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

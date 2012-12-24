@@ -12,7 +12,7 @@ def AnswerFileSerializedCreateSpec(vim, *args, **kwargs):
     '''The AnswerFileSerializedCreateSpec data object contains a serialized string
     representation of host-specific data for an answer file.'''
     
-    obj = vim.client.factory.create('ns0:AnswerFileSerializedCreateSpec')
+    obj = vim.client.factory.create('{urn:vim25}AnswerFileSerializedCreateSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

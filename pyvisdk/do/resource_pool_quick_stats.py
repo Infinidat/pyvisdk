@@ -18,7 +18,7 @@ def ResourcePoolQuickStats(vim, *args, **kwargs):
     updates. To monitor statistics values, use the statistics and alarms modules
     instead.'''
     
-    obj = vim.client.factory.create('ns0:ResourcePoolQuickStats')
+    obj = vim.client.factory.create('{urn:vim25}ResourcePoolQuickStats')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -10,7 +10,7 @@ from pyvisdk.exceptions import InvalidArgumentError
 log = logging.getLogger(__name__)
 
 def VimCLIInfoMethod(vim, *args, **kwargs):
-    obj = vim.client.factory.create('ns0:VimCLIInfoMethod')
+    obj = vim.client.factory.create('{urn:vim25}VimCLIInfoMethod')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

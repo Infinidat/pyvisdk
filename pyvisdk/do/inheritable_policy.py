@@ -21,7 +21,7 @@ def InheritablePolicy(vim, *args, **kwargs):
     effective values. if inherited is true, the object is getting the effective
     values from upper level. If false, the values are explicitly set by a user.'''
     
-    obj = vim.client.factory.create('ns0:InheritablePolicy')
+    obj = vim.client.factory.create('{urn:vim25}InheritablePolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

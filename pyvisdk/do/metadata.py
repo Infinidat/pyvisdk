@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Metadata(vim, *args, **kwargs):
     '''Metadata that describes the query result set.'''
     
-    obj = vim.client.factory.create('ns0:Metadata')
+    obj = vim.client.factory.create('{urn:sms}Metadata')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

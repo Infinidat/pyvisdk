@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmResettingEvent(vim, *args, **kwargs):
     '''This event records a virtual machine resetting.'''
     
-    obj = vim.client.factory.create('ns0:VmResettingEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmResettingEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

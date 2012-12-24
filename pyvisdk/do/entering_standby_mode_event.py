@@ -13,7 +13,7 @@ def EnteringStandbyModeEvent(vim, *args, **kwargs):
     All virtual machine operations are blocked, except the following:* MigrateVM *
     PowerOffVM * SuspendVM * ShutdownGuest * StandbyGuest'''
     
-    obj = vim.client.factory.create('ns0:EnteringStandbyModeEvent')
+    obj = vim.client.factory.create('{urn:vim25}EnteringStandbyModeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

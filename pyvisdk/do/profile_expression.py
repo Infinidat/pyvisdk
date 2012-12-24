@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ProfileExpression(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:ProfileExpression')
+    obj = vim.client.factory.create('{urn:vim25}ProfileExpression')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

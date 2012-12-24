@@ -27,7 +27,7 @@ def VirtualUSBUSBBackingInfo(vim, *args, **kwargs):
     backslash to embed a space in a value. Use a double blackslash to embed a
     single backslash in the value.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBUSBBackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBUSBBackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

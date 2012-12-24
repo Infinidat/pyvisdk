@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DvsUpgradeRejectedEvent(vim, *args, **kwargs):
     '''An upgrade for the distributed virtual switch is rejected.'''
     
-    obj = vim.client.factory.create('ns0:DvsUpgradeRejectedEvent')
+    obj = vim.client.factory.create('{urn:vim25}DvsUpgradeRejectedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

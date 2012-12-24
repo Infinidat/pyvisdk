@@ -14,7 +14,7 @@ def HostDatastoreBrowserSearchSpec(vim, *args, **kwargs):
     a separate parameter to the search method.A SearchSpec contains the query
     parameters and some global search modifiers.'''
     
-    obj = vim.client.factory.create('ns0:HostDatastoreBrowserSearchSpec')
+    obj = vim.client.factory.create('{urn:vim25}HostDatastoreBrowserSearchSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

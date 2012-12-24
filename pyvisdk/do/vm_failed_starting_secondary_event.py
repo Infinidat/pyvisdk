@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmFailedStartingSecondaryEvent(vim, *args, **kwargs):
     '''This event records vmotion failure when starting a secondary VM.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedStartingSecondaryEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedStartingSecondaryEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

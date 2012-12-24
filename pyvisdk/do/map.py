@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def Map(vim, *args, **kwargs):
     '''Topological representation of entity relationships as a set of nodes and edges.'''
     
-    obj = vim.client.factory.create('ns0:Map')
+    obj = vim.client.factory.create('{urn:sms}Map')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def VmResourcePoolMovedEvent(vim, *args, **kwargs):
     '''This event records when a virtual machine is moved from one resource pool to
     another.'''
     
-    obj = vim.client.factory.create('ns0:VmResourcePoolMovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmResourcePoolMovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

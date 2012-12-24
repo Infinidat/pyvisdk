@@ -12,7 +12,7 @@ def HostPlugStoreTopologyPlugin(vim, *args, **kwargs):
     '''This data object type represents a Plugin in the plug store architecture. A
     Plugin claims a set of paths and groups them into Devices.'''
     
-    obj = vim.client.factory.create('ns0:HostPlugStoreTopologyPlugin')
+    obj = vim.client.factory.create('{urn:vim25}HostPlugStoreTopologyPlugin')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

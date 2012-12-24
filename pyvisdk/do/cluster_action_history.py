@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def ClusterActionHistory(vim, *args, **kwargs):
     '''Base class for all action history.'''
     
-    obj = vim.client.factory.create('ns0:ClusterActionHistory')
+    obj = vim.client.factory.create('{urn:vim25}ClusterActionHistory')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

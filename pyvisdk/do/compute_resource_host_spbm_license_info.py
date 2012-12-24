@@ -12,7 +12,7 @@ def ComputeResourceHostSPBMLicenseInfo(vim, *args, **kwargs):
     '''The ComputeResourceHostSPBMLicenseInfo data object encapsulates the
     SPBM(Storage Policy Based Management) license information for a host.'''
     
-    obj = vim.client.factory.create('ns0:ComputeResourceHostSPBMLicenseInfo')
+    obj = vim.client.factory.create('{urn:vim25}ComputeResourceHostSPBMLicenseInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

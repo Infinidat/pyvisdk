@@ -13,7 +13,7 @@ def HostFirewallRule(vim, *args, **kwargs):
     number(s), direction and protocol. It is used as a convenient way for users to
     express what ports they want to permit through the firewall.'''
     
-    obj = vim.client.factory.create('ns0:HostFirewallRule')
+    obj = vim.client.factory.create('{urn:vim25}HostFirewallRule')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

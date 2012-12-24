@@ -12,7 +12,7 @@ def IntOption(vim, *args, **kwargs):
     '''The IntOption data object type is used to define the minimum, maximum, and
     default values for an integer option.'''
     
-    obj = vim.client.factory.create('ns0:IntOption')
+    obj = vim.client.factory.create('{urn:vim25}IntOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

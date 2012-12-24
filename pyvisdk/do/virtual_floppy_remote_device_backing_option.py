@@ -12,7 +12,7 @@ def VirtualFloppyRemoteDeviceBackingOption(vim, *args, **kwargs):
     '''The RemoteDeviceBackingOption data object type contains the options for the
     floppy remote device backing type.'''
     
-    obj = vim.client.factory.create('ns0:VirtualFloppyRemoteDeviceBackingOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualFloppyRemoteDeviceBackingOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

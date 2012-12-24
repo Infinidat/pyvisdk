@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def DiagnosticManagerLogDescriptor(vim, *args, **kwargs):
     '''Describes a log file that is available on a server.'''
     
-    obj = vim.client.factory.create('ns0:DiagnosticManagerLogDescriptor')
+    obj = vim.client.factory.create('{urn:vim25}DiagnosticManagerLogDescriptor')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

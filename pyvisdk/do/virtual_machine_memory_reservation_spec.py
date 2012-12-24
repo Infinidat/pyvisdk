@@ -12,7 +12,7 @@ def VirtualMachineMemoryReservationSpec(vim, *args, **kwargs):
     '''The VirtualMachineReservationSpec data object specifies configurable parameters
     for virtual machine memory reservation.'''
     
-    obj = vim.client.factory.create('ns0:VirtualMachineMemoryReservationSpec')
+    obj = vim.client.factory.create('{urn:vim25}VirtualMachineMemoryReservationSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

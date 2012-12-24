@@ -12,7 +12,7 @@ def VmFailedRelayoutEvent(vim, *args, **kwargs):
     '''This event records a specific failure to relay out a virtual machine, such as a
     failure to access the disk.'''
     
-    obj = vim.client.factory.create('ns0:VmFailedRelayoutEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFailedRelayoutEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

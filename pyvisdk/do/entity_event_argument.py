@@ -12,7 +12,7 @@ def EntityEventArgument(vim, *args, **kwargs):
     '''The event argument is a managed entity object.Subclasses of this type
     distinguish the different managed entities referenced in event objects.'''
     
-    obj = vim.client.factory.create('ns0:EntityEventArgument')
+    obj = vim.client.factory.create('{urn:vim25}EntityEventArgument')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GeneralVmErrorEvent(vim, *args, **kwargs):
     '''This event is the general error event for a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:GeneralVmErrorEvent')
+    obj = vim.client.factory.create('{urn:vim25}GeneralVmErrorEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

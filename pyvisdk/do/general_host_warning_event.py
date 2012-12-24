@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def GeneralHostWarningEvent(vim, *args, **kwargs):
     '''This event is the general warning event for a host.'''
     
-    obj = vim.client.factory.create('ns0:GeneralHostWarningEvent')
+    obj = vim.client.factory.create('{urn:vim25}GeneralHostWarningEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmwareDistributedVirtualSwitchVlanSpec(vim, *args, **kwargs):
     '''Base class for Vlan Specifiation for ports.'''
     
-    obj = vim.client.factory.create('ns0:VmwareDistributedVirtualSwitchVlanSpec')
+    obj = vim.client.factory.create('{urn:vim25}VmwareDistributedVirtualSwitchVlanSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

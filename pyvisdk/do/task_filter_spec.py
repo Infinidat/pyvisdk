@@ -14,7 +14,7 @@ def TaskFilterSpec(vim, *args, **kwargs):
     history collector with a filter specification, then retrieves the tasks from
     the task history collector.'''
     
-    obj = vim.client.factory.create('ns0:TaskFilterSpec')
+    obj = vim.client.factory.create('{urn:vim25}TaskFilterSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

@@ -12,7 +12,7 @@ def CustomizationName(vim, *args, **kwargs):
     '''A base object type for a virtual machine name that can be either fixed or auto-
     generated.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationName')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationName')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

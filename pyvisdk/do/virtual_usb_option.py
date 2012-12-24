@@ -15,7 +15,7 @@ def VirtualUSBOption(vim, *args, **kwargs):
     USB connection (VirtualUSBRemoteHostBackingOption)For information about USB
     device configuration, see VirtualUSB.'''
     
-    obj = vim.client.factory.create('ns0:VirtualUSBOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualUSBOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

@@ -12,7 +12,7 @@ def FaultToleranceSecondaryOpResult(vim, *args, **kwargs):
     '''FaultToleranceSecondaryOpResult is a data object that reports on the outcome of
     the CreateSecondaryVM_Task or EnableSecondaryVM_Task operation.'''
     
-    obj = vim.client.factory.create('ns0:FaultToleranceSecondaryOpResult')
+    obj = vim.client.factory.create('{urn:vim25}FaultToleranceSecondaryOpResult')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

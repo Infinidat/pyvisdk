@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IntPolicy(vim, *args, **kwargs):
     '''The integer type of setting or configuration that may get an inherited value.'''
     
-    obj = vim.client.factory.create('ns0:IntPolicy')
+    obj = vim.client.factory.create('{urn:vim25}IntPolicy')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

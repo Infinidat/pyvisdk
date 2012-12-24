@@ -12,7 +12,7 @@ def HostOvercommittedEvent(vim, *args, **kwargs):
     '''This event records when a host's capacity cannot satisfy resource configuration
     constraints.'''
     
-    obj = vim.client.factory.create('ns0:HostOvercommittedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostOvercommittedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

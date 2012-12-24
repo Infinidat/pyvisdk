@@ -16,7 +16,7 @@ def ProfileDeferredPolicyOptionParameter(vim, *args, **kwargs):
     when it calls the HostProfileManager.ApplyHostConfig_Task method. * The vCenter
     Server stores deferred parameter data in answer files (AnswerFile.userInput).'''
     
-    obj = vim.client.factory.create('ns0:ProfileDeferredPolicyOptionParameter')
+    obj = vim.client.factory.create('{urn:vim25}ProfileDeferredPolicyOptionParameter')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

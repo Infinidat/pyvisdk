@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostRemovedEvent(vim, *args, **kwargs):
     '''This event records the removal of a host from VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:HostRemovedEvent')
+    obj = vim.client.factory.create('{urn:vim25}HostRemovedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 4:

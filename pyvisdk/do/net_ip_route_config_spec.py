@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetIpRouteConfigSpec(vim, *args, **kwargs):
     '''Address family independent IP Route Table Configuration data object.'''
     
-    obj = vim.client.factory.create('ns0:NetIpRouteConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}NetIpRouteConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

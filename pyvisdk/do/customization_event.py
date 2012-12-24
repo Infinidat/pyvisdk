@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def CustomizationEvent(vim, *args, **kwargs):
     '''Base for customization events.'''
     
-    obj = vim.client.factory.create('ns0:CustomizationEvent')
+    obj = vim.client.factory.create('{urn:vim25}CustomizationEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

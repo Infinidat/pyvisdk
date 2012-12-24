@@ -37,7 +37,7 @@ def PerfInterval(vim, *args, **kwargs):
     disabled, and can be modified within certain limits (with the
     UpdatePerfInterval operation).'''
     
-    obj = vim.client.factory.create('ns0:PerfInterval')
+    obj = vim.client.factory.create('{urn:vim25}PerfInterval')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

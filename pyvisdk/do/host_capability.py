@@ -13,7 +13,7 @@ def HostCapability(vim, *args, **kwargs):
     referenced in other parts of the API specification to indicate under what
     circumstances an API will throw a NotSupported fault.'''
     
-    obj = vim.client.factory.create('ns0:HostCapability')
+    obj = vim.client.factory.create('{urn:vim25}HostCapability')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 37:

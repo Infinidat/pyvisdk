@@ -12,7 +12,7 @@ def ExtSolutionManagerInfo(vim, *args, **kwargs):
     '''This data object encapsulates the Solution Manager configuration for this
     extension.'''
     
-    obj = vim.client.factory.create('ns0:ExtSolutionManagerInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtSolutionManagerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 0:

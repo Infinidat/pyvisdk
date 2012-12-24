@@ -12,7 +12,7 @@ def ScsiLunDescriptor(vim, *args, **kwargs):
     '''A structure that encapsulates an identifier and its properties for the ScsiLun
     object.'''
     
-    obj = vim.client.factory.create('ns0:ScsiLunDescriptor')
+    obj = vim.client.factory.create('{urn:vim25}ScsiLunDescriptor')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

@@ -13,7 +13,7 @@ def ExtensionOvfConsumerInfo(vim, *args, **kwargs):
     functionality of vCenter server.This feature is experimental in this version of
     the API and might change in future versions.'''
     
-    obj = vim.client.factory.create('ns0:ExtensionOvfConsumerInfo')
+    obj = vim.client.factory.create('{urn:vim25}ExtensionOvfConsumerInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

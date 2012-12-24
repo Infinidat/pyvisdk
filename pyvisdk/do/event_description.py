@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def EventDescription(vim, *args, **kwargs):
     '''This data object provides static, locale-specific strings for event objects.'''
     
-    obj = vim.client.factory.create('ns0:EventDescription')
+    obj = vim.client.factory.create('{urn:vim25}EventDescription')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

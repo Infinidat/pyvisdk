@@ -12,7 +12,7 @@ def VirtualLsiLogicControllerOption(vim, *args, **kwargs):
     '''VirtualLsiLogicControllerOption is the data object that contains the options
     for a LSI Logic SCSI controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualLsiLogicControllerOption')
+    obj = vim.client.factory.create('{urn:vim25}VirtualLsiLogicControllerOption')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 12:

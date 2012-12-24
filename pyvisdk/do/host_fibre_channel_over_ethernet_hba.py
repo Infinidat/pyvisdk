@@ -13,7 +13,7 @@ def HostFibreChannelOverEthernetHba(vim, *args, **kwargs):
     Terminology is borrowed from T11's working draft of the Fibre Channel Backbone
     5 standard (FC-BB-5). The draft can be found at http://www.t11.org.'''
     
-    obj = vim.client.factory.create('ns0:HostFibreChannelOverEthernetHba')
+    obj = vim.client.factory.create('{urn:vim25}HostFibreChannelOverEthernetHba')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 12:

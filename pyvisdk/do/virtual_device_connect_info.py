@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualDeviceConnectInfo(vim, *args, **kwargs):
     '''The data object type contains information about connectable virtual devices.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDeviceConnectInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDeviceConnectInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 3:

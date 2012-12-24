@@ -25,7 +25,7 @@ def ClusterDrsVmConfigSpec(vim, *args, **kwargs):
     In this case, creates a DRS configuration for a virtual machine in the new
     cluster configuration.'''
     
-    obj = vim.client.factory.create('ns0:ClusterDrsVmConfigSpec')
+    obj = vim.client.factory.create('{urn:vim25}ClusterDrsVmConfigSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

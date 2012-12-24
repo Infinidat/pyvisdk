@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def HostPatchManagerStatus(vim, *args, **kwargs):
     ''''''
     
-    obj = vim.client.factory.create('ns0:HostPatchManagerStatus')
+    obj = vim.client.factory.create('{urn:vim25}HostPatchManagerStatus')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def UserUpgradeEvent(vim, *args, **kwargs):
     '''This event is a general user event from upgrade.'''
     
-    obj = vim.client.factory.create('ns0:UserUpgradeEvent')
+    obj = vim.client.factory.create('{urn:vim25}UserUpgradeEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:

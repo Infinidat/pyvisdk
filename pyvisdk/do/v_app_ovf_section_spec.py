@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VAppOvfSectionSpec(vim, *args, **kwargs):
     '''An incremental update to the OvfSection list.'''
     
-    obj = vim.client.factory.create('ns0:VAppOvfSectionSpec')
+    obj = vim.client.factory.create('{urn:vim25}VAppOvfSectionSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

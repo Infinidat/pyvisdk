@@ -12,7 +12,7 @@ def VirtualCdrom(vim, *args, **kwargs):
     '''The VirtualCdrom data object type describes the configuration of a CD-ROM
     device in a virtual machine.'''
     
-    obj = vim.client.factory.create('ns0:VirtualCdrom')
+    obj = vim.client.factory.create('{urn:vim25}VirtualCdrom')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

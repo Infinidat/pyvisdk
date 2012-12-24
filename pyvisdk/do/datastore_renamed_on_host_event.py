@@ -14,7 +14,7 @@ def DatastoreRenamedOnHostEvent(vim, *args, **kwargs):
     different name, or because the name conflicts with another datastore in
     VirtualCenter.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreRenamedOnHostEvent')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreRenamedOnHostEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

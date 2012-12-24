@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def IpPoolAssociation(vim, *args, **kwargs):
     '''Information about a network or portgroup that is associated to an IP pool.'''
     
-    obj = vim.client.factory.create('ns0:IpPoolAssociation')
+    obj = vim.client.factory.create('{urn:vim25}IpPoolAssociation')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:

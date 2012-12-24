@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def NetDhcpConfigSpecDhcpOptionsSpec(vim, *args, **kwargs):
     '''Provides for configuration of IPv6'''
     
-    obj = vim.client.factory.create('ns0:NetDhcpConfigSpecDhcpOptionsSpec')
+    obj = vim.client.factory.create('{urn:vim25}NetDhcpConfigSpecDhcpOptionsSpec')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

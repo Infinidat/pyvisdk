@@ -11,8 +11,8 @@ log = logging.getLogger(__name__)
 def LocalizedMethodFault(vim, *args, **kwargs):
     '''A wrapper class used to pass MethodFault data objects over the wire along with
     a localized display message for the fault.'''
-    
-    obj = vim.client.factory.create('ns0:LocalizedMethodFault')
+
+    obj = vim.client.factory.create('{urn:vim25}LocalizedMethodFault')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 1:
@@ -31,4 +31,3 @@ def LocalizedMethodFault(vim, *args, **kwargs):
             raise InvalidArgumentError("Invalid argument: %s.  Expected one of %s" % (name, ", ".join(required + optional)))
 
     return obj
-    

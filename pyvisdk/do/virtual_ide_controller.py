@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VirtualIDEController(vim, *args, **kwargs):
     '''The VirtualIDEController data object type specifies a virtual IDE controller.'''
     
-    obj = vim.client.factory.create('ns0:VirtualIDEController')
+    obj = vim.client.factory.create('{urn:vim25}VirtualIDEController')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

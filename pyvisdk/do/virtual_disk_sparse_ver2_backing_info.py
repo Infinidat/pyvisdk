@@ -13,7 +13,7 @@ def VirtualDiskSparseVer2BackingInfo(vim, *args, **kwargs):
     using a virtual disk file on the host, in the sparse disk format used by VMware
     Server.'''
     
-    obj = vim.client.factory.create('ns0:VirtualDiskSparseVer2BackingInfo')
+    obj = vim.client.factory.create('{urn:vim25}VirtualDiskSparseVer2BackingInfo')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

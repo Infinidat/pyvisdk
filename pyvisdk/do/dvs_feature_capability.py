@@ -12,7 +12,7 @@ def DVSFeatureCapability(vim, *args, **kwargs):
     '''Dataobject representing the feature capabilities supported by the vSphere
     Distributed Switch.'''
     
-    obj = vim.client.factory.create('ns0:DVSFeatureCapability')
+    obj = vim.client.factory.create('{urn:vim25}DVSFeatureCapability')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 2:

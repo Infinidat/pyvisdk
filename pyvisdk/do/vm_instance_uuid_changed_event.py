@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 def VmInstanceUuidChangedEvent(vim, *args, **kwargs):
     '''This event records a change in a virtual machine's instance UUID.'''
     
-    obj = vim.client.factory.create('ns0:VmInstanceUuidChangedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmInstanceUuidChangedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 7:

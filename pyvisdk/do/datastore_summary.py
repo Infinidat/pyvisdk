@@ -14,7 +14,7 @@ def DatastoreSummary(vim, *args, **kwargs):
     references are typically set later when these objects are associated with a
     host.'''
     
-    obj = vim.client.factory.create('ns0:DatastoreSummary')
+    obj = vim.client.factory.create('{urn:vim25}DatastoreSummary')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 6:

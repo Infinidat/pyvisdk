@@ -13,7 +13,7 @@ def VmFaultToleranceVmTerminatedEvent(vim, *args, **kwargs):
     : divergence, lost connection to secondary, partial hardware failure of
     secondary, or by user.'''
     
-    obj = vim.client.factory.create('ns0:VmFaultToleranceVmTerminatedEvent')
+    obj = vim.client.factory.create('{urn:vim25}VmFaultToleranceVmTerminatedEvent')
 
     # do some validation checking...
     if (len(args) + len(kwargs)) < 5:
