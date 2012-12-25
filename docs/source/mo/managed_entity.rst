@@ -20,17 +20,14 @@ ManagedEntity
     :py:class:`~pyvisdk.do.dv_portgroup_config_spec.DVPortgroupConfigSpec`,
     :py:class:`~pyvisdk.do.dvs_scope_violated.DvsScopeViolated`,
     :py:class:`~pyvisdk.do.event_filter_spec_by_entity.EventFilterSpecByEntity`,
-    :py:class:`~pyvisdk.do.ext_extended_product_info.ExtExtendedProductInfo`,
     :py:class:`~pyvisdk.do.folder.Folder`,
     :py:class:`~pyvisdk.do.http_nfc_lease_info.HttpNfcLeaseInfo`,
     :py:class:`~pyvisdk.do.invalid_folder.InvalidFolder`,
     :py:class:`~pyvisdk.do.invalid_name.InvalidName`,
     :py:class:`~pyvisdk.do.managed_entity.ManagedEntity`,
     :py:class:`~pyvisdk.do.managed_entity_event_argument.ManagedEntityEventArgument`,
-    :py:class:`~pyvisdk.do.ovf_consumer_ost_node.OvfConsumerOstNode`,
     :py:class:`~pyvisdk.do.permission.Permission`,
     :py:class:`~pyvisdk.do.profile.Profile`,
-    :py:class:`~pyvisdk.do.replication_invalid_options.ReplicationInvalidOptions`,
     :py:class:`~pyvisdk.do.resource_config_spec.ResourceConfigSpec`,
     :py:class:`~pyvisdk.do.scheduled_task_info.ScheduledTaskInfo`,
     :py:class:`~pyvisdk.do.task_filter_spec_by_entity.TaskFilterSpecByEntity`,
@@ -71,8 +68,7 @@ ManagedEntity
     :py:meth:`~pyvisdk.do.find_by_ip.FindByIp`,
     :py:meth:`~pyvisdk.do.find_by_uuid.FindByUuid`,
     :py:meth:`~pyvisdk.do.find_child.FindChild`,
-    :py:meth:`~pyvisdk.do.open_inventory_view_folder.OpenInventoryViewFolder`,
-    :py:meth:`~pyvisdk.do.query_managed_by.QueryManagedBy`
+    :py:meth:`~pyvisdk.do.open_inventory_view_folder.OpenInventoryViewFolder`
     
 **Parameter to**
     
@@ -93,7 +89,6 @@ ManagedEntity
     :py:meth:`~pyvisdk.do.find_child.FindChild`,
     :py:meth:`~pyvisdk.do.get_alarm.GetAlarm`,
     :py:meth:`~pyvisdk.do.get_alarm_state.GetAlarmState`,
-    :py:meth:`~pyvisdk.do.has_privilege_on_entity.HasPrivilegeOnEntity`,
     :py:meth:`~pyvisdk.do.log_user_event.LogUserEvent`,
     :py:meth:`~pyvisdk.do.move_into_folder__task.MoveIntoFolder_Task`,
     :py:meth:`~pyvisdk.do.move_into_resource_pool.MoveIntoResourcePool`,

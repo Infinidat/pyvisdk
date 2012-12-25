@@ -11,8 +11,7 @@ HostFirewallSystem
 **See also**
     
     :py:class:`~pyvisdk.do.host_firewall_default_policy.HostFirewallDefaultPolicy`,
-    :py:class:`~pyvisdk.do.host_firewall_info.HostFirewallInfo`,
-    :py:class:`~pyvisdk.do.host_firewall_ruleset_ruleset_spec.HostFirewallRulesetRulesetSpec`
+    :py:class:`~pyvisdk.do.host_firewall_info.HostFirewallInfo`
     
 **Extends**
     

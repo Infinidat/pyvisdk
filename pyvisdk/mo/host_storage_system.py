@@ -89,7 +89,7 @@ class HostStorageSystem(ExtensibleManagedObject):
         '''
         return self.delegate("AttachVmfsExtent")(vmfsPath, extent)
     
-    def ComputeDiskPartitionInfo(self, devicePath, layout, partitionFormat):
+    def ComputeDiskPartitionInfo(self, devicePath, layout, partitionFormat=None):
         '''Computes the disk partition information given the desired disk layout. The
         server computes a new partition information object for a specific disk
         representing the desired layout.See HostDiskPartitionInfoPartitionFormat
@@ -103,7 +103,7 @@ class HostStorageSystem(ExtensibleManagedObject):
         '''
         return self.delegate("ComputeDiskPartitionInfo")(devicePath, layout, partitionFormat)
     
-    def ComputeDiskPartitionInfoForResize(self, partition, blockRange, partitionFormat):
+    def ComputeDiskPartitionInfoForResize(self, partition, blockRange, partitionFormat=None):
         '''Computes the disk partition information for the purpose of resizing a given
         partition.See HostDiskPartitionInfoPartitionFormat
         
@@ -246,6 +246,10 @@ class HostStorageSystem(ExtensibleManagedObject):
         storage devices, topology, and file systems. The ESX host updates its storage
         information asynchronously. The RefreshStorageSystem method obtains information
         from the host platform and it performs a rescan of VMFS volumes. It does not
+        look for new devices.Obtains the latest host storage information related to
+        storage devices, topology, and file systems. The ESX host updates its storage
+        information asynchronously. The RefreshStorageSystem method obtains information
+        from the host platform and it performs a rescan of VMFS volumes. It does not
         look for new devices.
         
         '''
@@ -284,7 +288,9 @@ class HostStorageSystem(ExtensibleManagedObject):
         and device topology. The RescanAllHba method looks for new devices, removed
         devices, and path changes.Scans all host bus adapters to obtain the current
         list of devices and device topology. The RescanAllHba method looks for new
-        devices, removed devices, and path changes.
+        devices, removed devices, and path changes.Scans all host bus adapters to
+        obtain the current list of devices and device topology. The RescanAllHba method
+        looks for new devices, removed devices, and path changes.
         
         '''
         return self.delegate("RescanAllHba")()
@@ -392,7 +398,7 @@ class HostStorageSystem(ExtensibleManagedObject):
         '''
         return self.delegate("UpdateDiskPartitions")(devicePath, spec)
     
-    def UpdateInternetScsiAdvancedOptions(self, iScsiHbaDevice, targetSet, options):
+    def UpdateInternetScsiAdvancedOptions(self, iScsiHbaDevice, options, targetSet=None):
         '''Updates the advanced options the iSCSI host bus adapter or the discovery
         addresses and targets associated with it.
         
@@ -415,7 +421,7 @@ class HostStorageSystem(ExtensibleManagedObject):
         '''
         return self.delegate("UpdateInternetScsiAlias")(iScsiHbaDevice, iScsiAlias)
     
-    def UpdateInternetScsiAuthenticationProperties(self, iScsiHbaDevice, authenticationProperties, targetSet):
+    def UpdateInternetScsiAuthenticationProperties(self, iScsiHbaDevice, authenticationProperties, targetSet=None):
         '''Updates the authentication properties for one or more targets or discovery
         addresses associated with an iSCSI host bus adapter.
         
@@ -428,7 +434,7 @@ class HostStorageSystem(ExtensibleManagedObject):
         '''
         return self.delegate("UpdateInternetScsiAuthenticationProperties")(iScsiHbaDevice, authenticationProperties, targetSet)
     
-    def UpdateInternetScsiDigestProperties(self, iScsiHbaDevice, targetSet, digestProperties):
+    def UpdateInternetScsiDigestProperties(self, iScsiHbaDevice, digestProperties, targetSet=None):
         '''Updates the digest properties for the iSCSI host bus adapter or the discovery
         addresses and targets associated with it.
         

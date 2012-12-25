@@ -31,24 +31,26 @@ class AuthorizationManager(BaseEntity):
     specified roles.Managed entities may be collected together into a "complex
     entity" for the purpose of applying permissions consistently. Complex entities
     may have a Datacenter, ComputeResource, or ClusterComputeResource as a parent,
-    with other child managed objects as additional parts of the complex
-    entity:Child objects in a complex entity are forced to inherit permissions from
-    the parent object. When query operations are used to discover permissions on
-    child objects of complex entities, different results may be returned for the
-    owner of the permission. In some cases, the child object of the complex entity
-    is returned as the object that defines the permission, and in other cases, the
-    parent from which the permission is propagated is returned as the object that
-    defines the permission. In both cases, the information about the owner of the
-    permission is correct, since the entities within a complex entity are
-    considered equivalent. Permissions defined on complex entities are always
-    applicable on the child entities, regardless of the propagation flag, but may
-    only be defined or modified on the parent object.In a group of fault-tolerance
-    (FT) protected VirtualMachines, the secondary VirtualMachines are forced to
-    inherit permissions from the primary VirtualMachine. Queries to discover
-    permissions on FT secondary VMs always return the primary VM as the object that
-    defines the permissions. Permissions defined on an FT primary VM are always
-    applicable on its secondary VMs, but can only be defined or modified on the
-    primary VM.'''
+    with other child managed objects as additional parts of the complex entity:* A
+    Datacenter's child objects are the root virtual machine and host Folders. * A
+    ComputeResource's child objects are the root ResourcePool and HostSystem. * A
+    ClusterComputeResource has only the root ResourcePool as a child object.Child
+    objects in a complex entity are forced to inherit permissions from the parent
+    object. When query operations are used to discover permissions on child objects
+    of complex entities, different results may be returned for the owner of the
+    permission. In some cases, the child object of the complex entity is returned
+    as the object that defines the permission, and in other cases, the parent from
+    which the permission is propagated is returned as the object that defines the
+    permission. In both cases, the information about the owner of the permission is
+    correct, since the entities within a complex entity are considered equivalent.
+    Permissions defined on complex entities are always applicable on the child
+    entities, regardless of the propagation flag, but may only be defined or
+    modified on the parent object.In a group of fault-tolerance (FT) protected
+    VirtualMachines, the secondary VirtualMachines are forced to inherit
+    permissions from the primary VirtualMachine. Queries to discover permissions on
+    FT secondary VMs always return the primary VM as the object that defines the
+    permissions. Permissions defined on an FT primary VM are always applicable on
+    its secondary VMs, but can only be defined or modified on the primary VM.'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.AuthorizationManager):
         super(AuthorizationManager, self).__init__(core, name=name, ref=ref, type=type)
@@ -70,7 +72,7 @@ class AuthorizationManager(BaseEntity):
 
     
     
-    def AddAuthorizationRole(self, name, privIds):
+    def AddAuthorizationRole(self, name, privIds=None):
         '''Adds a new role. This method will add a user-defined role with given list of
         privileges and three system-defined privileges, "System.Anonymous",
         "System.View", and "System.Read".
@@ -82,7 +84,7 @@ class AuthorizationManager(BaseEntity):
         '''
         return self.delegate("AddAuthorizationRole")(name, privIds)
     
-    def HasPrivilegeOnEntity(self, entity, sessionId, privId):
+    def HasPrivilegeOnEntity(self, entity, sessionId, privId=None):
         '''Check whether a session holds a set of privileges on a managed entity.Check
         whether a session holds a set of privileges on a managed entity.
         
@@ -128,7 +130,7 @@ class AuthorizationManager(BaseEntity):
         '''
         return self.delegate("RemoveEntityPermission")(entity, user, isGroup)
     
-    def ResetEntityPermissions(self, entity, permission):
+    def ResetEntityPermissions(self, entity, permission=None):
         '''Update the entire set of permissions defined on an entity. Any existing
         permissions on the entity are removed and replaced with the provided set.Update
         the entire set of permissions defined on an entity. Any existing permissions on
@@ -187,7 +189,7 @@ class AuthorizationManager(BaseEntity):
         '''
         return self.delegate("RetrieveRolePermissions")(roleId)
     
-    def SetEntityPermissions(self, entity, permission):
+    def SetEntityPermissions(self, entity, permission=None):
         '''Defines one or more permission rules on an entity or updates rules if already
         present for the given user or group on the entity.Defines one or more
         permission rules on an entity or updates rules if already present for the given
@@ -205,7 +207,7 @@ class AuthorizationManager(BaseEntity):
         '''
         return self.delegate("SetEntityPermissions")(entity, permission)
     
-    def UpdateAuthorizationRole(self, roleId, newName, privIds):
+    def UpdateAuthorizationRole(self, roleId, newName, privIds=None):
         '''Updates a role's name or privileges. If the new set of privileges are assigned
         to the role, the system-defined privileges, "System.Anonymous", "System.View",
         and "System.Read" will be assigned to the role too.

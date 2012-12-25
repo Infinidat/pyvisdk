@@ -10,8 +10,7 @@ ExtensionManager
     
 **See also**
     
-    :py:class:`~pyvisdk.do.extension.Extension`,
-    :py:class:`~pyvisdk.do.managed_entity.ManagedEntity`
+    :py:class:`~pyvisdk.do.extension.Extension`
     
 **Since**
     

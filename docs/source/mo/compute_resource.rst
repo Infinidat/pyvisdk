@@ -7,7 +7,6 @@ ComputeResource
 **Property of**
     
     :py:class:`~pyvisdk.do.compute_resource_event_argument.ComputeResourceEventArgument`,
-    :py:class:`~pyvisdk.do.fail_to_enable_spbm.FailToEnableSPBM`,
     :py:class:`~pyvisdk.do.no_active_host_in_cluster.NoActiveHostInCluster`,
     :py:class:`~pyvisdk.do.resource_pool.ResourcePool`
     

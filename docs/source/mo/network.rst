@@ -8,8 +8,6 @@ Network
     
     :py:class:`~pyvisdk.do.compute_resource.ComputeResource`,
     :py:class:`~pyvisdk.do.datacenter.Datacenter`,
-    :py:class:`~pyvisdk.do.host_config_summary.HostConfigSummary`,
-    :py:class:`~pyvisdk.do.host_esx_agent_host_manager_config_info.HostEsxAgentHostManagerConfigInfo`,
     :py:class:`~pyvisdk.do.host_system.HostSystem`,
     :py:class:`~pyvisdk.do.ip_pool_association.IpPoolAssociation`,
     :py:class:`~pyvisdk.do.network_event_argument.NetworkEventArgument`,

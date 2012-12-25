@@ -36,17 +36,8 @@ class DistributedVirtualPortgroup(Network):
     
     
     def ReconfigureDVPortgroup_Task(self, spec):
-        '''The DistributedVirtualPortgroups to be reconfigured
-            
-            
-              *
-        DVPortgroup.PolicyOp if changing the policy of the portgroup.
-              
-              *
-        DVPortgroup.ScopeOp if changing the scope of the portgroup.
-              
-              *
-        DVPortgroup.Modify for anything else.
+        '''The DistributedVirtualPortgroups to be reconfiguredThe
+        DistributedVirtualPortgroups to be reconfigured
         
         :param spec: 
         

@@ -11,7 +11,6 @@ ResourcePool
     :py:class:`~pyvisdk.do.ovf_resource_map.OvfResourceMap`,
     :py:class:`~pyvisdk.do.resource_pool.ResourcePool`,
     :py:class:`~pyvisdk.do.resource_pool_event_argument.ResourcePoolEventArgument`,
-    :py:class:`~pyvisdk.do.storage_placement_spec.StoragePlacementSpec`,
     :py:class:`~pyvisdk.do.v_app_clone_spec_resource_map.VAppCloneSpecResourceMap`,
     :py:class:`~pyvisdk.do.virtual_machine.VirtualMachine`,
     :py:class:`~pyvisdk.do.virtual_machine_import_spec.VirtualMachineImportSpec`,

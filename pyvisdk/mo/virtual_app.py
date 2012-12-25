@@ -61,7 +61,7 @@ class VirtualApp(ResourcePool):
     
     def CloneVApp_Task(self, name, target, spec):
         '''Creates a clone of this vApp.Creates a clone of this vApp.Creates a clone of
-        this vApp.Creates a clone of this vApp.
+        this vApp.Creates a clone of this vApp.Creates a clone of this vApp.
         
         :param name: The name of the new vApp.
         
@@ -111,11 +111,12 @@ class VirtualApp(ResourcePool):
         '''
         return self.delegate("unregisterVApp_Task")()
     
-    def UpdateLinkedChildren(self, addChangeSet, removeSet):
+    def UpdateLinkedChildren(self, addChangeSet=None, removeSet=None):
         '''Reconfigure the set of linked children.Reconfigure the set of linked
         children.Reconfigure the set of linked children.Reconfigure the set of linked
         children.Reconfigure the set of linked children.Reconfigure the set of linked
-        children.Reconfigure the set of linked children.
+        children.Reconfigure the set of linked children.Reconfigure the set of linked
+        children.
         
         :param addChangeSet: a set of LinkInfo objects that either add a new link or modify an exisiting link.
         

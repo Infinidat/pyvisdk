@@ -57,13 +57,12 @@ class VirtualMachine(ManagedEntity):
         return self.update('guest')
     @property
     def guestHeartbeatStatus(self):
-        '''The guest heartbeat. The heartbeat status is classified as:
-        * gray - VMware Tools are not installed or not running.
-        * red - No heartbeat. Guest operating system may have stopped responding.
-        * yellow - Intermittent heartbeat. May be due to guest load.
-        * green - Guest operating system is responding normally.
-        The guest heartbeat is a statistics metric. Alarms can be configured on this
-        metric to trigger emails or other actions.'''
+        '''The guest heartbeat. The heartbeat status is classified as: * gray - VMware
+        Tools are not installed or not running. * red - No heartbeat. Guest operating
+        system may have stopped responding. * yellow - Intermittent heartbeat. May be
+        due to guest load. * green - Guest operating system is responding normally. The
+        guest heartbeat is a statistics metric. Alarms can be configured on this metric
+        to trigger emails or other actions.'''
         return self.update('guestHeartbeatStatus')
     @property
     def layout(self):
@@ -114,18 +113,8 @@ class VirtualMachine(ManagedEntity):
         return self.update('storage')
     @property
     def summary(self):
-        '''Basic information about this virtual machine. This includes:
-        * runtimeInfo
-                    
-                    * guest
-                    
-                    * basic
-        configuration
-                    
-                    * alarms
-                    
-                    *
-        performance information'''
+        '''Basic information about this virtual machine. This includes: * runtimeInfo *
+        guest * basic configuration * alarms * performance information'''
         return self.update('summary')
 
     
@@ -152,7 +141,10 @@ class VirtualMachine(ManagedEntity):
         remote mouse-keyboard-screen connection.Creates and returns a one-time
         credential used in establishing a specific connection to this virtual machine,
         for example, a ticket type of mks can be used to establish a remote mouse-
-        keyboard-screen connection.
+        keyboard-screen connection.Creates and returns a one-time credential used in
+        establishing a specific connection to this virtual machine, for example, a
+        ticket type of mks can be used to establish a remote mouse-keyboard-screen
+        connection.
         
         :param ticketType: The type of service to acquire, the set of possible values is described in VirtualMachineTicketType.
         
@@ -190,7 +182,9 @@ class VirtualMachine(ManagedEntity):
         deploy command.Creates a clone of this virtual machine. If the virtual machine
         is used as a template, this method corresponds to the deploy command.Creates a
         clone of this virtual machine. If the virtual machine is used as a template,
-        this method corresponds to the deploy command.
+        this method corresponds to the deploy command.Creates a clone of this virtual
+        machine. If the virtual machine is used as a template, this method corresponds
+        to the deploy command.
         
         :param folder: The location of the new virtual machine.
         
@@ -221,7 +215,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("CreateScreenshot_Task")()
     
-    def CreateSecondaryVM_Task(self, host):
+    def CreateSecondaryVM_Task(self, host=None):
         '''Creates a secondary virtual machine to be part of this fault tolerant
         group.Creates a secondary virtual machine to be part of this fault tolerant
         group.Creates a secondary virtual machine to be part of this fault tolerant
@@ -232,7 +226,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("CreateSecondaryVM_Task")(host)
     
-    def CreateSnapshot_Task(self, name, description, memory, quiesce):
+    def CreateSnapshot_Task(self, name, memory, quiesce, description=None):
         '''Creates a new snapshot of this virtual machine. As a side effect, this updates
         the current snapshot.Creates a new snapshot of this virtual machine. As a side
         effect, this updates the current snapshot.Creates a new snapshot of this
@@ -274,7 +268,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("DisableSecondaryVM_Task")(vm)
     
-    def EnableSecondaryVM_Task(self, vm, host):
+    def EnableSecondaryVM_Task(self, vm, host=None):
         '''Enables the specified secondary virtual machine in this fault tolerant
         group.Enables the specified secondary virtual machine in this fault tolerant
         group.Enables the specified secondary virtual machine in this fault tolerant
@@ -337,7 +331,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("MarkAsTemplate")()
     
-    def MarkAsVirtualMachine(self, pool, host):
+    def MarkAsVirtualMachine(self, pool, host=None):
         '''Clears the 'isTemplate' flag and reassociates the virtual machine with a
         resource pool and host.
         
@@ -348,7 +342,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("MarkAsVirtualMachine")(pool, host)
     
-    def MigrateVM_Task(self, pool, host, priority, state):
+    def MigrateVM_Task(self, priority, pool=None, host=None, state=None):
         '''Migrates a virtual machine's execution to a specific resource pool or
         host.Migrates a virtual machine's execution to a specific resource pool or
         host.
@@ -380,7 +374,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("PowerOffVM_Task")()
     
-    def PowerOnVM_Task(self, host):
+    def PowerOnVM_Task(self, host=None):
         '''Powers on this virtual machine. If the virtual machine is suspended, this
         method resumes execution from the suspend point.Powers on this virtual machine.
         If the virtual machine is suspended, this method resumes execution from the
@@ -392,7 +386,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("PowerOnVM_Task")(host)
     
-    def PromoteDisks_Task(self, unlink, disks):
+    def PromoteDisks_Task(self, unlink, disks=None):
         '''Promotes disks on this virtual machine that have delta disk backings.Promotes
         disks on this virtual machine that have delta disk backings.Promotes disks on
         this virtual machine that have delta disk backings.
@@ -404,7 +398,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("PromoteDisks_Task")(unlink, disks)
     
-    def QueryChangedDiskAreas(self, snapshot, deviceKey, startOffset, changeId):
+    def QueryChangedDiskAreas(self, deviceKey, startOffset, changeId, snapshot=None):
         '''Get a list of areas of a virtual disk belonging to this VM that have been
         modified since a well-defined point in the past. The beginning of the change
         interval is identified by "changeId", while the end of the change interval is
@@ -459,7 +453,13 @@ class VirtualMachine(ManagedEntity):
         virtual machine as an atomic operation.Reconfigures this virtual machine. All
         the changes in the given configuration are applied to the virtual machine as an
         atomic operation.Reconfigures this virtual machine. All the changes in the
-        given configuration are applied to the virtual machine as an atomic operation.
+        given configuration are applied to the virtual machine as an atomic
+        operation.Reconfigures this virtual machine. All the changes in the given
+        configuration are applied to the virtual machine as an atomic
+        operation.Reconfigures this virtual machine. All the changes in the given
+        configuration are applied to the virtual machine as an atomic
+        operation.Reconfigures this virtual machine. All the changes in the given
+        configuration are applied to the virtual machine as an atomic operation.
         
         :param spec: The new configuration values.
         
@@ -497,7 +497,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("reloadVirtualMachineFromPath_Task")(configurationPath)
     
-    def RelocateVM_Task(self, spec, priority):
+    def RelocateVM_Task(self, spec, priority=None):
         '''Relocates a virtual machine's virtual disks to a specific location; optionally
         moves the virtual machine to a different host as well.Relocates a virtual
         machine's virtual disks to a specific location; optionally moves the virtual
@@ -512,7 +512,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("RelocateVM_Task")(spec, priority)
     
-    def RemoveAllSnapshots_Task(self, consolidate):
+    def RemoveAllSnapshots_Task(self, consolidate=None):
         '''Remove all the snapshots associated with this virtual machine. If the virtual
         machine does not have any snapshots, then this operation simply returns
         successfully.
@@ -541,7 +541,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("ResetVM_Task")()
     
-    def RevertToCurrentSnapshot_Task(self, host, suppressPowerOn):
+    def RevertToCurrentSnapshot_Task(self, host=None, suppressPowerOn=None):
         '''Reverts the virtual machine to the current snapshot. This is equivalent to
         doing snapshot.currentSnapshot.revert.Reverts the virtual machine to the
         current snapshot. This is equivalent to doing snapshot.currentSnapshot.revert.
@@ -587,7 +587,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("StandbyGuest")()
     
-    def StartRecording_Task(self, name, description):
+    def StartRecording_Task(self, name, description=None):
         '''Initiates a recording session on this virtual machine. As a side effect, this
         operation creates a snapshot on the virtual machine, which in turn becomes the
         current snapshot.Initiates a recording session on this virtual machine. As a
@@ -632,7 +632,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("SuspendVM_Task")()
     
-    def TerminateFaultTolerantVM_Task(self, vm):
+    def TerminateFaultTolerantVM_Task(self, vm=None):
         '''Terminates the specified secondary virtual machine in a fault tolerant group.
         This can be used to test fault tolerance on a given virtual machine, and should
         be used with care.
@@ -670,7 +670,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("UnregisterVM")()
     
-    def UpgradeTools_Task(self, installerOptions):
+    def UpgradeTools_Task(self, installerOptions=None):
         '''Begins the tools upgrade process. To monitor the status of the tools install,
         clients should check the tools status, toolsVersionStatus and
         toolsRunningStatus.
@@ -680,7 +680,7 @@ class VirtualMachine(ManagedEntity):
         '''
         return self.delegate("UpgradeTools_Task")(installerOptions)
     
-    def UpgradeVM_Task(self, version):
+    def UpgradeVM_Task(self, version=None):
         '''Upgrades this virtual machine's virtual hardware to the latest revision that is
         supported by the virtual machine's current host.
         

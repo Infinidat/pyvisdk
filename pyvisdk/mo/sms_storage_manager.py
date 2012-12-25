@@ -16,7 +16,10 @@ class SmsStorageManager(BaseEntity):
     information about available storage topology, capabilities, and state. SMS
     establishes and maintains connections with VASA providers. SMS retrieves
     information about storage availability from the providers, and clients can use
-    the SMS API to perform the following operations.'''
+    the SMS API to perform the following operations.* Identify VASA providers. *
+    Retrieve information about storage arrays. * Identify vSphere inventory
+    entities (hosts and datastores) which are associated with external storage
+    entities on the storage arrays.'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.SmsStorageManager):
         super(SmsStorageManager, self).__init__(core, name=name, ref=ref, type=type)
@@ -36,7 +39,7 @@ class SmsStorageManager(BaseEntity):
     def QueryArrayAssociatedWithLun(self, canonicalName):
         '''Get the StorageArray object that is associated with the ScsiLun.
         
-        :param canonicalName: canonicalName of ScsiLun
+        :param canonicalName: of ScsiLun
         
         '''
         return self.delegate("QueryArrayAssociatedWithLun")(canonicalName)
@@ -44,21 +47,33 @@ class SmsStorageManager(BaseEntity):
     def QueryDatastoreCapability(self, datastore):
         '''Get the capability for the given datastore.
         
-        :param datastore: reference to Datastore
+        :param datastore: reference to
         
         '''
         return self.delegate("QueryDatastoreCapability")(datastore)
     
     def QueryDrsMigrationCapabilityForPerformance(self, srcDatastore, dstDatastore):
-        '''Query the provider to figure out whether Storage DRS should migrate the blocks
-        of a VMDK between the two given datastores.
+        '''<b>Deprecated.</b> <i>As of SMS API 3.0, use
+        QueryDrsMigrationCapabilityForPerformanceEx</i> Query the provider to figure
+        out whether Storage DRS should migrate VMDKs between the two given datastores.
         
-        :param srcDatastore: Reference to the source Datastore
+        :param srcDatastore: Reference to the source
         
-        :param dstDatastore: Reference to the destination Datastore
+        :param dstDatastore: Reference to the destination
         
         '''
         return self.delegate("QueryDrsMigrationCapabilityForPerformance")(srcDatastore, dstDatastore)
+    
+    def QueryDrsMigrationCapabilityForPerformanceEx(self, datastore):
+        '''Query available VASA providers for I/O performance based migration
+        recommendations for all pair combinations of the given set of datastores.
+        Datastore pairs for which a recommendation cannot be obtained are not included
+        in the result.
+        
+        :param datastore: Array containing references toobjects.
+        
+        '''
+        return self.delegate("QueryDrsMigrationCapabilityForPerformanceEx")(datastore)
     
     def QueryFileSystemAssociatedWithArray(self, arrayId):
         '''Get the StorageFileSystem data objects for the Array.

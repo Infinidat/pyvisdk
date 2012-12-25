@@ -6,9 +6,9 @@ SmsStorageManager
 
 **See also**
     
-    :py:class:`~pyvisdk.do.datastore.Datastore`,
-    :py:class:`~pyvisdk.do.host_system.HostSystem`,
-    :py:class:`~pyvisdk.do.sms_provider.SmsProvider`,
+    :py:class:`~pyvisdk.do..`,
+    :py:class:`~pyvisdk.do.drs_migration_capability_result.DrsMigrationCapabilityResult`,
+    :py:class:`~pyvisdk.do..`, :py:class:`~pyvisdk.do.sms_provider.SmsProvider`,
     :py:class:`~pyvisdk.do.sms_provider_spec.SmsProviderSpec`,
     :py:class:`~pyvisdk.do.storage_array.StorageArray`,
     :py:class:`~pyvisdk.do.storage_capability.StorageCapability`,

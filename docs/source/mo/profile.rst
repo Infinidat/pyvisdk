@@ -7,7 +7,6 @@ Profile
 **Property of**
     
     :py:class:`~pyvisdk.do.compliance_result.ComplianceResult`,
-    :py:class:`~pyvisdk.do.invalid_profile_reference_host.InvalidProfileReferenceHost`,
     :py:class:`~pyvisdk.do.profile_event_argument.ProfileEventArgument`,
     :py:class:`~pyvisdk.do.profile_manager.ProfileManager`
     
@@ -29,12 +28,7 @@ Profile
     
     :py:meth:`~pyvisdk.do.check_compliance__task.CheckCompliance_Task`,
     :py:meth:`~pyvisdk.do.clear_compliance_status.ClearComplianceStatus`,
-    :py:meth:`~pyvisdk.do.create_default_profile.CreateDefaultProfile`,
-    :py:meth:`~pyvisdk.do.query_compliance_status.QueryComplianceStatus`,
-    :py:meth:`~pyvisdk.do.query_expression_metadata.QueryExpressionMetadata`,
-    :py:meth:`~pyvisdk.do.query_host_profile_metadata.QueryHostProfileMetadata`,
-    :py:meth:`~pyvisdk.do.query_policy_metadata.QueryPolicyMetadata`,
-    :py:meth:`~pyvisdk.do.query_profile_structure.QueryProfileStructure`
+    :py:meth:`~pyvisdk.do.query_compliance_status.QueryComplianceStatus`
     
 **See also**
     

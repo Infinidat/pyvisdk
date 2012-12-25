@@ -37,25 +37,53 @@ class ResourcePool(ManagedEntity):
     are three states that the resource pool tree can be in: undercommited (green),
     overcommited (yellow), and inconsistent (red). Depending on the state,
     different resource pool configuration policies are enforced. The states are
-    described in more detail below:In this state, the DRS algorithm is disabled
-    until the resource pool tree's configuration has been brought back into a
-    consistent state. We also restrict the resources that such invalid nodes
-    request from their parents to the configured reservation/limit, in an attempt
-    to isolate the problem to a small subtree. For the rest of the tree, we
-    determine whether the cluster is undercommitted or overcommitted according to
-    the existing rules and perform admission control accordingly.Note that since
-    all changes to the resource settings are validated on the VirtualCenter server,
-    the system cannot be brought into this state by simply manipulating a cluster
-    resource pool tree through VirtualCenter. It can only happen if a virtual
-    machine gets powered on directly on a host that is part of a DRS
-    cluster.Destroying a ResourcePoolWhen a ResourcePool is destroyed, all the
-    virtual machines are reassigned to its parent pool. The root resource pool
-    cannot be destroyed, and invoking destroy on it will throw an InvalidType
-    fault.Any vApps in the ResourcePool will be moved to the ResourcePool's parent
-    before the pool is destroyed.The Resource.DeletePool privilege must be held on
-    the pool as well as the parent of the resource pool. Also, the
-    Resource.AssignVMToPool privilege must be held on the resource pool's parent
-    pool and any virtual machines that are reassigned.'''
+    described in more detail below:* GREEN (aka undercommitted): We have a tree
+    that is in a state. Every node has a reservation greater than the sum of the
+    reservations for its children. We have enough capacity at the root to satisfy
+    all the resources reserved by the children. All operations performed on the
+    tree, such as powering on virtual machines, creating new resource pools, or
+    reconfiguring resource settings, will ensure that the above constraints are
+    maintained. * RED (aka. inconsistent): One or more nodes in the tree has
+    children whose reservations are greater than the node is configured to support.
+    For example, i) a resource pool with a fixed reservation has a running virtual
+    machine with a reservation that is higher than the reservation on resource pool
+    itself., or ii) the child reservations are greater than the limit.In this
+    state, the DRS algorithm is disabled until the resource pool tree's
+    configuration has been brought back into a consistent state. We also restrict
+    the resources that such invalid nodes request from their parents to the
+    configured reservation/limit, in an attempt to isolate the problem to a small
+    subtree. For the rest of the tree, we determine whether the cluster is
+    undercommitted or overcommitted according to the existing rules and perform
+    admission control accordingly.Note that since all changes to the resource
+    settings are validated on the VirtualCenter server, the system cannot be
+    brought into this state by simply manipulating a cluster resource pool tree
+    through VirtualCenter. It can only happen if a virtual machine gets powered on
+    directly on a host that is part of a DRS cluster.* YELLOW (aka overcommitted):
+    In this state, the tree is consistent internally, but the root resource pool
+    does not have the capacity at to meet the reservation of its children. We can
+    only go from GREEN -> YELLOW if we lose resources at the root. For example,
+    hosts becomes unavailable or is put into maintenance mode. Note that we will
+    always have enough capacity at the root to run all currently powered on VMs.
+    However, we may not be able to satisfy all resource pool reservations in the
+    tree. In this state, the reservation configured for a resource pool is no
+    longer guaranteed, but the limits are still enforced. This provides additional
+    flexibility for bringing the tree back into a consistent state, without risking
+    bringing the tree into a RED state. In more detail: * Resource Pool The root is
+    considered to have unlimited capacity. You can reserve resources without any
+    check except the requirement that the tree remains consistent. This means that
+    nodes whose parents are all configured with expandable reservations and no
+    limit will have unlimited available resources. However, if there is an ancestor
+    with a fixed reservation or an expandable reservation with a limit somewhere,
+    then the node will be limited by the reservation/limit of the ancestor. *
+    Virtual Machine Virtual machines are limited by ancestors with a fixed
+    reservation and the capacity at the root.Destroying a ResourcePoolWhen a
+    ResourcePool is destroyed, all the virtual machines are reassigned to its
+    parent pool. The root resource pool cannot be destroyed, and invoking destroy
+    on it will throw an InvalidType fault.Any vApps in the ResourcePool will be
+    moved to the ResourcePool's parent before the pool is destroyed.The
+    Resource.DeletePool privilege must be held on the pool as well as the parent of
+    the resource pool. Also, the Resource.AssignVMToPool privilege must be held on
+    the resource pool's parent pool and any virtual machines that are reassigned.'''
 
     def __init__(self, core, name=None, ref=None, type=ManagedObjectTypes.ResourcePool):
         super(ResourcePool, self).__init__(core, name=name, ref=ref, type=type)
@@ -96,7 +124,7 @@ class ResourcePool(ManagedEntity):
 
     
     
-    def CreateChildVM_Task(self, config, host):
+    def CreateChildVM_Task(self, config, host=None):
         '''Creates a new virtual machine in a vApp container.Creates a new virtual machine
         in a vApp container.Creates a new virtual machine in a vApp container.Creates a
         new virtual machine in a vApp container.Creates a new virtual machine in a vApp
@@ -120,7 +148,7 @@ class ResourcePool(ManagedEntity):
         '''
         return self.delegate("CreateResourcePool")(name, spec)
     
-    def CreateVApp(self, name, resSpec, configSpec, vmFolder):
+    def CreateVApp(self, name, resSpec, configSpec, vmFolder=None):
         '''Creates a new vApp container.Creates a new vApp container.
         
         :param name: The name of the vApp container in the inventory
@@ -141,12 +169,14 @@ class ResourcePool(ManagedEntity):
         vApps associated with the child resource pools get associated with this
         resource pool.Removes all child resource pools recursively. All virtual
         machines and vApps associated with the child resource pools get associated with
+        this resource pool.Removes all child resource pools recursively. All virtual
+        machines and vApps associated with the child resource pools get associated with
         this resource pool.
         
         '''
         return self.delegate("DestroyChildren")()
     
-    def ImportVApp(self, spec, folder, host):
+    def ImportVApp(self, spec, folder=None, host=None):
         '''Creates a new entity in this resource pool. The import process consists of two
         steps:
         
@@ -171,7 +201,10 @@ class ResourcePool(ManagedEntity):
         The pools, vApps and virtual machines must be part of the cluster or standalone
         host that contains this pool.Moves a set of resource pools, vApps or virtual
         machines into this pool. The pools, vApps and virtual machines must be part of
-        the cluster or standalone host that contains this pool.
+        the cluster or standalone host that contains this pool.Moves a set of resource
+        pools, vApps or virtual machines into this pool. The pools, vApps and virtual
+        machines must be part of the cluster or standalone host that contains this
+        pool.
         
         :param list: A list of ResourcePool and VirtualMachine objects.
         
@@ -195,7 +228,7 @@ class ResourcePool(ManagedEntity):
         '''
         return self.delegate("RefreshRuntime")()
     
-    def RegisterChildVM_Task(self, path, name, host):
+    def RegisterChildVM_Task(self, path, name=None, host=None):
         '''Adds an existing virtual machine to this resource pool or vApp.Adds an existing
         virtual machine to this resource pool or vApp.Adds an existing virtual machine
         to this resource pool or vApp.
@@ -219,16 +252,20 @@ class ResourcePool(ManagedEntity):
         bulk modifications of the set of the direct children (virtual machines and
         resource pools).Changes resource configuration of a set of children of this
         resource pool. The method allows bulk modifications of the set of the direct
-        children (virtual machines and resource pools).
+        children (virtual machines and resource pools).Changes resource configuration
+        of a set of children of this resource pool. The method allows bulk
+        modifications of the set of the direct children (virtual machines and resource
+        pools).
         
         :param spec: 
         
         '''
         return self.delegate("UpdateChildResourceConfiguration")(spec)
     
-    def UpdateConfig(self, name, config):
+    def UpdateConfig(self, name=None, config=None):
         '''Updates the configuration of the resource pool.Updates the configuration of the
-        resource pool.Updates the configuration of the resource pool.
+        resource pool.Updates the configuration of the resource pool.Updates the
+        configuration of the resource pool.
         
         :param name: If set, then the new name of the resource pool.
         

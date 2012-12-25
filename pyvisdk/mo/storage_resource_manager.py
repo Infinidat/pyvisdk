@@ -28,7 +28,10 @@ class StorageResourceManager(BaseEntity):
         returned. Other workflows don't have a return value.Applies a recommendation
         from the recommendation list. Each recommendation can be applied only once. In
         the case of CreateVm and CloneVm a VirtualMachine is returned. Other workflows
-        don't have a return value.
+        don't have a return value.Applies a recommendation from the recommendation
+        list. Each recommendation can be applied only once. In the case of CreateVm and
+        CloneVm a VirtualMachine is returned. Other workflows don't have a return
+        value.
         
         :param key: The key fields of the Recommendations that are applied.
         
@@ -122,25 +125,64 @@ class StorageResourceManager(BaseEntity):
         fields should be unset iff the user wants SDRS recommendations. The remaining
         expected input parameters in StoragePlacementSpec will be the same as those for
         the existing API as determined by StoragePlacementSpec::type. If a parameter is
-        optional in the existing API, it will also be optional in the new API.
-        * For CreateVm, the Folder, ConfigSpec, ResourcePool and HostSystem parameters
-        will be expected in StoragePlacementSpec. The disks to be created can be
-        determined by ConfigSpec -&gt; VirtualDeviceSpec[] (deviceChange) -&gt;
-        VirtualDevice (device) -&gt; VirtualDisk (subclass).
-              
-              * For
-        AddDisk, the VirtualMachine and ConfigSpec parameters will be expected. The use
-        of the ConfigSpec for determining the disks to add will be the same as that in
-        CreateVm.
-              
-              * For RelocateVm, the VirtualMachine, RelocateSpec and
-        MovePriority parameters will be expected.
-              
-              * For CloneVm, the
-        VirtualMachine, CloneSpec, Folder and cloneName parameters will be
-        expected.This method returns a StoragePlacementResult object. This API is
-        intended to replace the following existing APIs for SDRS-enabled pods:
-        CreateVm: StoragePlacementSpec::type == create = CreateVM_Task AddDisk:
+        optional in the existing API, it will also be optional in the new API.This
+        method returns a StoragePlacementResult object. This API is intended to replace
+        the following existing APIs for SDRS-enabled pods: CreateVm:
+        StoragePlacementSpec::type == create = CreateVM_Task AddDisk:
+        StoragePlacementSpec::type == reconfigure = ReconfigVM_Task RelocateVm:
+        StoragePlacementSpec::type == relocate = RelocateVM_Task CloneVm:
+        StoragePlacementSpec::type == clone = CloneVM_Task The PodSelectionSpec
+        parameter in StoragePlacementSpec is required for all workflows. It specifies
+        which SDRS-enabled pod the user has selected for the VM and/or for each disk.
+        For CreateVm, RelocateVm and CloneVm, PodSelectionSpec.storagePod is the user
+        selected SDRS pod for the VM, i.e., its system files. For all workflows,
+        PodSelectionSpec.disk.storagePod is the user selected SDRS pod for the given
+        disk. Note that a DiskLocator must be specified for each disk that the user
+        requests to create, migrate or clone into an SDRS pod, even if it's the same
+        pod as the VM or the user has manually selected a datastore within the pod. If
+        the user has manually selected a datastore, the datastore must be specified in
+        the workflow specific fields as described below. For CreateVm and AddDisk, the
+        manually selected datastore must be specified in ConfigSpec.files or
+        ConfigSpec.deviceChange.device.backing.datastore, the fields should will be
+        unset if the user wants SDRS to recommend the datastore. For RelocateVm, the
+        manually selected datastore must be specified in RelocateSpec.datastore or
+        RelocateSpec.disk.datastore; the fields should be unset iff the user wants SDRS
+        recommendations. For CloneVm, the manually selected datastore must be specified
+        in CloneSpec.location.datastore or CloneSpec.location.disk[].datastore; the
+        fields should be unset iff the user wants SDRS recommendations. The remaining
+        expected input parameters in StoragePlacementSpec will be the same as those for
+        the existing API as determined by StoragePlacementSpec::type. If a parameter is
+        optional in the existing API, it will also be optional in the new API.This
+        method returns a StoragePlacementResult object. This API is intended to replace
+        the following existing APIs for SDRS-enabled pods: CreateVm:
+        StoragePlacementSpec::type == create = CreateVM_Task AddDisk:
+        StoragePlacementSpec::type == reconfigure = ReconfigVM_Task RelocateVm:
+        StoragePlacementSpec::type == relocate = RelocateVM_Task CloneVm:
+        StoragePlacementSpec::type == clone = CloneVM_Task The PodSelectionSpec
+        parameter in StoragePlacementSpec is required for all workflows. It specifies
+        which SDRS-enabled pod the user has selected for the VM and/or for each disk.
+        For CreateVm, RelocateVm and CloneVm, PodSelectionSpec.storagePod is the user
+        selected SDRS pod for the VM, i.e., its system files. For all workflows,
+        PodSelectionSpec.disk.storagePod is the user selected SDRS pod for the given
+        disk. Note that a DiskLocator must be specified for each disk that the user
+        requests to create, migrate or clone into an SDRS pod, even if it's the same
+        pod as the VM or the user has manually selected a datastore within the pod. If
+        the user has manually selected a datastore, the datastore must be specified in
+        the workflow specific fields as described below. For CreateVm and AddDisk, the
+        manually selected datastore must be specified in ConfigSpec.files or
+        ConfigSpec.deviceChange.device.backing.datastore, the fields should will be
+        unset if the user wants SDRS to recommend the datastore. For RelocateVm, the
+        manually selected datastore must be specified in RelocateSpec.datastore or
+        RelocateSpec.disk.datastore; the fields should be unset iff the user wants SDRS
+        recommendations. For CloneVm, the manually selected datastore must be specified
+        in CloneSpec.location.datastore or CloneSpec.location.disk[].datastore; the
+        fields should be unset iff the user wants SDRS recommendations. The remaining
+        expected input parameters in StoragePlacementSpec will be the same as those for
+        the existing API as determined by StoragePlacementSpec::type. If a parameter is
+        optional in the existing API, it will also be optional in the new API.This
+        method returns a StoragePlacementResult object. This API is intended to replace
+        the following existing APIs for SDRS-enabled pods: CreateVm:
+        StoragePlacementSpec::type == create = CreateVM_Task AddDisk:
         StoragePlacementSpec::type == reconfigure = ReconfigVM_Task RelocateVm:
         StoragePlacementSpec::type == relocate = RelocateVM_Task CloneVm:
         StoragePlacementSpec::type == clone = CloneVM_Task The PodSelectionSpec
@@ -165,63 +207,6 @@ class StorageResourceManager(BaseEntity):
         expected input parameters in StoragePlacementSpec will be the same as those for
         the existing API as determined by StoragePlacementSpec::type. If a parameter is
         optional in the existing API, it will also be optional in the new API.
-        * For CreateVm, the Folder, ConfigSpec, ResourcePool and HostSystem parameters
-        will be expected in StoragePlacementSpec. The disks to be created can be
-        determined by ConfigSpec -&gt; VirtualDeviceSpec[] (deviceChange) -&gt;
-        VirtualDevice (device) -&gt; VirtualDisk (subclass).
-              
-              * For
-        AddDisk, the VirtualMachine and ConfigSpec parameters will be expected. The use
-        of the ConfigSpec for determining the disks to add will be the same as that in
-        CreateVm.
-              
-              * For RelocateVm, the VirtualMachine, RelocateSpec and
-        MovePriority parameters will be expected.
-              
-              * For CloneVm, the
-        VirtualMachine, CloneSpec, Folder and cloneName parameters will be
-        expected.This method returns a StoragePlacementResult object. This API is
-        intended to replace the following existing APIs for SDRS-enabled pods:
-        CreateVm: StoragePlacementSpec::type == create = CreateVM_Task AddDisk:
-        StoragePlacementSpec::type == reconfigure = ReconfigVM_Task RelocateVm:
-        StoragePlacementSpec::type == relocate = RelocateVM_Task CloneVm:
-        StoragePlacementSpec::type == clone = CloneVM_Task The PodSelectionSpec
-        parameter in StoragePlacementSpec is required for all workflows. It specifies
-        which SDRS-enabled pod the user has selected for the VM and/or for each disk.
-        For CreateVm, RelocateVm and CloneVm, PodSelectionSpec.storagePod is the user
-        selected SDRS pod for the VM, i.e., its system files. For all workflows,
-        PodSelectionSpec.disk.storagePod is the user selected SDRS pod for the given
-        disk. Note that a DiskLocator must be specified for each disk that the user
-        requests to create, migrate or clone into an SDRS pod, even if it's the same
-        pod as the VM or the user has manually selected a datastore within the pod. If
-        the user has manually selected a datastore, the datastore must be specified in
-        the workflow specific fields as described below. For CreateVm and AddDisk, the
-        manually selected datastore must be specified in ConfigSpec.files or
-        ConfigSpec.deviceChange.device.backing.datastore, the fields should will be
-        unset if the user wants SDRS to recommend the datastore. For RelocateVm, the
-        manually selected datastore must be specified in RelocateSpec.datastore or
-        RelocateSpec.disk.datastore; the fields should be unset iff the user wants SDRS
-        recommendations. For CloneVm, the manually selected datastore must be specified
-        in CloneSpec.location.datastore or CloneSpec.location.disk[].datastore; the
-        fields should be unset iff the user wants SDRS recommendations. The remaining
-        expected input parameters in StoragePlacementSpec will be the same as those for
-        the existing API as determined by StoragePlacementSpec::type. If a parameter is
-        optional in the existing API, it will also be optional in the new API.
-        * For CreateVm, the Folder, ConfigSpec, ResourcePool and HostSystem parameters
-        will be expected in StoragePlacementSpec. The disks to be created can be
-        determined by ConfigSpec -&gt; VirtualDeviceSpec[] (deviceChange) -&gt;
-        VirtualDevice (device) -&gt; VirtualDisk (subclass).
-              
-              * For
-        AddDisk, the VirtualMachine and ConfigSpec parameters will be expected. The use
-        of the ConfigSpec for determining the disks to add will be the same as that in
-        CreateVm.
-              
-              * For RelocateVm, the VirtualMachine, RelocateSpec and
-        MovePriority parameters will be expected.
-              
-              * For CloneVm, the
-        VirtualMachine, CloneSpec, Folder and cloneName parameters will be expected.
         
         :param storageSpec: 
         
