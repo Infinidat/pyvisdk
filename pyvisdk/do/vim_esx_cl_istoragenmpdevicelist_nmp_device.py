@@ -17,7 +17,7 @@ def VimEsxCLIstoragenmpdevicelistNmpDevice(vim, *args, **kwargs):
         raise IndexError('Expected at least 1 arguments got: %d' % len(args))
 
     required = [  ]
-    optional = [ 'Device', 'DeviceDisplayName', 'PathSelectionPolicy', 'PathSelectionPolicyDeviceConfig', 'PathSelectionPolicyDeviceCustomConfig', 'StorageArrayType', 'StorageArrayTypeDeviceConfig', 'WorkingPaths' ]
+    optional = [ 'Device', 'DeviceDisplayName', 'IsBootUSBDevice', 'IsLocalSASDevice', 'PathSelectionPolicy', 'PathSelectionPolicyDeviceConfig', 'PathSelectionPolicyDeviceCustomConfig', 'StorageArrayType', 'StorageArrayTypeDeviceConfig', 'WorkingPaths' ]
 
     for name, arg in zip(required + optional, args):
         setattr(obj, name, arg)

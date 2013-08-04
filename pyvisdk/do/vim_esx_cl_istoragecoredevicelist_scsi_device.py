@@ -17,7 +17,7 @@ def VimEsxCLIstoragecoredevicelistScsiDevice(vim, *args, **kwargs):
         raise IndexError('Expected at least 1 arguments got: %d' % len(args))
 
     required = [  ]
-    optional = [ 'AttachedFilters', 'DevfsPath', 'Device', 'DeviceType', 'DisplayName', 'HasSettableDisplayName', 'IsLocal', 'IsOffline', 'IsPerenniallyReserved', 'IsPseudo', 'IsRDMCapable', 'IsRemovable', 'IsSSD', 'Model', 'MultipathPlugin', 'OtherUIDs', 'Revision', 'SCSILevel', 'Size', 'Status', 'ThinProvisioningStatus', 'VAAIStatus', 'Vendor' ]
+    optional = [ 'AttachedFilters', 'DevfsPath', 'Device', 'DeviceType', 'DisplayName', 'HasSettableDisplayName', 'IsBootUSBDevice', 'IsLocal', 'IsLocalSASDevice', 'IsOffline', 'IsPerenniallyReserved', 'IsPseudo', 'IsRDMCapable', 'IsRemovable', 'IsSSD', 'Model', 'MultipathPlugin', 'OtherUIDs', 'QueueFullSampleSize', 'QueueFullThreshold', 'Revision', 'SCSILevel', 'Size', 'Status', 'ThinProvisioningStatus', 'VAAIStatus', 'Vendor' ]
 
     for name, arg in zip(required + optional, args):
         setattr(obj, name, arg)
