@@ -74,7 +74,7 @@ class Task(object):
             with self:
                 return func(*args, **kwargs)
         return callable
-    
+
     @contextmanager
     def silent_context(self):
         try:
@@ -100,10 +100,16 @@ class Task(object):
     def get_name(self):
         data_object = self._get_info()
         return data_object.name or ''
-    
+
     def set_state(self, state):
-        self._managed_object.SetTaskState(state, None, None)
-    
+        from pyvisdk.do.localized_method_fault import LocalizedMethodFault
+        from pyvisdk.do.vim_fault import VimFault
+        localized_method_fault = None
+        if state == 'error':
+            fault = VimFault(self._client, [], [], None, [])
+            localized_method_fault = LocalizedMethodFault(self._client, fault=fault, localizedMessage='error')
+        self._managed_object.SetTaskState(state, None, localized_method_fault)
+
     def set_description(self, message):
         from pyvisdk.do.localizable_message import LocalizableMessage
         msg = LocalizableMessage(self._client, key=self._managed_object.info.key, message=message)
