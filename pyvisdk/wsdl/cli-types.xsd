@@ -1355,6 +1355,7 @@
           <element type="xsd:boolean" name="IsPseudo" minOccurs="0"/>
           <element type="xsd:boolean" name="IsRDMCapable" minOccurs="0"/>
           <element type="xsd:boolean" name="IsRemovable" minOccurs="0"/>
+          <element type="xsd:boolean" name="IsBootUSBDevice" minOccurs="0"/>
           <element type="xsd:boolean" name="IsSSD" minOccurs="0"/>
           <element type="xsd:string" name="Model" minOccurs="0"/>
           <element type="xsd:string" name="MultipathPlugin" minOccurs="0"/>
