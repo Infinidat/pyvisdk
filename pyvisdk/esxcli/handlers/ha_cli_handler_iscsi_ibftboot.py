@@ -7,7 +7,7 @@ class IscsiIbftboot(Base):
     Operations that can be performed on iSCSI IBFT boot table
     '''
     moid = 'ha-cli-handler-iscsi-ibftboot'
-    def import(self):
+    def import_(self):
         '''
         Import iSCSI target configuration from iBFT to ESX iSCSI initiators. The boot target recorded in iBFT is added to all the eligible 'dependent' iSCSI adapters.
         :returns: void
@@ -20,4 +20,4 @@ class IscsiIbftboot(Base):
         :returns: vim.EsxCLI.iscsi.ibftboot.get.IbftBoot[]
         '''
         return execute_soap(self._client, self._host, self.moid, 'vim.EsxCLI.iscsi.ibftboot.Get',
-                            )   
+                            )
