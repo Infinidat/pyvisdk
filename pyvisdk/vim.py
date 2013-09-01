@@ -237,6 +237,12 @@ class Vim(VimMixin, pyvisdk.core.VimBase):
         """
         return self.getDecendentsByName(_type=ManagedObjectTypes.VirtualMachine, properties=["name", "runtime.powerState"]) #@UndefinedVariable
 
+    def getVirtualApps(self):
+        return self.getDecendentsByName(_type=ManagedObjectTypes.VirtualApp, properties=["name"]) #@UndefinedVariable
+
+    def getFolders(self):
+        return self.getDecendentsByName(_type=ManagedObjectTypes.Folder, properties=["name"]) #@UndefinedVariable
+
     #------------------------------------------------------------
     # Hierarchy
     #------------------------------------------------------------
