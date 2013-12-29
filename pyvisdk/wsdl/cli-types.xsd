@@ -1360,6 +1360,7 @@
           <element type="xsd:boolean" name="IsSSD" minOccurs="0"/>
           <element type="xsd:string" name="Model" minOccurs="0"/>
           <element type="xsd:string" name="MultipathPlugin" minOccurs="0"/>
+          <element type="xsd:long" name="NoofoutstandingIOswithcompetingworlds" minOccurs="0"/>
           <element maxOccurs="unbounded" type="xsd:string" name="OtherUIDs" minOccurs="0"/>
           <element type="xsd:long" name="QueueFullSampleSize" minOccurs="0"/>
           <element type="xsd:long" name="QueueFullThreshold" minOccurs="0"/>
