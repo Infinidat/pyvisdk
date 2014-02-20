@@ -32,9 +32,9 @@ location = os.path.abspath(os.path.dirname(__file__))
 version = open(os.path.join(location, "pyvisdk", "__init__.py")).readline().split()[-1].strip("'")
 
 # we need to make sure we have these to python modules in our path
-install_requires = ["suds-jurko", "enum", "brownie", "lxml", "bunch", "infi.pyutils", "jinja2", "python-cjson", ]
+install_requires = ["suds-jurko", "enum", "brownie", "lxml", "munch", "infi.pyutils", "jinja2", "python-cjson", ]
 
-setup( 
+setup(
     name = 'infi.pyvisdk',
     description = "vSphere SDK for Python",
     long_description = "vSphere SDK for Python",
@@ -46,7 +46,7 @@ setup(
     install_requires = install_requires,
     packages = ["pyvisdk", "pyvisdk.mo", "pyvisdk.base", "pyvisdk.do", "pyvisdk.enums", "pyvisdk.thirdparty", "pyvisdk.facade", "pyvisdk.facade.extension", "pyvisdk.facade.task", "pyvisdk.facade.property_collector", "pyvisdk.esxcli", "pyvisdk.esxcli.base", "pyvisdk.esxcli.executer", "pyvisdk.esxcli.generator", "pyvisdk.esxcli.handlers", ],
     package_data = {'pyvisdk': ['wsdl/*']},
-    
+
     classifiers = ['Development Status :: 4 - Beta',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: MIT License',

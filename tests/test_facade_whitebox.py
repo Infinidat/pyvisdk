@@ -2,7 +2,7 @@ import unittest
 import mock
 from pyvisdk.facade.property_collector import CachedPropertyCollector, HostSystemCachedPropertyCollector, PROPERTY_NAME_PATTERN
 from re import findall, findall
-from bunch import Bunch
+from munch import Munch
 
 HBAAPI_PROPERTY_PATH = 'config.storageDevice.hostBusAdapter'
 TOPOLOGY_PROPERTY_PATH = 'config.storageDevice.scsiTopology.adapter'
@@ -28,20 +28,20 @@ class RegexTestCase(unittest.TestCase):
         key = 'config.storageDevice.scsiTopology.adapter["key-vim.host.ScsiTopology.Interface-vmhba2"].target["key-vim.host.ScsiTopology.Target-vmhba2:0:0"]'
         result = findall(PROPERTY_NAME_PATTERN, key)
         self.assertEquals(result, ['config', 'storageDevice', 'scsiTopology', 'adapter',
-                                   '["key-vim.host.ScsiTopology.Interface-vmhba2"]', 'target', 
+                                   '["key-vim.host.ScsiTopology.Interface-vmhba2"]', 'target',
                                    '["key-vim.host.ScsiTopology.Target-vmhba2:0:0"]'])
 
 class ScsiTopologyTestCase(unittest.TestCase):
     def _get_fake_property_collector(self, vim, filterSet=[]):
         fake = mock.Mock()
-        update_set = Bunch(filterSet=filterSet, truncated=False, version='1')
+        update_set = Munch(filterSet=filterSet, truncated=False, version='1')
         fake.WaitForUpdatesEx.return_value = update_set
         vim.service_content.propertyCollector.CreatePropertyCollector.return_value = fake
         return fake
 
     def _set_update_on_fake_property_collector(self, fake, filterSet=[]):
         version = str(int(fake.WaitForUpdatesEx.return_value.version) + 1)
-        update_set = Bunch(filterSet=filterSet, truncated=False, version=version)
+        update_set = Munch(filterSet=filterSet, truncated=False, version=version)
         fake.WaitForUpdatesEx.return_value = update_set
 
     def _assert_fake_methods_were_called(self, vim, fake):
@@ -56,29 +56,29 @@ class ScsiTopologyTestCase(unittest.TestCase):
         self._assert_fake_methods_were_called(vim, fake)
 
     def _get_initial_filter_update(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        adapter_list = [Bunch(adapter="adapter", key=HBA_KEY, target=[])]
-        property_change = Bunch(name=TOPOLOGY_PROPERTY_PATH, op="add", val=adapter_list)
-        object_update = Bunch(kind="enter", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        adapter_list = [Munch(adapter="adapter", key=HBA_KEY, target=[])]
+        property_change = Munch(name=TOPOLOGY_PROPERTY_PATH, op="add", val=adapter_list)
+        object_update = Munch(kind="enter", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_filter_update__target_added(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        target = Bunch(key=TARGET_KEY, lun=[], target=0, transport=None)
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        target = Munch(key=TARGET_KEY, lun=[], target=0, transport=None)
         name = """{}["{}"].target["{}"]"""
-        property_change = Bunch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY), op="add", val=target)
-        object_update = Bunch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        property_change = Munch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY), op="add", val=target)
+        object_update = Munch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_filter_update__target_changed(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        target = Bunch(key=TARGET_KEY, lun=[], target=0, transport=None)
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        target = Munch(key=TARGET_KEY, lun=[], target=0, transport=None)
         name = """{}["{}"].target["{}"]"""
-        property_change = Bunch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY), op="assign", val=target)
-        object_update = Bunch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        property_change = Munch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY), op="assign", val=target)
+        object_update = Munch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_filter_update__target_removed(self):
@@ -88,12 +88,12 @@ class ScsiTopologyTestCase(unittest.TestCase):
         return filter_update
 
     def _get_filter_update__lun_added(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        lun = Bunch(key=LUN_KEY, lun=0, scsiLun=LUN_KEY, transport=None)
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        lun = Munch(key=LUN_KEY, lun=0, scsiLun=LUN_KEY, transport=None)
         name = """{}["{}"].target["{}"].lun["{}"]"""
-        property_change = Bunch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY, LUN_KEY), op="add", val=lun)
-        object_update = Bunch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        property_change = Munch(name=name.format(TOPOLOGY_PROPERTY_PATH, HBA_KEY, TARGET_KEY, LUN_KEY), op="add", val=lun)
+        object_update = Munch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_filter_update__lun_removed(self):
@@ -185,14 +185,14 @@ class ScsiTopologyTestCase(unittest.TestCase):
 class ScsiLunsTestCase(unittest.TestCase):
     def _get_fake_property_collector(self, vim, filterSet=[]):
         fake = mock.Mock()
-        update_set = Bunch(filterSet=filterSet, truncated=False, version='1')
+        update_set = Munch(filterSet=filterSet, truncated=False, version='1')
         fake.WaitForUpdatesEx.return_value = update_set
         vim.service_content.propertyCollector.CreatePropertyCollector.return_value = fake
         return fake
 
     def _set_update_on_fake_property_collector(self, fake, filterSet=[]):
         version = str(int(fake.WaitForUpdatesEx.return_value.version) + 1)
-        update_set = Bunch(filterSet=filterSet, truncated=False, version=version)
+        update_set = Munch(filterSet=filterSet, truncated=False, version=version)
         fake.WaitForUpdatesEx.return_value = update_set
 
     def _assert_fake_methods_were_called(self, vim, fake):
@@ -207,27 +207,27 @@ class ScsiLunsTestCase(unittest.TestCase):
         self._assert_fake_methods_were_called(vim, fake)
 
     def _get_initial_filter_update(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        lun_list = [Bunch(displayName="name", key=LUN_KEY)]
-        property_change = Bunch(name=SCSI_LUNS_PROPERTY_PATH, op="add", val=lun_list)
-        object_update = Bunch(kind="enter", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        lun_list = [Munch(displayName="name", key=LUN_KEY)]
+        property_change = Munch(name=SCSI_LUNS_PROPERTY_PATH, op="add", val=lun_list)
+        object_update = Munch(kind="enter", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_second_filter_update(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
         path = '{}["{}"].displayName'
-        property_change = Bunch(name=path.format(SCSI_LUNS_PROPERTY_PATH, LUN_KEY), op="assign", val="NAME")
-        object_update = Bunch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        property_change = Munch(name=path.format(SCSI_LUNS_PROPERTY_PATH, LUN_KEY), op="assign", val="NAME")
+        object_update = Munch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def _get_assignment_filter_update(self):
-        managed_object_reference = Bunch(ref=Bunch(_type="HostSystem", value="host-1"))
-        lun_list = [Bunch(displayName="name", key=LUN_KEY)]
-        property_change = Bunch(name=SCSI_LUNS_PROPERTY_PATH, op="assign", val=lun_list)
-        object_update = Bunch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
-        filter_update = Bunch(filter=None, missingSet=[], objectSet=[object_update])
+        managed_object_reference = Munch(ref=Munch(_type="HostSystem", value="host-1"))
+        lun_list = [Munch(displayName="name", key=LUN_KEY)]
+        property_change = Munch(name=SCSI_LUNS_PROPERTY_PATH, op="assign", val=lun_list)
+        object_update = Munch(kind="modify", missingSet=[], changeSet=[property_change], obj=managed_object_reference)
+        filter_update = Munch(filter=None, missingSet=[], objectSet=[object_update])
         return filter_update
 
     def test_get_properties__first_time(self):

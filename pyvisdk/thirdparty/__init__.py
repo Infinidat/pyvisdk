@@ -1,1 +1,1 @@
-from ..utils import bunchify as Enum
+from ..utils import munchify as Enum

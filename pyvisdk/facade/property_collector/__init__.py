@@ -5,7 +5,7 @@ from pyvisdk.do.selection_spec import SelectionSpec
 from pyvisdk.do.wait_options import WaitOptions
 from logging import getLogger
 from re import match, findall
-from bunch import Bunch
+from munch import Munch
 
 logger = getLogger(__name__)
 
@@ -19,7 +19,7 @@ PROPERTY_NAME_PATTERN = r'\w+|\["[^"\]]+"\]'
 class CachedPropertyCollector(object):
     """
     Facade for using PropertyCollectors to fetch a list of properties from all instances of a specific object_type
-    
+
     :param vim: :py:class:`Vim` instance
     :param managedObjectTypeName: A name of managed object type, e.g. HostSystem
     :param propertiesList: A list of properties to fetch, can be nested, e.g. config.storageDevice
@@ -118,7 +118,7 @@ class CachedPropertyCollector(object):
 
     def _walk_on_property_path(self, path):
         from re import findall
-        matches = [Bunch(value=item) for item in findall(PROPERTY_NAME_PATTERN, path)]
+        matches = [Munch(value=item) for item in findall(PROPERTY_NAME_PATTERN, path)]
         for match in matches:
             if match.value.startswith('['):
                 match.type = "key"
@@ -141,12 +141,12 @@ class CachedPropertyCollector(object):
             if item.type == "key":
                 object_to_update = [element for element in object_to_update if element.key == item.value][0]
             else:
-                if isinstance(object_to_update, (dict, Bunch)):
+                if isinstance(object_to_update, (dict, Munch)):
                     object_to_update = object_to_update.get(item.value)
                 else:
                     object_to_update = getattr(object_to_update, item.value)
         return object_to_update
-        
+
     def _get_property_name_to_update(self, property_dict, path):
         for key in property_dict.keys():
             if path == key:
@@ -155,7 +155,7 @@ class CachedPropertyCollector(object):
 
     def _get_key_to_remove(self, key):
         return self._walk_on_property_path(key)[-1].value
-    
+
     def _mergePropertyChange__add(self, property_dict, key, value):
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.Change.html
         list_to_update = self._get_list_and_object_to_update(property_dict, key, value)
@@ -252,7 +252,7 @@ class CachedPropertyCollector(object):
 
 class HostSystemCachedPropertyCollector(CachedPropertyCollector):
     """
-    Facade for fetching host attributes by using a faster traversal (e.g no need to traverse inside HostSystem) 
+    Facade for fetching host attributes by using a faster traversal (e.g no need to traverse inside HostSystem)
     """
 
     def __init__(self, vim, hostProperties):

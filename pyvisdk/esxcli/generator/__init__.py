@@ -34,7 +34,7 @@ class {{ class_name }}(Base):
     {{ class_doc }}
     '''
     moid = {{ moid }}
-    
+
     {%- for method in methods %}
     def {{ method.name }}({{ method.formatted_args }}):
         '''
@@ -46,11 +46,11 @@ class {{ class_name }}(Base):
         '''
         return execute_soap(self._client, self._host, self.moid, {{ method.wsdl_name_repr }},
                             {%- for kwarg in method.kwargs %}
-                            {{ kwarg.name }}={{ kwarg.name }}, 
+                            {{ kwarg.name }}={{ kwarg.name }},
                             {%- endfor %}
                             )
-            
-    {%- endfor %}   
+
+    {%- endfor %}
 """
 
 DATA_OBJECT_TEMPLATE = """
@@ -193,8 +193,8 @@ class Generator(Base):
     def _prepare_method_parameters(self, param_type_info_list, cli_info_param_dict):
         """:param param_type_info_list: `DynamicTypeMgrParamTypeInfo`
         :param cli_info_param_dict: `VimCLIInfoParam`"""
-        from bunch import Bunch
-        return [Bunch(name=param_type_info.name,
+        from munch import Munch
+        return [Munch(name=param_type_info.name,
                       doc="{}, {}".format(param_type_info.type,
                                           cli_info_param_dict.get(param_type_info.name).help),
                       )
@@ -214,10 +214,10 @@ class Generator(Base):
                                         filter(lambda item: is_optional(item), param_type_info_list)))
 
     def _prepate_methods(self, managed_type_name, methods_dict, cli_info, handler_name):
-        from bunch import Bunch
+        from munch import Munch
         methods_in_cli_info = {}
         for method in cli_info.method:
-            methods_in_cli_info[method.name] = Bunch(parameters={param.name: param for param in method.param},
+            methods_in_cli_info[method.name] = Munch(parameters={param.name: param for param in method.param},
                                                      return_value=method.ret,
                                                      help=method.help)
         methods = []
@@ -227,7 +227,7 @@ class Generator(Base):
             formatted_args = self.prepare_method_formatted_arugments(method.paramTypeInfo,
                                                                      methods_in_cli_info.get(method.name)['parameters'])
             returns_doc = ', '.join([return_type_info.type for return_type_info in method.returnTypeInfo])
-            methods.append(Bunch(name=method.name,
+            methods.append(Munch(name=method.name,
                                  wsdl_name_repr=repr(".".join([managed_type_name, method.name.capitalize()])),
                                  doc=methods_in_cli_info.get(method.name).help,
                                  returns_doc=returns_doc,
@@ -236,8 +236,8 @@ class Generator(Base):
         return methods
 
     def _render_handler_module(self, managed_type_name, methods_dict, cli_info, handler_name):
-        """ Render handle module 
-        
+        """ Render handle module
+
         :param managed_type_name: string
         :param methods_dict: {name:`DynamicTypeMgrMethodTypeInfo`}
         :param cli_info: `VimCLIInfoInfo`
