@@ -59,6 +59,10 @@ class Task(object):
         self._managed_object.UpdateProgress(percentage)
 
     def step(self, steps):
+        for _ in self.iter(steps):
+            pass
+
+    def iter(self, steps):
         percentage = 0
         increment = 100 / len(steps)
         with self:
@@ -66,6 +70,7 @@ class Task(object):
                 step()
                 percentage += increment
                 self.update_progress(percentage)
+                yield percentage
             self.update_progress(100)
 
     def wraps(self, func):
