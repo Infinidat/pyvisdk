@@ -32,7 +32,7 @@ location = os.path.abspath(os.path.dirname(__file__))
 version = open(os.path.join(location, "pyvisdk", "__init__.py")).readline().split()[-1].strip("'")
 
 # we need to make sure we have these to python modules in our path
-install_requires = ["suds-jurko", "enum", "brownie", "lxml", "munch", "infi.pyutils", "jinja2", "python-cjson", ]
+install_requires = ["suds-jurko", "enum", "Brownie", "lxml", "munch", "infi.pyutils", "Jinja2", "python-cjson", ]
 
 setup(
     name = 'infi.pyvisdk',
