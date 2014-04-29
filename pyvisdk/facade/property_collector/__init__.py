@@ -88,13 +88,19 @@ class CachedPropertyCollector(object):
 
     def _getChanges(self, time_in_seconds=0, truncated_version=None):
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.html#waitForUpdatesEx
+        from suds import WebFault
         property_collector = self._getPropertyCollector()
         wait_options = WaitOptions(self._vim, maxWaitSeconds=time_in_seconds)
         logger.debug("Checking for updates on property collector {!r}".format(self))
-        update = property_collector.WaitForUpdatesEx(truncated_version or self._version,
-                                                     wait_options)
-        logger.debug("There is {} pending update".format('no' if update is None else 'indeed an'))
-        return update
+        try:
+            update = property_collector.WaitForUpdatesEx(truncated_version or self._version, wait_options)
+            logger.debug("There is {} pending update".format('no' if update is None else 'indeed an'))
+            return update
+        except WebFault, e:
+            if e.fault.detail.__keylist__ == ['InvalidCollectorVersionFault']:
+                logger.error("caught InvalidCollectorVersionFault, collector version is out of date or invalid")
+                self._version = INITIAL_VERSION
+                return self._getChanges(time_in_seconds=time_in_seconds, truncated_version=truncated_version)
 
     def _refToString(self, ref):
         return "{}:{}".format(ref._type, ref.value)
