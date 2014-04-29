@@ -217,6 +217,9 @@ class CachedPropertyCollector(object):
     def _mergeChangesIntoCache(self, update):
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.UpdateSet.html
         # http://vijava.sourceforge.net/vSphereAPIDoc/ver5/ReferenceGuide/vmodl.query.PropertyCollector.FilterUpdate.html
+        logger.debug("Merging changes into cache; the following log messages contain the current cache and the incoming update")
+        logger.debug(repr(self._result))
+        logger.debug(repr(update))
         for filterSet in update.filterSet:
             for key in map(lambda missingObject: self._refToString(missingObject.obj), filterSet.missingSet):
                 logger.debug("Removing key {} from cache because it is missing in the filterSet".format(key))
@@ -228,6 +231,9 @@ class CachedPropertyCollector(object):
         else:
             self._version = update.version
             logger.debug("Cache of {!r} is updated for version {}".format(self, self._version))
+            logger.debug("Updated cached after merge follows")
+            logger.debug(repr(self._result))
+
 
     def checkForUpdates(self):
         """:returns: True if the cached data is not up to date"""
