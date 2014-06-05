@@ -370,7 +370,7 @@ class SmsBase(CoreMixin):
     def connect(self):
         from .client import SmsClient
         from suds.sax.element import Element
-        self.client = SmsClient("{0}:8443".format(self._vim.server_fqdn))
+        self.client = SmsClient(self._vim.server_fqdn)
         session = eval(list(self._vim.client.client.options.transport.cookiejar)[0].value)
         cookie = Element("vcSessionCookie")
         cookie.setText(session)
