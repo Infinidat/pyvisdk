@@ -57,6 +57,8 @@ def execute_soap(vim, host, moid, method, **kwargs):
     from suds import WebFault
     response = host.RetrieveManagedMethodExecuter().executeSoap(moid=moid, version=SOAP_VERSION, method=method,
                                                                 argument=generate_arguments(vim, **kwargs))
+    if response is None:
+        return
     if response.response is None and response.fault.faultMsg is not None:
         fault = marshall_response(vim, response)
         fault.faultstring = response.faul.faultMsg
