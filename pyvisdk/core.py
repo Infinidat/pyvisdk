@@ -28,6 +28,7 @@ from .mo.sms_service_instance import SmsServiceInstance
 from .utils import camel_to_under
 from brownie.importing import import_string
 
+from pyvisdk.transport import retry_on_URLError
 log = logging.getLogger(__name__)
 log.setLevel(logging.INFO)
 
@@ -340,6 +341,7 @@ class VimBase(CoreMixin):
                 log.debug("versions found: " + str(versions))
         return versions
 
+    @retry_on_URLError
     def waitForTask(self, task, timeout=None):
         if not isinstance(task, Task):
             task = self._parse_object_content(task)

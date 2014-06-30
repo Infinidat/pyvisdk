@@ -13,6 +13,56 @@
 import urllib2
 import suds.client
 
+from logging import getLogger
+logger = getLogger(__name__)
+
+
+try:
+    from gevent import sleep
+except ImportError:
+    from time import sleep
+
+
+def retry_on_exception(func, seconds_between_retries=1, max_retries=None, exception_predicate=None):
+    """ Retries the call if an exception occurrs.
+    seconds_between_retries indicates the number of seconds to sleep after the operation fails, before the next retry.
+    max_retries specifies the number of times to retry the execution, not including the first call.
+    i.e. if max_retries is 1, then the command will be called once, and retried once more. If the command still fails
+    after max_retries, the last exception will be raised. If max_retries is None, the command will be retried
+    indefinitely.
+    exception_predicate is a function that is called with the raised exception, to test the exception if only
+    specific exceptions are valid for retry. If the function returns True, the command will be retried, otherwise the
+    exception will be raised without a retry. If exception_predicate is None, the command will be retried for all
+    exceptions. """
+    from infi.pyutils.decorators import wraps
+
+    @wraps(func)
+    def retry(*args, **kwargs):
+        from time import sleep
+        retries = 0
+        while True:
+            try:
+                return func(*args, **kwargs)
+            except Exception, error:
+                if exception_predicate is not None and not exception_predicate(error):
+                    raise
+                retries += 1
+                if max_retries is not None and retries > max_retries:
+                    raise
+                logger.warn("function {!r} failed with {!r}, retrying".format(func, error))
+                sleep(seconds_between_retries)
+    return retry
+
+
+def retry_on_URLError(func):
+    from urllib2 import URLError
+    # INFINILAB-82: sometimes FC commands fail on the switch, retry works
+    def predicate(error):
+        return isinstance(error, URLError)
+    # we retry twice, with 2 seconds in between. The predicate filters only the relevant exceptions
+    return retry_on_exception(func, 1, 30, predicate)
+
+
 class HTTPSClientAuthHandler(urllib2.HTTPSHandler):
     def __init__(self, key, cert):
         urllib2.HTTPSHandler.__init__(self)
@@ -28,6 +78,7 @@ class HTTPSClientAuthHandler(urllib2.HTTPSHandler):
     def getConnection(self, host, timeout=300):
         from httplib import HTTPSConnection
         return HTTPSConnection(host, key_file=self.key, cert_file=self.cert)
+
 
 class HttpAuthenticated(suds.client.HttpAuthenticated):
     def __init__(self, certfile=None, keyfile=None, proxy=None, **kwargs):
