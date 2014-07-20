@@ -59,8 +59,10 @@ def execute_soap(vim, host, moid, method, **kwargs):
                                                                 argument=generate_arguments(vim, **kwargs))
     if response is None:
         return
+
     if response.response is None and response.fault.faultMsg is not None:
-        fault = marshall_response(vim, response)
-        fault.faultstring = response.faul.faultMsg
-        raise WebFault(fault, response)
+        # HIPVM-457
+        # response is ReflectManagedMethodExecuterSoapResult
+        # fault is ReflectManagedMethodExecuterSoapFault
+        raise WebFault(response.fault, None)
     return marshall_response(vim, response.response)
